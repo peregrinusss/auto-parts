@@ -20,11 +20,9 @@ module.exports = {
   darkMode: "class",
   theme: {
     colors: {
-      "primary": "#6A8BFF",
-      "primary-light": "#f1f4ff",
+      "primary": "#2EA6FF",
       "blue-gray": "#455A64",
       "light-gray": "#F0F2F4",
-      "dark-gray": "#00000080",
       "dark": "#151F2B",
       "dark-light": "#00000099",
       "danger": "#FE4845",
@@ -50,7 +48,6 @@ module.exports = {
       "2xl": "1440px",
     },
     container: {
-      // TODO: Check container width and maybe set it like that
       screens: {
         xl: '100%',
         // "2xl": "1440px",
