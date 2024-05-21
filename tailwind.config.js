@@ -1,6 +1,5 @@
 const options = require("./config"); //options from config.js
 
-
 const allPlugins = {
   typography: require("@tailwindcss/typography"),
   forms: require("@tailwindcss/forms"),
@@ -15,13 +14,15 @@ const plugins = Object.keys(allPlugins)
     }
   });
 
+const withMT = require("@material-tailwind/html/utils/withMT");
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withMT({
   content: ["./src/**/*.{html,js,php}"],
   darkMode: "class",
   theme: {
     colors: {
-      "primary": "#2EA6FF",
+      "primary": "#2463EB",
       "blue-gray": "#455A64",
       "light-gray": "#F0F2F4",
       "dark": "#151F2B",
@@ -66,4 +67,4 @@ module.exports = {
     },
   },
   plugins: plugins,
-};
+});

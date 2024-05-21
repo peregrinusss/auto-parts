@@ -49,5 +49,8 @@
   "bugs": {
     "url": "https://github.com/manjumjn/gulp-with-tailwindcss/issues"
   },
-  "homepage": "https://github.com/manjumjn/gulp-with-tailwindcss#readme"
+  "homepage": "https://github.com/manjumjn/gulp-with-tailwindcss#readme",
+  "dependencies": {
+    "@material-tailwind/html": "^2.2.2"
+  }
 }
