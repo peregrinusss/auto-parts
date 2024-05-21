@@ -5,19 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Gulp with TailwindCSS v3</title>
+    <link
+            rel="stylesheet"
+            href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+    />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
   </head>
   <body>
     <div class="grid grid-cols-[auto_1fr] gap-5 h-full">
       @@include('components/sidebar.html')
-      <div class="">
+      <div class="w-full">
         @@include('components/header.html')
-        <main class="">
-          <p class="text-red-500">main</p>
-        </main>
+        @@include('components/main.html')
       </div>
     </div>
 
+
+
+
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js" type="module"></script>
+    <script src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js" type="module"></script>
     <script src="./js/scripts.js"></script>
   </body>
 </html>

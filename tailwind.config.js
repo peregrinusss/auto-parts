@@ -1,5 +1,6 @@
 const options = require("./config"); //options from config.js
 
+
 const allPlugins = {
   typography: require("@tailwindcss/typography"),
   forms: require("@tailwindcss/forms"),
@@ -46,6 +47,16 @@ module.exports = {
       lg: "1023px",
       xl: "1200px",
       "2xl": "1440px",
+    },
+    fontSize: {
+      xs: '8px',
+      sm: '12px',
+      md:'14px',
+      lg: '16px',
+      xl: '25px',
+      '2xl': '35px',
+      '3xl': '61px',
+      '4xl': '90px',
     },
     container: {
       screens: {
