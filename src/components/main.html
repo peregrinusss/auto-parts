@@ -1,1002 +1,1205 @@
 <main class="mb-8 mt-4">
-  <div
-    class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
-  >
-    <div class="overflow-x-auto rounded-xl">
-      <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
-        <thead>
-          <tr>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
-            >
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="cog_1"
-                >
-                  <input
-                    id="cog_1"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="cog_1"
+                            >
+                                <input
+                                        id="cog_1"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Артикул
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Название
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Узел
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                ОЕМ
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                применимость
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Цена
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                При продаже
-                <br />
-                Скидка / цена
-              </p>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-            >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                связанных
-              </p>
-            </th>
-          </tr>
-          <tr>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
-            ></th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            >
-              <div class="md:w-18 w-full">
-                <div class="relative h-10 w-full min-w-[50px]">
-                  <div
-                    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-                  >
+                            </label>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Артикул
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Название
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Узел
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            ОЕМ
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            применимость
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Цена
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            При продаже
+                            <br/>
+                            Скидка / цена
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            связанных
+                        </p>
+                    </th>
+                </tr>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative w-full min-w-[200px] h-10">
+                                <div
+                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+                                >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            class="h-5 w-5"
+                                    >
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                        placeholder=" "/><label
+                                    class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-md text-md peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                Фильтр
+                            </label>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative w-full min-w-[200px] h-10">
+                                <div
+                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+                                >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            class="h-5 w-5"
+                                    >
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                        placeholder=" "/><label
+                                    class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-md text-md peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                Фильтр
+                            </label>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative w-full min-w-[200px] h-10">
+                                <div
+                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+                                >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            class="h-5 w-5"
+                                    >
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                        placeholder=" "/><label
+                                    class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-md text-md peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                Фильтр
+                            </label>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative w-full min-w-[200px] h-10">
+                                <div
+                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+                                >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            class="h-5 w-5"
+                                    >
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                        placeholder=" "/><label
+                                    class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-md text-md peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                Фильтр
+                            </label>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative w-full min-w-[200px] h-10">
+                                <div
+                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+                                >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            fill="none"
+                                            viewBox="0 0 24 24"
+                                            stroke-width="1.5"
+                                            stroke="currentColor"
+                                            aria-hidden="true"
+                                            class="h-5 w-5"
+                                    >
+                                        <path
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                        ></path>
+                                    </svg>
+                                </div>
+                                <input
+                                        class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-sm px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                        placeholder=" "/><label
+                                    class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-md text-md peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                Фильтр
+                            </label>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      class="h-5 w-5"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border focus:outline-0 disabled:border-0"
-                    placeholder=" "
-                  />
-                  <label
-                    class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute left-2 top-9 block h-4 w-fit select-none !overflow-visible truncate bg-[#F6F7F8] px-1 text-[11px] font-normal leading-tight text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-[6px] peer-focus:text-[10px] peer-focus:leading-tight peer-focus:text-gray-900 peer-disabled:text-transparent"
-                  >
-                    Фильтр
-                  </label>
-                </div>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            >
-              <div class="md:w-27 w-full">
-                <div class="relative h-10 w-full min-w-[50px]">
-                  <div
-                    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      class="h-5 w-5"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border focus:outline-0 disabled:border-0"
-                    placeholder=" "
-                  />
-                  <label
-                    class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute left-2 top-9 block h-4 w-fit select-none !overflow-visible truncate bg-[#F6F7F8] px-1 text-[11px] font-normal leading-tight text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-[6px] peer-focus:text-[10px] peer-focus:leading-tight peer-focus:text-gray-900 peer-disabled:text-transparent"
-                  >
-                    Фильтр
-                  </label>
-                </div>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            >
-              <div class="md:w-18 w-full">
-                <div class="relative h-10 w-full min-w-[50px]">
-                  <div
-                    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      class="h-5 w-5"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border focus:outline-0 disabled:border-0"
-                    placeholder=" "
-                  />
-                  <label
-                    class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute left-2 top-9 block h-4 w-fit select-none !overflow-visible truncate bg-[#F6F7F8] px-1 text-[11px] font-normal leading-tight text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-[6px] peer-focus:text-[10px] peer-focus:leading-tight peer-focus:text-gray-900 peer-disabled:text-transparent"
-                  >
-                    Фильтр
-                  </label>
-                </div>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            >
-              <div class="md:w-18 w-full">
-                <div class="relative h-10 w-full min-w-[50px]">
-                  <div
-                    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      class="h-5 w-5"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border focus:outline-0 disabled:border-0"
-                    placeholder=" "
-                  />
-                  <label
-                    class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute left-2 top-9 block h-4 w-fit select-none !overflow-visible truncate bg-[#F6F7F8] px-1 text-[11px] font-normal leading-tight text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-[6px] peer-focus:text-[10px] peer-focus:leading-tight peer-focus:text-gray-900 peer-disabled:text-transparent"
-                  >
-                    Фильтр
-                  </label>
-                </div>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            >
-              <div class="md:w-18 w-full">
-                <div class="relative h-10 w-full min-w-[50px]">
-                  <div
-                    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke-width="1.5"
-                      stroke="currentColor"
-                      aria-hidden="true"
-                      class="h-5 w-5"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                      ></path>
-                    </svg>
-                  </div>
-                  <input
-                    class="border-blue-gray-200 text-blue-gray-700 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 disabled:bg-blue-gray-50 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 !pr-9 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border focus:outline-0 disabled:border-0"
-                    placeholder=" "
-                  />
-                  <label
-                    class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 pointer-events-none absolute left-2 top-9 block h-4 w-fit select-none !overflow-visible truncate bg-[#F6F7F8] px-1 text-[11px] font-normal leading-tight text-gray-500 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-sm peer-focus:-top-[6px] peer-focus:text-[10px] peer-focus:leading-tight peer-focus:text-gray-900 peer-disabled:text-transparent"
-                  >
-                    Фильтр
-                  </label>
-                </div>
-              </div>
-            </th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            ></th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            ></th>
-            <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
-            ></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
-                    >
-                      <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="group border-blue-gray-50 border-b p-3">
+                        <button table-item-button class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div class="group relative h-12 w-12 flex-shrink-0">
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full rounded-[5px] object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md transition-all group-hover:text-primary group-hover:opacity-75">
+                                    Абсорбер топливной системы
+                                </h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span>в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span>омск</span>
+                                </div>
+                            </div>
+                        </button>
+                        <div table-item-modal
+                             class="pt-[30%] overflow-y-scroll hidden fixed inset-0 flex transition-all duration-400 items-center justify-center  backdrop-blur-[5px] z-50 ">
+                            <div table-modal-content
+                                 class="my-[10%]  flex flex-col justify-center w-4/5 bg-white  rounded-lg transform transition-all duration-400 translate-y-14 opacity-0 border-4 border-solid border-primary border-opacity-80">
+                                <div class="flex justify-between relative items-center px-12 py-8 pb-12">
+                                    <div class="flex flex-col justify-center gap-2">
+                                        <h3 class="text-2xl font-bold">
+                                            Изменение запчасти
+                                            (<a href="#"
+                                                class=" text-primary transition-all opacity-85 hover:opacity-80">показать
+                                            на сайте</a>)
+                                        </h3>
+                                        <a href="#"
+                                           class="w-fit  text-xl text-primary transition-all opacity-85 hover:opacity-80">запчасти</a>
+                                        <div class="flex flex-col  gap-1">
+                                            <h5 class="text-xl">Артикул: 68411</h5>
+                                            <h5 class="text-xl">Б/у, в наличии</h5>
+                                        </div>
+                                    </div>
+                                    <div class=" absolute right-[3%] top-[10%] flex items-center gap-3">
+
+                                        <div table-close-modal class="w-auto h-[60px] flex items-center">
+                                            <svg class="w-auto h-full transition-all cursor-pointer fill-blue-gray hover:fill-primary"
+                                                 focusable="false" aria-hidden="true" viewBox="0 0 24 24"
+                                                 data-testid="CloseIcon">
+                                                <path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <span class="inline-flex mx-auto w-full h-0.5 rounded-full bg-primary"></span>
+                                <div class="">
+                                    <form>
+                                        <div class="px-12 grid grid-cols-3 ">
+                                            <div class="flex flex-col gap-4 pb-8 pt-12 px-4 border-r-2 border-solid border-primary">
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        ОЕМ
+                                                    </label>
+                                                </div>
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <div
+                                                            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                                                    >
+                                                        <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                                stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                aria-hidden="true"
+                                                                class="h-7 w-7"
+                                                        >
+                                                            <path
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                                            ></path>
+                                                        </svg>
+                                                    </div>
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Узел
+                                                    </label>
+                                                </div>
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <div
+                                                            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                                                    >
+                                                        <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                                stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                aria-hidden="true"
+                                                                class="h-7 w-7"
+                                                        >
+                                                            <path
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                                            ></path>
+                                                        </svg>
+                                                    </div>
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Донор
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col items-center justify-center gap-3 pb-8 pt-12 px-4">
+                                                <p class="text-xl text-primary ">Применимость:</p>
+                                                <div class="flex flex-col gap-2">
+                                                    <p class="text-2lg text-blue-gray">Scania 5-series G</p>
+                                                    <p class="text-2lg text-blue-gray">Scania 5-series P</p>
+                                                    <p class="text-2lg text-blue-gray">Scania 5-series R</p>
+                                                    <button class="cursor-pointer text-primary">Выбрать...</button>
+                                                </div>
+                                            </div>
+                                            <div class="flex flex-col gap-4 pb-8 pt-12 px-4 border-l-2 border-solid border-primary">
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <input class="pointer-events-none cursor-not-allowed bg-blue-gray bg-opacity-20 peer w-full h-full  text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Замены
+                                                    </label>
+                                                </div>
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <div
+                                                            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                                                    >
+                                                        <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                                stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                aria-hidden="true"
+                                                                class="h-7 w-7"
+                                                        >
+                                                            <path
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                                            ></path>
+                                                        </svg>
+                                                    </div>
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Бренд Avito
+                                                    </label>
+                                                </div>
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <div
+                                                            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                                                    >
+                                                        <svg
+                                                                xmlns="http://www.w3.org/2000/svg"
+                                                                fill="none"
+                                                                viewBox="0 0 24 24"
+                                                                stroke-width="1.5"
+                                                                stroke="currentColor"
+                                                                aria-hidden="true"
+                                                                class="h-7 w-7"
+                                                        >
+                                                            <path
+                                                                    stroke-linecap="round"
+                                                                    stroke-linejoin="round"
+                                                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                                            ></path>
+                                                        </svg>
+                                                    </div>
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray-700 font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Название
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="py-8 px-12 flex flex-col  border-t-2 border-solid border-primary gap-6">
+                                            <div id="preview-container" class=" grid grid-cols-5 gap-4">
+                                                <div class="rounded-xl w-full max-w-[300px] border-4 border-solid border-primary">
+                                                    <img class="h-full object-cover rounded-[8px]"
+                                                         src="./img/gallery-item.jpeg" alt="detail">
+                                                </div>
+                                            </div>
+                                            <div class="w-full flex justify-center items-center">
+                                                <div class="group relative w-fit">
+                                                    <button class="bg-primary cursor-pointer flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-light-gray text-xl font-medium leading-tight transition-all hover:bg-light-gray hover:text-primary focus:bg-light-gray focus:text-primary">
+                                                        Загрузить изображения
+                                                    </button>
+                                                    <input id="fileInput"
+                                                           class="w-full absolute inset-0 opacity-0 z-[999]" multiple
+                                                           accept="image/*" type="file">
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="py-8 px-12 grid grid-cols-2  border-t-2 border-solid border-primary gap-6">
+                                            <div class="flex flex-col gap-2">
+                                                <label for="area-oem" class="block mb-2 text-2lg font-medium text-primary">Описание OEMа:</label>
+                                                <textarea id="area-oem" rows="4" class="transition-all block p-2.5 w-full text-2lg text-gray-900 bg-gray-50 rounded-lg border border-primary focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+                                            </div>
+                                            <div class="flex flex-col gap-2">
+                                                <label for="area-zapch" class="block mb-2 text-2lg font-medium text-primary">Описание экземпляра запчасти:</label>
+                                                <textarea id="area-zapch" rows="4" class="transition-all block p-2.5 w-full text-2lg text-gray-900 bg-gray-50 rounded-lg border border-primary focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Напишите что-нибудь..."></textarea>
+                                            </div>
+                                            <div class="flex flex-col gap-2">
+                                                <div class="relative w-full min-w-[200px] h-16">
+                                                    <input class="peer w-full h-full bg-transparent text-blue-gray font-sans font-normal outline outline-0 focus:outline-0 disabled:bg-blue-gray-50 disabled:border-0 transition-all placeholder-shown:border placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border focus:border-2 border-t-blue-gray-200 focus:border-t-transparent text-2lg px-3 py-2.5 rounded-[7px] border-blue-gray-200 focus:border-blue-500"
+                                                           placeholder=" "/>
+                                                    <label
+                                                            class="flex w-full h-full select-none pointer-events-none absolute left-0 font-normal !overflow-visible truncate peer-placeholder-shown:text-blue-gray-500 leading-tight peer-focus:leading-tight peer-disabled:text-transparent peer-disabled:peer-placeholder-shown:text-blue-gray-500 transition-all -top-1.5 peer-placeholder-shown:text-2lg text-2lg peer-focus:text-[11px] before:content[' '] before:block before:box-border before:w-2.5 before:h-1.5 before:mt-[6.5px] before:mr-1 peer-placeholder-shown:before:border-transparent before:rounded-tl-md before:border-t peer-focus:before:border-t-2 before:border-l peer-focus:before:border-l-2 before:pointer-events-none before:transition-all peer-disabled:before:border-transparent after:content[' '] after:block after:flex-grow after:box-border after:w-2.5 after:h-1.5 after:mt-[6.5px] after:ml-1 peer-placeholder-shown:after:border-transparent after:rounded-tr-md after:border-t peer-focus:after:border-t-2 after:border-r peer-focus:after:border-r-2 after:pointer-events-none after:transition-all peer-disabled:after:border-transparent peer-placeholder-shown:leading-[3.75] text-blue-gray-400 peer-focus:text-blue-500 before:border-blue-gray-200 peer-focus:before:!border-blue-500 after:border-blue-gray-200 peer-focus:after:!border-blue-500">
+                                                        Ссылка на видео
+                                                    </label>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-          <tr>
-            <td class="border-blue-gray-50 border-b p-2">
-              <div class="inline-flex items-center">
-                <label
-                  class="relative flex cursor-pointer items-center rounded-full p-0"
-                  htmlFor="vertical-list-react"
-                >
-                  <input
-                    id="vertical-list-react"
-                    type="checkbox"
-                    class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
-                  />
-                  <span
-                    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-                  >
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+                                    class="relative flex cursor-pointer items-center rounded-full p-0"
+                                    htmlFor="vertical-list-react"
+                            >
+                                <input
+                                        id="vertical-list-react"
+                                        type="checkbox"
+                                        class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"
+                                />
+                                <span
+                                        class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                >
                     <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      class="h-3.5 w-3.5"
-                      viewBox="0 0 20 20"
-                      fill="currentColor"
-                      stroke="currentColor"
-                      stroke-width="1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            class="h-3.5 w-3.5"
+                            viewBox="0 0 20 20"
+                            fill="currentColor"
+                            stroke="currentColor"
+                            stroke-width="1"
                     >
                       <path
-                        fill-rule="evenodd"
-                        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                        clip-rule="evenodd"
+                              fill-rule="evenodd"
+                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                              clip-rule="evenodd"
                       ></path>
                     </svg>
                   </span>
-                </label>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
-                <h4 class="text-md">59513-1</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex flex-col gap-1">
-                <div class="flex items-center gap-2">
-                  <div
-                    class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
-                  >
-                    <img
-                      src="./img/engine.png"
-                      alt="engine"
-                      class="h-full w-full object-cover"
-                    />
-                  </div>
-                  <h4 class="text-md">Абсорбер топливной системы</h4>
-                </div>
-                <div class="flex flex-wrap gap-1">
-                  <div
-                    class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">в работе</span>
-                  </div>
-                  <div
-                    class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
-                  >
-                    <span class="">омск</span>
-                  </div>
-                </div>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex w-min justify-start">
-                <h4 class="text-md">Патрубок воздушного фильтра</h4>
-              </div>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4
-                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-              >
-                A9402940701
-              </h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
-            </td>
-            <td class="border-blue-gray-50 border-b p-3"></td>
-            <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">1</h4>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+                            </label>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">59513-1</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div
+                                        class="relative h-12 w-12 flex-shrink-0 overflow-hidden rounded-[5px]"
+                                >
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full object-cover"
+                                    />
+                                </div>
+                                <h4 class="text-md">Абсорбер топливной системы</h4>
+                            </div>
+                            <div class="flex flex-wrap gap-1">
+                                <div
+                                        class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">в работе</span>
+                                </div>
+                                <div
+                                        class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span class="">омск</span>
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            A9402940701
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Renault T</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3"></td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">1</h4>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-  </div>
-  @@include('footer.html')
+    @@include('footer.html')
 </main>

@@ -7,12 +7,12 @@ const allPlugins = {
 };
 
 const plugins = Object.keys(allPlugins)
-  .filter((k) => options.plugins[k])
-  .map((k) => {
-    if (k in options.plugins && options.plugins[k]) {
-      return allPlugins[k];
-    }
-  });
+    .filter((k) => options.plugins[k])
+    .map((k) => {
+      if (k in options.plugins && options.plugins[k]) {
+        return allPlugins[k];
+      }
+    });
 
 const withMT = require("@material-tailwind/html/utils/withMT");
 
@@ -38,7 +38,7 @@ module.exports = withMT({
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+            "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
     screens: {
@@ -52,8 +52,9 @@ module.exports = withMT({
     fontSize: {
       xs: '8px',
       sm: '12px',
-      md:'14px',
+      md: '14px',
       lg: '16px',
+      '2lg': '20px',
       xl: '25px',
       '2xl': '35px',
       '3xl': '61px',
@@ -68,3 +69,5 @@ module.exports = withMT({
   },
   plugins: plugins,
 });
+
+

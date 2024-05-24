@@ -72,3 +72,76 @@ if (paginations.length) {
     });
   });
 }
+
+
+// table content
+
+document.addEventListener('DOMContentLoaded', () => {
+  const buttons = document.querySelectorAll('[table-item-button]');
+  const modals = document.querySelectorAll('[table-item-modal]');
+  const closeButtons = document.querySelectorAll('[table-close-modal]');
+
+  buttons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      modals[index].classList.remove('hidden');
+      const modalContent = modals[index].querySelector('[table-modal-content]');
+      requestAnimationFrame(() => {
+        modalContent.classList.remove('opacity-0', 'translate-y-14');
+      });
+      document.body.classList.add('overflow-hidden');
+    });
+  });
+
+  closeButtons.forEach((button, index) => {
+    button.addEventListener('click', () => {
+      const modal = modals[index];
+      const modalContent = modal.querySelector('[table-modal-content]');
+      modalContent.classList.add('opacity-0', 'translate-y-14');
+      modalContent.addEventListener('transitionend', () => {
+        modal.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }, { once: true });
+    });
+  });
+
+  modals.forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      if (!event.target.closest('[table-modal-content]')) {
+        const modalContent = modal.querySelector('[table-modal-content]');
+        modalContent.classList.add('opacity-0', 'translate-y-14');
+        modalContent.addEventListener('transitionend', () => {
+          modal.classList.add('hidden');
+          document.body.classList.remove('overflow-hidden');
+        }, { once: true });
+      }
+    });
+  });
+});
+
+
+// gallery in modal
+document.addEventListener('DOMContentLoaded', function() {
+  const fileInput = document.getElementById('fileInput');
+  const previewContainer = document.getElementById('preview-container');
+
+  fileInput.addEventListener('change', function() {
+    const files = Array.from(fileInput.files);
+
+    files.forEach(file => {
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const preview = document.createElement('div');
+        preview.classList.add('rounded-xl', 'w-full', 'max-w-[300px]', 'border-4', 'border-solid', 'border-primary');
+
+        const img = document.createElement('img');
+        img.src = e.target.result;
+        img.classList.add('rounded-[8px]', 'w-full', 'h-full', 'object-cover');
+
+        preview.appendChild(img);
+        previewContainer.appendChild(preview);
+      };
+
+      reader.readAsDataURL(file);
+    });
+  });
+});

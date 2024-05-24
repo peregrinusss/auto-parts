@@ -47,3 +47,12 @@ body {
 .tab-active {
   background: #FFF;
 }
+
+[data-header-drops]:hover {
+
+  svg > path {
+    stroke: white;
+  }
+
+
+}
