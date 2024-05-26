@@ -145,3 +145,109 @@ document.addEventListener('DOMContentLoaded', function() {
     });
   });
 });
+
+// mini-modals
+document.addEventListener('DOMContentLoaded', () => {
+  const topToggles = document.querySelectorAll('[minimodal-top-toggle]');
+  const topModals = document.querySelectorAll('[minimodal-top-content]');
+
+  // Делегирование событий для переключателей
+  topToggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+      const modal = topModals[index];
+      if (modal) {
+        if (modal.classList.contains('hidden')) {
+          modal.classList.remove('hidden');
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              modal.classList.remove('translate-y-14', 'opacity-0');
+            });
+          }, 10);
+          document.body.classList.add('overflow-hidden');
+        } else {
+          modal.classList.add('opacity-0', 'translate-y-14');
+          modal.addEventListener('transitionend', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          }, { once: true });
+        }
+      }
+    });
+  });
+
+  // Закрытие модальных окон при клике вне их содержимого
+  document.addEventListener('click', (event) => {
+    topModals.forEach((modal, index) => {
+      const toggle = topToggles[index];
+      if (!modal.contains(event.target) && !toggle.contains(event.target)) {
+        if (!modal.classList.contains('hidden')) {
+          modal.classList.add('opacity-0', 'translate-y-14');
+          modal.addEventListener('transitionend', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          }, { once: true });
+        }
+      }
+    });
+  });
+
+  // Предотвращение закрытия модального окна при клике внутри него
+  topModals.forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  });
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const bottomToggles = document.querySelectorAll('[minimodal-bottom-toggle]');
+  const bottomModals = document.querySelectorAll('[minimodal-bottom-content]');
+
+  // Делегирование событий для переключателей
+  bottomToggles.forEach((toggle, index) => {
+    toggle.addEventListener('click', () => {
+      const modal = bottomModals[index];
+      if (modal) {
+        if (modal.classList.contains('hidden')) {
+          modal.classList.remove('hidden');
+          setTimeout(() => {
+            requestAnimationFrame(() => {
+              modal.classList.remove('translate-y-full', 'opacity-0');
+            });
+          }, 10);
+          document.body.classList.add('overflow-hidden');
+        } else {
+          modal.classList.add('opacity-0', 'translate-y-full');
+          modal.addEventListener('transitionend', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          }, { once: true });
+        }
+      }
+    });
+  });
+
+  // Закрытие модальных окон при клике вне их содержимого
+  document.addEventListener('click', (event) => {
+    bottomModals.forEach((modal, index) => {
+      const toggle = bottomToggles[index];
+      if (!modal.contains(event.target) && !toggle.contains(event.target)) {
+        if (!modal.classList.contains('hidden')) {
+          modal.classList.add('opacity-0', 'translate-y-full');
+          modal.addEventListener('transitionend', () => {
+            modal.classList.add('hidden');
+            document.body.classList.remove('overflow-hidden');
+          }, { once: true });
+        }
+      }
+    });
+  });
+
+  // Предотвращение закрытия модального окна при клике внутри него
+  bottomModals.forEach((modal) => {
+    modal.addEventListener('click', (event) => {
+      event.stopPropagation();
+    });
+  });
+});

@@ -45,7 +45,10 @@ body {
 }
 
 .tab-active {
-  background: #FFF;
+  background: #2463EC;
+}
+.tab-active > h4 {
+  color: #ffffff
 }
 
 [data-header-drops]:hover {
