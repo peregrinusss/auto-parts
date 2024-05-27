@@ -1,4 +1,5 @@
-const { src, dest, watch, series, parallel } = require("gulp");
+const gulp = require("gulp");
+const { src, dest, watch, series, parallel } = gulp;
 const clean = require("gulp-clean"); //For Cleaning build/dist for fresh export
 const options = require("./config"); //paths and other options from config.js
 const browserSync = require("browser-sync").create();
@@ -8,12 +9,45 @@ const postcss = require("gulp-postcss"); //For Compiling tailwind utilities with
 const concat = require("gulp-concat"); //For Concatinating js,css files
 const uglify = require("gulp-terser"); //To Minify JS files
 const imagemin = require("gulp-imagemin"); //To Optimize Images
-const mozjpeg = require("imagemin-mozjpeg"); // imagemin plugin
-const pngquant = require("imagemin-pngquant"); // imagemin plugin
 const purgecss = require("gulp-purgecss"); // Remove Unused CSS from Styles
 const logSymbols = require("log-symbols"); //For Symbolic Console logs :) :P
 const includePartials = require("gulp-file-include"); //For supporting partials if required
 const nunjucksRender = require("gulp-nunjucks-render"); // For Nunjucks templating
+
+const cleanCSS = require("gulp-clean-css");
+const extReplace = require("gulp-ext-replace");
+const htmlmin = require("gulp-htmlmin");
+const imageResize = require("gulp-image-resize");
+const rename = require("gulp-rename");
+const run = require("gulp-run-command").default;
+const sourcemaps = require("gulp-sourcemaps");
+const version = require("gulp-version-number");
+
+const PATHS = {
+  output: "dist",
+  srcpath: "src",
+  templates: "src/templates",
+  pages: "src/pages",
+};
+const versionConfig = {
+  value: "%MDS%",
+  append: {
+    key: "v",
+    to: ["css", "js"],
+  },
+};
+
+async function getImageminMozjpeg() {
+  return (await import('imagemin-mozjpeg')).default;
+}
+
+async function getImageminPngquant() {
+  return (await import('imagemin-pngquant')).default;
+}
+
+async function getImageminWebp() {
+  return (await import('imagemin-webp')).default;
+}
 
 // Load Previews on Browser on dev
 function livePreview(done) {
@@ -43,7 +77,8 @@ function devHTML() {
 function devNunjucks() {
   return src(`${options.paths.src.base}/**/*.njk`)
     .pipe(nunjucksRender({
-      path: [options.paths.src.base]
+      path: [options.paths.src.base],
+      ext: '.html' // Настраиваем расширение для компилированных файлов
     }))
     .pipe(dest(options.paths.dist.base));
 }
@@ -125,7 +160,8 @@ function prodHTML() {
 function prodNunjucks() {
   return src(`${options.paths.src.base}/**/*.njk`)
     .pipe(nunjucksRender({
-      path: [options.paths.src.base]
+      path: [options.paths.src.base],
+      ext: '.html' // Настраиваем расширение для компилированных файлов
     }))
     .pipe(dest(options.paths.build.base));
 }
@@ -156,13 +192,17 @@ function prodScripts() {
     .pipe(dest(options.paths.build.js));
 }
 
-function prodImages() {
+async function prodImages() {
   const pngQuality = Array.isArray(options.config.imagemin.png)
     ? options.config.imagemin.png
     : [0.7, 0.7];
   const jpgQuality = Number.isInteger(options.config.imagemin.jpeg)
     ? options.config.imagemin.jpeg
     : 70;
+
+  const mozjpeg = await getImageminMozjpeg();
+  const pngquant = await getImageminPngquant();
+
   const plugins = [
     pngquant({ quality: pngQuality }),
     mozjpeg({ quality: jpgQuality }),
@@ -203,6 +243,7 @@ function buildFinish(done) {
   done();
 }
 
+// Default task
 exports.default = series(
   devClean, // Clean Dist Folder
   parallel(devNunjucks, devStyles, devScripts, devImages, devFonts, devThirdParty, devHTML), // Run All tasks in parallel
@@ -210,6 +251,7 @@ exports.default = series(
   watchFiles // Watch for Live Changes
 );
 
+// Production task
 exports.prod = series(
   prodClean, // Clean Build Folder
   parallel(
@@ -223,3 +265,37 @@ exports.prod = series(
   ), // Run All tasks in parallel
   buildFinish
 );
+
+// Additional tasks
+gulp.task("nun", function () {
+  return src(PATHS.pages + "/**/*.+(html|njk)")
+    .pipe(
+      nunjucksRender({
+        path: [PATHS.templates],
+        watch: true,
+      })
+    )
+    .pipe(version(versionConfig))
+    .pipe(dest(PATHS.output));
+});
+
+// BrowserSync
+gulp.task("sync", function () {
+  browserSync.init({
+    server: {
+      baseDir: PATHS.output,
+    },
+    port: 3000,
+  });
+});
+
+// Watch for changes
+gulp.task("watch", function () {
+  gulp.watch(PATHS.templates + "/**/*", gulp.series("nun"));
+  gulp.watch(PATHS.pages + "/**/*", gulp.series("nun"));
+  gulp.watch(PATHS.output + "/**/*").on("change", browserSync.reload);
+});
+
+// Serve task
+gulp.task("serve", gulp.series("nun", "sync", "watch"));
+
