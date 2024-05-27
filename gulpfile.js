@@ -1,17 +1,3 @@
-/**
- *   Gulp with TailwindCSS - An CSS Utility framework build setup with SCSS
- *   Author : Manjunath G
- *   URL : manjumjn.com | lazymozek.com
- *   Twitter : twitter.com/manju_mjn
- **/
-
-/*
-  Usage:
-  1. npm install //To install all dev dependencies of package
-  2. npm run dev //To start development and server for live preview
-  3. npm run prod //To generate minifed files for live server
-*/
-
 const { src, dest, watch, series, parallel } = require("gulp");
 const clean = require("gulp-clean"); //For Cleaning build/dist for fresh export
 const options = require("./config"); //paths and other options from config.js
@@ -27,8 +13,9 @@ const pngquant = require("imagemin-pngquant"); // imagemin plugin
 const purgecss = require("gulp-purgecss"); // Remove Unused CSS from Styles
 const logSymbols = require("log-symbols"); //For Symbolic Console logs :) :P
 const includePartials = require("gulp-file-include"); //For supporting partials if required
+const nunjucksRender = require("gulp-nunjucks-render"); // For Nunjucks templating
 
-//Load Previews on Browser on dev
+// Load Previews on Browser on dev
 function livePreview(done) {
   browserSync.init({
     server: {
@@ -46,10 +33,18 @@ function previewReload(done) {
   done();
 }
 
-//Development Tasks
+// Development Tasks
 function devHTML() {
   return src(`${options.paths.src.base}/**/*.html`)
     .pipe(includePartials())
+    .pipe(dest(options.paths.dist.base));
+}
+
+function devNunjucks() {
+  return src(`${options.paths.src.base}/**/*.njk`)
+    .pipe(nunjucksRender({
+      path: [options.paths.src.base]
+    }))
     .pipe(dest(options.paths.dist.base));
 }
 
@@ -79,12 +74,6 @@ function devImages() {
   );
 }
 
-function devImages() {
-  return src(`${options.paths.src.img}/**/*`).pipe(
-    dest(options.paths.dist.img)
-  );
-}
-
 function devFonts() {
   return src(`${options.paths.src.fonts}/**/*`).pipe(
     dest(options.paths.dist.fonts)
@@ -99,8 +88,8 @@ function devThirdParty() {
 
 function watchFiles() {
   watch(
-    `${options.paths.src.base}/**/*.{html,php}`,
-    series(devHTML, devStyles, previewReload)
+    `${options.paths.src.base}/**/*.{html,php,njk}`,
+    series(devHTML, devNunjucks, devStyles, previewReload)
   );
   watch(
     [options.config.tailwindjs, `${options.paths.src.css}/**/*.scss`],
@@ -126,10 +115,18 @@ function devClean() {
   );
 }
 
-//Production Tasks (Optimized Build for Live/Production Sites)
+// Production Tasks (Optimized Build for Live/Production Sites)
 function prodHTML() {
   return src(`${options.paths.src.base}/**/*.{html,php}`)
     .pipe(includePartials())
+    .pipe(dest(options.paths.build.base));
+}
+
+function prodNunjucks() {
+  return src(`${options.paths.src.base}/**/*.njk`)
+    .pipe(nunjucksRender({
+      path: [options.paths.src.base]
+    }))
     .pipe(dest(options.paths.build.base));
 }
 
@@ -146,21 +143,6 @@ function prodStyles() {
         cssnano(),
       ])
     )
-    // .pipe(
-    //   purgecss({
-    //     ...options.config.purgecss,
-    //     defaultExtractor: (content) => {
-    //       // without arbitray selectors
-    //       // const v2Regex = /[\w-:./]+(?<!:)/g;
-    //       // with arbitray selectors
-    //       const v3Regex = /[(\([&*\])|\w)-:./]+(?<!:)/g;
-    //       const broadMatches = content.match(v3Regex) || [];
-    //       const innerMatches =
-    //         content.match(/[^<>"'`\s.()]*[^<>"'`\s.():]/g) || [];
-    //       return broadMatches.concat(innerMatches);
-    //     },
-    //   })
-    // )
     .pipe(dest(options.paths.build.css));
 }
 
@@ -223,7 +205,7 @@ function buildFinish(done) {
 
 exports.default = series(
   devClean, // Clean Dist Folder
-  parallel(devStyles, devScripts, devImages, devFonts, devThirdParty, devHTML), //Run All tasks in parallel
+  parallel(devNunjucks, devStyles, devScripts, devImages, devFonts, devThirdParty, devHTML), // Run All tasks in parallel
   livePreview, // Live Preview Build
   watchFiles // Watch for Live Changes
 );
@@ -231,12 +213,13 @@ exports.default = series(
 exports.prod = series(
   prodClean, // Clean Build Folder
   parallel(
+    prodNunjucks,
     prodStyles,
     prodScripts,
     prodImages,
     prodHTML,
     prodFonts,
     prodThirdParty
-  ), //Run All tasks in parallel
+  ), // Run All tasks in parallel
   buildFinish
 );

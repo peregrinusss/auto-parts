@@ -1,66 +1,148 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Авторазбор</title>
-    <link
-      rel="stylesheet"
-      href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
-    />
-    <link rel="stylesheet" type="text/css" href="./css/style.css" />
-  </head>
-  <body>
-    <div class="grid h-full grid-cols-[auto_1fr] gap-2">
-      @@include('components/sidebar.html')
-      <div class="relative w-[calc(100vw-288px)] px-4">
-        @@include('components/header.html') @@include('components/main.html')
-      </div>
-    </div>
+<html lang="ru" class="page">
+  @@include('./components/head.html')
 
-    <script
-      src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
-      type="module"
-    ></script>
-    <script
-      src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
-      type="module"
-    ></script>
-    <script src="./js/scripts.js"></script>
+  <style>
+    @keyframes gradient {
+      0% {
+        background-position: 0 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0 50%;
+      }
+    }
+
+    html,
+    body {
+      height: 100%;
+      color: #fff;
+      background: -o-linear-gradient(310deg, #000000, #04523c);
+      background: linear-gradient(140deg, #0c0c0c, #03515a);
+      background-repeat: no-repeat;
+      background-size: 200%;
+      animation: gradient 10s infinite;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    html {
+      height: 200% !important;
+    }
+
+    li {
+      list-style: none;
+      list-style-type: decimal;
+      font-size: 18px;
+      margin-top: 15px;
+    }
+    .index {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 40px 15px;
+    }
+    h1 {
+      width: fit-content;
+      font-size: 45px;
+      font-weight: 600;
+      line-height: 130%;
+      background-image: linear-gradient(to right, #5cc889, #2b8bbb);
+      color: transparent;
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+    a {
+      background-image: linear-gradient(
+        to right,
+        #1dd994,
+        #1dd994 50%,
+        #ffffff 50%
+      );
+      background-size: 200% 100%;
+      background-position: -100%;
+      display: inline-block;
+      padding: 5px 0;
+      position: relative;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      transition: all 0.3s ease-in-out;
+    }
+
+    a::before {
+      content: "";
+      background: #1dd994;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+    a::after {
+      content: "";
+      background: #ffffff;
+      display: block;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 100%;
+      height: 2px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    a:hover {
+      background-position: 0;
+    }
+
+    a:hover::before {
+      width: 100%;
+    }
+    a:hover::after {
+      width: 0;
+    }
+
+    .disc {
+      display: block;
+      font-size: 16px;
+      margin: 40px 0 50px;
+    }
+
+    .stack {
+      display: flex;
+      column-gap: 20px;
+      row-gap: 5px;
+      flex-wrap: wrap;
+    }
+    .stack span {
+      font-size: 22px;
+      font-weight: 600;
+      color: #817f7f;
+    }
+  </style>
+
+  <body class="page__body">
+    <main class="main">
+      <div class="index">
+        <div class="stack">
+          <span>Html</span>
+          <span>Tailwind</span>
+          <span>Js (ES6)</span>
+          <span>Js libraries</span>
+          <span>Gulp</span>
+        </div>
+        <h1>Разработка верстки админки сайта автозапчастей</h1>
+        <span class="disc"
+          >Ниже приведены ссылки на страницы проекта. Для вашего удобства
+          страницы открываются в новом окне.</span
+        >
+        <ol>
+          <li>
+            <a href="parts.html" target="_blank">Запчасти</a>
+          </li>
+        </ol>
+      </div>
+    </main>
   </body>
 </html>
-
-<!-- TODO: Make index page with links to all pages -->
-
-
-
-
-<!--<div class="inline-flex items-center">-->
-<!--  <input-->
-
-<!--          type="checkbox"-->
-<!--          class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-0"-->
-<!--  />-->
-<!--  <span-->
-<!--          class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"-->
-<!--  >-->
-<!--                                            <svg-->
-<!--                                                    xmlns="http://www.w3.org/2000/svg"-->
-<!--                                                    class="h-3.5 w-3.5"-->
-<!--                                                    viewBox="0 0 20 20"-->
-<!--                                                    fill="currentColor"-->
-<!--                                                    stroke="currentColor"-->
-<!--                                                    stroke-width="1"-->
-<!--                                            >-->
-<!--                                              <path-->
-<!--                                                      fill-rule="evenodd"-->
-<!--                                                      d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"-->
-<!--                                                      clip-rule="evenodd"-->
-<!--                                              ></path>-->
-<!--                                            </svg>-->
-<!--                                          </span>-->
-<!--</div>-->
-
-
-
