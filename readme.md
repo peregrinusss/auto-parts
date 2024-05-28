@@ -1,21 +1,21 @@
-# Gulp with TailwindCSS Starter Kit
+# Админ панель проекта TruckStar
 
-Gulp with TailwindCSS v3 Starter Kit ( ~~Updated with [TailwindCSS JIT](https://github.com/tailwindlabs/tailwindcss-jit)~~ - **latest tailwind has JIT is built-in** ) - A repo that makes your development easier with predefined gulp tasks that help you to use [tailwindcss](https://github.com/tailwindcss/tailwindcss) with simple commands.
-
-## Features
-
-- Easy configuration using `config.js`
-- Live reload on file/assets changes using `browser-sync`
-- SCSS support
-- Minification of styles and scripts on production build
-- Minification of images on production build using `imagemin`
-- Includes following tailwindcss plugins (can be disabled/enabled with `config.js`)
-
-  - [@tailwindcss/forms](https://github.com/tailwindlabs/tailwindcss-forms)
-  - ~~[@tailwindcss/line-clamp](https://github.com/tailwindlabs/tailwindcss-line-clamp)~~ - Utility is included by default in Tailwind v3.3 release
-  - [@tailwindcss/typography](https://tailwindcss.com/docs/typography-plugin)
-  - [@tailwindcss/container-queries](https://github.com/tailwindlabs/tailwindcss-container-queries)
-
+TODO
+-[] Фильтры
+-[] Разбор
+	-[] Модалка Изменение запчасти
+	-[] Модалка Выберите модель ТС
+	-[] Модалка Выбор группы запчастей
+	-[] Модалка Журнал изменений
+	-[] Модалка Печать
+-[] Баланс
+	-[] Модалка Изменение баланса
+-[] Пользователи
+	-[] Модалка Изменение пользователя
+	-[] Модалка Журнал изменений
+	-[] Модалка Просмотр филиала
+	-[] Модалка Просмотр склада
+	
 ## Quick Start
 
 You can get started by clicking on `Use this template` for creating new repo using this template or simply by cloning it.
@@ -68,7 +68,3 @@ const plugins = {
 };
 ...
 ```
-
-## License
-
-This project is open source and available under the [MIT License](https://github.com/lazymozek/gulp-with-tailwindcss/blob/main/LICENSE).
