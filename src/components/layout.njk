@@ -1,16 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-  {% include './components/head.njk' %}
-  <!-- {# @@include('./components/head.html') #} -->
+  {% include 'components/partials/head.njk' %}
   <body>
     <div class="grid h-full grid-cols-[auto_1fr] gap-2">
-       {% include './components/sidebar.njk' %}
-      <!-- {# @@include('components/sidebar.html') #} -->
+       {% include 'components/partials/sidebar.njk' %}
       <div class="relative w-[calc(100vw-288px)] px-4">
-        {% include './components/header.njk' %}
-        <!-- {# {% 'components/main.html' %} #} -->
-        <!-- {# @@include('components/header.html')
-         @@include('components/main.html') #} -->
+        {% include 'components/partials/header.njk' %}
 
          {% block content %}{% endblock %}
       </div>
