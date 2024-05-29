@@ -195,12 +195,5 @@ class GraphModal {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-  const modal = new GraphModal({
-    isOpen: (instance) => {
-      console.log('Modal is open', instance);
-    },
-    isClose: (instance) => {
-      console.log('Modal is closed', instance);
-    }
-  });
+  const modal = new GraphModal;
 });
