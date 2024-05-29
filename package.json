@@ -53,6 +53,7 @@
   "homepage": "https://github.com/manjumjn/gulp-with-tailwindcss#readme",
   "dependencies": {
     "@material-tailwind/html": "^2.2.2",
+    "graph-modal": "^1.0.7",
     "gulp-nunjucks-render": "^2.2.3"
   }
 }
