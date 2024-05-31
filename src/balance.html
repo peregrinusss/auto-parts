@@ -5,20 +5,9 @@
     <div class="grid h-full grid-cols-[auto_1fr] gap-2">
       @@include('components/sidebar.html')
       <div class="relative w-[calc(100vw-288px)] px-4">
-
-        @@include('components/header/parts.html')
-        @@include('components/main.html')
-        @@include('components/main/modals/layout.html')
-
-
-
-
+        @@include('components/header/balance.html') @@include('components/balance.html')
       </div>
     </div>
-
-
-
-
 
     <script
       src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
@@ -28,7 +17,6 @@
       src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
       type="module"
     ></script>
-
     <script src="./js/scripts.js"></script>
   </body>
 </html>

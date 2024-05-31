@@ -257,6 +257,255 @@
                 </div>
               </button>
 
+              <div
+                table-item-modal
+                class="duration-400 fixed inset-0 z-50 flex hidden items-center justify-center overflow-y-scroll bg-black bg-opacity-10 backdrop-blur-[5px] transition-all"
+              >
+                <div
+                  table-modal-content
+                  class="duration-400 h-[95dvh] w-3/5 translate-y-14 transform justify-center overflow-hidden rounded-[30px] bg-white opacity-0 shadow-lg transition-all"
+                >
+                  <div
+                    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+                  >
+                    <div class="flex flex-col justify-center gap-2">
+                      <h3 class="text-xl font-bold">
+                        Изменение запчасти
+                        <a
+                          href="#"
+                          class="opacity-85 text-base text-primary transition-all hover:opacity-80"
+                          >показать на сайте</a
+                        >
+                      </h3>
+                      <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                        >запчасти</a
+                      >
+                      <div class="flex flex-col">
+                        <h5 class="text-md">Артикул: 68411</h5>
+                        <h5 class="text-md">Б/у, в наличии</h5>
+                      </div>
+                    </div>
+                    <div class="absolute right-5 top-5 flex items-center gap-3">
+                      <div table-close-modal class="flex h-8 w-8 items-center">
+                        <svg
+                          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                          focusable="false"
+                          aria-hidden="true"
+                          viewBox="0 0 24 24"
+                          data-testid="CloseIcon"
+                        >
+                          <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                          ></path>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="">
+                    <form>
+                      <div class="h-[70vh] overflow-y-scroll">
+                        <div class="grid grid-cols-3 px-12">
+                          <div
+                            class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                          >
+                            <div class="relative h-fit w-full min-w-[200px]">
+                              @@include('./shared/input.html', {
+                                placeholder: "OEM",
+                              })
+                            </div>
+                            <div class="relative h-16 w-full min-w-[200px]">
+                              <div
+                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  aria-hidden="true"
+                                  class="h-7 w-7"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <input
+                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
+                                placeholder=" "
+                              />
+                              <label
+                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+                              >
+                                Узел
+                              </label>
+                            </div>
+                            <div class="relative h-16 w-full min-w-[200px]">
+                              <div
+                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  aria-hidden="true"
+                                  class="h-7 w-7"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <input
+                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
+                                placeholder=" "
+                              />
+                              <label
+                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+                              >
+                                Донор
+                              </label>
+                            </div>
+                          </div>
+                          <div
+                            class="flex flex-col items-center justify-center gap-3 px-4 pb-8 pt-12"
+                          >
+                            <p class="text-xl text-primary">Применимость:</p>
+                            <div class="flex flex-col gap-2">
+                              <p class="text-2lg text-blue-gray">
+                                Scania 5-series G
+                              </p>
+                              <p class="text-2lg text-blue-gray">
+                                Scania 5-series P
+                              </p>
+                              <p class="text-2lg text-blue-gray">
+                                Scania 5-series R
+                              </p>
+                              <button class="cursor-pointer text-primary">
+                                Выбрать...
+                              </button>
+                            </div>
+                          </div>
+                          <div
+                            class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                          >
+                            <div class="relative h-16 w-full min-w-[200px]">
+                              <input
+                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer pointer-events-none h-full w-full cursor-not-allowed rounded-[7px] border bg-blue-gray bg-opacity-20 px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
+                                placeholder=" "
+                              />
+                              <label
+                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+                              >
+                                Замены
+                              </label>
+                            </div>
+                            <div class="relative h-16 w-full min-w-[200px]">
+                              <div
+                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  aria-hidden="true"
+                                  class="h-7 w-7"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <input
+                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
+                                placeholder=" "
+                              />
+                              <label
+                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+                              >
+                                Бренд Avito
+                              </label>
+                            </div>
+                            <div class="relative h-16 w-full min-w-[200px]">
+                              <div
+                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
+                              >
+                                <svg
+                                  xmlns="http://www.w3.org/2000/svg"
+                                  fill="none"
+                                  viewBox="0 0 24 24"
+                                  stroke-width="1.5"
+                                  stroke="currentColor"
+                                  aria-hidden="true"
+                                  class="h-7 w-7"
+                                >
+                                  <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                                  ></path>
+                                </svg>
+                              </div>
+                              <input
+                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
+                                placeholder=" "
+                              />
+                              <label
+                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
+                              >
+                                Название
+                              </label>
+                            </div>
+                          </div>
+                        </div>
+
+                        <div
+                          class="flex flex-col gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
+                        >
+                          <div
+                            id="preview-container"
+                            class="grid grid-cols-5 gap-4"
+                          >
+                            <div
+                              class="w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                              <img
+                                class="h-full rounded-[8px] object-cover"
+                                src="./img/gallery-item.jpeg"
+                                alt="detail"
+                              />
+                            </div>
+                          </div>
+                          <div class="flex w-full items-center justify-center">
+                            <div class="group relative w-fit upload cursor-pointer active:opacity-60">
+                              @@include('./shared/button.html', {
+                                title: "Загрузить изображения +",
+                                color: "bg-primary",
+                              })
+                              <input
+                                id="fileInput"
+                                class="absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
+                                multiple
+                                accept="image/*"
+                                type="file"
+                              />
+                            </div>
+                          </div>
+                        </div>
+
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <div class="flex w-min justify-start">
