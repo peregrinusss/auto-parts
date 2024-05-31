@@ -1,3 +1,19 @@
+
+
+const modal = new GraphModal({
+  isOpen: (modal) => {
+    console.log(modal);
+    console.log('opened');
+  },
+});
+
+const accordeon = new HandyCollapse({
+  nameSpace: "nested",
+  closeOthers: false,
+  isAnimation: true,
+  animationSpeed: 400
+});
+
 // sidebar
 const accordionItems = document.querySelectorAll("[data-accordion-item]"); // Select elements with data-accordion-item attribute
 accordionItems.forEach((item) => {
@@ -117,6 +133,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
+
+
+
+//  graph-modal
+
+
+
 
 
 // gallery in modal
