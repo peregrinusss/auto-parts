@@ -108,9 +108,11 @@ html {
   display: block;
   background-color: #fff;
   border-radius: 10px;
-  padding: 20px;
+  padding: 0 !important;
   cursor: default;
   display: none;
+  border-radius: 20px;
+  overflow: hidden;
 }
 
 @media (max-width: 1024px) {
