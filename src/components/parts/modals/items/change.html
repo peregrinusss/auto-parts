@@ -67,12 +67,14 @@
                             </div>
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Узел",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
 
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Донор",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                         </div>
                         <div
@@ -99,15 +101,18 @@
                         >
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Замены",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">'
                             })
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Бренд Avito",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Название",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                         </div>
                     </div>
@@ -172,7 +177,8 @@
                         <div class="flex flex-col gap-2">
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Ссылка на видео",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">'
                             })
                         </div>
                         <div>
@@ -465,6 +471,8 @@
                     </div>
                     <div class="flex gap-4">
                         <button
+                                data-graph-path="barcodes"
+                                type="button"
                                 class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
                         >
                             <svg
