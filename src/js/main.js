@@ -1,3 +1,7 @@
+const TomSelect = require('tom-select');
+const HandyCollapse = require('handy-collapse');
+const GraphModal = require('../js/libs/graph-modal');
+
 const modal = new GraphModal({
   isOpen: (modal) => {
     console.log(modal);
@@ -290,6 +294,22 @@ document.addEventListener("DOMContentLoaded", () => {
   bottomModals.forEach((modal) => {
     modal.addEventListener("click", (event) => {
       event.stopPropagation();
+    });
+  });
+});
+
+
+
+
+//orders
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('select[data-tom-select]').forEach(function(select) {
+    new TomSelect(select,{
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc"
+      }
     });
   });
 });

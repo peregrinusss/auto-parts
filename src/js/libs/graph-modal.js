@@ -197,3 +197,6 @@ class GraphModal {
 document.addEventListener('DOMContentLoaded', function () {
   const modal = new GraphModal;
 });
+
+
+module.exports = GraphModal

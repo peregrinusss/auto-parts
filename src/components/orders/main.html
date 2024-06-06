@@ -1,0 +1,290 @@
+<main class="mb-8 mt-4">
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            @@include('../shared/checkbox-input.html', {id: "0"})
+                        </div>
+                    </th>
+
+                    <th
+                            class="w-[150px] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-primary flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Заказ
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="w-[150px] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Клиент
+                        </p>
+                    </th>
+                    <th
+                            class="md:w-[33rem] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Запчасти
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Ответственный
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-primary flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            сумма
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-primary flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            обновлен
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+
+                </tr>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class=" w-full">
+                            @@include('../shared/input-search.html', {
+                            placeholder: "Фильтр",
+                            fontSize: "text-sm",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">',
+                            width: "w-[150px]"
+                            })
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class=" w-full">
+                            @@include('../shared/input-search.html', {
+                            placeholder: "Фильтр",
+                            fontSize: "text-sm",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">',
+                            width: "w-[150px]"
+                            })
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                    </th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            @@include('../shared/checkbox-input.html', {id: "1"})
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <div class="flex items-center gap-3">
+                                <button class="text-lg text-primary" type="button" data-graph-path="change">
+                                    #7072
+                                </button>
+                                <div
+                                        class="relative inline-flex items-center h-fit w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span>в работе</span>
+                                </div>
+                            </div>
+                            <h4 class="text-md text-gray-500">Вчера 17:26</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <h4 class="text-lg text-blue-gray">+7 (920) 505 4565</h4>
+                            <h4 class="text-md text-gray-500">важно</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <div class="flex gap-1">
+                                <h4 class="text-lg text-blue-gray">Крышка инструментального ящика 2023 г.</h4>
+                                <h4 class="text-lg text-gray-500">Sinotruk Sitrak C7H</h4>
+                            </div>
+                            <h4 class="text-md text-gray-500">и ещё 1 запчасть</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            Светиков А.
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            6 000 р.
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            Вчера <span class="text-gray-500 text-lg">17:26</span>
+                        </h4>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            @@include('../shared/checkbox-input.html', {id: "1"})
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <div class="flex items-center gap-3">
+                                <button class="text-lg text-primary" type="button">#7072</button>
+                                <div
+                                        class="relative inline-flex items-center h-fit w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                >
+                                    <span>в работе</span>
+                                </div>
+                            </div>
+                            <h4 class="text-md text-gray-500">Вчера 17:26</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <h4 class="text-lg text-blue-gray">+7 (920) 505 4565</h4>
+                            <h4 class="text-md text-gray-500">важно</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col  justify-center gap-1">
+                            <div class="flex gap-1">
+                                <h4 class="text-lg text-blue-gray">Крышка инструментального ящика 2023 г.</h4>
+                                <h4 class="text-lg text-gray-500">Sinotruk Sitrak C7H</h4>
+                            </div>
+                            <h4 class="text-md text-gray-500">и ещё 1 запчасть</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            Светиков А.
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-success text-lg font-normal leading-normal antialiased"
+                        >
+                            12 000 р.
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            Вчера <span class="text-gray-500 text-lg">17:26</span>
+                        </h4>
+                    </td>
+
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @@include('../footer.html')
+</main>

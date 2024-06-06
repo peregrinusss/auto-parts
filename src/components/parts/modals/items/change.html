@@ -67,12 +67,14 @@
                             </div>
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Узел",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
 
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Донор",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                         </div>
                         <div
@@ -99,15 +101,18 @@
                         >
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Замены",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">'
                             })
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Бренд Avito",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Название",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
                         </div>
                     </div>
@@ -151,7 +156,7 @@
                     >
                         <div class="flex flex-col gap-2">
                             <label
-                                    for="area-oem"
+
                                     class="mb-2 block text-2lg font-medium text-primary"
                             >Описание OEMа:</label
                             >
@@ -161,7 +166,7 @@
                         </div>
                         <div class="flex flex-col gap-2">
                             <label
-                                    for="area-zapch"
+
                                     class="mb-2 block text-2lg font-medium text-primary"
                             >Описание экземпляра запчасти:</label
                             >
@@ -172,7 +177,8 @@
                         <div class="flex flex-col gap-2">
                             @@include('../../../shared/input-search.html', {
                             placeholder: "Ссылка на видео",
-                            fontSize: "text-lg"
+                            fontSize: "text-lg",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">'
                             })
                         </div>
                         <div>
@@ -314,7 +320,7 @@
                         </div>
                         <div class="flex h-full flex-col gap-2">
                             <label
-                                    for="area-comment"
+
                                     class="mb-2 block text-2lg font-medium text-primary"
                             >
                                 Комментарий:
@@ -372,6 +378,8 @@
                                 </h4>
                             </div>
                             <button
+                                    type="button"
+                                    data-graph-path="changelog"
                                     class="inline-flex cursor-pointer text-2lg text-primary"
                             >
                                 Посмотреть журнал изменений
@@ -449,12 +457,12 @@
                                     class="absolute bottom-[120%] left-0 flex hidden w-full translate-y-14 flex-col gap-2 rounded-lg border-2 border-blue-gray bg-light-gray bg-opacity-60 p-2 opacity-0 backdrop-blur-[12px] transition-all duration-300"
                             >
                                 <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-xl font-medium leading-tight text-light-gray transition-all"
+                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
                                 >
                                     Б/у
                                 </button>
                                 <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-xl font-medium leading-tight text-light-gray transition-all"
+                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
                                 >
                                     Новая
                                 </button>
@@ -463,6 +471,8 @@
                     </div>
                     <div class="flex gap-4">
                         <button
+                                data-graph-path="barcodes"
+                                type="button"
                                 class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
                         >
                             <svg
