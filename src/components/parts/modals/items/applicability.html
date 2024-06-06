@@ -76,7 +76,7 @@
                             </h4>
                         </button>
                     </div>
-                    @@include('../../../shared/input-search.html', {
+                    @@include('shared/input-search.html', {
                     placeholder: "Фильтр по модели...",
                     width: "max-w-[200px]",
                     loupe: '<img src="../../../../img/icons/loupe.svg">'
@@ -85,7 +85,7 @@
 
                 <div class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
                     <div class="flex gap-2">
-                        @@include('../../../shared/checkbox-input.html', {
+                        @@include('shared/checkbox-input.html', {
                         id: "different",
                         })
                         <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="main-accordion">
@@ -94,7 +94,7 @@
                     </div>
                     <div data-nested-content="main-accordion" class="flex flex-col gap-2 ms-2">
                         <div class="flex gap-2">
-                            @@include('../../../shared/checkbox-input.html', {
+                            @@include('shared/checkbox-input.html', {
                             id: "cars",
                             })
                             <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-1">
@@ -102,13 +102,13 @@
                             </button>
                         </div>
                         <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
-                            @@include('../../../shared/checkbox.html', {
+                            @@include('shared/checkbox.html', {
                             id: "nested-cars",
                             label: "Автомобили"
                             })
                         </div>
                         <div class="flex gap-2">
-                            @@include('../../../shared/checkbox-input.html', {
+                            @@include('shared/checkbox-input.html', {
                             id: "trucks",
                             })
                             <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-2">
@@ -116,13 +116,13 @@
                             </button>
                         </div>
                         <div data-nested-content="nested-accordion-2" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
-                            @@include('../../../shared/checkbox.html', {
+                            @@include('shared/checkbox.html', {
                             id: "nested-trucks",
                             label: "Грузовики"
                             })
                         </div>
                         <div class="flex gap-2">
-                            @@include('../../../shared/checkbox-input.html', {
+                            @@include('shared/checkbox-input.html', {
                             id: "spares",
                             })
                             <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-3">
@@ -131,13 +131,13 @@
                         </div>
                         <div data-nested-content="nested-accordion-3" class="ms-2  flex flex-col gap-2 ">
                             <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
-                                @@include('../../../shared/checkbox.html', {
+                                @@include('shared/checkbox.html', {
                                 id: "nested-spares",
                                 label: "На обработку"
                                 })
                             </div>
                             <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
-                                @@include('../../../shared/checkbox.html', {
+                                @@include('shared/checkbox.html', {
                                 id: "nested-spares",
                                 label: "На отгрузку"
                                 })
@@ -153,7 +153,7 @@
                 >
 
                     <div class="flex gap-4">
-                        @@include('../../../shared/button.html', {
+                        @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
                         class: "h-full"

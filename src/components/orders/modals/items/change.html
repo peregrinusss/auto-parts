@@ -60,7 +60,7 @@
                             <div class="">
                                 <h4 class="text-blue-gray text-lg">Имя клиента:</h4>
                                 <div class="relative h-fit w-full min-w-[200px]">
-                                    @@include('../../../shared/input.html', {
+                                    @@include('shared/input.html', {
                                     placeholder: "Имя клиента",
                                     })
                                 </div>
@@ -68,7 +68,7 @@
                             <div class="">
                                 <h4 class="text-blue-gray text-lg">Телефон:</h4>
                                 <div class="relative h-fit w-full min-w-[200px]">
-                                    @@include('../../../shared/input.html', {
+                                    @@include('shared/input.html', {
                                     placeholder: "Телефон",
                                     })
                                 </div>
@@ -236,7 +236,7 @@
                             >
                                 Комментарий:
                             </label>
-                            @@include('../../../shared/textarea.html', {
+                            @@include('shared/textarea.html', {
                               placeholder: "Напишите что-нибудь",
                             })
                             <h5 class="text-md text-gray-500">
@@ -273,12 +273,12 @@
                         </button>
                     </div>
                     <div class="flex gap-4">
-                        @@include('../../../shared/button.html', {
+                        @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
                         class: "h-fit"
                         })
-                        @@include('../../../shared/button.html', {
+                        @@include('shared/button.html', {
                         title: "Отмена",
                         color: "bg-danger",
                         class: "h-fit"

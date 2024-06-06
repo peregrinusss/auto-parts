@@ -2,6 +2,7 @@ const { src, dest, watch, series, parallel } = require('gulp');
 const clean = require('gulp-clean');
 const options = require('./config');
 const browserSync = require('browser-sync').create();
+const path = require('path');
 
 const gulp = require('gulp');
 const browserify = require('browserify');
@@ -43,7 +44,10 @@ function previewReload(done) {
 // Development Tasks
 function devHTML() {
   return src(`${options.paths.src.base}/**/*.html`)
-      .pipe(includePartials())
+      .pipe(includePartials({
+        prefix: '@@',
+        basepath: path.join(__dirname, 'src/components')
+      }))
       .pipe(dest(options.paths.dist.base));
 }
 
@@ -117,7 +121,10 @@ function devClean() {
 // Production Tasks (Optimized Build for Live/Production Sites)
 function prodHTML() {
   return src(`${options.paths.src.base}/**/*.{html,php}`)
-      .pipe(includePartials())
+      .pipe(includePartials({
+        prefix: '@@',
+        basepath: path.join(__dirname, 'src/components')
+      }))
       .pipe(dest(options.paths.build.base));
 }
 

@@ -61,17 +61,17 @@
                                 class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
                             <div class="relative h-fit w-full min-w-[200px]">
-                                @@include('../../../shared/input.html', {
+                                @@include('shared/input.html', {
                                 placeholder: "OEM",
                                 })
                             </div>
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Узел",
                             fontSize: "text-lg",
                             loupe: '<button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
 
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Донор",
                             fontSize: "text-lg",
                             loupe: '<button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
@@ -99,17 +99,17 @@
                         <div
                                 class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Замены",
                             fontSize: "text-lg",
                             loupe: '<img src="../../../../img/icons/loupe.svg">'
                             })
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Бренд Avito",
                             fontSize: "text-lg",
                             loupe: '<button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                             })
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Название",
                             fontSize: "text-lg",
                             loupe: '<button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
@@ -136,7 +136,7 @@
                         </div>
                         <div class="flex w-full items-center justify-center">
                             <div class="group relative w-fit upload cursor-pointer active:opacity-60">
-                                @@include('../../../shared/button.html', {
+                                @@include('shared/button.html', {
                                 title: "Загрузить изображения +",
                                 color: "bg-primary",
                                 })
@@ -160,7 +160,7 @@
                                     class="mb-2 block text-2lg font-medium text-primary"
                             >Описание OEMа:</label
                             >
-                            @@include('../../../shared/textarea.html', {
+                            @@include('shared/textarea.html', {
                               placeholder: "Напишите что-нибудь",
                             })
                         </div>
@@ -170,12 +170,12 @@
                                     class="mb-2 block text-2lg font-medium text-primary"
                             >Описание экземпляра запчасти:</label
                             >
-                            @@include('../../../shared/textarea.html', {
+                            @@include('shared/textarea.html', {
                               placeholder: "Напишите что-нибудь",
                             })
                         </div>
                         <div class="flex flex-col gap-2">
-                            @@include('../../../shared/input-search.html', {
+                            @@include('shared/input-search.html', {
                             placeholder: "Ссылка на видео",
                             fontSize: "text-lg",
                             loupe: '<img src="../../../../img/icons/loupe.svg">'
@@ -251,7 +251,7 @@
                             </select>
                         </div>
                         <div class="flex gap-1">
-                             @@include('../../../shared/input.html', {
+                             @@include('shared/input.html', {
                                 placeholder: "Длина (см)",
                               })
                             <span>
@@ -267,7 +267,7 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('../../../shared/input.html', {
+                            @@include('shared/input.html', {
                               placeholder: "Ширина (см)",
                             })
                             <span>
@@ -283,7 +283,7 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('../../../shared/input.html', {
+                            @@include('shared/input.html', {
                               placeholder: "Высота (см)",
                             })
                             <span>
@@ -299,7 +299,7 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('../../../shared/input.html', {
+                            @@include('shared/input.html', {
                               placeholder: "Вес (кг)",
                             })
                         </div>
@@ -325,7 +325,7 @@
                             >
                                 Комментарий:
                             </label>
-                            @@include('../../../shared/textarea.html', {
+                            @@include('shared/textarea.html', {
                               placeholder: "Напишите что-нибудь",
                             })
                         </div>
@@ -526,12 +526,12 @@
                             </svg>
                             Печать
                         </button>
-                        @@include('../../../shared/button.html', {
+                        @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
                         class: "h-fit"
                         })
-                        @@include('../../../shared/button.html', {
+                        @@include('shared/button.html', {
                         title: "Отмена",
                         color: "bg-danger",
                         class: "h-fit"

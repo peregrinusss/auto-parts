@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="ru">
-  @@include('./components/head.html')
+  @@include('head.html')
   <body>
     <div class="grid h-full grid-cols-[auto_1fr] gap-2">
-      @@include('components/sidebar.html')
+      @@include('sidebar.html')
       <div class="relative w-[calc(100vw-288px)] px-4">
-        @@include('components/header/users.html') @@include('components/users.html')
+        @@include('header/users.html') @@include('users.html')
       </>
     </div>
 
