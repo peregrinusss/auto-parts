@@ -35,7 +35,6 @@
       list-style: none;
       list-style-type: decimal;
       font-size: 18px;
-      margin-top: 15px;
     }
     .index {
       max-width: 1200px;
@@ -137,10 +136,16 @@
           >Ниже приведены ссылки на страницы проекта. Для вашего удобства
           страницы открываются в новом окне.</span
         >
-        <ol>
+        <ol class="flex flex-col gap-6">
           <li>
             <a href="parts.html" target="_blank">Запчасти</a>
           </li>
+          <div class="">
+            <h2 class="text-[20px] text-medium text-gray-500">Справочники:</h2>
+            <li>
+              <a href="users.html" target="_blank">Пользователи</a>
+            </li>
+          </div>
           <li>
             <a href="balance.html" target="_blank">Баланс</a>
           </li>
