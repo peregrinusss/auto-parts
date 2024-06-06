@@ -52,7 +52,7 @@
         <div class="">
             <form>
                 <div class="h-[65vh] overflow-y-scroll">
-                    <div class="grid grid-cols-2 px-12">
+                    <div class="grid grid-cols-2 items-center px-12">
                         <div
                                 class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
@@ -79,64 +79,160 @@
                             </div>
                             <div class="">
                                 <h4 class="text-blue-gray text-lg">Источник:</h4>
-                                <input id="input-tags" value="awesome,neat" autocomplete="off" placeholder="How cool is this?">
+                                <select data-tom-select id="select-beast" placeholder="Выберите..." autocomplete="off">
+                                    <option disabled selected value="">Выберите</option>
+                                    <option value="4">Telegram</option>
+                                    <option value="1">Avito Kazan</option>
+                                    <option value="3">Avito Krasnodar</option>
+                                </select>
                             </div>
                             <div class="">
                                 <h4 class="text-blue-gray text-lg">Способ оплаты:</h4>
-                                <div class="relative h-fit w-full min-w-[200px]">
-                                    <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
-  placeholder="Телефон"
-/>
-
-                                </div>
+                                <select data-tom-select  placeholder="Выберите..." autocomplete="off">
+                                    <option disabled selected value="">Выберите</option>
+                                    <option value="4">Наличные</option>
+                                    <option value="1">Безнал</option>
+                                    <option value="3">Терминал</option>
+                                </select>
                             </div>
 
                         </div>
                         <div
                                 class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
-                            <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <img src="../../../../img/icons/loupe.svg">
-  </div>
-  <input
-    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
-    placeholder="Замены"
-  />
-</div>
-
-                            <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <img src="../../../../img/icons/loupe.svg">
-  </div>
-  <input
-    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
-    placeholder="Бренд Avito"
-  />
-</div>
-
-                            <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <img src="../../../../img/icons/loupe.svg">
-  </div>
-  <input
-    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
-    placeholder="Название"
-  />
-</div>
-
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Статус</h4>
+                                <select data-tom-select  placeholder="Выберите..." autocomplete="off">
+                                    <option disabled selected value="">Выберите</option>
+                                    <option value="4">Новый</option>
+                                    <option value="1">Резерв</option>
+                                    <option value="3">В работе</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Ответственный:</h4>
+                                <select data-tom-select  placeholder="Выберите..." autocomplete="off">
+                                    <option disabled selected value=""> - </option>
+                                    <option value="4">Хакимов П.А</option>
+                                    <option value="1">Разумчик И.А</option>
+                                    <option value="3">Кулябов И.П</option>
+                                </select>
+                            </div>
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Участник сделки:</h4>
+                                <select data-tom-select  placeholder="Выберите..." autocomplete="off">
+                                    <option disabled selected value="">Выберите</option>
+                                    <option value="4">Андрей С.</option>
+                                    <option value="1">8(996) 921 10 38</option>
+                                    <option value="3">Бравый П.B</option>
+                                </select>
+                            </div>
+                            <div class="mt-10 flex items-center gap-[1rem]">
+                                <div
+                                        class="relative flex cursor-pointer items-center rounded-full"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
+                                            id="detail_active"
+                                    />
+                                    <span
+                                            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                    >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-3.5 w-3.5"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                    >
+                                      <path
+                                              fill-rule="evenodd"
+                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                              clip-rule="evenodd"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                </div>
+                                <label
+                                        for="detail_active"
+                                        class="text-lg text-blue-gray"
+                                >Оплачен</label
+                                >
+                            </div>
                         </div>
                     </div>
                     <div
                             class="grid grid-cols-1 gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
                     >
+
+                        <div class="flex h-full flex-col gap-2">
+                            <h4
+
+                                    class="mb-2 block text-2lg font-medium text-primary"
+                            >
+                                Запчасти:
+                            </h4>
+                            <div class="flex flex-col gap-6">
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="flex gap-2">
+                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                            <img
+                                                    src="./img/engine.png"
+                                                    alt="engine"
+                                                    class="h-full w-full rounded-[5px] object-cover"
+                                            />
+                                        </div>
+                                        <div class="flex flex-col  justify-center gap-1">
+                                            <div class="flex gap-1">
+                                                <h4 class="text-lg text-blue-gray">Крышка инструментального ящика 2023 г.</h4>
+                                                <h4 class="text-lg text-gray-500">Sinotruk Sitrak C7H</h4>
+                                            </div>
+                                            <h4 class="text-md text-gray-500"><span>Артикул: <span class="text-primary text-opacity-85">69000</span></span> <span>OEM: 810W669125289</span></h4>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col  justify-center gap-1">
+                                        <h4 class="text-lg text-blue-gray">5 000 р.</h4>
+                                        <h4 class="text-md text-gray-500">продажа: <span class="text-primary text-opacity-85">5 000</span> р.</h4>
+                                    </div>
+                                </div>
+                                <span class="flex h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                                <div class="flex items-center justify-between gap-2">
+                                    <div class="flex gap-2">
+                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                            <img
+                                                    src="./img/engine.png"
+                                                    alt="engine"
+                                                    class="h-full w-full rounded-[5px] object-cover"
+                                            />
+                                        </div>
+                                        <div class="flex flex-col  justify-center gap-1">
+                                            <div class="flex gap-1">
+                                                <h4 class="text-lg text-blue-gray">Крышка инструментального ящика 2023 г.</h4>
+                                                <h4 class="text-lg text-gray-500">Sinotruk Sitrak C7H</h4>
+                                            </div>
+                                            <h4 class="text-md text-gray-500"><span>Артикул: <span class="text-primary text-opacity-85">69000</span></span> <span>OEM: 810W669125289</span></h4>
+                                        </div>
+                                    </div>
+                                    <div class="flex flex-col  justify-center gap-1">
+                                        <h4 class="text-lg text-blue-gray">5 000 р.</h4>
+                                        <h4 class="text-md text-gray-500">продажа: <span class="text-primary text-opacity-85">5 000</span> р.</h4>
+                                    </div>
+                                </div>
+                                <span class="flex h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+
+                                <h4  class=" justify-center  flex w-full items-center gap-2  p-3 py-2 pr-4  text-primary font-medium leading-tight ">
+                                    Итого 2 запчасти на сумму 6 000 р.
+                                </h4>
+                            </div>
+                            <div class="">
+                                <button data-graph-path="parts" class=" justify-center bg-light-gray border-2 border-primary hover:border-light-gray border-solid flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4  text-primary font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary" type="button">
+                                    Добавить ещё
+                                </button>
+                            </div>
+                        </div>
+
                         <div class="flex h-full flex-col gap-2">
                             <label
 
@@ -150,6 +246,9 @@
   placeholder="Напишите что-нибудь"
 ></textarea>
 
+                            <h5 class="text-md text-gray-500">
+                                Комментарий для сотрудников, клиентам не отображается.
+                            </h5>
                         </div>
                         <div class="flex flex-col gap-3">
                             <button
@@ -168,139 +267,19 @@
                 >
                     <div class="flex gap-4">
                         <button
-                                class="h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
-                        >
-                            <svg
-                                    class="w-full"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        d="M3 17V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H11L13 7H19C19.5304 7 20.0391 7.21071 20.4142 7.58579C20.7893 7.96086 21 8.46957 21 9V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17Z"
-                                        stroke="#FFFFFF"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                            </svg>
-                        </button>
-                        <div
-                                minimodal-top-toggle
-                                class="h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
-                        >
-                            <svg
-                                    class="h-full w-auto"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M12.0601 16.5V11.5"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M14.5 14H9.5"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                />
-                            </svg>
-                            <h5 class="text-lg">Дополнительно</h5>
-
-                            <div
-                                    minimodal-top-content
-                                    class="absolute bottom-[120%] left-0 flex hidden w-full translate-y-14 flex-col gap-2 rounded-lg border-2 border-blue-gray bg-light-gray bg-opacity-60 p-2 opacity-0 backdrop-blur-[12px] transition-all duration-300"
-                            >
-                                <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
-                                >
-                                    Б/у
-                                </button>
-                                <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
-                                >
-                                    Новая
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex gap-4">
-                        <button
-                                data-graph-path="barcodes"
                                 type="button"
                                 class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
                         >
-                            <svg
-                                    class="stroke-blue-gray"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        d="M7.25 7H16.75V5C16.75 3 16 2 13.75 2H10.25C8 2 7.25 3 7.25 5V7Z"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        d="M16 15V19C16 21 15 22 13 22H11C9 22 8 21 8 19V15H16Z"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        d="M21 10V15C21 17 20 18 18 18H16V15H8V18H6C4 18 3 17 3 15V10C3 8 4 7 6 7H18C20 7 21 8 21 10Z"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        d="M17 15H15.79H7"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        d="M7 11H10"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                            </svg>
-                            Печать
+                            Накладная
                         </button>
+                        <button
+                                type="button"
+                                class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
+                        >
+                            Товарный чек
+                        </button>
+                    </div>
+                    <div class="flex gap-4">
                         <button
         type="button"
   class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
