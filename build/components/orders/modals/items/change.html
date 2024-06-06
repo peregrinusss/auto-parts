@@ -1,0 +1,326 @@
+
+<!--<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="modal-1">-->
+<!--    <div class="graph-modal__content">-->
+<!--        <button data-graph-path="modal-2">Open Nested Modal</button>-->
+<!--        <button class="js-modal-close">Close</button>-->
+<!--    </div>-->
+<!--</div>-->
+
+
+
+<div class="graph-modal__container" style="width: 65%" role="dialog" aria-modal="true" data-graph-target="change">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Изменение заказа
+
+            </h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+            >заказы</a
+            >
+            <div class="flex flex-col">
+                <h5 class="text-md">Заказ #7072</h5>
+                <h5 class="text-md">от 05.06.2024 17:26</h5>
+            </div>
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
+    >
+
+        <div class="">
+            <form>
+                <div class="h-[65vh] overflow-y-scroll">
+                    <div class="grid grid-cols-2 px-12">
+                        <div
+                                class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                        >
+
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Имя клиента:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+  placeholder="Имя клиента"
+/>
+
+                                </div>
+                            </div>
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Телефон:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+  placeholder="Телефон"
+/>
+
+                                </div>
+                            </div>
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Источник:</h4>
+                                <input id="input-tags" value="awesome,neat" autocomplete="off" placeholder="How cool is this?">
+                            </div>
+                            <div class="">
+                                <h4 class="text-blue-gray text-lg">Способ оплаты:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+  placeholder="Телефон"
+/>
+
+                                </div>
+                            </div>
+
+                        </div>
+                        <div
+                                class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                        >
+                            <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <img src="../../../../img/icons/loupe.svg">
+  </div>
+  <input
+    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Замены"
+  />
+</div>
+
+                            <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <img src="../../../../img/icons/loupe.svg">
+  </div>
+  <input
+    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Бренд Avito"
+  />
+</div>
+
+                            <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <img src="../../../../img/icons/loupe.svg">
+  </div>
+  <input
+    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Название"
+  />
+</div>
+
+                        </div>
+                    </div>
+                    <div
+                            class="grid grid-cols-1 gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
+                    >
+                        <div class="flex h-full flex-col gap-2">
+                            <label
+
+                                    class="mb-2 block text-2lg font-medium text-primary"
+                            >
+                                Комментарий:
+                            </label>
+                            <textarea
+  rows="5"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0"
+  placeholder="Напишите что-нибудь"
+></textarea>
+
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <button
+                                    type="button"
+                                    data-graph-path="changelog"
+                                    class="inline-flex cursor-pointer text-2lg text-primary"
+                            >
+                                Посмотреть журнал изменений
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+                    <div class="flex gap-4">
+                        <button
+                                class="h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
+                        >
+                            <svg
+                                    class="w-full"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M3 17V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H11L13 7H19C19.5304 7 20.0391 7.21071 20.4142 7.58579C20.7893 7.96086 21 8.46957 21 9V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17Z"
+                                        stroke="#FFFFFF"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                            </svg>
+                        </button>
+                        <div
+                                minimodal-top-toggle
+                                class="h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
+                        >
+                            <svg
+                                    class="h-full w-auto"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        class="stroke-blue-gray"
+                                        d="M12.0601 16.5V11.5"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        class="stroke-blue-gray"
+                                        d="M14.5 14H9.5"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        class="stroke-blue-gray"
+                                        d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                />
+                            </svg>
+                            <h5 class="text-lg">Дополнительно</h5>
+
+                            <div
+                                    minimodal-top-content
+                                    class="absolute bottom-[120%] left-0 flex hidden w-full translate-y-14 flex-col gap-2 rounded-lg border-2 border-blue-gray bg-light-gray bg-opacity-60 p-2 opacity-0 backdrop-blur-[12px] transition-all duration-300"
+                            >
+                                <button
+                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
+                                >
+                                    Б/у
+                                </button>
+                                <button
+                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
+                                >
+                                    Новая
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <button
+                                data-graph-path="barcodes"
+                                type="button"
+                                class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
+                        >
+                            <svg
+                                    class="stroke-blue-gray"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M7.25 7H16.75V5C16.75 3 16 2 13.75 2H10.25C8 2 7.25 3 7.25 5V7Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M16 15V19C16 21 15 22 13 22H11C9 22 8 21 8 19V15H16Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M21 10V15C21 17 20 18 18 18H16V15H8V18H6C4 18 3 17 3 15V10C3 8 4 7 6 7H18C20 7 21 8 21 10Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M17 15H15.79H7"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M7 11H10"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                            </svg>
+                            Печать
+                        </button>
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+>
+  <h4>Отмена</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
