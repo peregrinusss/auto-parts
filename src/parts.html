@@ -7,8 +7,12 @@
       <div class="relative w-[calc(100vw-288px)] px-4">
 
         @@include('header/parts.html')
-        @@include('parts/main.html')
-        @@include('parts/modals/layout.html')
+        @@include('global/parts-selection/main.html')
+
+        <div class="graph-modal">
+        @@include('global/parts-selection/modals/layout.html')
+        @@include('global/cars-selection/modals/layout.html')
+        </div>
 
       </div>
     </div>

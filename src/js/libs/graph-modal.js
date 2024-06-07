@@ -21,6 +21,7 @@ class GraphModal {
       '[tabindex]:not([tabindex^="-"])'
     ];
     this._fixBlocks = document.querySelectorAll('.fix-block');
+    this.openModalsStack = [];
     this.events();
   }
 
@@ -66,19 +67,17 @@ class GraphModal {
     this.previousActiveElement = document.activeElement;
 
     if (this.isOpen) {
-      this.modalContainer.classList.remove('graph-modal-open'); // Закрываем текущую модалку
-      this.isOpen = false;
+      this.openModalsStack.push(this.modalContainer);
     }
 
     this.modalContainer = this._nextContainer;
 
     if (parent) {
-      this.modalContainer.setAttribute('data-parent', parent.dataset.graphTarget); // Устанавливаем родительскую модалку
-      parent.classList.remove('graph-modal-open'); // Закрываем родительскую модалку
+      this.modalContainer.setAttribute('data-parent', parent.dataset.graphTarget);
+      parent.classList.remove('graph-modal-open');
     }
 
     this.modalContainer.scrollTo(0, 0);
-
     this.modalContainer.style.setProperty('--transition-time', `${this.speed / 1000}s`);
     this.modalContainer.closest('.graph-modal').classList.add('is-open');
     this.modalContainer.classList.add('graph-modal-open');
@@ -87,7 +86,6 @@ class GraphModal {
     document.documentElement.style.scrollBehavior = 'auto';
 
     this.disableScroll();
-
     this.modalContainer.classList.add(this.animation);
 
     setTimeout(() => {
@@ -112,22 +110,14 @@ class GraphModal {
       this.options.isClose(this);
       this.isOpen = false;
 
-      // Повторное открытие родительской модалки, если она существует
-      let parentSelector = this.modalContainer.getAttribute('data-parent');
-      if (parentSelector) {
-        let parent = document.querySelector(`[data-graph-target="${parentSelector}"]`);
-        if (parent) {
-          this.modalContainer = parent;
-          parent.removeAttribute('data-parent');
-          parent.classList.add('graph-modal-open');
-          setTimeout(() => {
-            parent.classList.add('animate-open');
-            this.isOpen = true;
-            this.focusTrap();
-          }, this.speed);
-        } else {
+      if (this.openModalsStack.length > 0) {
+        this.modalContainer = this.openModalsStack.pop();
+        this.modalContainer.classList.add('graph-modal-open');
+        setTimeout(() => {
+          this.modalContainer.classList.add('animate-open');
+          this.isOpen = true;
           this.focusTrap();
-        }
+        }, this.speed);
       } else {
         this.modalContainer.closest('.graph-modal').classList.remove('is-open');
         this.focusTrap();
@@ -198,5 +188,4 @@ document.addEventListener('DOMContentLoaded', function () {
   const modal = new GraphModal;
 });
 
-
-module.exports = GraphModal
+module.exports = GraphModal;

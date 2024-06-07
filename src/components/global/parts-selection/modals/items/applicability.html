@@ -1,0 +1,169 @@
+
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="applicability">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Выберите модель ТС
+            </h3>
+            <div class="flex ">
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >запчасти</a
+                >
+                <span>/</span>
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >Изменение запчасти </a
+                >
+            </div>
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
+    >
+
+        <div class="">
+            <form>
+
+                <div
+                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+
+                    <div
+                            data-tabs=""
+                            class="bg-blue-gray-50/60 relative flex gap-2 rounded-lg p-1"
+                    >
+                        <button
+                                type="button"
+                                class="z-30 flex-auto rounded-lg px-2 text-center transition-all tab-active"
+                        >
+                            <h4
+                                    class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
+                            >
+                                <span class="">Показать выбранные </span>
+                            </h4>
+                        </button>
+                        <button
+                                type="button"
+                                class="z-30 flex-auto rounded-lg p-2 text-center transition-all"
+                        >
+                            <h4
+                                    class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
+                            >
+                                <span class="">Показать все</span>
+                            </h4>
+                        </button>
+                    </div>
+                    @@include('shared/input-search.html', {
+                    placeholder: "Фильтр по модели...",
+                    width: "max-w-[200px]",
+                    loupe: '<img src="../../../../../img/icons/loupe.svg">'
+                    })
+                </div>
+
+                <div class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
+                    <div class="flex gap-2">
+                        @@include('shared/checkbox-input.html', {
+                        id: "different",
+                        })
+                        <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="main-accordion">
+                            Разные
+                        </button>
+                    </div>
+                    <div data-nested-content="main-accordion" class="flex flex-col gap-2 ms-2">
+                        <div class="flex gap-2">
+                            @@include('shared/checkbox-input.html', {
+                            id: "cars",
+                            })
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-1">
+                                Автомобили
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
+                            @@include('shared/checkbox.html', {
+                            id: "nested-cars",
+                            label: "Автомобили"
+                            })
+                        </div>
+                        <div class="flex gap-2">
+                            @@include('shared/checkbox-input.html', {
+                            id: "trucks",
+                            })
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-2">
+                                Грузовики
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-2" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
+                            @@include('shared/checkbox.html', {
+                            id: "nested-trucks",
+                            label: "Грузовики"
+                            })
+                        </div>
+                        <div class="flex gap-2">
+                            @@include('shared/checkbox-input.html', {
+                            id: "spares",
+                            })
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-3">
+                                Запчасти
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-3" class="ms-2  flex flex-col gap-2 ">
+                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
+                                @@include('shared/checkbox.html', {
+                                id: "nested-spares",
+                                label: "На обработку"
+                                })
+                            </div>
+                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
+                                @@include('shared/checkbox.html', {
+                                id: "nested-spares",
+                                label: "На отгрузку"
+                                })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div
+                        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+
+                    <div class="flex gap-4">
+                        @@include('shared/button.html', {
+                        title: "Применить",
+                        color: "bg-success",
+                        class: "h-full"
+                        })
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
