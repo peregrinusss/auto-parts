@@ -697,3 +697,33 @@ html {
   border-top: 0 none;
 }
 /*# sourceMappingURL=tom-select.default.css.map */
+
+
+.tooltip-more-active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.sidebar-active {
+  background: #F3F5F6 !important;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 4px;
+    background-color: #2463EB;
+  }
+  
+  // & svg {
+  //   color: white !important;
+  // }
+
+  // & h5 {
+  //   color: white !important;
+  // }
+}

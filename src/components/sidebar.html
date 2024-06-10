@@ -11,10 +11,10 @@
     <a
       href="#"
       role="button"
-      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray sidebar-active"
     >
-      <div class="mr-2 grid place-items-center">
-        <img src="./img/icons/cog.svg" />
+      <div class="mr-2 grid place-items-center flex-shrink-0">
+        @@include('shared/sprite.html', { name: "cog", class: "w-6 h-6" })
       </div>
       <h5 class="text-lg font-normal">Запчасти</h5>
     </a>
@@ -24,7 +24,7 @@
       class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
     >
       <div class="mr-2 grid flex-shrink-0 place-items-center">
-        <img src="./img/icons/shopping-cart.svg" />
+        @@include('shared/sprite.html', { name: "shopping-cart", class: "w-6 h-6" })
       </div>
       <h5 class="text-lg font-normal">Заказы</h5>
       <div class="ml-auto grid place-items-center justify-self-end">
@@ -41,7 +41,7 @@
       class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
     >
       <div class="mr-2 grid flex-shrink-0 place-items-center">
-        <img src="./img/icons/truck.svg" />
+        @@include('shared/sprite.html', { name: "truck", class: "w-6 h-6" })
       </div>
 
       <h5 class="text-lg font-normal">Машины</h5>
@@ -57,7 +57,7 @@
           class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
         >
           <div class="mr-2 grid flex-shrink-0 place-items-center">
-            <img src="./img/icons/depot.svg" />
+            @@include('shared/sprite.html', { name: "depot", class: "w-6 h-6" })
           </div>
           <p
             class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
@@ -101,7 +101,7 @@
                 class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
               >
                 <div class="mr-2 grid flex-shrink-0 place-items-center">
-                  <img src="./img/icons/document-text.svg" />
+                  @@include('shared/sprite.html', { name: "document-text", class: "w-6 h-6" })
                 </div>
                 <h5 class="text-lg font-normal">Размещение</h5>
               </a>
@@ -111,7 +111,7 @@
                 class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
               >
                 <div class="mr-2 grid flex-shrink-0 place-items-center">
-                  <img src="./img/icons/document-text.svg" />
+                  @@include('shared/sprite.html', { name: "document-text", class: "w-6 h-6" })
                 </div>
                 <h5 class="text-lg font-normal">Инвентаризация</h5>
               </a>
@@ -121,7 +121,7 @@
                 class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
               >
                 <div class="mr-2 grid flex-shrink-0 place-items-center">
-                  <img src="./img/icons/document-text.svg" />
+                  @@include('shared/sprite.html', { name: "document-text", class: "w-6 h-6" })
                 </div>
                 <h5 class="text-lg font-normal">Склады</h5>
               </a>
@@ -136,7 +136,7 @@
       class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
     >
       <div class="mr-2 grid flex-shrink-0 place-items-center">
-        <img src="./img/icons/template.svg" />
+        @@include('shared/sprite.html', { name: "template", class: "w-6 h-6" })
       </div>
       <h5 class="text-lg font-normal">Интеграции</h5>
     </a>
@@ -151,7 +151,7 @@
           class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
         >
           <div class="mr-2 grid flex-shrink-0 place-items-center">
-            <img src="./img/icons/book-open.svg" />
+            @@include('shared/sprite.html', { name: "book-open", class: "w-6 h-6" })
           </div>
           <p
             class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
@@ -191,7 +191,7 @@
               class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
             >
               <div class="mr-2 grid flex-shrink-0 place-items-center">
-                <img src="./img/icons/user-group.svg" />
+                @@include('shared/sprite.html', { name: "user-group", class: "w-6 h-6" })
               </div>
               <h5 class="text-lg font-normal">Пользователи</h5>
             </a>
@@ -201,7 +201,7 @@
               class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
             >
               <div class="mr-2 grid flex-shrink-0 place-items-center">
-                <img src="./img/icons/models.svg" />
+                @@include('shared/sprite.html', { name: "models", class: "w-6 h-6" })
               </div>
               <h5 class="text-lg font-normal">Марки и модели ТС</h5>
             </a>
@@ -211,7 +211,7 @@
               class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
             >
               <div class="mr-2 grid flex-shrink-0 place-items-center">
-                <img src="./img/icons/star.svg" />
+                @@include('shared/sprite.html', { name: "star", class: "w-6 h-6" })
               </div>
               <h5 class="text-lg font-normal">Отзывы на сайте</h5>
             </a>
@@ -221,7 +221,7 @@
               class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
             >
               <div class="mr-2 grid flex-shrink-0 place-items-center">
-                <img src="./img/icons/traffic.svg" />
+                @@include('shared/sprite.html', { name: "traffic", class: "w-6 h-6" })
               </div>
               <h5 class="text-lg font-normal">Каналы трафика</h5>
             </a>
@@ -231,7 +231,7 @@
               class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
             >
               <div class="mr-2 grid flex-shrink-0 place-items-center">
-                <img src="./img/icons/branches.svg" />
+                @@include('shared/sprite.html', { name: "branches", class: "w-6 h-6" })
               </div>
               <h5 class="text-lg font-normal">Филиалы</h5>
             </a>
@@ -247,7 +247,7 @@
                   class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
                 >
                   <div class="mr-2 grid flex-shrink-0 place-items-center">
-                    <img src="./img/icons/cog.svg" />
+                    @@include('shared/sprite.html', { name: "cog", class: "w-6 h-6" })
                   </div>
                   <p
                     class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
@@ -291,7 +291,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid flex-shrink-0 place-items-center">
-                          <img src="./img/icons/hub.svg" />
+                          @@include('shared/sprite.html', { name: "hub", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">Узлы</h5>
                       </a>
@@ -301,7 +301,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid flex-shrink-0 place-items-center">
-                          <img src="./img/icons/category.svg" />
+                          @@include('shared/sprite.html', { name: "category", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">Категории</h5>
                       </a>
@@ -311,7 +311,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid flex-shrink-0 place-items-center">
-                          <img src="./img/icons/bookmark-alt.svg" />
+                          @@include('shared/sprite.html', { name: "bookmark-alt", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">Группы</h5>
                       </a>
@@ -321,7 +321,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid flex-shrink-0 place-items-center">
-                          <img src="./img/icons/sparkles.svg" />
+                          @@include('shared/sprite.html', { name: "sparkles", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">Особенности</h5>
                       </a>
@@ -341,7 +341,7 @@
                   class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
                 >
                   <div class="mr-2 grid flex-shrink-0 place-items-center">
-                    <img src="./img/icons/shopping-cart.svg" />
+                    @@include('shared/sprite.html', { name: "shopping-cart", class: "w-6 h-6" })
                   </div>
                   <p
                     class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
@@ -385,7 +385,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid flex-shrink-0 place-items-center">
-                          <img src="./img/icons/clipboard-list.svg" />
+                          @@include('shared/sprite.html', { name: "clipboard-list", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">Истроия заказов</h5>
                       </a>
@@ -395,7 +395,7 @@
                         class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
                       >
                         <div class="mr-2 grid place-items-center">
-                          <img src="./img/icons/credit-card.svg" />
+                          @@include('shared/sprite.html', { name: "redit-card", class: "w-6 h-6" })
                         </div>
                         <h5 class="text-lg font-normal">
                           Способы оплаты заказов
@@ -421,7 +421,7 @@
           class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
         >
           <div class="mr-2 grid flex-shrink-0 place-items-center">
-            <img src="./img/icons/user.svg" />
+            @@include('shared/sprite.html', { name: "user", class: "w-6 h-6" })
           </div>
           <p
             class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
@@ -453,22 +453,6 @@
           class="flex max-h-0 flex-col gap-2 overflow-hidden transition-[max-height] duration-200"
           data-accordion-content=""
         >
-          <div
-            class="group mt-2.5 w-full rounded-lg bg-[#F3F5F6] p-2.5 font-sans text-sm font-light leading-normal antialiased transition-all"
-          >
-            <a href="#">
-              <p
-                class="mr-auto block font-sans text-lg font-bold leading-relaxed text-primary antialiased"
-              >
-                Баланс 12 190
-              </p>
-              <p
-                class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
-              >
-                При текущем уровне списаний баланса хватит до 26 мая 2024
-              </p>
-            </a>
-          </div>
           <div
             class="group mt-2.5 flex w-full flex-col gap-2 rounded-lg bg-[#F3F5F6] p-2.5 font-sans text-sm font-light leading-normal antialiased transition-all"
           >

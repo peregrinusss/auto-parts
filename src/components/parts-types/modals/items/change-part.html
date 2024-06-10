@@ -1,0 +1,106 @@
+<div
+  class="graph-modal__container"
+  style="width: 65%"
+  role="dialog"
+  aria-modal="true"
+  data-graph-target="change-vehicle"
+>
+  <div
+    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold">Изменение узла</h3>
+      <a
+        href="#"
+        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+        >Узлы 
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+        aria-label="Закрыть модальное окно"
+        class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="CloseIcon"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-[60vh] overflow-y-scroll">
+          <div class="px-5">
+            <div class="flex flex-col gap-4 pb-8 pt-12">
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Название:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/input.html', { placeholder: "Введите название", })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Альтернативные названия:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/textarea.html', { placeholder: "Введите названия", })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">ID в Авито:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/input.html', { placeholder: "Введите название", })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                <div class=""></div>
+                <a href="#" class="text-sm text-primary font-normal">Справочник</a>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/textarea.html', { placeholder: "Введите комментарий", })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                <div class=""></div>
+                <span class="text-sm text-gray-600 font-normal">Комментарий для сотрудников, клиентам не отображается.</span>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Активно:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/checkbox.html', { id: "active", label: "",
+                  })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                <div class=""></div>
+                <span class="text-sm text-gray-600 font-normal">Отображается на сайте и доступно для выбора.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="border-t-2 border-solid border-gray-200 p-5"
+        >
+          <div class="ml-auto flex items-center gap-4 w-fit">
+            @@include('shared/button.html', { title: "Применить", color:
+            "bg-success", class: "h-fit !w-fit" })
+            @@include('shared/button.html', { title: "Закрыть", color:
+            "bg-danger", class: "h-fit !w-fit" })
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

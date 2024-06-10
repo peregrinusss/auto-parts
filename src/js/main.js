@@ -1,6 +1,6 @@
-const TomSelect = require('tom-select');
-const HandyCollapse = require('handy-collapse');
-const GraphModal = require('../js/libs/graph-modal');
+const TomSelect = require("tom-select");
+const HandyCollapse = require("handy-collapse");
+const GraphModal = require("../js/libs/graph-modal");
 
 const modal = new GraphModal({
   isOpen: (modal) => {
@@ -298,20 +298,19 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-
-
-
 //orders
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('select[data-tom-select]').forEach(function(select) {
-    new TomSelect(select,{
-      create: false,
-      sortField: {
-        field: "text",
-        direction: "asc"
-      }
+document.addEventListener("DOMContentLoaded", function () {
+  document
+    .querySelectorAll("select[data-tom-select]")
+    .forEach(function (select) {
+      new TomSelect(select, {
+        create: false,
+        sortField: {
+          field: "text",
+          direction: "asc",
+        },
+      });
     });
-  });
 });
 
 // select
@@ -380,3 +379,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+// tooltip more list
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-more]").forEach(function (tooltip) {
+    const tooltipTitle = tooltip.querySelector("[data-more-title]");
+    const tooltipContent = tooltip.querySelector("[data-more-content]");
+
+    // Function to show tooltip
+    function showTooltip() {
+      tooltipContent.classList.add("tooltip-more-active");
+    }
+
+    // Function to hide tooltip
+    function hideTooltip() {
+      tooltipContent.classList.remove("tooltip-more-active");
+    }
+
+    // Listen for mouse enter on the tooltip title
+    tooltip.addEventListener("mouseenter", function (event) {
+      // Hide all other tooltips before showing this one
+      document.querySelectorAll("[data-more-content]").forEach(el => {
+        el.classList.remove("tooltip-more-active");
+      });
+      showTooltip();
+    });
+
+    // Listen for mouse leave on the tooltip title
+    tooltip.addEventListener("mouseleave", hideTooltip);
+  });
+});
+

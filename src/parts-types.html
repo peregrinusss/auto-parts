@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('head.html')
+  <body>
+    <div class="grid h-full grid-cols-[auto_1fr] gap-2">
+      @@include('sidebar.html')
+      <div class="relative w-[calc(100vw-288px)] px-4">
+        @@include('header/parts-types.html') @@include('parts-types/main.html')
+      </div>
+    </div>
+
+    <div class="graph-modal">
+      @@include('parts-types/modals/layout.html')
+    </div>
+
+    <script
+      src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
+      type="module"
+    ></script>
+    <script src="./js/scripts.js"></script>
+  </body>
+</html>
