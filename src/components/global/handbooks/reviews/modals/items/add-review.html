@@ -1,0 +1,143 @@
+<div class="graph-modal__container " style="width: 60%;" role="dialog" aria-modal="true" data-graph-target="add-review">
+
+
+    <div
+            class=" relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Изменение отзыва
+            </h3>
+            <div class="flex gap-1 ">
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >Отзывы </a>
+
+            </div>
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
+    >
+
+        <div class="">
+            <form>
+                <div class="max-h-[55vh] overflow-y-scroll">
+
+                    <div
+                            class="grid grid-cols-2 gap-6 border-t-2 border-solid border-gray-200 px-12 py-8">
+                        <div class="flex flex-col gap-1">
+                            <h4 class="text-primary text-lg">Имя:</h4>
+                            @@include('shared/input.html', {
+                            placeholder: "Имя",
+                            value: ""
+                            })
+                        </div>
+                    </div>
+
+
+                    <div
+                            class="grid grid-cols-2 gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
+                    >
+                        <div class="flex h-full flex-col gap-2">
+                            <label
+
+                                    class="mb-2 block text-2lg font-medium text-primary"
+                            >
+                                Отзыв:
+                            </label>
+                            @@include('shared/textarea.html', {
+                            placeholder: "Напишите что-нибудь",
+                            })
+                        </div>
+                        <div class="flex flex-col justify-between gap-3">
+                            <div class="flex flex-col gap-1">
+                                <div class="mt-10 flex items-center gap-[1rem]">
+                                    <div
+                                            class="relative flex cursor-pointer items-center rounded-full"
+                                    >
+                                        <input
+                                                type="checkbox"
+                                                class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
+                                                id="detail_active"
+                                        />
+                                        <span
+                                                class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                        >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-3.5 w-3.5"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                    >
+                                      <path
+                                              fill-rule="evenodd"
+                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                              clip-rule="evenodd"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                    </div>
+                                    <label
+                                            for="detail_active"
+                                            class="text-2lg text-blue-gray"
+                                    >Активно</label
+                                    >
+                                </div>
+                                <h5 class="text-lg text-blue-gray opacity-75">
+                                    Отображается на сайте и доступно для выбора.
+                                </h5>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+                    <div class="flex gap-4">
+                        @@include('shared/button.html', {
+                        title: "Удалить",
+                        color: "bg-danger",
+                        class: "h-fit"
+                        })
+                    </div>
+                    <div class="flex gap-4">
+
+                        @@include('shared/button.html', {
+                        title: "Применить",
+                        color: "bg-success",
+                        class: "h-fit"
+                        })
+                        @@include('shared/button.html', {
+                        title: "Отмена",
+                        color: "bg-danger",
+                        class: "h-fit"
+                        })
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -5,8 +5,13 @@
     <div class="grid h-full grid-cols-[auto_1fr] gap-2">
       @@include('sidebar.html')
       <div class="relative w-[calc(100vw-288px)] px-4">
-        @@include('header/users.html') @@include('users.html')
-      </>
+        @@include('header/branches.html')
+        @@include('branches/main.html')
+      </div>
+    </div>
+
+    <div class="graph-modal">
+      @@include('branches/modals/layout.html')
     </div>
 
     <script
@@ -17,6 +22,6 @@
       src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
       type="module"
     ></script>
-    <script src="./js/scripts.js"></script>
+    <script src="../js/scripts.js"></script>
   </body>
 </html>
