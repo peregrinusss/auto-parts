@@ -410,3 +410,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+
+
+// colorPick
+
+document.getElementById('colorPick').addEventListener('input', function(event) {
+  const colorBox = document.getElementById('colorBox');
+  const selectedColor = event.target.value;
+  colorBox.style.backgroundColor = selectedColor;
+});

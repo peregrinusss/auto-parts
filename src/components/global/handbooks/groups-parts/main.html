@@ -1,0 +1,174 @@
+<main class="mb-8 mt-4">
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            @@include('shared/checkbox-input.html', {id: "0"})
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Название
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Комментарий
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Заблокировано
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Комментарий
+
+                        </p>
+                    </th>
+                </tr>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+                    >
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            @@include('shared/input-search.html', {
+                            placeholder: "Фильтр",
+                            fontSize: "text-sm",
+                            loupe: '<img src="../../../../img/icons/loupe.svg">',
+                            width: 'min-w-[170px]'
+                            })
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            @@include('shared/checkbox-input.html', {id: "1"})
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                        <button data-graph-path="change-group-parts"  class="flex flex-col gap-1">
+                            <h4
+                                    class="text-start text-md text-primary transition-all group-hover:text-primary group-hover:opacity-75"
+                            >
+                                Не выгружать в Авито
+                            </h4>
+                        </button>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">
+                                Закупка Андрей + Евгений Новиков
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex justify-start items-center gap-3">
+<!--                                @@include('shared/sprite.html', {name: "cross-block", class: "w-10 h-10"})-->
+                            <svg id="cross-block" width="20" height="20" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M3 27L27 3M3 3L27 27" stroke="#212121" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">
+
+                                392
+                            </h4>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    @@include('footer.html')
+</main>

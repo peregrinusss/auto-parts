@@ -119,5 +119,12 @@
   </symbol>
   <symbol id="arrow-right" viewBox="0 0 8 13" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M7.71309 5.99999L1.70209 -0.0100098L0.288086 1.40399L4.88809 6.00399L0.288086 10.597L1.70209 12.011L7.71309 5.99999Z" fill="currentColor"/>
-  </symbol>   
+  </symbol>
+
+  <symbol id="cross-block" width="24" height="24"  fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 19L19 3M3 3L19 19" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+
+
+
 </svg>
