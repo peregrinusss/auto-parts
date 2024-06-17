@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Авторазбор</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+  />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+<div class="grid h-full grid-cols-[auto_1fr] gap-2">
+    <div
+  class="shadow-blue-gray-900/5 relative flex h-full w-[280px] px-3 flex-col bg-white bg-clip-border p-2 text-blue-gray shadow-xl"
+>
+  <div class="mb-2 flex items-center gap-4 p-4 px-3 max-w-[160px]">
+    <img src="../img/logo.svg" alt="">
+  </div>
+
+  <nav
+    class="text-blue-gray-700 flex flex-col gap-1 font-sans text-sm font-normal"
+  >
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray sidebar-active"
+    >
+      <div class="mr-2 grid place-items-center flex-shrink-0">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Запчасти</h5>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Заказы</h5>
+      <div class="ml-auto grid place-items-center justify-self-end">
+        <div
+          class="relative flex h-7 w-7 select-none items-center justify-center whitespace-nowrap rounded-full text-xs"
+        >
+          <span class="text-base font-sans font-bold text-primary">14</span>
+        </div>
+      </div>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#truck"
+  ></use>
+</svg>
+
+      </div>
+
+      <h5 class="text-lg font-normal">Машины</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#depot"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Склад
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+          >
+            <nav
+              class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+            >
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Размещение</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Инвентаризация</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Склады</h5>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#template"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Интеграции</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#book-open"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Справочники
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="max-h-0 overflow-hidden" data-accordion-content>
+        <div
+          class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+        >
+          <nav
+            class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+          >
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user-group"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Пользователи</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#models"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Марки и модели ТС</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#star"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Отзывы на сайте</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#traffic"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Каналы трафика</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#branches"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Филиалы</h5>
+            </a>
+
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Запчасти
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#hub"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Узлы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#category"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Категории</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#bookmark-alt"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Группы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#sparkles"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Особенности</h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Заказы
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#clipboard-list"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Истроия заказов</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#credit-card"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">
+                          Способы оплаты заказов
+                        </h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            +7 912 761 9299
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="flex max-h-0 flex-col gap-2 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="group mt-2.5 flex w-full flex-col gap-2 rounded-lg bg-[#F3F5F6] p-2.5 font-sans text-sm font-light leading-normal antialiased transition-all"
+          >
+            <button>
+              <p
+                class="mr-auto block font-sans text-lg font-bold leading-relaxed text-primary antialiased"
+              >
+                Выйти
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div class="relative w-[calc(100vw-288px)] px-4">
+
+        <header class="sticky left-0 top-0 z-40 -mx-2 rounded-lg">
+    <nav
+            class="border-blue-gray-50 block w-full border-b bg-opacity-80 px-2 py-3 text-white backdrop-blur-2xl backdrop-saturate-200"
+    >
+        <div class="text-blue-gray-900 flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-blue-gray">Машины</h2>
+            <div class="block">
+                <ul class="my-2 mb-0 mt-0 flex flex-row gap-6">
+
+                    <li
+                            minimodal-bottom-toggle
+                            class="relative flex items-center justify-center"
+                    >
+                        <div
+                                class="relative h-10 w-10 cursor-pointer transition-all hover:rotate-90 active:opacity-60"
+                        >
+                            <svg
+                                    class="h-full w-full"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M13.675 4.317C13.249 2.561 10.751 2.561 10.325 4.317C10.049 5.452 8.749 5.99 7.753 5.382C6.209 4.442 4.443 6.209 5.383 7.752C5.5243 7.98375 5.60889 8.24559 5.62987 8.51621C5.65085 8.78683 5.60764 9.05859 5.50375 9.30935C5.39985 9.56011 5.23822 9.7828 5.032 9.95929C4.82578 10.1358 4.5808 10.2611 4.317 10.325C2.561 10.751 2.561 13.249 4.317 13.675C4.58056 13.7391 4.82529 13.8645 5.03127 14.0409C5.23726 14.2174 5.3987 14.44 5.50247 14.6906C5.60624 14.9412 5.64942 15.2128 5.62848 15.4832C5.60755 15.7537 5.5231 16.0153 5.382 16.247C4.442 17.791 6.209 19.557 7.752 18.617C7.98375 18.4757 8.24559 18.3911 8.51621 18.3701C8.78683 18.3491 9.05859 18.3924 9.30935 18.4963C9.56011 18.6001 9.7828 18.7618 9.95929 18.968C10.1358 19.1742 10.2611 19.4192 10.325 19.683C10.751 21.439 13.249 21.439 13.675 19.683C13.7391 19.4194 13.8645 19.1747 14.0409 18.9687C14.2174 18.7627 14.44 18.6013 14.6906 18.4975C14.9412 18.3938 15.2128 18.3506 15.4832 18.3715C15.7537 18.3924 16.0153 18.4769 16.247 18.618C17.791 19.558 19.557 17.791 18.617 16.248C18.4757 16.0162 18.3911 15.7544 18.3701 15.4838C18.3491 15.2132 18.3924 14.9414 18.4963 14.6907C18.6001 14.4399 18.7618 14.2172 18.968 14.0407C19.1742 13.8642 19.4192 13.7389 19.683 13.675C21.439 13.249 21.439 10.751 19.683 10.325C19.4194 10.2609 19.1747 10.1355 18.9687 9.95905C18.7627 9.78258 18.6013 9.55999 18.4975 9.30938C18.3938 9.05877 18.3506 8.78721 18.3715 8.51677C18.3924 8.24634 18.4769 7.98466 18.618 7.753C19.558 6.209 17.791 4.443 16.248 5.383C16.0162 5.5243 15.7544 5.60889 15.4838 5.62987C15.2132 5.65085 14.9414 5.60764 14.6907 5.50375C14.4399 5.39985 14.2172 5.23822 14.0407 5.032C13.8642 4.82578 13.7389 4.5808 13.675 4.317Z"
+                                        stroke="#212121"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213Z"
+                                        stroke="#212121"
+                                        stroke-width="2"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                            </svg>
+                        </div>
+                        <div
+                                minimodal-bottom-content
+                                class="absolute left-0 top-[7px] hidden w-max translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                        >
+                            <div class="flex flex-col gap-2">
+
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="updated" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="updated"
+        >
+          <input
+            id="updated"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Филиал
+    </h4>
+  </label>
+</div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li
+                            minimodal-bottom-toggle
+                            class="relative flex cursor-pointer items-center gap-2 transition-all"
+                    >
+                        <button
+                                class="bg-blue-gray-50/50 flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary focus:text-light-gray"
+                        >
+                            <h4>Фильтр</h4>
+                        </button>
+                        <div
+                                minimodal-bottom-content
+                                class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                        >
+                            <div class="flex flex-col gap-2">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Название</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Описание</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">OEM</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Артикул</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Донор</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Применимость</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Узел</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Группа</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Состояние</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Статус</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Фотографии</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Особенность</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Комментарий</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Обновлена</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">В архиве</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Хранение</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Цены</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                  <span class="text-base font-normal text-black"
+                  >Сотрудники</span
+                  >
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Даты</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Ещё</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li
+                            minimodal-bottom-toggle
+                            class="relative flex cursor-pointer items-center gap-2 transition-all"
+                    >
+                        <button
+                                class="bg-primary flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                        >
+                            <h4>Добавить +</h4>
+                        </button>
+
+                        <div
+                                minimodal-bottom-content
+                                class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                        >
+                            <div class="flex flex-col gap-2">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Б/у</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                    <span class="text-base font-normal text-black">Новая</span>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+        <div class="mb-8 mt-4">
+    <div class="mb-5 flex flex-col gap-5">
+  <div class="flex items-center gap-20">
+    <div
+      class="flex cursor-pointer items-center gap-4 transition-all hover:opacity-70"
+    >
+      <div class="relative h-4 w-4">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-full w-full"
+        >
+          <g stroke-width="0"></g>
+          <g stroke-linecap="round" stroke-linejoin="round"></g>
+          <g>
+            <path
+              d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+              fill="#0F0F0F"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <span>OEM:</span>
+    </div>
+    <div class="grid grid-cols-2 items-center gap-4">
+      <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+ <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder=""
+  value=""
+  type="@@type"
+/>
+
+    </div>
+  </div>
+  <div class="flex items-center gap-20">
+    <div
+      class="flex cursor-pointer items-center gap-4 transition-all hover:opacity-70"
+    >
+      <div class="relative h-4 w-4">
+        <svg
+          viewBox="0 0 24 24"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-full w-full"
+        >
+          <g stroke-width="0"></g>
+          <g stroke-linecap="round" stroke-linejoin="round"></g>
+          <g>
+            <path
+              d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z"
+              fill="#0F0F0F"
+            ></path>
+          </g>
+        </svg>
+      </div>
+      <span>OEM:</span>
+    </div>
+    <div class="grid grid-cols-2 items-center gap-4">
+      <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+ <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder=""
+  value=""
+  type="@@type"
+/>
+
+    </div>
+  </div>
+  <div class="flex items-center gap-5">
+    <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !w-fit whitespace-nowrap"
+>
+  <h4>Применить фильтры</h4>
+</button>
+ <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !w-fit whitespace-nowrap"
+>
+  <h4>Очистить фильтры</h4>
+</button>
+
+  </div>
+</div>
+
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="0"
+>
+  <input
+    id="0"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Модель ТС
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Код
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Год
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Тип двигателя
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Объем двигателя
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            КПП
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Описание
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Добавлена
+                        </p>
+                    </th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="1"
+>
+  <input
+    id="1"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group border-b p-3">
+                        <button type="button"  data-graph-path="change-cars" class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div class="group relative h-12 w-12 flex-shrink-0">
+                                    <img
+                                            src="./img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full rounded-[5px] object-cover"
+                                    />
+                                </div>
+                                <h4
+                                        class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                >
+                                    Абсорбер топливной системы
+                                </h4>
+                            </div>
+                        </button>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">К8</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">2 018</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            Дизель
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">16 литров</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">МКПП</h4>
+                    </td>
+                    <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
+                        Город: Москва
+                        Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                        КПП: МКПП ZF 16S2220TD
+                        Редуктор: R440P 24000S 3.077
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">06.06.2024</h4>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <span
+class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased"
+>Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422
+720 р.)
+</span>
+<div class="mt-3 flex items-center justify-between gap-5">
+<div class="flex items-center gap-2" data-pagination>
+  <button
+    disabled
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-prev
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+      ></path>
+    </svg>
+  </button>
+  <div class="flex items-center gap-1">
+    <button
+      class="pagination-active relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        1
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        2
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        3
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        4
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        5
+      </span>
+    </button>
+  </div>
+  <button
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-next
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+      ></path>
+    </svg>
+  </button>
+</div>
+<div class="flex items-center gap-3">
+  <span
+    class="text-blue-gray-600 text-sm font-normal leading-normal antialiased"
+    >На страницу</span
+  >
+
+  <div
+    id="preheader_tabs"
+    data-tabs
+    class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
+  >
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">20</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">50</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">100</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">500</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">1000</span>
+      </h4>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+
+
+        <div class="graph-modal">
+
+            
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="change-cars">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Изменение машины в разборе
+                <a
+                        href="#"
+                        class="opacity-85 text-base text-primary transition-all hover:opacity-80"
+                >показать на сайте</a
+                >
+            </h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+            >Машины в разборе</a
+            >
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
+    >
+
+        <div class="">
+            <form>
+                <div class="h-[65vh] overflow-y-scroll">
+                    <div class="grid grid-cols-3 px-12">
+                        <div
+                                class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                        >
+
+                            <div class="flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Модель ТС:</h4>
+                                <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <button type="button" data-graph-path="change-modelTS"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+  </div>
+  <input
+    class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Модель ТС"
+  />
+</div>
+
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Код:</h4>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Код"
+  value=""
+  type="@@type"
+/>
+
+                                <h4 class="text-gray-500 text-md">внутренний код машины в системе.</h4>
+                            </div>
+                            <div class="flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Год:</h4>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Год"
+  value=""
+  type="@@type"
+/>
+
+                            </div>
+                        </div>
+                        <div
+                                class="flex flex-col items-center justify-center gap-3 px-4 pb-8 pt-12"
+                        >
+                            <div class="w-full flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">КПП:</h4>
+                                <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Тип двигателя:</h4>
+                                <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Объем двигателя:</h4>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Объем двигателя"
+  value=""
+  type="@@type"
+/>
+
+                                <h4 class="text-gray-500 text-md">В кубических сантиментрах (например 1600).</h4>
+                            </div>
+                        </div>
+                        <div
+                                class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
+                        >
+                            <div class="flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Описание:</h4>
+                                <div class="flex flex-col gap-2">
+                                    <textarea
+  rows="5"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+  placeholder="Напишите что-нибудь"
+></textarea>
+
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col gap-1">
+                                <h4 class="text-primary text-lg">Филиал: *</h4>
+                                <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                            class="flex flex-col gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
+                    >
+                        <div
+                                id="preview-container"
+                                class="grid grid-cols-5 gap-4"
+                        >
+                            <div
+                                    class="w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="./img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                        </div>
+                        <div class="flex w-full items-center justify-center">
+                            <div class="group relative w-fit upload cursor-pointer active:opacity-60">
+                                <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 @@class whitespace-nowrap"
+>
+  <h4>Загрузить изображения +</h4>
+</button>
+
+                                <input
+                                        id="fileInput"
+                                        class="absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
+                                        multiple
+                                        accept="image/*"
+                                        type="file"
+                                />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div
+                            class="grid grid-cols-2 gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
+                    >
+                        <div class="flex h-full flex-col gap-2">
+                            <label
+
+                                    class="mb-2 block text-2lg font-medium text-primary"
+                            >
+                                Комментарий:
+                            </label>
+                            <textarea
+  rows="5"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+  placeholder="Напишите что-нибудь"
+></textarea>
+
+                        </div>
+                        <div class="flex flex-col gap-3">
+                            <div class="flex flex-col gap-1">
+                                <div class="mt-10 flex items-center gap-[1rem]">
+                                    <div
+                                            class="relative flex cursor-pointer items-center rounded-full"
+                                    >
+                                        <input
+                                                type="checkbox"
+                                                class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
+                                                id="detail_active"
+                                        />
+                                        <span
+                                                class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                        >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-3.5 w-3.5"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                    >
+                                      <path
+                                              fill-rule="evenodd"
+                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                              clip-rule="evenodd"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                    </div>
+                                    <label
+                                            for="detail_active"
+                                            class="text-2lg text-blue-gray"
+                                    >Активно</label
+                                    >
+                                </div>
+                                <h5 class="text-lg text-blue-gray opacity-75">
+                                    Отображается на сайте и доступно для выбора.
+                                </h5>
+                            </div>
+                            <div class="flex gap-3">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Добавлена:
+                                </h4>
+                                <h4 class="text-2lg text-primary opacity-75">
+                                    25.05.2024 11:54 (Антон Маринин)
+                                </h4>
+                            </div>
+                            <button
+                                    type="button"
+                                    data-graph-path="changelog-cars"
+                                    class="inline-flex cursor-pointer text-2lg text-primary"
+                            >
+                                Посмотреть журнал изменений
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+                    <div class="flex gap-4">
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+>
+  <h4>Удалить</h4>
+</button>
+
+                    </div>
+                    <div class="flex gap-4">
+
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+>
+  <h4>Отмена</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="change-modelTS">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Выберите модель ТС
+            </h3>
+            <div class="flex ">
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >запчасти</a
+                >
+                <span>/</span>
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >Изменение запчасти </a
+                >
+            </div>
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
+    >
+
+        <div class="">
+            <form>
+
+                <div
+                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+
+                    <div
+                            data-tabs=""
+                            class="bg-blue-gray-50/60 relative flex gap-2 rounded-lg p-1"
+                    >
+                        <button
+                                type="button"
+                                class="z-30 flex-auto rounded-lg px-2 text-center transition-all tab-active"
+                        >
+                            <h4
+                                    class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
+                            >
+                                <span class="">Показать выбранные </span>
+                            </h4>
+                        </button>
+                        <button
+                                type="button"
+                                class="z-30 flex-auto rounded-lg p-2 text-center transition-all"
+                        >
+                            <h4
+                                    class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
+                            >
+                                <span class="">Показать все</span>
+                            </h4>
+                        </button>
+                    </div>
+                    <div class="relative  w-full min-w-[200px] h-auto max-w-[200px]">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <img src="../../../../../img/icons/loupe.svg">
+  </div>
+  <input
+    class="text-blue-gray-700 @@fontSize disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Фильтр по модели..."
+  />
+</div>
+
+                </div>
+
+                <div class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
+                    <div class="flex gap-2">
+                        <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="different"
+>
+  <input
+    id="different"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="main-accordion">
+                            Разные
+                        </button>
+                    </div>
+                    <div data-nested-content="main-accordion" class="flex flex-col gap-2 ms-2">
+                        <div class="flex gap-2">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="cars"
+>
+  <input
+    id="cars"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-1">
+                                Автомобили
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
+                            <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="nested-cars" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="nested-cars"
+        >
+          <input
+            id="nested-cars"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Автомобили
+    </h4>
+  </label>
+</div>
+
+                        </div>
+                        <div class="flex gap-2">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="trucks"
+>
+  <input
+    id="trucks"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-2">
+                                Грузовики
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-2" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
+                            <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="nested-trucks" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="nested-trucks"
+        >
+          <input
+            id="nested-trucks"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Грузовики
+    </h4>
+  </label>
+</div>
+
+                        </div>
+                        <div class="flex gap-2">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="spares"
+>
+  <input
+    id="spares"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-3">
+                                Запчасти
+                            </button>
+                        </div>
+                        <div data-nested-content="nested-accordion-3" class="ms-2  flex flex-col gap-2 ">
+                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
+                                <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="nested-spares" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="nested-spares"
+        >
+          <input
+            id="nested-spares"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      На обработку
+    </h4>
+  </label>
+</div>
+
+                            </div>
+                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
+                                <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="nested-spares" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="nested-spares"
+        >
+          <input
+            id="nested-spares"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      На отгрузку
+    </h4>
+  </label>
+</div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div
+                        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+
+                    <div class="flex gap-4">
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-full whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="changelog-cars">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Журнал изменений
+            </h3>
+            <div class="flex gap-1 ">
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >запчасти </a
+                >
+                <span> / </span>
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                > Изменение запчасти </a
+                >
+            </div>
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all">
+        <div class="p-7 pb-0 flex flex-col gap-7">
+            <div class="flex">
+                <h4 class="text-2lg text-primary opacity-75">
+                    25.05.2024 11:54 - Антон Маринин
+                </h4>
+            </div>
+            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+            <div class="grid grid-cols-2 gap-6">
+                <div class="flex flex-col gap-4 items-start">
+                    <h4 class="text-2lg text-blue-gray">
+                        Описание:
+                    </h4>
+                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                        Город: Москва
+                        Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                        КПП: МКПП ZF 16S2220TD
+                        Редуктор: R440P 24000S 3.077
+                    </h4>
+                </div>
+                <div class="flex flex-col gap-4 items-start">
+                    <h4 class="text-2lg text-blue-gray">
+                        Фото:
+                    </h4>
+                    <div
+                            class="h-full grid grid-cols-3 gap-4"
+                    >
+                        <div
+                                class="w-full max-w-[160px] rounded-xl border-2 border-solid border-gray-200"
+                        >
+                            <img
+                                    class="h-full rounded-[8px] object-cover"
+                                    src="./img/gallery-item.jpeg"
+                                    alt="detail"
+                            />
+                        </div>
+                        <div
+                                class="w-full max-w-[160px] rounded-xl border-2 border-solid border-gray-200"
+                        >
+                            <img
+                                    class="h-full rounded-[8px] object-cover"
+                                    src="./img/gallery-item.jpeg"
+                                    alt="detail"
+                            />
+                        </div>
+                        <div
+                                class="w-full max-w-[160px] rounded-xl border-2 border-solid border-gray-200"
+                        >
+                            <img
+                                    class="h-full rounded-[8px] object-cover"
+                                    src="./img/gallery-item.jpeg"
+                                    alt="detail"
+                            />
+                        </div>
+                        <div
+                                class="w-full max-w-[160px] rounded-xl border-2 border-solid border-gray-200"
+                        >
+                            <img
+                                    class="h-full rounded-[8px] object-cover"
+                                    src="./img/gallery-item.jpeg"
+                                    alt="detail"
+                            />
+                        </div>
+                        <div
+                                class="w-full max-w-[160px] rounded-xl border-2 border-solid border-gray-200"
+                        >
+                            <img
+                                    class="h-full rounded-[8px] object-cover"
+                                    src="./img/gallery-item.jpeg"
+                                    alt="detail"
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+            <div class="grid grid-cols-4 gap-6">
+                <div class="w-full flex flex-col gap-7">
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Модель ТС:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            5490
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Код:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            K8
+                        </h4>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col gap-7">
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Год:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            2 018
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            КПП:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            МКПП
+                        </h4>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col gap-7">
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Тип двигателя:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Дизель
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Описание:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Город: Москва
+                            Двигатель: -
+                            КПП: МКПП -
+                            Редуктор: -
+                        </h4>
+                    </div>
+                </div>
+                <div class="w-full flex flex-col gap-7">
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Активно:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Да
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-1 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Филиал:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Основной
+                        </h4>
+                    </div>
+                </div>
+            </div>
+            <div
+                    class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+            >
+
+                <button type="button" aria-label="Закрыть модальное окно" class=" js-modal-close flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100 ">
+                    Закрыть
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+
+        </div>
+
+
+
+    </div>
+</div>
+
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+        type="module"
+></script>
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
+        type="module"
+></script>
+
+
+<script src="./js/scripts.js"></script>
+
+</body>
+</html>

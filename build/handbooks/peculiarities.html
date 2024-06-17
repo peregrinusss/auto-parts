@@ -1,0 +1,1403 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Авторазбор</title>
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+  />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+</head>
+
+<body>
+<div class="grid h-full grid-cols-[auto_1fr] gap-2">
+    <div
+  class="shadow-blue-gray-900/5 relative flex h-full w-[280px] px-3 flex-col bg-white bg-clip-border p-2 text-blue-gray shadow-xl"
+>
+  <div class="mb-2 flex items-center gap-4 p-4 px-3 max-w-[160px]">
+    <img src="../img/logo.svg" alt="">
+  </div>
+
+  <nav
+    class="text-blue-gray-700 flex flex-col gap-1 font-sans text-sm font-normal"
+  >
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray sidebar-active"
+    >
+      <div class="mr-2 grid place-items-center flex-shrink-0">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Запчасти</h5>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Заказы</h5>
+      <div class="ml-auto grid place-items-center justify-self-end">
+        <div
+          class="relative flex h-7 w-7 select-none items-center justify-center whitespace-nowrap rounded-full text-xs"
+        >
+          <span class="text-base font-sans font-bold text-primary">14</span>
+        </div>
+      </div>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#truck"
+  ></use>
+</svg>
+
+      </div>
+
+      <h5 class="text-lg font-normal">Машины</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#depot"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Склад
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+          >
+            <nav
+              class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+            >
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Размещение</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Инвентаризация</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Склады</h5>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#template"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Интеграции</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#book-open"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Справочники
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="max-h-0 overflow-hidden" data-accordion-content>
+        <div
+          class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+        >
+          <nav
+            class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+          >
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user-group"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Пользователи</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#models"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Марки и модели ТС</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#star"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Отзывы на сайте</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#traffic"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Каналы трафика</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#branches"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Филиалы</h5>
+            </a>
+
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Запчасти
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#hub"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Узлы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#category"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Категории</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#bookmark-alt"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Группы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#sparkles"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Особенности</h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Заказы
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#clipboard-list"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Истроия заказов</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#credit-card"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">
+                          Способы оплаты заказов
+                        </h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            +7 912 761 9299
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="flex max-h-0 flex-col gap-2 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="group mt-2.5 flex w-full flex-col gap-2 rounded-lg bg-[#F3F5F6] p-2.5 font-sans text-sm font-light leading-normal antialiased transition-all"
+          >
+            <button>
+              <p
+                class="mr-auto block font-sans text-lg font-bold leading-relaxed text-primary antialiased"
+              >
+                Выйти
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div class="relative w-[calc(100vw-288px)] px-4">
+        <header class="sticky left-0 top-0 z-40 -mx-2 rounded-lg">
+    <nav
+            class="border-blue-gray-50 block w-full border-b bg-opacity-80 px-2 py-5 text-white backdrop-blur-2xl backdrop-saturate-200"
+    >
+        <div class="text-blue-gray-900 flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-blue-gray">Особенности запчастей</h2>
+            <div class="flex items-center gap-4">
+
+                <div
+
+                        class="relative flex cursor-pointer items-center gap-2 transition-all"
+                >
+                    <button
+                            type="button"
+                            data-graph-path="add-peculiarities"
+                            class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                    >
+                        <h4>Добавить +</h4>
+                    </button>
+
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+        <main class="mb-8 mt-4">
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+                    <th
+                            class="w-[5%] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="0"
+>
+  <input
+    id="0"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Название
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                    <th
+                            class="w-[15%] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Метка
+                            <svg
+                                    xmlns="http://www.w3.org/2000/svg"
+                                    fill="none"
+                                    viewBox="0 0 24 24"
+                                    stroke-width="2"
+                                    stroke="currentColor"
+                                    aria-hidden="true"
+                                    class="h-4 w-4"
+                            >
+                                <path
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
+                                ></path>
+                            </svg>
+                        </p>
+                    </th>
+                </tr>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+                    >
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="md:w-18 w-full">
+                            <div class="relative  w-full min-w-[200px] h-auto min-w-[170px]">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <img src="../../../../img/icons/loupe.svg">
+  </div>
+  <input
+    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0"
+    placeholder="Фильтр"
+  />
+</div>
+
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="1"
+>
+  <input
+    id="1"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                        <button data-graph-path="change-peculiarities"  class="flex flex-col gap-1">
+                            <h4
+                                    class="text-start text-md text-primary transition-all group-hover:text-primary group-hover:opacity-75"
+                            >
+                                Новая
+                            </h4>
+                        </button>
+                    </td>
+
+                    <td class=" border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <div class="relative inline w-fit rounded-md bg-black px-1 py-0.5 font-sans text-md font-bold uppercase text-white">
+                                <span>#000000</span>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <span
+class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased"
+>Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422
+720 р.)
+</span>
+<div class="mt-3 flex items-center justify-between gap-5">
+<div class="flex items-center gap-2" data-pagination>
+  <button
+    disabled
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-prev
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+      ></path>
+    </svg>
+  </button>
+  <div class="flex items-center gap-1">
+    <button
+      class="pagination-active relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        1
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        2
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        3
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        4
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        5
+      </span>
+    </button>
+  </div>
+  <button
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-next
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+      ></path>
+    </svg>
+  </button>
+</div>
+<div class="flex items-center gap-3">
+  <span
+    class="text-blue-gray-600 text-sm font-normal leading-normal antialiased"
+    >На страницу</span
+  >
+
+  <div
+    id="preheader_tabs"
+    data-tabs
+    class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
+  >
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">20</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">50</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">100</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">500</span>
+      </h4>
+    </button>
+    <button
+      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">1000</span>
+      </h4>
+    </button>
+  </div>
+</div>
+</div>
+</main>
+
+
+        <div class="graph-modal">
+            
+<div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="change-peculiarities"
+>
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold"> Изменение особенности запчастей</h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+                Особенности запчастей
+            </a>
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button
+                    aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+            >
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+            class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+    >
+        <div class="">
+            <form>
+                <div class="h-[60vh] overflow-y-scroll">
+                    <div class="px-5">
+                        <div class="flex flex-col gap-8 pb-8 pt-12">
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Название:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Введите название"
+  value=""
+  type="@@type"
+/>
+
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Метка:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div  class="relative flex justify-center items-center bg-gray-100 h-[40px] border-2 blue-gray-200  w-full rounded-lg min-w-[200px] py-2.5 px-5">
+                                    <label for="colorPick" class="hidden"></label>
+                                    <input id="colorPick"
+                                           class="absolute inset-0 opacity-0 w-full h-full"
+                                           type="color" />
+                                    <div id="colorBox" class="w-full h-4/5 rounded-lg bg-[#4caf50] "></div>
+                                </div>
+                            </div>
+
+
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Код:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Введите код"
+  value=""
+  type="@@type"
+/>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <textarea
+  rows="5"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+  placeholder="Введите комментарий"
+></textarea>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                                <div class=""></div>
+                                <span class="text-sm text-gray-600 font-normal">Комментарий для сотрудников, клиентам не отображается.</span>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                                <h4 class="text-lg text-blue-gray">Активно:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="active" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="active"
+        >
+          <input
+            id="active"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      
+    </h4>
+  </label>
+</div>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                                <div class=""></div>
+                                <span class="text-sm text-gray-600 font-normal">Отображается на сайте и доступно для выбора.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="border-t-2 border-solid border-gray-200 p-5 flex justify-between"
+                >
+                    <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Удалить</h4>
+</button>
+
+                    <div class="ml-auto flex items-center gap-4 w-fit">
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Отмена</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="add-peculiarities"
+>
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold"> Добавление особенности запчастей</h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+                Особенности запчастей
+            </a>
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button
+                    aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+            >
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+            class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+    >
+        <div class="">
+            <form>
+                <div class="h-[60vh] overflow-y-scroll">
+                    <div class="px-5">
+                        <div class="flex flex-col gap-8 pb-8 pt-12">
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Название:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Введите название"
+  value=""
+  type="@@type"
+/>
+
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Метка:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div  class="relative flex justify-center items-center bg-gray-100 h-[40px] border-2 blue-gray-200  w-full rounded-lg min-w-[200px] py-2.5 px-5">
+                                    <label for="colorPick" class="hidden"></label>
+                                    <input id="colorPick"
+                                           class="absolute inset-0 opacity-0 w-full h-full"
+                                           type="color" />
+                                    <div id="colorBox" class="w-full h-4/5 rounded-lg bg-[#4caf50] "></div>
+                                </div>
+                            </div>
+
+
+                            <div class="grid grid-cols-[180px_1fr] items-center ">
+                                <h4 class="text-lg text-blue-gray">Код:
+                                    <span class="text-danger">*</span>
+                                </h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  placeholder="Введите код"
+  value=""
+  type="@@type"
+/>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <textarea
+  rows="5"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+  placeholder="Введите комментарий"
+></textarea>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                                <div class=""></div>
+                                <span class="text-sm text-gray-600 font-normal">Комментарий для сотрудников, клиентам не отображается.</span>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                                <h4 class="text-lg text-blue-gray">Активно:</h4>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="active" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="active"
+        >
+          <input
+            id="active"
+            type="checkbox"
+            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      
+    </h4>
+  </label>
+</div>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
+                                <div class=""></div>
+                                <span class="text-sm text-gray-600 font-normal">Отображается на сайте и доступно для выбора.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="border-t-2 border-solid border-gray-200 p-5 flex justify-end"
+                >
+
+                    <div class="ml-auto flex items-center gap-4 w-fit">
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                        <button
+        type="button"
+  class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Отмена</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+        </div>
+    </div>
+</div>
+
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+        type="module"
+></script>
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
+        type="module"
+></script>
+<script src="../js/scripts.js"></script>
+</body>
+</html>

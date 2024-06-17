@@ -1,0 +1,34 @@
+<header class="sticky left-0 top-0 z-40 -mx-2 rounded-lg">
+  <nav
+    class="border-blue-gray-50 block w-full border-b bg-opacity-80 px-2 py-5 text-white backdrop-blur-2xl backdrop-saturate-200"
+  >
+    <div class="text-blue-gray-900 flex items-center justify-between">
+      <h2 class="text-2xl font-bold text-blue-gray">Марки ТС</h2>
+      <div class="flex items-center gap-4">
+        <div
+          minimodal-bottom-toggle
+          class="relative flex cursor-pointer items-center gap-2 transition-all"
+        >
+          <button
+            class="bg-blue-gray-50/50 flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary focus:text-light-gray"
+          >
+            <h4>Фильтр</h4>
+          </button>
+          <div
+            minimodal-bottom-content
+            class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+          >
+            <div class="flex flex-col gap-2">
+              <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                <span class="text-base font-normal text-black">Название</span>
+              </div>
+              <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                <span class="text-base font-normal text-black">Активно</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
