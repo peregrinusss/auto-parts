@@ -40,10 +40,10 @@
   <symbol id="depot" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M19 21V5C19 4.46957 18.7893 3.96086 18.4142 3.58579C18.0391 3.21071 17.5304 3 17 3H7C6.46957 3 5.96086 3.21071 5.58579 3.58579C5.21071 3.96086 5 4.46957 5 5V21M19 21H5M19 21H21M19 21H14M5 21H3M5 21H10M14 21V16C14 15.7348 13.8946 15.4804 13.7071 15.2929C13.5196 15.1054 13.2652 15 13 15H11C10.7348 15 10.4804 15.1054 10.2929 15.2929C10.1054 15.4804 10 15.7348 10 16V21M14 21H10M9 7H10M9 11H10M14 7H15M14 11H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol id="document-text.svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="document-text" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M9 12H15M9 16H15M17 21H7C6.46957 21 5.96086 20.7893 5.58579 20.4142C5.21071 20.0391 5 19.5304 5 19V5C5 4.46957 5.21071 3.96086 5.58579 3.58579C5.96086 3.21071 6.46957 3 7 3H12.586C12.8512 3.00006 13.1055 3.10545 13.293 3.293L18.707 8.707C18.8946 8.89449 18.9999 9.1488 19 9.414V19C19 19.5304 18.7893 20.0391 18.4142 20.4142C18.0391 20.7893 17.5304 21 17 21Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-  <symbol id="foldAdd.svg" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="foldAdd" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M12.0601 16.5V11.5" stroke="#171717" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M14.5 14H9.5" stroke="#171717" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z" stroke="#171717" stroke-width="1.5" stroke-miterlimit="10"/>
@@ -124,7 +124,8 @@
   <symbol id="cross-block" width="24" height="24"  fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M3 19L19 3M3 3L19 19" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
-
-
-
+  <symbol id="eye" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M4.1665 4.99984C4.1665 5.22085 4.2543 5.43281 4.41058 5.58909C4.56686 5.74537 4.77882 5.83317 4.99984 5.83317C5.22085 5.83317 5.43281 5.74537 5.58909 5.58909C5.74537 5.43281 5.83317 5.22085 5.83317 4.99984C5.83317 4.77882 5.74537 4.56686 5.58909 4.41058C5.43281 4.2543 5.22085 4.1665 4.99984 4.1665C4.77882 4.1665 4.56686 4.2543 4.41058 4.41058C4.2543 4.56686 4.1665 4.77882 4.1665 4.99984Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M8.75 5C7.75 6.66667 6.5 7.5 5 7.5C3.5 7.5 2.25 6.66667 1.25 5C2.25 3.33333 3.5 2.5 5 2.5C6.5 2.5 7.75 3.33333 8.75 5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
 </svg>

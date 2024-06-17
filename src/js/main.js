@@ -411,11 +411,42 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // colorPick
+const colorPick = document.getElementById('colorPick');
 
-document.getElementById('colorPick').addEventListener('input', function(event) {
-  const colorBox = document.getElementById('colorBox');
-  const selectedColor = event.target.value;
-  colorBox.style.backgroundColor = selectedColor;
+if (colorPick) {
+  colorPick.addEventListener('input', function(event) {
+    const colorBox = document.getElementById('colorBox');
+    const selectedColor = event.target.value;
+    colorBox.style.backgroundColor = selectedColor;
+  });
+}
+
+
+// Show/hide password
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-password]").forEach(function (tooltip) {
+    const trigger = tooltip.querySelector("[data-password-trigger]");
+    const crossLine = tooltip.querySelector("[data-password-line]");
+    const inputPassword = tooltip.querySelector("input");
+    let isPasswordVisible = false;
+
+    // Function to show/hide password
+    function showPassword() {
+      if (!isPasswordVisible) {
+        inputPassword.type = "text";
+        crossLine.classList.add("crossline-hidden");
+        isPasswordVisible = true;
+      } else {
+        inputPassword.type = "password";
+        crossLine.classList.remove("crossline-hidden");
+        isPasswordVisible = false;
+      }
+    }
+
+    // Listen for click on the toggle pasword
+    trigger.addEventListener("click", function (event) {
+      showPassword();
+    });
+  });
 });

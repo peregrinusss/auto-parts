@@ -60,13 +60,15 @@
                                 <h4 class="text-primary text-lg">Код:</h4>
                                 @@include('shared/input.html', {
                                 placeholder: "Код",
+                                value: ""
                                 })
                                 <h4 class="text-gray-500 text-md">внутренний код машины в системе.</h4>
                             </div>
                             <div class="flex flex-col gap-1">
                                 <h4 class="text-primary text-lg">Год:</h4>
                                 @@include('shared/input.html', {
-                                placeholder: "Год",
+                                placeholder: "Год", 
+                                value: ""
                                 })
                             </div>
                         </div>
@@ -84,7 +86,7 @@
                             <div class="w-full flex flex-col gap-1">
                                 <h4 class="text-primary text-lg">Объем двигателя:</h4>
                                 @@include('shared/input.html', {
-                                placeholder: "Объем двигателя",
+                                placeholder: "Объем двигателя", value: ""
                                 })
                                 <h4 class="text-gray-500 text-md">В кубических сантиментрах (например 1600).</h4>
                             </div>
