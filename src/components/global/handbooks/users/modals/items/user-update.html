@@ -48,7 +48,9 @@
                   Email:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите email", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите email", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -57,7 +59,8 @@
                   <span class="text-danger">*</span>
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите телефон", value: "+7(915)9466695" })
+                  @@include('shared/input.html', { placeholder: "Введите телефон", value: "+7(915)9466695", type: "text",
+                  optional_attr: "" })
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -65,7 +68,8 @@
                   Пароль:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]" data-password>
-                  @@include('shared/input.html', { placeholder: "Введите пароль", value: "123123123", type: "password", class: "!pr-10" })
+                  @@include('shared/input.html', { placeholder: "Введите пароль", value: "123123123", type: "password", class: "!pr-10",
+                  optional_attr: ""})
                   <div class="absolute right-2 top-0 bottom-0 my-auto w-8 h-8 rounded-full flex items-center justify-center p-2 cursor-pointer active:opacity-70 transition-all" data-password-trigger>
                     @@include('shared/sprite.html', { name: "eye", class: "w-10 h-10 text-gray-500" })
                     <div class="absolute text-lg font-normal text-gray-500" data-password-line>
@@ -79,7 +83,9 @@
                   Фамилия:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите фамилию", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите фамилию", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -87,7 +93,9 @@
                   Имя:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите имя", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите имя", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -95,7 +103,9 @@
                   Отчество:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите отчество", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите отчество", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -122,30 +132,30 @@
               </div>
               <div class="grid grid-cols-[180px_1fr] items-start gap-2">
                 <h4 class="text-lg text-blue-gray">Роли:</h4>
-                <div class="">
+                <div class="flex flex-col gap-2">
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change9", label: "Внесение запчастей" })
+                    @@include('shared/checkbox.html', { id: "change9", label: "Внесение запчастей", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change10", label: "Кладовщик" })
+                    @@include('shared/checkbox.html', { id: "change10", label: "Кладовщик", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change11", label: "Продавец" })
+                    @@include('shared/checkbox.html', { id: "change11", label: "Продавец", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change12", label: "Ревизор (склад)" })
+                    @@include('shared/checkbox.html', { id: "change12", label: "Ревизор (склад)", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change13", label: "Супервайзер" })
+                    @@include('shared/checkbox.html', { id: "change13", label: "Супервайзер", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change14", label: "Управление запчастями" })
+                    @@include('shared/checkbox.html', { id: "change14", label: "Управление запчастями", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change15", label: "Управление запчастями глобальное" })
+                    @@include('shared/checkbox.html', { id: "change15", label: "Управление запчастями глобальное", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change16", label: "Управляющий" })
+                    @@include('shared/checkbox.html', { id: "change16", label: "Управляющий", optional_attr: "" })
                   </div>
                 </div>
               </div>
@@ -164,7 +174,7 @@
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
                 <h4 class="text-lg text-blue-gray">Активен:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/checkbox.html', { id: "active1", label: "" })
+                  @@include('shared/checkbox.html', { id: "active1", label: "", optional_attr: "checked" })
                 </div>
               </div>
               <button type="button" data-graph-path="changelog" class="inline-flex cursor-pointer text-2lg text-primary">

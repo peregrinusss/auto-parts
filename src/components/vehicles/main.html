@@ -45,21 +45,6 @@
                 class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
               >
                 Моделей
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
               </p>
             </th>
             <th
@@ -69,21 +54,6 @@
                 class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
               >
                 Каталог
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
               </p>
             </th>
           </tr>
@@ -135,5 +105,9 @@
       </table>
     </div>
   </div>
-  @@include('footer.html')
+  @@include('footer.html',
+      {summary:
+      "Всего 2 записи"
+      }
+  )
 </main>

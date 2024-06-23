@@ -5,11 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Авторазбор</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/src/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
   <link
     rel="stylesheet"
     href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
   />
   <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
 </head>
 
   <body>
@@ -647,70 +655,28 @@
           >
             <div class="flex flex-col gap-2">
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Название</span>
+                <span class="text-base font-normal text-black">Телефон</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Описание</span>
+                <span class="text-base font-normal text-black">Email</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">OEM</span>
+                <span class="text-base font-normal text-black">Имя</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Артикул</span>
+                <span class="text-base font-normal text-black">Фамилия</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Донор</span>
+                <span class="text-base font-normal text-black">Филиал</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                  >Применимость</span
-                >
+                <span class="text-base font-normal text-black">Роль</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Узел</span>
+                <span class="text-base font-normal text-black">Комментарий</span>
               </div>
               <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Группа</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Состояние</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Статус</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Фотографии</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                  >Особенность</span
-                >
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                  >Комментарий</span
-                >
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Обновлена</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">В архиве</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Хранение</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Цены</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Сотрудники</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Даты</span>
-              </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black">Ещё</span>
+                <span class="text-base font-normal text-black">Активен</span>
               </div>
             </div>
           </div>
@@ -895,6 +861,110 @@
               </p>
             </th>
           </tr>
+          <tr>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#loupe"
+  ></use>
+</svg>
+
+  </div>
+  <input
+    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+    placeholder="Фильтр"
+  />
+</div>
+
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#loupe"
+  ></use>
+</svg>
+
+  </div>
+  <input
+    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+    placeholder="Фильтр"
+  />
+</div>
+
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#loupe"
+  ></use>
+</svg>
+
+  </div>
+  <input
+    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+    placeholder="Фильтр"
+  />
+</div>
+
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                <div class="relative  w-full min-w-[200px] h-auto @@width">
+  <div
+    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+  >
+    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#loupe"
+  ></use>
+</svg>
+
+  </div>
+  <input
+    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+    placeholder="Фильтр"
+  />
+</div>
+
+              </div>
+            </th>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -941,9 +1011,18 @@
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
+              <div class="flex flex-col items-start justify-center gap-3">
                 <h4 class="text-md">
-                  Кладовщик Управление запчастями Внесение запчастей Ревизор
+                  Кладовщик
+                </h4>
+                <h4 class="text-md">
+                  Управление запчастями
+                </h4>
+                <h4 class="text-md">
+                  Внесение запчастей
+                </h4>
+                <h4 class="text-md">
+                  Ревизор
                   (склад)
                 </h4>
               </div>
@@ -964,14 +1043,91 @@
               </div>
             </td>
           </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="1"
+>
+  <input
+    id="1"
+    type="checkbox"
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+              <button table-item-button data-graph-path="user-update" class="flex flex-col gap-1">
+                <h4
+                        class="text-start text-md text-primary transition-all group-hover:text-primary group-hover:opacity-75"
+                >
+                  +7 915 946 6695
+                </h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex flex-col items-start justify-center gap-3">
+                <h4 class="text-md">
+                  Продавец
+
+                </h4>
+                <h4 class="text-md">
+                  Управление запчастями
+                </h4>
+                <h4 class="text-md">
+                  Внесение запчастей
+                </h4>
+                <h4 class="text-md">
+                  Ревизор (склад)
+                </h4>
+                <h4 class="text-md">
+                  Супервайзер
+                </h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Основной</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Артемий</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Чесноков</h4>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
-  <span
-class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased"
->Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422
-720 р.)
+  <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
+  Всего 2 записи
 </span>
 <div class="mt-3 flex items-center justify-between gap-5">
 <div class="flex items-center gap-2" data-pagination>
@@ -1151,7 +1307,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
     class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
   >
     <div class="flex flex-col justify-center gap-2">
-      <h3 class="text-xl font-bold">Изменение пользователя</h3>
+      <h3 class="text-xl font-bold">Создание пользователя</h3>
       <a
         href="#"
         class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
@@ -1194,7 +1350,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите email"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1209,7 +1366,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите телефон"
   value="+7(915)9466695"
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1224,6 +1382,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   placeholder="Введите пароль"
   value="123123123"
   type="password"
+  
 />
 
                   <div class="absolute right-2 top-0 bottom-0 my-auto w-8 h-8 rounded-full flex items-center justify-center p-2 cursor-pointer active:opacity-70 transition-all" data-password-trigger>
@@ -1249,7 +1408,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите фамилию"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1263,7 +1423,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите имя"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1277,7 +1438,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите отчество"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1368,7 +1530,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
               </div>
               <div class="grid grid-cols-[180px_1fr] items-start gap-2">
                 <h4 class="text-lg text-blue-gray">Роли:</h4>
-                <div class="">
+                <div class="flex flex-col gap-2">
                   <div class="relative h-fit w-full min-w-[200px]">
                     <div
   role="button"
@@ -1384,7 +1546,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change1"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1431,7 +1594,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change2"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1478,7 +1642,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change3"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1525,7 +1690,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change4"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1572,7 +1738,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change5"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1619,7 +1786,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change6"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1666,7 +1834,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change7"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1713,7 +1882,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change8"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1781,7 +1951,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="active"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            checked
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1897,7 +2068,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите email"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1912,7 +2084,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите телефон"
   value="+7(915)9466695"
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1927,6 +2100,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   placeholder="Введите пароль"
   value="123123123"
   type="password"
+  
 />
 
                   <div class="absolute right-2 top-0 bottom-0 my-auto w-8 h-8 rounded-full flex items-center justify-center p-2 cursor-pointer active:opacity-70 transition-all" data-password-trigger>
@@ -1952,7 +2126,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите фамилию"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1966,7 +2141,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите имя"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -1980,7 +2156,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите отчество"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2071,7 +2248,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
               </div>
               <div class="grid grid-cols-[180px_1fr] items-start gap-2">
                 <h4 class="text-lg text-blue-gray">Роли:</h4>
-                <div class="">
+                <div class="flex flex-col gap-2">
                   <div class="relative h-fit w-full min-w-[200px]">
                     <div
   role="button"
@@ -2087,7 +2264,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change9"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2134,7 +2312,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change10"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2181,7 +2360,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change11"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2228,7 +2408,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change12"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2275,7 +2456,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change13"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2322,7 +2504,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change14"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2369,7 +2552,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change15"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2416,7 +2600,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="change16"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2484,7 +2669,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="active1"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            checked
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -2760,7 +2946,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите название"
   value="Нижний Новгород"
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2774,7 +2961,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите сокращенное название"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2788,7 +2976,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите город"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2802,7 +2991,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите номер телефона"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2816,7 +3006,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите название"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2831,6 +3022,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   placeholder="Введите приоритет"
   value="0"
   type="number"
+  
 />
 
                 </div>
@@ -2845,7 +3037,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите филиал"
   value="Основной"
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -2884,7 +3077,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="active9"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -3002,7 +3196,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
   placeholder="Введите название"
   value=""
-  type="@@type"
+  type="text"
+  
 />
 
                 </div>
@@ -3024,7 +3219,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="active"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -3074,7 +3270,8 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
           <input
             id="active"
             type="checkbox"
-            class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
           />
           <span
             class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -3116,7 +3313,7 @@ class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal
         >
           <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit ml-auto whitespace-nowrap"
+  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit ml-auto js-modal-close whitespace-nowrap"
 >
   <h4>Закрыть</h4>
 </button>

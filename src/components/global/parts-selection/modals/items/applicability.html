@@ -103,7 +103,8 @@
                         <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
                             @@include('shared/checkbox.html', {
                             id: "nested-cars",
-                            label: "Автомобили"
+                            label: "Автомобили",
+                            optional_attr: ""
                             })
                         </div>
                         <div class="flex gap-2">
@@ -117,7 +118,8 @@
                         <div data-nested-content="nested-accordion-2" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
                             @@include('shared/checkbox.html', {
                             id: "nested-trucks",
-                            label: "Грузовики"
+                            label: "Грузовики",
+                            optional_attr: ""
                             })
                         </div>
                         <div class="flex gap-2">
@@ -132,13 +134,15 @@
                             <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
                                 @@include('shared/checkbox.html', {
                                 id: "nested-spares",
-                                label: "На обработку"
+                                label: "На обработку",
+                                optional_attr: ""
                                 })
                             </div>
                             <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
                                 @@include('shared/checkbox.html', {
                                 id: "nested-spares",
-                                label: "На отгрузку"
+                                label: "На отгрузку",
+                                optional_attr: ""
                                 })
                             </div>
                         </div>

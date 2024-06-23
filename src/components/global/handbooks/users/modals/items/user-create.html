@@ -9,7 +9,7 @@
     class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
   >
     <div class="flex flex-col justify-center gap-2">
-      <h3 class="text-xl font-bold">Изменение пользователя</h3>
+      <h3 class="text-xl font-bold">Создание пользователя</h3>
       <a
         href="#"
         class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
@@ -48,7 +48,9 @@
                   Email:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите email", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите email", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -57,7 +59,9 @@
                   <span class="text-danger">*</span>
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите телефон", value: "+7(915)9466695" })
+                  @@include('shared/input.html', { placeholder: "Введите телефон", value: "+7(915)9466695",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -65,7 +69,8 @@
                   Пароль:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]" data-password>
-                  @@include('shared/input.html', { placeholder: "Введите пароль", value: "123123123", type: "password", class: "!pr-10" })
+                  @@include('shared/input.html', { placeholder: "Введите пароль", value: "123123123", type: "password", class: "!pr-10",
+                  optional_attr: "" })
                   <div class="absolute right-2 top-0 bottom-0 my-auto w-8 h-8 rounded-full flex items-center justify-center p-2 cursor-pointer active:opacity-70 transition-all" data-password-trigger>
                     @@include('shared/sprite.html', { name: "eye", class: "w-10 h-10 text-gray-500" })
                     <div class="absolute text-lg font-normal text-gray-500" data-password-line>
@@ -79,7 +84,8 @@
                   Фамилия:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите фамилию", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите фамилию", value: "", type: "text",
+                  optional_attr: "" })
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -87,7 +93,9 @@
                   Имя:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите имя", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите имя", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -95,7 +103,9 @@
                   Отчество:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите отчество", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите отчество", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -122,30 +132,30 @@
               </div>
               <div class="grid grid-cols-[180px_1fr] items-start gap-2">
                 <h4 class="text-lg text-blue-gray">Роли:</h4>
-                <div class="">
+                <div class="flex flex-col gap-2">
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change1", label: "Внесение запчастей" })
+                    @@include('shared/checkbox.html', { id: "change1", label: "Внесение запчастей", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change2", label: "Кладовщик" })
+                    @@include('shared/checkbox.html', { id: "change2", label: "Кладовщик", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change3", label: "Продавец" })
+                    @@include('shared/checkbox.html', { id: "change3", label: "Продавец", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change4", label: "Ревизор (склад)" })
+                    @@include('shared/checkbox.html', { id: "change4", label: "Ревизор (склад)", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change5", label: "Супервайзер" })
+                    @@include('shared/checkbox.html', { id: "change5", label: "Супервайзер", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change6", label: "Управление запчастями" })
+                    @@include('shared/checkbox.html', { id: "change6", label: "Управление запчастями", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change7", label: "Управление запчастями глобальное" })
+                    @@include('shared/checkbox.html', { id: "change7", label: "Управление запчастями глобальное", optional_attr: "" })
                   </div>
                   <div class="relative h-fit w-full min-w-[200px]">
-                    @@include('shared/checkbox.html', { id: "change8", label: "Управляющий" })
+                    @@include('shared/checkbox.html', { id: "change8", label: "Управляющий", optional_attr: "" })
                   </div>
                 </div>
               </div>
@@ -164,7 +174,7 @@
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
                 <h4 class="text-lg text-blue-gray">Активен:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/checkbox.html', { id: "active", label: "" })
+                  @@include('shared/checkbox.html', { id: "active", label: "", optional_attr: "checked" })
                 </div>
               </div>
             </div>

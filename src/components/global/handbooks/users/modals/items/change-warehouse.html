@@ -49,7 +49,9 @@
                   <span class="text-danger">*</span>
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите название", value: "Нижний Новгород" })
+                  @@include('shared/input.html', { placeholder: "Введите название", value: "Нижний Новгород",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -57,7 +59,9 @@
                   Сокращенное название:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите сокращенное название", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите сокращенное название", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -65,7 +69,9 @@
                   Город:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите город", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите город", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -73,7 +79,9 @@
                   Номер телефона:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите номер телефона", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите номер телефона", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -81,7 +89,9 @@
                   Название в трекере:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите название", value: "" })
+                  @@include('shared/input.html', { placeholder: "Введите название", value: "",
+                  type: "text",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -89,7 +99,8 @@
                   Приоритет в выдаче на сайте:
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите приоритет", value: "0", type: "number" })
+                  @@include('shared/input.html', { placeholder: "Введите приоритет", value: "0", type: "number",
+                  optional_attr: ""})
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
@@ -98,7 +109,8 @@
                   <span class="text-danger">*</span>
                 </h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/input.html', { placeholder: "Введите филиал", value: "Основной" })
+                  @@include('shared/input.html', { placeholder: "Введите филиал", value: "Основной", type: "text",
+                  optional_attr: "" })
                 </div>
               </div>
               <div class="grid grid-cols-[180px_1fr] items-start gap-2">
@@ -116,7 +128,7 @@
               <div class="grid grid-cols-[180px_1fr] items-center gap-2">
                 <h4 class="text-lg text-blue-gray">Активно:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
-                  @@include('shared/checkbox.html', { id: "active9", label: "" })
+                  @@include('shared/checkbox.html', { id: "active9", label: "", optional_attr: "" })
                 </div>
               </div>
                 <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">

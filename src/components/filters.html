@@ -24,7 +24,8 @@
     </div>
     <div class="grid grid-cols-2 items-center gap-4">
       @@include('shared/select.html', { options: '<li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>' }) 
-      @@include('shared/input.html', {placeholder: "", value: ""})
+      @@include('shared/input.html', {placeholder: "", value: "", type: "text",
+      optional_attr: ""})
     </div>
   </div>
   <div class="flex items-center gap-20">
@@ -52,7 +53,8 @@
     </div>
     <div class="grid grid-cols-2 items-center gap-4">
       @@include('shared/select.html', { options: '<li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option B</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option C</li>' }) 
-      @@include('shared/input.html', {placeholder: "", value: ""})
+      @@include('shared/input.html', {placeholder: "", value: "", type: "text",
+      optional_attr: ""})
     </div>
   </div>
   <div class="flex items-center gap-5">

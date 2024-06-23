@@ -450,3 +450,154 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+//popover
+
+document.querySelectorAll('[data-popover-wrapper]').forEach(wrapper => {
+  const trigger = wrapper.querySelector('[data-popover-trigger]');
+  const content = wrapper.querySelector('[data-popover-content]');
+
+  trigger.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (content.classList.contains('opacity-0')) {
+      content.classList.remove('opacity-0', 'invisible');
+      content.classList.add('opacity-80');
+    } else {
+      content.classList.remove('opacity-80');
+      content.classList.add('opacity-0');
+    }
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!wrapper.contains(event.target)) {
+      if (content.classList.contains('opacity-80')) {
+        content.classList.remove('opacity-80');
+        content.classList.add('opacity-0');
+        content.addEventListener('transitionend', function handleTransitionEnd() {
+          content.classList.add('invisible');
+          content.removeEventListener('transitionend', handleTransitionEnd);
+        });
+      }
+    }
+  });
+});
+
+
+//table columns & checkboxes
+
+document.addEventListener('DOMContentLoaded', () => {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][data-column]');
+  checkboxes.forEach(checkbox => {
+    const columnIndex = checkbox.getAttribute('data-column');
+    document.querySelectorAll(`#parts-table tr`).forEach(row => {
+      const cells = Array.from(row.children);
+      const cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
+      if (cell) {
+        if (!checkbox.checked) {
+          cell.classList.add('hidden');
+        }
+      }
+    });
+
+    checkbox.addEventListener('change', function() {
+      document.querySelectorAll(`#parts-table tr`).forEach(row => {
+        const cells = Array.from(row.children);
+        const cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
+        if (cell) {
+          if (this.checked) {
+            cell.classList.remove('hidden');
+          } else {
+            cell.classList.add('hidden');
+          }
+        }
+      });
+    });
+  });
+});
+
+
+// column sorting
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sortingTriggers = document.querySelectorAll('[data-sorting-trigger]');
+
+  sortingTriggers.forEach(trigger => {
+    const ascending = trigger.querySelector('[data-sorting-ascending]');
+    const descending = trigger.querySelector('[data-sorting-descending]');
+    const title = trigger.querySelector('[data-sorting-title]');
+    const sortingWrapper = trigger.querySelector('[data-sorting-wrapper]');
+
+    // По умолчанию скрыть sortingWrapper
+    if (sortingWrapper) {
+      sortingWrapper.classList.add('hidden');
+    }
+
+    if (title) {
+      title.classList.add('text-primary');
+      title.addEventListener('click', () => {
+        title.classList.toggle('underline');
+        if (sortingWrapper) {
+          sortingWrapper.classList.toggle('hidden');
+          sortingWrapper.classList.toggle('flex');
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+
+    if (ascending) {
+      ascending.addEventListener('click', () => {
+        const isActive = ascending.classList.toggle('text-primary');
+        if (isActive) {
+          title.classList.add('text-primary');
+        }
+        if (descending) {
+          descending.classList.remove('text-primary');
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+
+    if (descending) {
+      descending.addEventListener('click', () => {
+        const isActive = descending.classList.toggle('text-primary');
+        if (isActive) {
+          title.classList.add('text-primary');
+        }
+        if (ascending) {
+          ascending.classList.remove('text-primary');
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+  });
+
+  function resetOtherTriggers(activeTrigger) {
+    sortingTriggers.forEach(trigger => {
+      if (trigger !== activeTrigger) {
+        const ascending = trigger.querySelector('[data-sorting-ascending]');
+        const descending = trigger.querySelector('[data-sorting-descending]');
+        const title = trigger.querySelector('[data-sorting-title]');
+
+        if (ascending) {
+          ascending.classList.remove('text-primary');
+        }
+        if (descending) {
+          descending.classList.remove('text-primary');
+        }
+        if (title) {
+          title.classList.remove('underline');
+        }
+        // Скрыть sortingWrapper для неактивных триггеров
+        const sortingWrapper = trigger.querySelector('[data-sorting-wrapper]');
+        if (sortingWrapper) {
+          sortingWrapper.classList.add('hidden');
+          sortingWrapper.classList.remove('flex');
+        }
+      }
+    });
+  }
+});
+

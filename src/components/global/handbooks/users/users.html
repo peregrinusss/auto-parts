@@ -134,6 +134,58 @@
               </p>
             </th>
           </tr>
+          <tr>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                @@include('shared/input-search.html', {
+                placeholder: "Фильтр",
+                fontSize: "text-sm",
+                loupe: '<img src="../../../../img/icons/loupe.svg">'
+                })
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                @@include('shared/input-search.html', {
+                placeholder: "Фильтр",
+                fontSize: "text-sm",
+                loupe: '<img src="../../../../img/icons/loupe.svg">'
+                })
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                @@include('shared/input-search.html', {
+                placeholder: "Фильтр",
+                fontSize: "text-sm",
+                loupe: '<img src="../../../../img/icons/loupe.svg">'
+                })
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="md:w-18 w-full">
+                @@include('shared/input-search.html', {
+                placeholder: "Фильтр",
+                fontSize: "text-sm",
+                loupe: '<img src="../../../../img/icons/loupe.svg">'
+                })
+              </div>
+            </th>
+          </tr>
         </thead>
         <tbody>
           <tr>
@@ -152,9 +204,18 @@
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
-              <div class="flex items-center gap-3">
+              <div class="flex flex-col items-start justify-center gap-3">
                 <h4 class="text-md">
-                  Кладовщик Управление запчастями Внесение запчастей Ревизор
+                  Кладовщик
+                </h4>
+                <h4 class="text-md">
+                  Управление запчастями
+                </h4>
+                <h4 class="text-md">
+                  Внесение запчастей
+                </h4>
+                <h4 class="text-md">
+                  Ревизор
                   (склад)
                 </h4>
               </div>
@@ -175,9 +236,64 @@
               </div>
             </td>
           </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                @@include('shared/checkbox-input.html', {id: "1"})
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+              <button table-item-button data-graph-path="user-update" class="flex flex-col gap-1">
+                <h4
+                        class="text-start text-md text-primary transition-all group-hover:text-primary group-hover:opacity-75"
+                >
+                  +7 915 946 6695
+                </h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex flex-col items-start justify-center gap-3">
+                <h4 class="text-md">
+                  Продавец
+
+                </h4>
+                <h4 class="text-md">
+                  Управление запчастями
+                </h4>
+                <h4 class="text-md">
+                  Внесение запчастей
+                </h4>
+                <h4 class="text-md">
+                  Ревизор (склад)
+                </h4>
+                <h4 class="text-md">
+                  Супервайзер
+                </h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Основной</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Артемий</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Чесноков</h4>
+              </div>
+            </td>
+          </tr>
         </tbody>
       </table>
     </div>
   </div>
-  @@include('footer.html')
+  @@include('footer.html',
+  {summary:
+  "Всего 2 записи"
+  }
+  )
 </main>

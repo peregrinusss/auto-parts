@@ -4,9 +4,9 @@
     class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
   >
     <div class="overflow-x-auto rounded-xl">
-      <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+      <table id="parts-table" class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
         <thead>
-          <tr>
+          <tr class="h-[100px]">
 
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
@@ -16,52 +16,44 @@
               </div>
             </th>
             <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50  border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Артикул
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
+              <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Артикул</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Название
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
+              <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Название</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
@@ -70,21 +62,7 @@
                 class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
               >
                 Узел
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
+
               </p>
             </th>
             <th
@@ -94,60 +72,173 @@
                 class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
               >
                 ОЕМ
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
+              </p>
+            </th>
+            <th
+              class=" border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-default border-b p-3 transition-colors"
+            >
+              <div class="flex gap-2 items-center">
+                <p
+                        class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
                 >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
+                  Применимость
+                </p>
+                <div data-popover-wrapper class="relative  ">
+                  <div data-popover-trigger class="w-[20px] h-[20px]">
+                    <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 8V12M12 16H12.01M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+
+                  <div
+                          data-popover-content
+                          class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-[-125px] z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                    <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75">
+                    </span>
+                    При отображении применимости моделей, применимость к которым была определена через каталоги, модели будут выделены <i>курсивом</i>.<br/> При отображении применимости по производителям данные выводятся в формате: <i>Производитель: прямые + каталожные</i>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Применимость
-              </p>
+              <div data-sorting-trigger class="min-w-[120px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Цена</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Цена
-              </p>
+              <div class="min-w-[200px]">
+                <p class="font-semibold text-md">При продаже</p>
+                <div class="h-[30px] flex items-center gap-2">
+                  <div data-sorting-trigger class=" flex items-center justify-between gap-1 font-sans text-md font-normal leading-none antialiased ">
+                    <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Скидка</p>
+                    <div data-sorting-wrapper class="hidden gap-0.5 items-center">
+                      <div data-sorting-ascending class="mb-[5px]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                      <div data-sorting-descending class="mt-[5px]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                  <span class="w-[2px] h-[80%] bg-[#8E8E8E] translate-y-[5%] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-trigger class=" flex items-center justify-between gap-1 font-sans text-md font-normal leading-none antialiased ">
+                    <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Цена</p>
+                    <div data-sorting-wrapper class="hidden gap-0.5 items-center">
+                      <div data-sorting-ascending class="mb-[5px]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                      <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                      <div data-sorting-descending class="mt-[5px]">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-default border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                При продаже
-                <br />
-                Скидка / цена
-              </p>
+              <div class="min-w-[170px] flex gap-2">
+                <div data-sorting-trigger class=" flex items-center justify-between gap-1 font-sans text-md font-normal leading-none antialiased ">
+                  <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Связанных</p>
+                  <div data-popover-wrapper class="relative">
+                    <div data-popover-trigger class=" w-[20px] h-[20px] ">
+                      <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 8V12M12 16H12.01M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+
+                    <div
+                            data-popover-content
+                            class="invisible opacity-0 transition-opacity duration-300 cursor-default  w-[200px] absolute top-full  left-[-78px] z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900  py-2 px-4 text-sm text-white font-medium  border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                    <span class="absolute -top-1.5 left-[95%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75">
+                    </span>
+                      Количество связанных запчастей в наличии
+                    </div>
+                  </div>
+                  <div data-sorting-wrapper class="hidden gap-1 items-center">
+                    <div data-sorting-ascending class="mb-[5px]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                    <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                    <div data-sorting-descending class="mt-[5px]">
+                      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                      </svg>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
             </th>
             <th
-              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Связанных
-              </p>
+              <div data-sorting-trigger class="min-w-[120px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Место</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+            >
+              <div data-sorting-trigger class="min-w-[120px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Обновлена</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
           </tr>
           <tr>
@@ -217,6 +308,12 @@
             ></th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+                    class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
             ></th>
           </tr>
         </thead>
@@ -319,7 +416,9 @@
                             <div class="relative h-fit w-full min-w-[200px]">
                               @@include('shared/input.html', {
                                 placeholder: "OEM",
-                                value: ""
+                                value: "",
+                                type: "text",
+                                optional_attr: ""
                               })
                             </div>
                             <div class="relative h-16 w-full min-w-[200px]">
@@ -528,7 +627,9 @@
               </h4>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
-              <h4 class="text-md">Renault T</h4>
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
@@ -537,10 +638,20 @@
             <td class="border-blue-gray-50 border-b p-3">
               <h4 class="text-md">1</h4>
             </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
-  @@include('footer.html')
+  @@include('footer.html',
+  {summary:
+  "Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422720 р.)"
+  }
+  )
 </div>

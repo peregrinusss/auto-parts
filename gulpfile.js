@@ -97,6 +97,10 @@ function devThirdParty() {
   return src(`${options.paths.src.thirdParty}/**/*`).pipe(dest(options.paths.dist.thirdParty));
 }
 
+function devFavicons() {
+  return src(`${options.paths.src.base}/favicons/**/*`).pipe(dest(`${options.paths.dist.base}/favicons`));
+}
+
 function watchFiles() {
   watch(
       `${options.paths.src.base}/**/*.{html,php}`,
@@ -110,6 +114,7 @@ function watchFiles() {
   watch(`${options.paths.src.img}/**/*`, series(devImages, previewReload));
   watch(`${options.paths.src.fonts}/**/*`, series(devFonts, previewReload));
   watch(`${options.paths.src.thirdParty}/**/*`, series(devThirdParty, previewReload));
+  watch(`${options.paths.src.base}/favicons/**/*`, series(devFavicons, previewReload));
   console.log('\n\t' + logSymbols.info, 'Watching for Changes..\n');
 }
 
@@ -175,6 +180,10 @@ function prodThirdParty() {
   return src(`${options.paths.src.thirdParty}/**/*`).pipe(dest(options.paths.build.thirdParty));
 }
 
+function prodFavicons() {
+  return src(`${options.paths.src.base}/favicons/**/*`).pipe(dest(`${options.paths.build.base}/favicons`));
+}
+
 function prodClean() {
   console.log('\n\t' + logSymbols.info, 'Cleaning build folder for fresh start.\n');
   return src(options.paths.build.base, { read: false, allowEmpty: true }).pipe(clean());
@@ -190,13 +199,13 @@ function buildFinish(done) {
 
 exports.default = series(
     devClean, // Clean Dist Folder
-    parallel(devStyles, devScripts, bundleScripts, devImages, devFonts, devThirdParty, devHTML), // Run All tasks in parallel
+    parallel(devStyles, devScripts, bundleScripts, devImages, devFonts, devThirdParty, devFavicons, devHTML), // Run All tasks in parallel
     livePreview, // Live Preview Build
     watchFiles // Watch for Live Changes
 );
 
 exports.prod = series(
     prodClean, // Clean Build Folder
-    parallel(prodStyles, prodScripts, prodImages, prodHTML, prodFonts, prodThirdParty), // Run All tasks in parallel
+    parallel(prodStyles, prodScripts, prodImages, prodHTML, prodFonts, prodThirdParty, prodFavicons), // Run All tasks in parallel
     buildFinish
 );
