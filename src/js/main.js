@@ -291,11 +291,11 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // Предотвращение закрытия модального окна при клике внутри него
-  bottomModals.forEach((modal) => {
-    modal.addEventListener("click", (event) => {
-      event.stopPropagation();
-    });
-  });
+  // bottomModals.forEach((modal) => {
+  //   modal.addEventListener("click", (event) => {
+  //     event.stopPropagation();
+  //   });
+  // });
 });
 
 //orders
@@ -742,7 +742,7 @@ function createAndAppendContainer(title, point) {
     "gap-4",
     "transition-all",
     "hover:opacity-70",
-    "w-40"
+    "w-44"
   );
 
   // Create SVG container
@@ -933,3 +933,31 @@ function clearAllFilters() {
     point.classList.remove("filter-choosed");
   });
 }
+
+
+// inventory checkbox
+document.addEventListener("DOMContentLoaded", function () {
+  const inventories = document.querySelector("[data-inventories]");
+  if (!inventories) return; // Проверка на наличие элемента inventories
+  
+  const inventoryItems = inventories.querySelectorAll("[data-inventory]");
+
+  inventoryItems.forEach((inventoryItem) => {
+    const inventoryCheckbox = inventoryItem.querySelector("[data-inventory-checkbox]");
+    const checkbox = inventoryCheckbox.querySelector("input[type='checkbox']");
+
+    checkbox.addEventListener("change", () => {
+      if (checkbox.checked) {
+        const currentDate = new Date();
+        const formattedDate = currentDate.toLocaleString(); // Форматирование даты и времени
+        const span = document.createElement("span");
+        span.classList.add("text-sm", "text-success", "font-normal");
+        span.textContent = `${formattedDate}`;
+        inventoryItem.classList.add("invetory-active");
+
+        inventoryCheckbox.innerHTML = ''; // Очистка содержимого элемента
+        inventoryCheckbox.appendChild(span); // Добавление нового span с датой и временем
+      }
+    });
+  });
+});

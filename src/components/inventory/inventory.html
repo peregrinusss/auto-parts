@@ -1,0 +1,69 @@
+<div class="mt-4">
+  <div class="rounded-[20px] bg-[#F3F5F6] py-6 px-4 w-fit mx-auto shadow-lg">
+    <span class="text-base text-black font-normal">Отсканируйте штриход полки или </span>
+    <span class="text-base text-primary font-normal underline cursor-pointer" data-graph-path="warehouse-place"> выберите полку вручную </span>
+  </div>
+  <div class="mx-auto w-fit mt-5">
+    @@include('shared/input.html', {
+      placeholder: "Штрихкод",
+      value: "",
+      class: "text-2lg h-[52px]",
+      type: "text",
+      optional_attr: ""
+      })
+  </div>
+  <div class="flex flex-col gap-4 w-fit mx-auto mt-8" data-inventories>
+    <div class="shadow-lg rounded-[20px] py-4 px-5 w-[600px]" data-inventory>
+      <div class="flex items-center justify-between gap-5">
+        <span class="text-base text-primary font-normal">Артикул: <strong>52106-19</strong></span>
+        <span class="text-base text-dark font-normal">OEM: 2104911</span>
+      </div>
+      <div class="text-base text-dark font-normal mt-2">Кронштейн амортизатора переднего</div>
+      <div class="flex items-center gap-5 justify-between mt-2">
+        <span class="text-md text-gray-500 font-normal"> Daf XF106 (2012-) </span>
+        <div class="" data-inventory-checkbox>
+          @@include('shared/checkbox-input.html', {id: "item1"})
+        </div>
+      </div>
+    </div>
+    <div class="shadow-lg rounded-[20px] py-4 px-5 w-[600px]" data-inventory>
+      <div class="flex items-center justify-between gap-5">
+        <span class="text-base text-primary font-normal">Артикул: <strong>52106-19</strong></span>
+        <span class="text-base text-dark font-normal">OEM: 2104911</span>
+      </div>
+      <div class="text-base text-dark font-normal mt-2">Кронштейн амортизатора переднего</div>
+      <div class="flex items-center gap-5 justify-between mt-2">
+        <span class="text-md text-gray-500 font-normal"> Daf XF106 (2012-) </span>
+        <div class="" data-inventory-checkbox>
+          @@include('shared/checkbox-input.html', {id: "item1"})
+        </div>
+      </div>
+    </div>
+    <div class="shadow-lg rounded-[20px] py-4 px-5 w-[600px]" data-inventory>
+      <div class="flex items-center justify-between gap-5">
+        <span class="text-base text-primary font-normal">Артикул: <strong>52106-19</strong></span>
+        <span class="text-base text-dark font-normal">OEM: 2104911</span>
+      </div>
+      <div class="text-base text-dark font-normal mt-2">Кронштейн амортизатора переднего</div>
+      <div class="flex items-center gap-5 justify-between mt-2">
+        <span class="text-md text-gray-500 font-normal"> Daf XF106 (2012-) </span>
+        <div class="" data-inventory-checkbox>
+          @@include('shared/checkbox-input.html', {id: "item1"})
+        </div>
+      </div>
+    </div>
+    <div class="shadow-lg rounded-[20px] py-4 px-5 w-[600px]" data-inventory>
+      <div class="flex items-center justify-between gap-5">
+        <span class="text-base text-primary font-normal">Артикул: <strong>52106-19</strong></span>
+        <span class="text-base text-dark font-normal">OEM: 2104911</span>
+      </div>
+      <div class="text-base text-dark font-normal mt-2">Кронштейн амортизатора переднего</div>
+      <div class="flex items-center gap-5 justify-between mt-2">
+        <span class="text-md text-gray-500 font-normal"> Daf XF106 (2012-) </span>
+        <div class="" data-inventory-checkbox>
+          @@include('shared/checkbox-input.html', {id: "item1"})
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

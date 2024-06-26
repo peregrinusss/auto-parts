@@ -18,82 +18,62 @@
                         </button>
                         <div
                                 minimodal-bottom-content
-                                class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                         >
-                            <div class="flex flex-col gap-2">
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Название</span>
+                            <div class="flex flex-col gap-2" data-filters>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="name">
+                                    <span class="text-base font-normal text-black">Заказ</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Описание</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">OEM</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Артикул</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Донор</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Применимость</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Узел</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Группа</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Состояние</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="status">
                                     <span class="text-base font-normal text-black">Статус</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="client">
+                                    <span class="text-base font-normal text-black">Клиент</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="responsible">
+                                    <span class="text-base font-normal text-black">Ответственный</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="partner">
+                                    <span class="text-base font-normal text-black">Участник сделки</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="source">
                   <span class="text-base font-normal text-black"
-                  >Фотографии</span
+                  >Источник</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="payment">
+                                    <span class="text-base font-normal text-black">Способ оплаты</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="paid">
+                                    <span class="text-base font-normal text-black">Оплачен</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="returned">
                   <span class="text-base font-normal text-black"
-                  >Особенность</span
+                  >Есть возвращённые запчасти</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="comment">
+                                    <span class="text-base font-normal text-black">Комментарий</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="user">
                   <span class="text-base font-normal text-black"
-                  >Комментарий</span
+                  >Добавил</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="amount">
                   <span class="text-base font-normal text-black"
-                  >Обновлена</span
+                  >Сумма</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">В архиве</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Хранение</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Цены</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="updated">
                   <span class="text-base font-normal text-black"
-                  >Сотрудники</span
+                  >Дата обновления</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Даты</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Ещё</span>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="created">
+                  <span class="text-base font-normal text-black"
+                  >Дата добавления</span
+                  >
                                 </div>
                             </div>
                         </div>
@@ -111,7 +91,7 @@
 
                         <div
                                 minimodal-bottom-content
-                                class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                         >
                             <div class="flex flex-col gap-2">
                                 <div class="px-4 py-1 transition-all hover:bg-gray-100">
