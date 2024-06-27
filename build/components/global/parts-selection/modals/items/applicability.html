@@ -76,22 +76,26 @@
                             </h4>
                         </button>
                     </div>
-                    <div class="relative  w-full min-w-[200px] h-auto max-w-[200px]">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                    
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto max-w-[200px]">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      @@loupe
+    </div>
+    <input
+            class="text-blue-gray-700 @@fontSize disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр по модели..."
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 @@fontSize disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр по модели..."
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
                 </div>
@@ -105,6 +109,7 @@
   <input
     id="different"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -140,6 +145,7 @@
   <input
     id="cars"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -222,6 +228,7 @@
   <input
     id="trucks"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -304,6 +311,7 @@
   <input
     id="spares"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -440,7 +448,8 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-full whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-full whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>

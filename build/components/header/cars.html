@@ -38,7 +38,7 @@
                         </div>
                         <div
                                 minimodal-bottom-content
-                                class="absolute right-0 top-[7px] hidden w-max translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                class="absolute left-0 top-[7px] hidden w-max translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                         >
                             <div class="flex flex-col gap-2">
 
@@ -106,80 +106,32 @@
                                 minimodal-bottom-content
                                 class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                         >
-                            <div class="flex flex-col gap-2">
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Название</span>
+                            <div class="flex flex-col gap-2" data-filters>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="name">
+                                    <span class="text-base font-normal text-black">Модель ТС</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="code">
+                                    <span class="text-base font-normal text-black">Код</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="year">
+                                    <span class="text-base font-normal text-black">Год</span>
+                                </div>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="description">
                                     <span class="text-base font-normal text-black">Описание</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">OEM</span>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="branch">
+                                    <span class="text-base font-normal text-black">Филиал</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Артикул</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Донор</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Применимость</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Узел</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Группа</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Состояние</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Статус</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Фотографии</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Особенность</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="comment">
                   <span class="text-base font-normal text-black"
                   >Комментарий</span
                   >
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Обновлена</span
-                  >
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="created">
+                                    <span class="text-base font-normal text-black">Добавлена</span>
                                 </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">В архиве</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Хранение</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Цены</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                  <span class="text-base font-normal text-black"
-                  >Сотрудники</span
-                  >
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Даты</span>
-                                </div>
-                                <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                    <span class="text-base font-normal text-black">Ещё</span>
+                                <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="active">
+                                    <span class="text-base font-normal text-black">Активно</span>
                                 </div>
                             </div>
                         </div>

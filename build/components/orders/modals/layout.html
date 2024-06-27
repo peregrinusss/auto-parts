@@ -62,7 +62,7 @@
                                 <h4 class="text-blue-gray text-lg">Имя клиента:</h4>
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Имя клиента"
   value=""
   type="text"
@@ -75,7 +75,7 @@
                                 <h4 class="text-blue-gray text-lg">Телефон:</h4>
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Телефон"
   value=""
   type="text"
@@ -379,10 +379,14 @@
                                 Комментарий:
                             </label>
                             <textarea
-  rows="5"
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
-  placeholder="Напишите что-нибудь"
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Напишите что-нибудь"
 ></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
 
                             <h5 class="text-md text-gray-500">
                                 Комментарий для сотрудников, клиентам не отображается.
@@ -420,14 +424,16 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
 
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Отмена</h4>
 </button>
@@ -511,11 +517,12 @@
               <div class="inline-flex items-center">
                 <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="0"
+  htmlfor="parts-0"
 >
   <input
-    id="0"
+    id="parts-0"
     type="checkbox"
+    data-table-checkbox-main="parts" 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -774,22 +781,26 @@
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
             >
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -798,22 +809,26 @@
                     class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
             >
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -822,22 +837,26 @@
                     class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
             >
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -846,22 +865,26 @@
                     class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
             >
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -870,22 +893,26 @@
                     class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
             >
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -913,11 +940,12 @@
               <div class="inline-flex items-center">
                 <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="1"
+  htmlfor="parts-1"
 >
   <input
-    id="1"
+    id="parts-1"
     type="checkbox"
+    data-table-checkbox-secondary='parts' 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -977,265 +1005,6 @@
                   </div>
                 </div>
               </button>
-
-              <div
-                table-item-modal
-                class="duration-400 fixed inset-0 z-50 flex hidden items-center justify-center overflow-y-scroll bg-black bg-opacity-10 backdrop-blur-[5px] transition-all"
-              >
-                <div
-                  table-modal-content
-                  class="duration-400 h-[95dvh] w-3/5 translate-y-14 transform justify-center overflow-hidden rounded-[30px] bg-white opacity-0 shadow-lg transition-all"
-                >
-                  <div
-                    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
-                  >
-                    <div class="flex flex-col justify-center gap-2">
-                      <h3 class="text-xl font-bold">
-                        Изменение запчасти
-                        <a
-                          href="#"
-                          class="opacity-85 text-base text-primary transition-all hover:opacity-80"
-                          >показать на сайте</a
-                        >
-                      </h3>
-                      <a
-                        href="#"
-                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
-                        >запчасти</a
-                      >
-                      <div class="flex flex-col">
-                        <h5 class="text-md">Артикул: 68411</h5>
-                        <h5 class="text-md">Б/у, в наличии</h5>
-                      </div>
-                    </div>
-                    <div class="absolute right-5 top-5 flex items-center gap-3">
-                      <div table-close-modal class="flex h-8 w-8 items-center">
-                        <svg
-                          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
-                          focusable="false"
-                          aria-hidden="true"
-                          viewBox="0 0 24 24"
-                          data-testid="CloseIcon"
-                        >
-                          <path
-                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                          ></path>
-                        </svg>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="">
-                    <form>
-                      <div class="h-[70vh] overflow-y-scroll">
-                        <div class="grid grid-cols-3 px-12">
-                          <div
-                            class="flex flex-col gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
-                          >
-                            <div class="relative h-fit w-full min-w-[200px]">
-                              <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
-  placeholder="OEM"
-  value=""
-  type="text"
-  
-/>
-
-                            </div>
-                            <div class="relative h-16 w-full min-w-[200px]">
-                              <div
-                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                  class="h-7 w-7"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                                  ></path>
-                                </svg>
-                              </div>
-                              <input
-                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                placeholder=" "
-                              />
-                              <label
-                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                              >
-                                Узел
-                              </label>
-                            </div>
-                            <div class="relative h-16 w-full min-w-[200px]">
-                              <div
-                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                  class="h-7 w-7"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                                  ></path>
-                                </svg>
-                              </div>
-                              <input
-                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                placeholder=" "
-                              />
-                              <label
-                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                              >
-                                Донор
-                              </label>
-                            </div>
-                          </div>
-                          <div
-                            class="flex flex-col items-center justify-center gap-3 px-4 pb-8 pt-12"
-                          >
-                            <p class="text-xl text-primary">Применимость:</p>
-                            <div class="flex flex-col gap-2">
-                              <p class="text-2lg text-blue-gray">
-                                Scania 5-series G
-                              </p>
-                              <p class="text-2lg text-blue-gray">
-                                Scania 5-series P
-                              </p>
-                              <p class="text-2lg text-blue-gray">
-                                Scania 5-series R
-                              </p>
-                              <button class="cursor-pointer text-primary">
-                                Выбрать...
-                              </button>
-                            </div>
-                          </div>
-                          <div
-                            class="flex flex-col gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
-                          >
-                            <div class="relative h-16 w-full min-w-[200px]">
-                              <input
-                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer pointer-events-none h-full w-full cursor-not-allowed rounded-[7px] border bg-blue-gray bg-opacity-20 px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                placeholder=" "
-                              />
-                              <label
-                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                              >
-                                Замены
-                              </label>
-                            </div>
-                            <div class="relative h-16 w-full min-w-[200px]">
-                              <div
-                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                  class="h-7 w-7"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                                  ></path>
-                                </svg>
-                              </div>
-                              <input
-                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                placeholder=" "
-                              />
-                              <label
-                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                              >
-                                Бренд Avito
-                              </label>
-                            </div>
-                            <div class="relative h-16 w-full min-w-[200px]">
-                              <div
-                                class="text-blue-gray-500 absolute right-3 top-2/4 grid h-7 w-7 -translate-y-2/4 place-items-center"
-                              >
-                                <svg
-                                  xmlns="http://www.w3.org/2000/svg"
-                                  fill="none"
-                                  viewBox="0 0 24 24"
-                                  stroke-width="1.5"
-                                  stroke="currentColor"
-                                  aria-hidden="true"
-                                  class="h-7 w-7"
-                                >
-                                  <path
-                                    stroke-linecap="round"
-                                    stroke-linejoin="round"
-                                    d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
-                                  ></path>
-                                </svg>
-                              </div>
-                              <input
-                                class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-2lg font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                placeholder=" "
-                              />
-                              <label
-                                class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-2lg font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[3.75] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-[11px] peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                              >
-                                Название
-                              </label>
-                            </div>
-                          </div>
-                        </div>
-
-                        <div
-                          class="flex flex-col gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
-                        >
-                          <div
-                            id="preview-container"
-                            class="grid grid-cols-5 gap-4"
-                          >
-                            <div
-                              class="w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
-                            >
-                              <img
-                                class="h-full rounded-[8px] object-cover"
-                                src="../img/gallery-item.jpeg"
-                                alt="detail"
-                              />
-                            </div>
-                          </div>
-                          <div class="flex w-full items-center justify-center">
-                            <div class="group relative w-fit upload cursor-pointer active:opacity-60">
-                              <button
-        type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 @@class whitespace-nowrap"
->
-  <h4>Загрузить изображения +</h4>
-</button>
-
-                              <input
-                                id="fileInput"
-                                class="absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
-                                multiple
-                                accept="image/*"
-                                type="file"
-                              />
-                            </div>
-                          </div>
-                        </div>
-
-
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <div class="flex w-min justify-start">
@@ -1268,9 +1037,676 @@
               <h4 class="text-md">21 июня 09:22</h4>
             </td>
           </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-2"
+>
+  <input
+    id="parts-2"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-3"
+>
+  <input
+    id="parts-3"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-4"
+>
+  <input
+    id="parts-4"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+          <tr class="disabled-item">
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-5"
+>
+  <input
+    id="parts-5"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+          <tr class="disabled-item">
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-6"
+>
+  <input
+    id="parts-6"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="parts-7"
+>
+  <input
+    id="parts-7"
+    type="checkbox"
+    data-table-checkbox-secondary='parts'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">59513-1</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group border-b p-3">
+
+              <button type="button"  data-graph-path="change" class="flex flex-col gap-1">
+                <div class="flex items-center gap-2">
+                  <div class="group relative h-12 w-12 flex-shrink-0">
+                    <img
+                            src="../img/engine.png"
+                            alt="engine"
+                            class="h-full w-full rounded-[5px] object-cover"
+                    />
+                  </div>
+                  <h4
+                          class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                  >
+                    Абсорбер топливной системы
+                  </h4>
+                </div>
+                <div class="flex flex-wrap gap-1">
+                  <div
+                          class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>в работе</span>
+                  </div>
+                  <div
+                          class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                  >
+                    <span>омск</span>
+                  </div>
+                </div>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                      class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+              >
+                A9402940701
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <button type="button" data-graph-path="current_applicability">
+                <h4 class="text-md">Renault T</h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3"></td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">1</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">S1-3</h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4 class="text-md">21 июня 09:22</h4>
+            </td>
+          </tr>
+
         </tbody>
       </table>
     </div>
+
+    <div class="absolute top-0 right-0">
+    <div class="relative ">
+        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2">
+            <div id="toast-success"
+                 class="flex hidden  items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    <span class="sr-only">Check icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Сохранено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-success').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="toast-danger"
+                 class="flex hidden items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                    </svg>
+                    <span class="sr-only">Error icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Удалено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-danger').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
   </div>
   <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
   Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422720 р.)
@@ -1390,46 +1826,46 @@
     class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
   >
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">20</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">50</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">100</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">500</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">1000</span>
       </h4>
@@ -1437,7 +1873,12 @@
   </div>
 </div>
 </div>
+
+
+
 </div>
+
+
 
 
 
@@ -1449,7 +1890,8 @@
                     <div class="flex  gap-4">
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>

@@ -651,16 +651,16 @@
           </button>
           <div
             minimodal-bottom-content
-            class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+            class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
           >
-            <div class="flex flex-col gap-2">
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
+            <div class="flex flex-col gap-2" data-filters>
+              <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="name">
                 <span class="text-base font-normal text-black">Название</span>
               </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
+              <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="category">
                 <span class="text-base font-normal text-black">Категория</span>
               </div>
-              <div class="px-4 py-1 transition-all hover:bg-gray-100">
+              <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="active">
                 <span class="text-base font-normal text-black">Активно</span>
               </div>
             </div>
@@ -691,6 +691,7 @@
   <input
     id="0"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -793,44 +794,52 @@
             </th>
             <th class="border-blue-gray-50 group cursor-pointer border-b p-3">
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg" />
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
             </th>
             <th class="border-blue-gray-50 border-b p-3">
               <div class="md:w-18 w-full">
-                <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg" />
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
               </div>
@@ -851,6 +860,7 @@
   <input
     id="1"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -1017,46 +1027,46 @@
     class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
   >
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">20</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">50</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">100</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">500</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">1000</span>
       </h4>
@@ -1120,7 +1130,7 @@
                 <h4 class="text-lg text-blue-gray">Название:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Введите название"
   value=""
   type="text"
@@ -1133,10 +1143,14 @@
                 <h4 class="text-lg text-blue-gray">Альтернативные названия:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
                   <textarea
-  rows="5"
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
-  placeholder="Введите названия"
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Введите названия"
 ></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
 
                 </div>
               </div>
@@ -1144,7 +1158,7 @@
                 <h4 class="text-lg text-blue-gray">ID в Авито:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Введите название"
   value=""
   type="text"
@@ -1161,10 +1175,14 @@
                 <h4 class="text-lg text-blue-gray">Комментарий:</h4>
                 <div class="relative h-fit w-full min-w-[200px]">
                   <textarea
-  rows="5"
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
-  placeholder="Введите комментарий"
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Введите комментарий"
 ></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
 
                 </div>
               </div>
@@ -1237,14 +1255,16 @@
           <div class="ml-auto flex items-center gap-4 w-fit">
             <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
 
             <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit js-modal-close whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit js-modal-close whitespace-nowrap"
 >
   <h4>Закрыть</h4>
 </button>

@@ -1,0 +1,734 @@
+<div
+  class="graph-modal__container"
+  style="width: 65%"
+  role="dialog"
+  aria-modal="true"
+  data-graph-target="user-update"
+>
+  <div
+    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold">Изменение пользователя</h3>
+      <a
+        href="#"
+        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+        >Пользователи
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+        aria-label="Закрыть модальное окно"
+        class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="CloseIcon"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-[60vh] overflow-y-scroll">
+          <div class="px-8">
+            <div class="flex flex-col gap-8 pb-8 pt-12">
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Email:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Введите email"
+  value=""
+  type="text"
+  
+/>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Телефон:
+                  <span class="text-danger">*</span>
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Введите телефон"
+  value="+7(915)9466695"
+  type="text"
+  
+/>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Пароль:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]" data-password>
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed !pr-10"
+  placeholder="Введите пароль"
+  value="123123123"
+  type="password"
+  
+/>
+
+                  <div class="absolute right-2 top-0 bottom-0 my-auto w-8 h-8 rounded-full flex items-center justify-center p-2 cursor-pointer active:opacity-70 transition-all" data-password-trigger>
+                    <svg class="transition-all duration-300 text-black w-10 h-10 text-gray-500">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#eye"
+  ></use>
+</svg>
+
+                    <div class="absolute text-lg font-normal text-gray-500" data-password-line>
+                      /
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Фамилия:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Введите фамилию"
+  value=""
+  type="text"
+  
+/>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Имя:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Введите имя"
+  value=""
+  type="text"
+  
+/>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Отчество:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Введите отчество"
+  value=""
+  type="text"
+  
+/>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Филиал:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">-</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Основной</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Склад:
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <div class="custom-select relative w-full">
+  <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+    <button
+      type="button"
+      class="select-button flex w-full items-center justify-between px-3 py-2 text-left"
+    >
+      <span class="selected-option"></span>
+      <svg
+        class="h-5 w-5"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M19 9l-7 7-7-7"
+        ></path>
+      </svg>
+    </button>
+  </div>
+  <ul
+    class="dropdown-options pointer-events-none absolute z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+  >
+    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">-</li><li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний Новгород</li>
+    <!-- example option: -->
+    <!-- <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Option A</li> -->
+  </ul>
+</div>
+
+                </div>
+              </div>
+              <div class="-mt-7 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Склад, выбираемый автоматически при создании элементов.</span
+                >
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Роли:</h4>
+                <div class="flex flex-col gap-2">
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change9" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change9"
+        >
+          <input
+            id="change9"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Внесение запчастей
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change10" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change10"
+        >
+          <input
+            id="change10"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Кладовщик
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change11" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change11"
+        >
+          <input
+            id="change11"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Продавец
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change12" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change12"
+        >
+          <input
+            id="change12"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Ревизор (склад)
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change13" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change13"
+        >
+          <input
+            id="change13"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Супервайзер
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change14" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change14"
+        >
+          <input
+            id="change14"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Управление запчастями
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change15" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change15"
+        >
+          <input
+            id="change15"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Управление запчастями глобальное
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="change16" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="change16"
+        >
+          <input
+            id="change16"
+            type="checkbox"
+            
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      Управляющий
+    </h4>
+  </label>
+</div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <textarea
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Введите комментарий"
+></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
+
+                </div>
+              </div>
+              <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Комментарий для сотрудников, клиентам не отображается.</span
+                >
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Активен:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+>
+  <label htmlfor="active1" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="active1"
+        >
+          <input
+            id="active1"
+            type="checkbox"
+            checked
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+    >
+      
+    </h4>
+  </label>
+</div>
+
+                </div>
+              </div>
+              <button type="button" data-graph-path="changelog" class="inline-flex cursor-pointer text-2lg text-primary">
+                Посмотреть журнал изменений
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-between border-t-2 border-solid border-gray-200 p-5"
+        >
+          <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Удалить</h4>
+</button>
+
+          <div class="ml-auto flex w-fit items-center gap-4">
+            <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+            <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit whitespace-nowrap"
+>
+  <h4>Отмена</h4>
+</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

@@ -653,72 +653,18 @@
                             minimodal-bottom-content
                             class="absolute left-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                     >
-                        <div class="flex flex-col gap-2">
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Название</span>
+                        <div class="flex flex-col gap-2" data-filters>
+                            <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="name">
+                                <span class="text-base font-normal text-black">Имя</span>
                             </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Описание</span>
+                            <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="comment">
+                                <span class="text-base font-normal text-black">Отзыв</span>
                             </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">OEM</span>
+                            <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="created">
+                                <span class="text-base font-normal text-black">Дата добавления</span>
                             </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Артикул</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Донор</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                >Применимость</span
-                >
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Узел</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Группа</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Состояние</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Статус</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Фотографии</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                >Особенность</span
-                >
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                <span class="text-base font-normal text-black"
-                >Комментарий</span
-                >
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Обновлена</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">В архиве</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Хранение</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Цены</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Сотрудники</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Даты</span>
-                            </div>
-                            <div class="px-4 py-1 transition-all hover:bg-gray-100">
-                                <span class="text-base font-normal text-black">Ещё</span>
+                            <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="active">
+                                <span class="text-base font-normal text-black">Активно</span>
                             </div>
                         </div>
                     </div>
@@ -744,6 +690,8 @@
 </header>
 
         <main class="mb-8 mt-4">
+    <div data-filters-area></div>
+
     <div
             class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
@@ -762,6 +710,7 @@
   <input
     id="0"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -893,22 +842,26 @@
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
                     >
                         <div class="md:w-18 w-full">
-                            <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                            
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
                         </div>
@@ -917,22 +870,26 @@
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
                     >
                         <div class="md:w-18 w-full">
-                            <div class="relative  w-full min-w-[200px] h-auto @@width">
-  <div
-    class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
-  >
-    <svg class="transition-all duration-300 text-black w-5 h-5 !text-gray-500">
-  <use
-    class="w-full h-full object-contain"
-    href="../img/icons/sprite.svg#loupe"
-  ></use>
-</svg>
+                            
+<div>
 
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../../../../img/icons/loupe.svg">
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
   </div>
-  <input
-    class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
-    placeholder="Фильтр"
-  />
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
 </div>
 
                         </div>
@@ -956,6 +913,7 @@
   <input
     id="1"
     type="checkbox"
+    @@optional_attr
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -1134,46 +1092,46 @@
     class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
   >
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">20</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">50</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">100</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">500</span>
       </h4>
     </button>
     <button
-      class="z-30 flex-auto rounded-md p-1 px-2 text-center transition-all"
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
     >
       <h4
-        class="text-slate-700 z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
       >
         <span class="">1000</span>
       </h4>
@@ -1235,7 +1193,7 @@
                         <div class="flex flex-col gap-1">
                             <h4 class="text-primary text-lg">Имя:</h4>
                             <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Имя"
   value="Максим"
   type="text"
@@ -1257,10 +1215,14 @@
                                 Отзыв:
                             </label>
                             <textarea
-  rows="5"
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
-  placeholder="Напишите что-нибудь"
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Напишите что-нибудь"
 ></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
 
                         </div>
                         <div class="flex flex-col justify-between gap-3">
@@ -1321,7 +1283,8 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Удалить</h4>
 </button>
@@ -1331,14 +1294,16 @@
 
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
 
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Отмена</h4>
 </button>
@@ -1398,7 +1363,7 @@
                         <div class="flex flex-col gap-1">
                             <h4 class="text-primary text-lg">Имя:</h4>
                             <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 @@class"
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
   placeholder="Имя"
   value=""
   type="text"
@@ -1420,10 +1385,14 @@
                                 Отзыв:
                             </label>
                             <textarea
-  rows="5"
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
-  placeholder="Напишите что-нибудь"
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        placeholder="Напишите что-нибудь"
 ></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
 
                         </div>
                         <div class="flex flex-col justify-between gap-3">
@@ -1477,7 +1446,8 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Удалить</h4>
 </button>
@@ -1487,14 +1457,16 @@
 
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
 
                         <button
         type="button"
-  class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Отмена</h4>
 </button>
