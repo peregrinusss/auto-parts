@@ -121,9 +121,10 @@
     <path d="M7.71309 5.99999L1.70209 -0.0100098L0.288086 1.40399L4.88809 6.00399L0.288086 10.597L1.70209 12.011L7.71309 5.99999Z" fill="currentColor"/>
   </symbol>
 
-  <symbol id="cross-block" width="24" height="24"  fill="none" xmlns="http://www.w3.org/2000/svg">
-    <path d="M3 19L19 3M3 3L19 19" stroke="#212121" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <symbol id="cross-block" width="24" height="24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M3 19L19 3M3 3L19 19" stroke="currentColor" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
   </symbol>
+
   <symbol id="eye" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
     <path d="M4.1665 4.99984C4.1665 5.22085 4.2543 5.43281 4.41058 5.58909C4.56686 5.74537 4.77882 5.83317 4.99984 5.83317C5.22085 5.83317 5.43281 5.74537 5.58909 5.58909C5.74537 5.43281 5.83317 5.22085 5.83317 4.99984C5.83317 4.77882 5.74537 4.56686 5.58909 4.41058C5.43281 4.2543 5.22085 4.1665 4.99984 4.1665C4.77882 4.1665 4.56686 4.2543 4.41058 4.41058C4.2543 4.56686 4.1665 4.77882 4.1665 4.99984Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>
     <path d="M8.75 5C7.75 6.66667 6.5 7.5 5 7.5C3.5 7.5 2.25 6.66667 1.25 5C2.25 3.33333 3.5 2.5 5 2.5C6.5 2.5 7.75 3.33333 8.75 5Z" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"/>

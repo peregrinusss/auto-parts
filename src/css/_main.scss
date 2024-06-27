@@ -743,3 +743,12 @@ html {
 .invetory-active {
   background: #39cd3e4d !important;
 }
+
+
+.disabled-item {
+    background-color: lightgray !important;
+    color: gray !important;
+ //td:not(:nth-child(1)){
+ //  pointer-events: none;
+ //}
+}
