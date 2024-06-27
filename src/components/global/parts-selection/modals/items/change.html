@@ -50,31 +50,44 @@
                         <div
                                 class="flex flex-col justify-between gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
-                            <div class="relative h-fit w-full min-w-[200px]">
-                                @@include('shared/input.html', {
-                                placeholder: "OEM",
-                                value: "",
-                                type: "text",
-                                optional_attr: ""
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    OEM:
+                                </label>
+                                <div class="relative h-fit w-full min-w-[200px]">
+                                    @@include('shared/input.html', {
+                                    placeholder: "OEM",
+                                    value: "",
+                                    type: "text",
+                                    optional_attr: ""
+                                    })
+                                </div>
+                            </div>
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Узел:
+                                </label>
+                                @@include('shared/input-search.html', {
+                                placeholder: "Узел",
+                                fontSize: "text-lg cursor-default",
+                                hint: "Категории: Салон, Оснащение кузова",
+                                id: "hub",
+                                optional_attr: "readonly",
+                                loupe: '<button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
                                 })
                             </div>
-                            @@include('shared/input-search.html', {
-                            placeholder: "Узел",
-                            fontSize: "text-lg cursor-default",
-                            hint: "Категории: Салон, Оснащение кузова",
-                            id: "hub",
-                            optional_attr: "readonly",
-
-                            loupe: '<button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
-                            })
-
-                            @@include('shared/input-search.html', {
-                            placeholder: "Донор",
-                            fontSize: "text-lg cursor-default",
-                            hint: "внесено: 25.11.2022",
-                            id: "", optional_attr: "readonly",
-                            loupe: '<button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
-                            })
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Донор:
+                                </label>
+                                @@include('shared/input-search.html', {
+                                placeholder: "Донор",
+                                fontSize: "text-lg cursor-default",
+                                hint: "внесено: 25.11.2022",
+                                id: "", optional_attr: "readonly",
+                                loupe: '<button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
+                                })
+                            </div>
                         </div>
                         <div
                                 class="flex flex-col items-center justify-center gap-3 px-4 pb-8 pt-12"
@@ -99,21 +112,32 @@
                                 class="flex flex-col justify-between gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
                         >
 
-                            @@include('shared/input-search.html', {
-                            placeholder: "Бренд Avito",
-                            fontSize: "text-lg cursor-default",
-                            optional_attr: "readonly",
-                            hint: "Передается в поле «brand» при автозагрузке в Авито. Если не заполнено, передается производитель донора запчасти (при наличии). Если не указан донор, значение берется из применимости.",
-                            id: "",
-                            loupe: '<button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
-                            })
-                            @@include('shared/input-search.html', {
-                            placeholder: "Название",
-                            fontSize: "text-lg", optional_attr: "",
-                            hint: "Например: Бампер красный.",
-                            id: "",
-                            loupe: '<button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
-                            })
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Бренд Avito:
+                                </label>
+                                @@include('shared/input-search.html', {
+                                placeholder: "Бренд Avito",
+                                fontSize: "text-lg cursor-default",
+                                optional_attr: "readonly",
+                                hint: "Передается в поле «brand» при автозагрузке в Авито. Если не заполнено, передается производитель донора запчасти (при наличии). Если не указан донор, значение берется из применимости.",
+                                id: "",
+                                loupe: '<button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
+                                })
+                            </div>
+
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Название:
+                                </label>
+                                @@include('shared/input-search.html', {
+                                placeholder: "Название",
+                                fontSize: "text-lg", optional_attr: "",
+                                hint: "Например: Бампер красный.",
+                                id: "",
+                                loupe: '<button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>'
+                                })
+                            </div>
                         </div>
                     </div>
 
@@ -125,13 +149,21 @@
                                 class="grid grid-cols-5 gap-4"
                         >
                             <div
-                                    class="w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
+                                    class="uploaded-card  relative w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
                             >
                                 <img
                                         class="h-full rounded-[8px] object-cover"
                                         src="../img/gallery-item.jpeg"
                                         alt="detail"
                                 />
+                                <span class="group delete-card cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
+                                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                       <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="currentColor" stroke-width="5"
+                                             stroke-linecap="round" stroke-linejoin="round"/>
+                                   </svg>
+                                </span>
+
                             </div>
                         </div>
                         <div class="flex w-full items-center justify-center">
@@ -180,6 +212,9 @@
                             })
                         </div>
                         <div class="flex flex-col gap-2">
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Ссылка на видео:
+                            </label>
                             @@include('shared/input-search.html', {
                             placeholder: "Ссылка на видео",
                             fontSize: "text-lg",
@@ -189,84 +224,123 @@
                             })
                         </div>
                         <div>
-                            <label for="detail_city" class="sr-only"
-                            >Склад</label
-                            >
-                            <select
-                                    id="detail_city"
-                                    class="block h-full w-full rounded-lg border border-gray-200 border-opacity-70 bg-gray-50 p-2.5 text-2lg text-blue-gray focus:border-blue-500 focus:ring-blue-500"
-                            >
-                                <option disabled selected>Склад</option>
-                                <option value="1">Рязань</option>
-                                <option value="2">Омск</option>
-                                <option value="3">Нижний Новгород</option>
-                                <option value="4">Москва</option>
-                            </select>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Склад:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            type="button"
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option"></span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний Новгород</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100"> Рязань</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
+                                </ul>
+
+                            </div>
                         </div>
                         <div class="grid grid-cols-2 gap-2">
                             <div class="relative h-full w-full min-w-[200px]">
-                                <div
-                                        class="text-blue-gray-500 absolute right-3 top-2/4 grid h-full w-5 -translate-y-2/4 place-items-center"
-                                >
-                                    <svg
-                                            width="24"
-                                            height="24"
-                                            viewBox="0 0 24 24"
-                                            fill="none"
-                                            xmlns="http://www.w3.org/2000/svg"
-                                    >
-                                        <path
-                                                d="M3.055 11H5C5.53043 11 6.03914 11.2107 6.41421 11.5858C6.78929 11.9609 7 12.4696 7 13V14C7 14.5304 7.21071 15.0391 7.58579 15.4142C7.96086 15.7893 8.46957 16 9 16C9.53043 16 10.0391 16.2107 10.4142 16.5858C10.7893 16.9609 11 17.4696 11 18V20.945M8 3.935V5.5C8 6.16304 8.26339 6.79893 8.73223 7.26777C9.20107 7.73661 9.83696 8 10.5 8H11C11.5304 8 12.0391 8.21071 12.4142 8.58579C12.7893 8.96086 13 9.46957 13 10C13 10.5304 13.2107 11.0391 13.5858 11.4142C13.9609 11.7893 14.4696 12 15 12C15.5304 12 16.0391 11.7893 16.4142 11.4142C16.7893 11.0391 17 10.5304 17 10C17 9.46957 17.2107 8.96086 17.5858 8.58579C17.9609 8.21071 18.4696 8 19 8H20.064M15 20.488V18C15 17.4696 15.2107 16.9609 15.5858 16.5858C15.9609 16.2107 16.4696 16 17 16H20.064M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
-                                                stroke="#212121"
-                                                stroke-width="2"
-                                                stroke-linecap="round"
-                                                stroke-linejoin="round"
-                                        />
-                                    </svg>
-                                </div>
-                                <input
-                                        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-sm font-normal outline outline-0 transition-all placeholder-shown:border focus:border-2 focus:border-blue-500 focus:border-t-transparent focus:outline-0 disabled:border-0"
-                                        placeholder=" "
-                                />
-                                <label
-                                        class="peer-placeholder-shown:text-blue-gray-500 peer-disabled:peer-placeholder-shown:text-blue-gray-500 before:content[' '] after:content[' '] text-blue-gray-400 before:border-blue-gray-200 after:border-blue-gray-200 pointer-events-none absolute -top-1.5 left-0 flex h-full w-full select-none !overflow-visible truncate text-md font-normal leading-tight transition-all before:pointer-events-none before:mr-1 before:mt-[6.5px] before:box-border before:block before:h-1.5 before:w-2.5 before:rounded-tl-md before:border-l before:border-t before:transition-all after:pointer-events-none after:ml-1 after:mt-[6.5px] after:box-border after:block after:h-1.5 after:w-2.5 after:flex-grow after:rounded-tr-md after:border-r after:border-t after:transition-all peer-placeholder-shown:text-2lg peer-placeholder-shown:leading-[2.85] peer-placeholder-shown:before:border-transparent peer-placeholder-shown:after:border-transparent peer-focus:text-md peer-focus:leading-tight peer-focus:text-blue-500 peer-focus:before:border-l-2 peer-focus:before:border-t-2 peer-focus:before:!border-blue-500 peer-focus:after:border-r-2 peer-focus:after:border-t-2 peer-focus:after:!border-blue-500 peer-disabled:text-transparent peer-disabled:before:border-transparent peer-disabled:after:border-transparent"
-                                >
-                                    Цена
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Цена:
                                 </label>
+                                @@include('shared/input-search.html', {
+                                placeholder: "Цена",
+                                fontSize: "text-lg",
+                                hint: "", optional_attr: "",
+                                id: "",
+                                loupe: ''
+                                })
+
                             </div>
-                            <div
-                                    class="flex h-full items-center justify-center rounded-lg border border-gray-200 border-opacity-50 bg-gray-50 p-2"
-                            >
-                                <button type="button" class="cursor-pointer text-primary" data-graph-path="groups">
-                                    Выбрать...
-                                </button>
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Группы
+                                </label>
+                                <div
+                                        class="flex   h-fit items-center justify-center rounded-lg border border-solid border-gray-700 border-opacity-50 bg-gray-50 p-2"
+                                >
+
+                                    <button type="button" class="cursor-pointer text-primary" data-graph-path="groups">
+                                        Выбрать...
+                                    </button>
+                                </div>
                             </div>
                         </div>
                         <div>
-                            <label for="detail_depot" class="sr-only"
-                            >Складское место</label
-                            >
-                            <select
-                                    id="detail_depot"
-                                    class="block h-full w-full rounded-lg border border-gray-200 border-opacity-70 bg-gray-50 p-2.5 text-2lg text-blue-gray focus:border-blue-500 focus:ring-blue-500"
-                            >
-                                <option disabled selected>Складское место</option>
-                                <option value="1">A-1-1-1</option>
-                                <option value="2">A-1-1-1</option>
-                                <option value="3">A-1-1-1</option>
-                                <option value="4">A-1-1-1</option>
-                            </select>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Складское место:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            type="button"
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option"></span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-1</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-2</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-3</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-4</li>
+                                </ul>
+
+                            </div>
                         </div>
-                        <div class="flex gap-1">
-                             @@include('shared/input.html', {
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Габариты:
+                            </label>
+                            <div class="flex gap-1">
+                                @@include('shared/input.html', {
                                 placeholder: "Длина (см)",
                                 value: "",
                                 type: "text",
                                 optional_attr: ""
-                              })
-                            <span>
+                                })
+                                <span>
                               <svg
-                                      class="h-full w-[25px] cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                                      class="h-full w-[25px]  fill-blue-gray "
                                       focusable="false"
                                       aria-hidden="true"
                                       viewBox="0 0 24 24"
@@ -277,15 +351,15 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('shared/input.html', {
-                              placeholder: "Ширина (см)",
-                              value: "",
-                              type: "text",
-                              optional_attr: ""
-                            })
-                            <span>
+                                @@include('shared/input.html', {
+                                placeholder: "Ширина (см)",
+                                value: "",
+                                type: "text",
+                                optional_attr: ""
+                                })
+                                <span>
                               <svg
-                                      class="h-full w-[25px] cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                                      class="h-full w-[25px]  fill-blue-gray "
                                       focusable="false"
                                       aria-hidden="true"
                                       viewBox="0 0 24 24"
@@ -296,15 +370,15 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('shared/input.html', {
-                              placeholder: "Высота (см)",
-                              value: "",
-                              type: "text",
-                              optional_attr: ""
-                            })
-                            <span>
+                                @@include('shared/input.html', {
+                                placeholder: "Высота (см)",
+                                value: "",
+                                type: "text",
+                                optional_attr: ""
+                                })
+                                <span>
                               <svg
-                                      class="h-full w-[25px] cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                                      class="h-full w-[25px]  fill-blue-gray "
                                       focusable="false"
                                       aria-hidden="true"
                                       viewBox="0 0 24 24"
@@ -315,27 +389,51 @@
                                 ></path>
                               </svg>
                             </span>
-                            @@include('shared/input.html', {
-                              placeholder: "Вес (кг)",
-                              value: "",
-                              type: "text",
-                              optional_attr: ""
-                            })
+                                @@include('shared/input.html', {
+                                placeholder: "Вес (кг)",
+                                value: "",
+                                type: "text",
+                                optional_attr: ""
+                                })
+                            </div>
                         </div>
                         <div>
-                            <label for="detail_peculiarity" class="sr-only"
-                            >Особенность</label
-                            >
-                            <select
-                                    id="detail_peculiarity"
-                                    class="block h-full w-full rounded-lg border border-gray-200 border-opacity-70 bg-gray-50 p-2.5 text-2lg text-blue-gray focus:border-blue-500 focus:ring-blue-500"
-                            >
-                                <option selected disabled>Особенность</option>
-                                <option value="1">Рязань</option>
-                                <option value="2">Омск</option>
-                                <option value="3">Нижний новгород</option>
-                                <option value="4">Москва</option>
-                            </select>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Особенность:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            type="button"
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option"></span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Рязань</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний новгород</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
+                                </ul>
+
+                            </div>
                         </div>
                         <div class="flex h-full flex-col gap-2">
                             <label
@@ -394,7 +492,7 @@
                                 <h4 class="text-2lg text-blue-gray">
                                     Добавлена:
                                 </h4>
-                                <h4 class="text-2lg text-primary opacity-75">
+                                <h4 class="text-2lg text-blue-gray opacity-75">
                                     25.05.2024 11:54 (Антон Маринин)
                                 </h4>
                             </div>
@@ -414,7 +512,7 @@
                 >
                     <div class="flex gap-4">
                         <button
-                                class="h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
+                                class="group relative h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
                         >
                             <svg
                                     class="w-full"
@@ -432,46 +530,61 @@
                                         stroke-linejoin="round"
                                 />
                             </svg>
+                            <div
+                                    class="invisible opacity-0 -top-[60px] -left-[210%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
+                                </span>
+                                Переместить в архив
+                            </div>
                         </button>
                         <div
                                 minimodal-top-toggle
-                                class="h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
+                                class=" h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
                         >
-                            <svg
-                                    class="h-full w-auto"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M12.0601 16.5V11.5"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M14.5 14H9.5"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                                <path
-                                        class="stroke-blue-gray"
-                                        d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
-                                        stroke="#171717"
-                                        stroke-width="1.5"
-                                        stroke-miterlimit="10"
-                                />
-                            </svg>
-                            <h5 class="text-lg">Дополнительно</h5>
+                            <div class="group flex items-center gap-1 ">
+                                <svg
+                                        class="h-full w-auto"
+                                        width="20"
+                                        height="20"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                            class="stroke-blue-gray"
+                                            d="M12.0601 16.5V11.5"
+                                            stroke="#171717"
+                                            stroke-width="1.5"
+                                            stroke-miterlimit="10"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                    />
+                                    <path
+                                            class="stroke-blue-gray"
+                                            d="M14.5 14H9.5"
+                                            stroke="#171717"
+                                            stroke-width="1.5"
+                                            stroke-miterlimit="10"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                    />
+                                    <path
+                                            class="stroke-blue-gray"
+                                            d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
+                                            stroke="#171717"
+                                            stroke-width="1.5"
+                                            stroke-miterlimit="10"
+                                    />
+                                </svg>
+                                <h5 class="text-lg">Связанная</h5>
+
+                                <div
+                                        class="invisible opacity-0 -top-[63px] -left-[105%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
+                                </span>
+                                    Добавить запчасть, связанную с этой
+                                </div>
+                            </div>
 
                             <div
                                     minimodal-top-content
@@ -493,6 +606,7 @@
                     <div class="flex gap-4">
                         <button
                                 data-graph-path="barcodes"
+                                data-clear-stack="true"
                                 type="button"
                                 class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
                         >

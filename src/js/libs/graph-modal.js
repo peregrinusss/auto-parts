@@ -1,6 +1,6 @@
 class GraphModal {
   constructor(options) {
-    let defaultOptions = {
+    const defaultOptions = {
       isOpen: () => {},
       isClose: () => {},
     };
@@ -35,6 +35,13 @@ class GraphModal {
         this.animation = animation ? animation : 'fade';
         this.speed = speed ? parseInt(speed) : 300;
         this._nextContainer = document.querySelector(`[data-graph-target="${target}"]`);
+
+
+        // Очистка стека при необходимости
+        if (this._nextContainer && this._nextContainer.dataset.clearStack === 'true') {
+          this.openModalsStack = [];
+        }
+
         this.open(clickedElement.closest('.graph-modal__container'));
         return;
       }
@@ -149,7 +156,7 @@ class GraphModal {
   }
 
   disableScroll() {
-    let pagePosition = window.scrollY;
+    const pagePosition = window.scrollY;
     this.lockPadding();
     document.body.classList.add('disable-scroll');
     document.body.dataset.position = pagePosition;
@@ -157,7 +164,7 @@ class GraphModal {
   }
 
   enableScroll() {
-    let pagePosition = parseInt(document.body.dataset.position, 10);
+    const pagePosition = parseInt(document.body.dataset.position, 10);
     this.unlockPadding();
     document.body.style.top = 'auto';
     document.body.classList.remove('disable-scroll');
@@ -169,7 +176,7 @@ class GraphModal {
   }
 
   lockPadding() {
-    let paddingOffset = window.innerWidth - document.body.offsetWidth + 'px';
+    const paddingOffset = `${window.innerWidth - document.body.offsetWidth}px`;
     this._fixBlocks.forEach((el) => {
       el.style.paddingRight = paddingOffset;
     });
@@ -184,8 +191,8 @@ class GraphModal {
   }
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-  const modal = new GraphModal;
+document.addEventListener('DOMContentLoaded', () => {
+  new GraphModal();
 });
 
 module.exports = GraphModal;

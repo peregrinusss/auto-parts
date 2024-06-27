@@ -156,26 +156,64 @@ document.addEventListener("DOMContentLoaded", function () {
       reader.onload = function (e) {
         const preview = document.createElement("div");
         preview.classList.add(
-          "rounded-xl",
-          "w-full",
-          "max-w-[300px]",
-          "border-4",
-          "border-solid",
-          "border-primary"
+            "uploaded-card",
+            "relative",
+            "w-full",
+            "max-w-[300px]",
+            "rounded-xl",
+            "border-2",
+            "border-solid",
+            "border-gray-200"
         );
 
         const img = document.createElement("img");
         img.src = e.target.result;
-        img.classList.add("rounded-[8px]", "w-full", "h-full", "object-cover");
+        img.alt = "detail";
+        img.classList.add("h-full", "rounded-[8px]", "object-cover");
+
+        const deleteButton = document.createElement("span");
+        deleteButton.classList.add(
+            "group",
+            "delete-card",
+            "cursor-pointer",
+            "absolute",
+            "top-0",
+            "right-0",
+            "p-2.5",
+            "text-primary",
+            "font-extrabold",
+            "text-lg"
+        );
+        deleteButton.innerHTML = `
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+               xmlns="http://www.w3.org/2000/svg">
+            <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="#212121" stroke-width="5"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        `;
+
+        deleteButton.addEventListener("click", function () {
+          preview.remove();
+        });
 
         preview.appendChild(img);
+        preview.appendChild(deleteButton);
         previewContainer.appendChild(preview);
       };
 
       reader.readAsDataURL(file);
     });
   });
+
+  // Add event listener for existing delete buttons
+  previewContainer.addEventListener('click', function (event) {
+    if (event.target.closest('.delete-card')) {
+      event.target.closest('.uploaded-card').remove();
+    }
+  });
 });
+
+
 
 // mini-modals
 document.addEventListener("DOMContentLoaded", () => {
