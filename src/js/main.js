@@ -1034,3 +1034,5 @@ secondaryCheckboxes.forEach(function (secondaryCheckbox) {
     updateSortingVisibility(CheckboxType);
   });
 });
+
+//
