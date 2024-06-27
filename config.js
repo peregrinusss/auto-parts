@@ -25,7 +25,7 @@ const plugins = {
 const basePaths = ["src", "dist", "build"];
 
 // folder assets paths
-const folders = ["css", "js", "img", "fonts", "third-party"];
+const folders = ["css", "js", "img", "fonts", "third-party", "favicons"];
 
 const paths = {
   root: "./",
@@ -37,7 +37,7 @@ basePaths.forEach((base) => {
   };
   folders.forEach((folderName) => {
     const toCamelCase = folderName.replace(/\b-([a-z])/g, (_, c) =>
-      c.toUpperCase()
+        c.toUpperCase()
     );
     paths[base][toCamelCase] = `./${base}/${folderName}`;
   });

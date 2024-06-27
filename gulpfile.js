@@ -22,6 +22,7 @@ const pngquant = require('imagemin-pngquant');
 const purgecss = require('gulp-purgecss');
 const logSymbols = require('log-symbols');
 const includePartials = require('gulp-file-include');
+const replace = require('gulp-replace');
 
 // Load Previews on Browser on dev
 function livePreview(done) {
@@ -48,6 +49,7 @@ function devHTML() {
         prefix: '@@',
         basepath: path.join(__dirname, 'src/components')
       }))
+      .pipe(replace('/favicons/', '/auto-parts/favicons/'))
       .pipe(dest(options.paths.dist.base));
 }
 
@@ -130,6 +132,7 @@ function prodHTML() {
         prefix: '@@',
         basepath: path.join(__dirname, 'src/components')
       }))
+      .pipe(replace('/favicons/', '/auto-parts/favicons/'))
       .pipe(dest(options.paths.build.base));
 }
 
