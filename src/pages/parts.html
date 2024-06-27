@@ -4,7 +4,7 @@
   <body>
     <div class="grid h-full grid-cols-[auto_1fr] gap-2">
       @@include('sidebar.html')
-      <div class="relative w-[calc(100vw-288px)] px-4">
+      <div class="relative w-[calc(100vw-310px)] px-4">
 
         @@include('header/parts.html')
         @@include('global/parts-selection/main.html')
@@ -14,8 +14,13 @@
         @@include('global/cars-selection/modals/layout.html')
         </div>
 
+        @@include('global/parts-selection/checkboxes-filter.html')
+
+
       </div>
     </div>
+
+
 
     <script
       src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"

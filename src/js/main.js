@@ -337,12 +337,8 @@ function initializeSelects() {
     const dropdownOptions = customSelect.querySelector(".dropdown-options");
     const selectedOption = customSelect.querySelector(".selected-option");
 
-    // Set the first option as the default selected option
-    const firstOption = dropdownOptions.querySelector("li");
-    if (firstOption) {
-      selectedOption.textContent = firstOption.textContent;
-      firstOption.classList.add("text-primary", "font-bold");
-    }
+    // Set the default selected option to "-"
+    selectedOption.textContent = "-";
 
     selectButton.addEventListener("click", function (event) {
       closeAllDropdowns();
@@ -357,7 +353,7 @@ function initializeSelects() {
     options.forEach((option) => {
       option.addEventListener("click", function () {
         options.forEach((opt) =>
-          opt.classList.remove("text-primary", "font-bold")
+            opt.classList.remove("text-primary", "font-bold")
         );
         this.classList.add("text-primary", "font-bold");
         selectedOption.textContent = this.textContent;
@@ -383,6 +379,7 @@ function initializeSelects() {
 document.addEventListener("DOMContentLoaded", function () {
   initializeSelects();
 });
+
 
 // tooltip more list
 document.addEventListener("DOMContentLoaded", function () {
@@ -959,5 +956,43 @@ document.addEventListener("DOMContentLoaded", function () {
         inventoryCheckbox.appendChild(span); // Добавление нового span с датой и временем
       }
     });
+  });
+});
+
+
+const mainCheckboxes = document.querySelectorAll("[data-table-checkbox-main]");
+const secondaryCheckboxes = document.querySelectorAll("[data-table-checkbox-secondary]");
+
+function updateSortingVisibility(CheckboxType) {
+  const sortingElement = document.querySelector(`[data-table-checkbox-filter='${CheckboxType}']`);
+  const anyMainChecked = document.querySelector(`[data-table-checkbox-main='${CheckboxType}']:checked`);
+  const anySecondaryChecked = document.querySelector(`[data-table-checkbox-secondary='${CheckboxType}']:checked`);
+
+  if (anyMainChecked || anySecondaryChecked) {
+    sortingElement.classList.remove("hidden");
+  } else {
+    sortingElement.classList.add("hidden");
+  }
+}
+
+mainCheckboxes.forEach(function (mainCheckbox) {
+  mainCheckbox.addEventListener("change", function () {
+    const CheckboxType = mainCheckbox.getAttribute("data-table-checkbox-main");
+
+    // Update secondary checkboxes based on the main checkbox state
+    const secondaryCheckboxes = document.querySelectorAll(`[data-table-checkbox-secondary='${CheckboxType}']`);
+    secondaryCheckboxes.forEach(function (secondaryCheckbox) {
+      secondaryCheckbox.checked = mainCheckbox.checked;
+    });
+
+    // Update sorting visibility
+    updateSortingVisibility(CheckboxType);
+  });
+});
+
+secondaryCheckboxes.forEach(function (secondaryCheckbox) {
+  secondaryCheckbox.addEventListener("change", function () {
+    const CheckboxType = secondaryCheckbox.getAttribute("data-table-checkbox-secondary");
+    updateSortingVisibility(CheckboxType);
   });
 });
