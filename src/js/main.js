@@ -2,12 +2,6 @@ const TomSelect = require("tom-select");
 const HandyCollapse = require("handy-collapse");
 const GraphModal = require("../js/libs/graph-modal");
 
-const modal = new GraphModal({
-  isOpen: (modal) => {
-    console.log(modal);
-    console.log("opened");
-  },
-});
 
 const accordeon = new HandyCollapse({
   nameSpace: "nested",
@@ -15,6 +9,7 @@ const accordeon = new HandyCollapse({
   isAnimation: true,
   animationSpeed: 400,
 });
+
 
 // sidebar
 const accordionItems = document.querySelectorAll("[data-accordion-item]"); // Select elements with data-accordion-item attribute
@@ -655,199 +650,182 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // })
 
-// filters
 document.addEventListener("DOMContentLoaded", () => {
-  const filters = document.querySelector("[data-filters]");
-  const filterPoints = filters.querySelectorAll("[data-filter]");
+  const filtersGroups = document.querySelectorAll("[data-filters]");
 
-  filterPoints.forEach((point) => {
-    point.addEventListener("click", () => {
-      point.classList.add("filter-choosed");
+  filtersGroups.forEach(filters => {
+    const filterPoints = filters.querySelectorAll("[data-filter]");
+    const filtersGroupKey = filters.getAttribute("data-filters");
 
-      const parentElement = document.querySelector("[data-filter-container]");
+    filterPoints.forEach((point) => {
+      point.addEventListener("click", () => {
+        // Удаляем класс у всех фильтров в текущей группе
+        filterPoints.forEach(p => p.classList.remove("filter-choosed"));
 
-      !parentElement && createFilterElements("[data-filters-area]");
-      createAndAppendContainer(point.textContent, point);
-      initializeSelects();
+        // Добавляем класс выбранному фильтру
+        point.classList.add("filter-choosed");
 
-      // add conditions for all types of filters (in the discussion)
+        const filtersArea = document.querySelector(`[data-filters-area="${filtersGroupKey}"]`);
+
+        let parentElement = filtersArea.querySelector("[data-filter-container]");
+
+        if (!parentElement) {
+          createFilterElements(filtersArea);
+        }
+
+        const filterName = point.querySelector("span").textContent;
+        createAndAppendContainer(filterName, point, filtersArea);
+        initializeSelectsInArea(filtersArea); // Переименованная функция
+      });
     });
   });
 });
 
-function createFilterElements(parentSelector) {
-  const parentElement = document.querySelector(parentSelector);
-
-  // Create main filter container
+function createFilterElements(parentElement) {
   const filterContainer = document.createElement("div");
   filterContainer.dataset.filterContainer = true;
   filterContainer.classList.add("mb-5", "flex", "flex-col", "gap-5", "mt-5");
 
-  // Create filter buttons container
   const buttonsContainer = document.createElement("div");
   buttonsContainer.classList.add("flex", "items-center", "gap-5");
 
-  // Create "Apply Filters" button
   const applyButton = document.createElement("button");
   applyButton.type = "button";
   applyButton.classList.add(
-    "flex",
-    "w-full",
-    "items-center",
-    "gap-2",
-    "rounded-lg",
-    "bg-success",
-    "p-3",
-    "py-2",
-    "pr-4",
-    "text-start",
-    "font-medium",
-    "leading-tight",
-    "text-white",
-    "transition-all",
-    "hover:text-light-gray",
-    "cursor-pointer",
-    "active:opacity-60",
-    "!w-fit",
-    "whitespace-nowrap"
+      "flex",
+      "w-full",
+      "items-center",
+      "gap-2",
+      "rounded-lg",
+      "bg-success",
+      "p-3",
+      "py-2",
+      "pr-4",
+      "text-start",
+      "font-medium",
+      "leading-tight",
+      "text-white",
+      "transition-all",
+      "hover:text-light-gray",
+      "cursor-pointer",
+      "active:opacity-60",
+      "!w-fit",
+      "whitespace-nowrap"
   );
-
-  const applyButtonText = document.createElement("h4");
-  applyButtonText.textContent = "Применить фильтры";
-  applyButton.appendChild(applyButtonText);
+  applyButton.textContent = "Применить фильтры";
   buttonsContainer.appendChild(applyButton);
 
-  // Create "Clear Filters" button
   const clearButton = document.createElement("button");
   clearButton.type = "button";
   clearButton.classList.add(
-    "flex",
-    "w-full",
-    "items-center",
-    "gap-2",
-    "rounded-lg",
-    "bg-danger",
-    "p-3",
-    "py-2",
-    "pr-4",
-    "text-start",
-    "font-medium",
-    "leading-tight",
-    "text-white",
-    "transition-all",
-    "hover:text-light-gray",
-    "cursor-pointer",
-    "active:opacity-60",
-    "!w-fit",
-    "whitespace-nowrap"
+      "flex",
+      "w-full",
+      "items-center",
+      "gap-2",
+      "rounded-lg",
+      "bg-danger",
+      "p-3",
+      "py-2",
+      "pr-4",
+      "text-start",
+      "font-medium",
+      "leading-tight",
+      "text-white",
+      "transition-all",
+      "hover:text-light-gray",
+      "cursor-pointer",
+      "active:opacity-60",
+      "!w-fit",
+      "whitespace-nowrap"
   );
-  const clearButtonText = document.createElement("h4");
-  clearButtonText.textContent = "Очистить фильтры";
-  clearButton.appendChild(clearButtonText);
-  buttonsContainer.appendChild(clearButton);
-
-  // Add event listener to clear all filters on click
+  clearButton.textContent = "Очистить фильтры";
   clearButton.addEventListener("click", () => {
-    clearAllFilters();
+    clearAllFilters(parentElement);
   });
 
-  // Append buttons container to filter container
+  buttonsContainer.appendChild(clearButton);
   filterContainer.appendChild(buttonsContainer);
 
   const filtersList = document.createElement("div");
   filtersList.dataset.filterList = true;
   filtersList.classList.add("flex", "flex-col", "gap-5");
 
-  // Append filter container to parent element
   parentElement.appendChild(filtersList);
   parentElement.appendChild(filterContainer);
 }
 
-function createAndAppendContainer(title, point) {
-  // Create main container
+function createAndAppendContainer(filterName, point, filtersArea) {
   const container = document.createElement("div");
   container.classList.add("flex", "items-center", "gap-10");
 
-  // Create OEM div
   const oemDiv = document.createElement("div");
   oemDiv.classList.add(
-    "flex",
-    "cursor-pointer",
-    "items-center",
-    "gap-4",
-    "transition-all",
-    "hover:opacity-70",
-    "w-44"
+      "flex",
+      "cursor-pointer",
+      "items-center",
+      "gap-4",
+      "transition-all",
+      "hover:opacity-70",
+      "w-44"
   );
 
-  // Create SVG container
   const svgContainer = document.createElement("div");
   svgContainer.classList.add("relative", "h-4", "w-4");
   const svgElement = `
   <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">
-    <g stroke-width="0"></g>
-    <g stroke-linecap="round" stroke-linejoin="round"></g>
-    <g>
-      <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#0F0F0F"></path>
-    </g>
+    <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#0F0F0F"></path>
   </svg>
   `;
   svgContainer.innerHTML = svgElement;
   oemDiv.appendChild(svgContainer);
 
-  // Create OEM span
   const oemSpan = document.createElement("span");
-  oemSpan.textContent = `${title}:`;
+  oemSpan.textContent = `${filterName}:`;
   oemDiv.appendChild(oemSpan);
   container.appendChild(oemDiv);
 
-  // Add event listener to remove container on click
   oemDiv.addEventListener("click", () => {
     container.remove();
     point.classList.remove("filter-choosed");
 
-    // Check if there are any other filter containers
-    const filterList = document.querySelector("[data-filter-list]");
+    const filterList = filtersArea.querySelector("[data-filter-list]");
     if (!filterList || filterList.children.length === 0) {
-      const filterContainer = document.querySelector("[data-filter-container]");
+      const filterContainer = filtersArea.querySelector("[data-filter-container]");
       if (filterContainer) {
         filterContainer.remove();
       }
     }
   });
 
-  // Create grid container
   const gridContainer = document.createElement("div");
   gridContainer.classList.add("grid", "grid-cols-2", "items-center", "gap-4");
 
-  // Create custom select container
   const customSelectContainer = document.createElement("div");
   customSelectContainer.classList.add("custom-select", "relative", "w-full");
 
-  // Create select button
   const selectButtonDiv = document.createElement("div");
   selectButtonDiv.classList.add(
-    "border-blue-gray-200",
-    "rounded-lg",
-    "border",
-    "bg-white",
-    "shadow-sm"
+      "border-blue-gray-200",
+      "rounded-lg",
+      "border",
+      "bg-white",
+      "shadow-sm"
   );
   const selectButton = document.createElement("button");
   selectButton.type = "button";
   selectButton.classList.add(
-    "select-button",
-    "flex",
-    "w-full",
-    "items-center",
-    "justify-between",
-    "px-3",
-    "py-2",
-    "text-left"
+      "select-button",
+      "flex",
+      "w-full",
+      "items-center",
+      "justify-between",
+      "px-3",
+      "py-2",
+      "text-left"
   );
   const selectedOptionSpan = document.createElement("span");
   selectedOptionSpan.classList.add("selected-option");
-  selectedOptionSpan.textContent = "Option B";
+  selectedOptionSpan.textContent = "-";  // Устанавливаем начальное значение
   const selectIcon = `
   <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
@@ -857,88 +835,61 @@ function createAndAppendContainer(title, point) {
   selectButtonDiv.appendChild(selectButton);
   customSelectContainer.appendChild(selectButtonDiv);
 
-  // Create dropdown options
   const dropdownOptions = document.createElement("ul");
   dropdownOptions.classList.add(
-    "dropdown-options",
-    "pointer-events-none",
-    "absolute",
-    "z-10",
-    "mt-1",
-    "w-full",
-    "scale-95",
-    "transform",
-    "overflow-hidden",
-    "rounded-lg",
-    "border",
-    "border-gray-300",
-    "bg-white",
-    "opacity-0",
-    "shadow-sm",
-    "transition"
+      "dropdown-options",
+      "pointer-events-none",
+      "absolute",
+      "z-10",
+      "mt-1",
+      "w-full",
+      "scale-95",
+      "transform",
+      "overflow-hidden",
+      "rounded-lg",
+      "border",
+      "border-gray-300",
+      "bg-white",
+      "opacity-0",
+      "shadow-sm",
+      "transition"
   );
-  const optionB = document.createElement("li");
-  optionB.classList.add(
-    "cursor-pointer",
-    "px-3",
-    "py-2",
-    "hover:bg-gray-100",
-    "text-primary",
-    "font-bold"
-  );
-  optionB.textContent = "равно";
-  const optionC = document.createElement("li");
-  optionC.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
-  optionC.textContent = "не равно";
-  const optionD = document.createElement("li");
-  optionD.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
-  optionD.textContent = "содержит";
-  const optionE = document.createElement("li");
-  optionE.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
-  optionE.textContent = "не содержит";
-  const optionF = document.createElement("li");
-  optionF.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
-  optionF.textContent = "отсутсвует";
-  const optionG = document.createElement("li");
-  optionG.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
-  optionG.textContent = "существует";
-  dropdownOptions.appendChild(optionB);
-  dropdownOptions.appendChild(optionC);
-  dropdownOptions.appendChild(optionD);
-  dropdownOptions.appendChild(optionE);
-  dropdownOptions.appendChild(optionF);
-  dropdownOptions.appendChild(optionG);
+  const options = ["равно", "не равно", "содержит", "не содержит", "отсутствует", "существует"];
+  options.forEach(optionText => {
+    const option = document.createElement("li");
+    option.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
+    option.textContent = optionText;
+    dropdownOptions.appendChild(option);
+  });
   customSelectContainer.appendChild(dropdownOptions);
   gridContainer.appendChild(customSelectContainer);
 
-  // Create input field
   const inputField = document.createElement("input");
   inputField.classList.add(
-    "text-blue-gray-700",
-    "disabled:bg-blue-gray-50",
-    "placeholder-shown:border-blue-gray-200",
-    "placeholder-shown:border-t-blue-gray-200",
-    "border-t-blue-gray-200",
-    "border-blue-gray-200",
-    "peer",
-    "h-full",
-    "w-full",
-    "rounded-[7px]",
-    "border",
-    "bg-transparent",
-    "px-3",
-    "py-2.5",
-    "font-sans",
-    "text-base",
-    "font-normal",
-    "outline",
-    "outline-0",
-    "transition-all",
-    "placeholder-shown:border",
-    "focus:outline-1",
-    "focus:outline-primary",
-    "focus:border-primary",
-    "disabled:border-0"
+      "text-blue-gray-700",
+      "disabled:bg-blue-gray-50",
+      "placeholder-shown:border-blue-gray-200",
+      "border-t-blue-gray-200",
+      "border-blue-gray-200",
+      "peer",
+      "h-full",
+      "w-full",
+      "rounded-[7px]",
+      "border",
+      "bg-transparent",
+      "px-3",
+      "py-2.5",
+      "font-sans",
+      "text-base",
+      "font-normal",
+      "outline",
+      "outline-0",
+      "transition-all",
+      "placeholder-shown:border",
+      "focus:outline-1",
+      "focus:outline-primary",
+      "focus:border-primary",
+      "disabled:border-0"
   );
   inputField.placeholder = "";
   inputField.value = "";
@@ -947,18 +898,75 @@ function createAndAppendContainer(title, point) {
 
   container.appendChild(gridContainer);
 
-  // Append container to the desired parent element
-  const parentElement = document.querySelector("[data-filter-list]");
-  parentElement.appendChild(container);
+  const filterList = filtersArea.querySelector("[data-filter-list]");
+  filterList.appendChild(container);
+
+  // Инициализация логики селекта
+  initializeSelect(customSelectContainer);
 }
 
-function clearAllFilters() {
-  const filterContainer = document.querySelector("[data-filter-container]");
+function initializeSelect(customSelect) {
+  const selectButton = customSelect.querySelector(".select-button");
+  const dropdownOptions = customSelect.querySelector(".dropdown-options");
+  const selectedOption = customSelect.querySelector(".selected-option");
+
+  // Set the default selected option to "-"
+  selectedOption.textContent = "-";
+
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-options").forEach((dropdown) => {
+      if (!dropdown.classList.contains("pointer-events-none")) {
+        closeDropdown(dropdown);
+      }
+    });
+  }
+
+  function openDropdown(dropdown) {
+    dropdown.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+    dropdown.classList.add("opacity-100", "scale-100");
+  }
+
+  function closeDropdown(dropdown) {
+    dropdown.classList.remove("opacity-100", "scale-100");
+    dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+  }
+
+  selectButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    closeAllDropdowns();
+    if (dropdownOptions.classList.contains("opacity-0")) {
+      openDropdown(dropdownOptions);
+    } else {
+      closeDropdown(dropdownOptions);
+    }
+  });
+
+  const options = dropdownOptions.querySelectorAll("li");
+  options.forEach((option) => {
+    option.addEventListener("click", function () {
+      options.forEach((opt) =>
+          opt.classList.remove("text-primary", "font-bold")
+      );
+      this.classList.add("text-primary", "font-bold");
+      selectedOption.textContent = this.textContent;
+      closeDropdown(dropdownOptions);
+    });
+  });
+
+  document.addEventListener("click", function (event) {
+    if (!customSelect.contains(event.target)) {
+      closeDropdown(dropdownOptions);
+    }
+  });
+}
+
+function clearAllFilters(parentElement) {
+  const filterContainer = parentElement.querySelector("[data-filter-container]");
   if (filterContainer) {
     filterContainer.remove();
   }
 
-  const filterList = document.querySelector("[data-filter-list]");
+  const filterList = parentElement.querySelector("[data-filter-list]");
   if (filterList) {
     filterList.remove();
   }
@@ -968,6 +976,14 @@ function clearAllFilters() {
     point.classList.remove("filter-choosed");
   });
 }
+
+function initializeSelectsInArea(filtersArea) {
+  const selects = filtersArea.querySelectorAll(".custom-select");
+  selects.forEach(select => {
+    initializeSelect(select);
+  });
+}
+
 
 
 // inventory checkbox

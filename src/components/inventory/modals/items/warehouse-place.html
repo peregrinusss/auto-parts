@@ -349,7 +349,7 @@
           class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
         >
           <div class="flex gap-4">
-            @@include('shared/button.html', { title: "Применить", color: "bg-success", class: "h-fit" })
+            @@include('shared/button.html', { title: "Применить", color: "bg-success", class: "h-fit", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'})
           </div>
         </div>
       </form>
