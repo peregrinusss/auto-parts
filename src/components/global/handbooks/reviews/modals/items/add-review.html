@@ -6,7 +6,7 @@
     >
         <div class="flex flex-col justify-center gap-2">
             <h3 class="text-xl font-bold">
-                Изменение отзыва
+                Добавление отзыва
             </h3>
             <div class="flex gap-1 ">
                 <a
@@ -118,21 +118,15 @@
                 </div>
 
                 <div
-                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
                 >
-                    <div class="flex gap-4">
-                        @@include('shared/button.html', {
-                        title: "Удалить",
-                        color: "bg-danger",
-                        class: "h-fit"
-                        })
-                    </div>
+
                     <div class="flex gap-4">
 
                         @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
-                        class: "h-fit",
+                        class: "h-fit js-modal-close",
                         optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
                         })
                         @@include('shared/button.html', {

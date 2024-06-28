@@ -187,7 +187,7 @@
           class="flex justify-between border-t-2 border-solid border-gray-200 p-5"
         >
           <div class="ml-auto flex w-fit items-center gap-4">
-            @@include('shared/button.html', { title: "Применить", color: "bg-success", class: "h-fit !w-fit", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"' })
+            @@include('shared/button.html', { title: "Применить", color: "bg-success", class: "h-fit !w-fit js-modal-close", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"' })
             @@include('shared/button.html', { title: "Отмена", color: "bg-gray-200", class: "!text-black h-fit !w-fit js-modal-close" })
           </div>
         </div>
