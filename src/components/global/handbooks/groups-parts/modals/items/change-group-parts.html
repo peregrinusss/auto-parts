@@ -67,7 +67,7 @@
                                 <h4 class="text-lg text-blue-gray">Комментарий:</h4>
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     @@include('shared/textarea.html', { placeholder: "Введите комментарий", id: "",
-                                    hint: ""})
+                                    hint: "", optional_attr: ""})
                                 </div>
                             </div>
                             <div class="grid grid-cols-[180px_1fr] items-center gap-2 -mt-3">
@@ -96,7 +96,7 @@
                     "bg-danger", class: "h-fit !w-fit" })
                     <div class="ml-auto flex items-center gap-4 w-fit">
                         @@include('shared/button.html', { title: "Применить", color:
-                        "bg-success", class: "h-fit !w-fit" })
+                        "bg-success", class: "h-fit !w-fit", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"' })
                         @@include('shared/button.html', { title: "Отмена", color:
                         "bg-gray-200", class: "!text-black h-fit !w-fit js-modal-close" })
                     </div>

@@ -745,6 +745,8 @@ html {
 }
 
 
+
+
 .disabled-item {
     background-color: lightgray !important;
     color: gray !important;
@@ -752,3 +754,17 @@ html {
  //  pointer-events: none;
  //}
 }
+
+[data-nested-content] {
+  display: none;
+  transition: max-height 0.4s ease-out, opacity 0.4s ease-out;
+  max-height: 0;
+  opacity: 0;
+}
+
+[data-nested-content].is-active {
+  display: block;
+  max-height: 1000px; /* Установите достаточно большое значение */
+  opacity: 1;
+}
+
