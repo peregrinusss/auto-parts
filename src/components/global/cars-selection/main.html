@@ -1,10 +1,10 @@
 <div class="mb-8 mt-4">
-    @@include('filters.html')
+    @@include('filters.html', {area: "cars"})
     <div
             class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
         <div class="overflow-x-auto rounded-xl">
-            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+            <table id="cars-table" class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
                 <thead>
                 <tr>
 
@@ -12,7 +12,11 @@
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
                     >
                         <div class="inline-flex items-center">
-                            @@include('shared/checkbox-input.html', {id: "0"})
+                            @@include('shared/checkbox-input.html',
+                            {id: "cars-0",
+                            optional_attr: 'data-table-checkbox-main="cars" '
+                            }
+                            )
                         </div>
                     </th>
                     <th
@@ -146,6 +150,26 @@
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
                         <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Филиал </p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
                             <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Добавлена</p>
                             <div data-sorting-wrapper class="hidden gap-1 items-center">
                                 <div data-sorting-ascending class="mb-[5px]">
@@ -168,7 +192,7 @@
                 <tr>
                     <td class="border-blue-gray-50 border-b p-2">
                         <div class="inline-flex items-center">
-                            @@include('shared/checkbox-input.html', {id: "1"})
+                            @@include('shared/checkbox-input.html', {id: "cars-1", optional_attr: "data-table-checkbox-secondary='cars'" })
                         </div>
                     </td>
                     <td class="border-blue-gray-50 group border-b p-3">
@@ -217,6 +241,129 @@
                         Двигатель: OM457LA V/3-06 401 л.с. Euro 5
                         КПП: МКПП ZF 16S2220TD
                         Редуктор: R440P 24000S 3.077
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Основной</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">06.06.2024</h4>
+                    </td>
+                </tr>
+                <tr class="disabled-item">
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            @@include('shared/checkbox-input.html', {id: "cars-2", optional_attr: "data-table-checkbox-secondary='cars'" })
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group border-b p-3">
+                        <button type="button"  data-graph-path="change-cars" class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div class="group relative h-12 w-12 flex-shrink-0">
+                                    <img
+                                            src="../img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full rounded-[5px] object-cover"
+                                    />
+                                </div>
+                                <h4
+                                        class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                >
+                                    Абсорбер топливной системы
+                                </h4>
+                            </div>
+                        </button>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">К8</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">2 018</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            Дизель
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">16 литров</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">МКПП</h4>
+                    </td>
+                    <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
+                        Город: Москва
+                        Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                        КПП: МКПП ZF 16S2220TD
+                        Редуктор: R440P 24000S 3.077
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Основной</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">06.06.2024</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            @@include('shared/checkbox-input.html', {id: "cars-3", optional_attr: "data-table-checkbox-secondary='cars'" })
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group border-b p-3">
+                        <button type="button"  data-graph-path="change-cars" class="flex flex-col gap-1">
+                            <div class="flex items-center gap-2">
+                                <div class="group relative h-12 w-12 flex-shrink-0">
+                                    <img
+                                            src="../img/engine.png"
+                                            alt="engine"
+                                            class="h-full w-full rounded-[5px] object-cover"
+                                    />
+                                </div>
+                                <h4
+                                        class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                >
+                                    Абсорбер топливной системы
+                                </h4>
+                            </div>
+                        </button>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">К8</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-min justify-start">
+                            <h4 class="text-md">2 018</h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                        >
+                            Дизель
+                        </h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">16 литров</h4>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="whitespace-nowrap text-md">МКПП</h4>
+                    </td>
+                    <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
+                        Город: Москва
+                        Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                        КПП: МКПП ZF 16S2220TD
+                        Редуктор: R440P 24000S 3.077
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4 class="text-md">Основной</h4>
                     </td>
                     <td class="border-blue-gray-50 border-b p-3">
                         <h4 class="text-md">06.06.2024</h4>

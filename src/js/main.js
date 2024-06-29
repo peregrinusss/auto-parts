@@ -520,12 +520,14 @@ document.querySelectorAll("[data-popover-wrapper]").forEach((wrapper) => {
 //table columns & checkboxes
 
 document.addEventListener("DOMContentLoaded", () => {
-  const checkboxes = document.querySelectorAll(
-    'input[type="checkbox"][data-column]'
-  );
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][data-column][data-table]');
+
   checkboxes.forEach((checkbox) => {
+    const tableId = checkbox.getAttribute("data-table");
     const columnIndex = checkbox.getAttribute("data-column");
-    document.querySelectorAll(`#parts-table tr`).forEach((row) => {
+    const table = document.getElementById(tableId);
+
+    document.querySelectorAll(`#${tableId} tr`).forEach((row) => {
       const cells = Array.from(row.children);
       const cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
       if (cell) {
@@ -536,7 +538,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     checkbox.addEventListener("change", function () {
-      document.querySelectorAll(`#parts-table tr`).forEach((row) => {
+      document.querySelectorAll(`#${tableId} tr`).forEach((row) => {
         const cells = Array.from(row.children);
         const cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
         if (cell) {
