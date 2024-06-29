@@ -96,7 +96,7 @@
                     "bg-danger", class: "h-fit !w-fit" })
                     <div class="ml-auto flex items-center gap-4 w-fit">
                         @@include('shared/button.html', { title: "Применить", color:
-                        "bg-success", class: "h-fit !w-fit", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"' })
+                        "bg-success", class: "h-fit !w-fit js-modal-close", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"' })
                         @@include('shared/button.html', { title: "Отмена", color:
                         "bg-gray-200", class: "!text-black h-fit !w-fit js-modal-close" })
                     </div>
