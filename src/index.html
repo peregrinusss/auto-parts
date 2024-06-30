@@ -1,221 +1,231 @@
 <!DOCTYPE html>
 <html lang="ru" class="page">
 
-  @@include('head.html')
+@@include('head.html')
 
-  <style>
+<style>
     @keyframes gradient {
-      0% {
-        background-position: 0 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0 50%;
-      }
+        0% {
+            background-position: 0 50%;
+        }
+        50% {
+            background-position: 100% 50%;
+        }
+        100% {
+            background-position: 0 50%;
+        }
     }
 
     html,
     body {
-      height: 100%;
-      color: #fff;
-      background: -o-linear-gradient(310deg, #000000, #04523c);
-      background: linear-gradient(140deg, #0c0c0c, #03515a);
-      background-repeat: no-repeat;
-      background-size: 200%;
-      animation: gradient 10s infinite;
-      font-family: Arial, Helvetica, sans-serif;
+        height: 100%;
+        color: #fff;
+        background: -o-linear-gradient(310deg, #000000, #04523c);
+        background: linear-gradient(140deg, #0c0c0c, #03515a);
+        background-repeat: no-repeat;
+        background-size: 200%;
+        animation: gradient 10s infinite;
+        font-family: Arial, Helvetica, sans-serif;
     }
 
     html {
-      height: 200% !important;
+        height: 200% !important;
     }
 
     li {
-      list-style: none;
-      list-style-type: decimal;
-      font-size: 18px;
+        list-style: none;
+        list-style-type: decimal;
+        font-size: 18px;
     }
+
     .index {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 40px 15px;
     }
+
     h1 {
-      width: fit-content;
-      font-size: 45px;
-      font-weight: 600;
-      line-height: 130%;
-      background-image: linear-gradient(to right, #5cc889, #2b8bbb);
-      color: transparent;
-      background-clip: text;
-      -webkit-background-clip: text;
+        width: fit-content;
+        font-size: 45px;
+        font-weight: 600;
+        line-height: 130%;
+        background-image: linear-gradient(to right, #5cc889, #2b8bbb);
+        color: transparent;
+        background-clip: text;
+        -webkit-background-clip: text;
     }
+
     a {
-      background-image: linear-gradient(
-        to right,
-        #1dd994,
-        #1dd994 50%,
-        #ffffff 50%
-      );
-      background-size: 200% 100%;
-      background-position: -100%;
-      display: inline-block;
-      padding: 5px 0;
-      position: relative;
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      transition: all 0.3s ease-in-out;
+        background-image: linear-gradient(
+                to right,
+                #1dd994,
+                #1dd994 50%,
+                #ffffff 50%
+        );
+        background-size: 200% 100%;
+        background-position: -100%;
+        display: inline-block;
+        padding: 5px 0;
+        position: relative;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        transition: all 0.3s ease-in-out;
     }
 
     a::before {
-      content: "";
-      background: #1dd994;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      transition: all 0.3s ease-in-out;
+        content: "";
+        background: #1dd994;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        height: 2px;
+        transition: all 0.3s ease-in-out;
     }
+
     a::after {
-      content: "";
-      background: #ffffff;
-      display: block;
-      position: absolute;
-      bottom: 0;
-      right: 0;
-      width: 100%;
-      height: 2px;
-      transition: all 0.3s ease-in-out;
+        content: "";
+        background: #ffffff;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 100%;
+        height: 2px;
+        transition: all 0.3s ease-in-out;
     }
 
     a:hover {
-      background-position: 0;
+        background-position: 0;
     }
 
     a:hover::before {
-      width: 100%;
+        width: 100%;
     }
+
     a:hover::after {
-      width: 0;
+        width: 0;
     }
 
     .disc {
-      display: block;
-      font-size: 16px;
-      margin: 40px 0 50px;
+        display: block;
+        font-size: 16px;
+        margin: 40px 0 50px;
     }
 
     .stack {
-      display: flex;
-      column-gap: 20px;
-      row-gap: 5px;
-      flex-wrap: wrap;
+        display: flex;
+        column-gap: 20px;
+        row-gap: 5px;
+        flex-wrap: wrap;
     }
-    .stack span {
-      font-size: 22px;
-      font-weight: 600;
-      color: #817f7f;
-    }
-  </style>
 
-  <body class="page__body">
-    <main class="main">
-      <div class="index">
+    .stack span {
+        font-size: 22px;
+        font-weight: 600;
+        color: #817f7f;
+    }
+</style>
+
+<body class="page__body">
+<main class="main">
+    <div class="index">
         <div class="stack">
-          <span>Html</span>
-          <span>Tailwind</span>
-          <span>Js (ES6)</span>
-          <span>Js libraries</span>
-          <span>Gulp</span>
+            <span>Html</span>
+            <span>Tailwind</span>
+            <span>Js (ES6)</span>
+            <span>Js libraries</span>
+            <span>Gulp</span>
         </div>
         <h1>Разработка верстки админки сайта автозапчастей</h1>
         <span class="disc"
-          >Ниже приведены ссылки на страницы проекта. Для вашего удобства
+        >Ниже приведены ссылки на страницы проекта. Для вашего удобства
           страницы открываются в новом окне.</span
         >
         <ol class="flex flex-col gap-6">
-          <li>
-            <a href="pages/parts.html" target="_blank">Запчасти</a>
-          </li>
-          <li>
-            <a href="pages/orders.html" target="_blank">Заказы</a>
-          </li>
-          <li>
-            <a href="pages/cars.html" target="_blank">Машины</a>
-          </li>
-          <li>
-            <a href="pages/warehouse.html" target="_blank">Склад</a>
-          </li>
-          <li>
-            <a href="pages/warehouse-places.html" target="_blank">Складские места</a>
-          </li>
-          <li>
-            <a href="pages/placement.html" target="_blank">Размещение на складе</a>
-          </li>
-          <li>
-            <a href="pages/inventory.html" target="_blank">Инвентаризация</a>
-          </li>
-          <h2 class="text-medium text-[20px] text-gray-500">Справочники:</h2>
-          <ol class="ms-4 -mt-5 flex flex-col gap-1">
             <li>
-              <a href="handbooks/users.html" target="_blank">Пользователи</a>
+                <a href="pages/parts.html" target="_blank">Запчасти</a>
             </li>
             <li>
-              <a href="handbooks/vehicles.html" target="_blank">Марки ТС</a>
+                <a href="pages/orders.html" target="_blank">Заказы</a>
             </li>
             <li>
-              <a href="handbooks/branches.html" target="_blank">Филлиалы</a>
+                <a href="pages/cars.html" target="_blank">Машины</a>
             </li>
+            <h2 class="text-medium text-[20px] text-gray-500">Склад:</h2>
+            <ol class="ms-4 -mt-5 flex flex-col gap-1">
+                <li>
+                    <a href="pages/warehouse.html" target="_blank">Склад</a>
+                </li>
+                <li>
+                    <a href="pages/warehouse-places.html" target="_blank">Складские места</a>
+                </li>
+                <li>
+                    <a href="pages/placement.html" target="_blank">Размещение на складе</a>
+                </li>
+                <li>
+                    <a href="pages/inventory.html" target="_blank">Инвентаризация</a>
+                </li>
+            </ol>
+
+            <h2 class="text-medium text-[20px] text-gray-500">Справочники:</h2>
+            <ol class="ms-4 -mt-5 flex flex-col gap-1">
+                <li>
+                    <a href="handbooks/users.html" target="_blank">Пользователи</a>
+                </li>
+                <li>
+                    <a href="handbooks/vehicles.html" target="_blank">Марки ТС</a>
+                </li>
+                <li>
+                    <a href="handbooks/branches.html" target="_blank">Филлиалы</a>
+                </li>
+                <li>
+                    <a href="handbooks/reviews.html" target="_blank"
+                    >Отзывы на сайте</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/traffic-channels.html" target="_blank"
+                    >Каналы трафика</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/parts-types.html" target="_blank"
+                    >Запчасти - Узлы</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/categories.html" target="_blank"
+                    >Запчасти - Категории</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/groups-parts.html" target="_blank"
+                    >Запчасти - Группы</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/peculiarities.html" target="_blank"
+                    >Запчасти - Особенности</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/sources-orders.html" target="_blank"
+                    >Заказы - Источники заказов</a
+                    >
+                </li>
+                <li>
+                    <a href="handbooks/payments-orders.html" target="_blank"
+                    >Заказы - Способы оплаты заказов</a
+                    >
+                </li>
+            </ol>
             <li>
-              <a href="handbooks/reviews.html" target="_blank"
-                >Отзывы на сайте</a
-              >
+                <a href="pages/balance.html" target="_blank">Баланс</a>
             </li>
-            <li>
-              <a href="handbooks/traffic-channels.html" target="_blank"
-                >Каналы трафика</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/parts-types.html" target="_blank"
-                >Запчасти - Узлы</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/categories.html" target="_blank"
-                >Запчасти - Категории</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/groups-parts.html" target="_blank"
-                >Запчасти - Группы</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/peculiarities.html" target="_blank"
-                >Запчасти - Особенности</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/sources-orders.html" target="_blank"
-                >Заказы - Источники заказов</a
-              >
-            </li>
-            <li>
-              <a href="handbooks/payments-orders.html" target="_blank"
-                >Заказы - Способы оплаты заказов</a
-              >
-            </li>
-          </ol>
-          <li>
-            <a href="pages/balance.html" target="_blank">Баланс</a>
-          </li>
         </ol>
-      </div>
-    </main>
-  </body>
+    </div>
+</main>
+</body>
 </html>

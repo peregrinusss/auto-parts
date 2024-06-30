@@ -1,0 +1,87 @@
+<div
+  class="graph-modal__container"
+  role="dialog"
+  aria-modal="true"
+  data-graph-target="changelog"
+>
+  <div
+    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold">Журнал изменений</h3>
+      <div class="flex gap-1">
+        <a
+          href="#"
+          class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+          >Складские места: Нижний Новгород
+        </a>
+        <span> / </span>
+        <a
+          href="#"
+          class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+        >
+          Изменение складского места 
+        </a>
+      </div>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+        aria-label="Закрыть модальное окно"
+        class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="CloseIcon"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="flex flex-col gap-7 p-7 pb-0">
+      <div class="flex">
+        <h4 class="text-2lg text-primary opacity-75">
+          17.06.2024 09:57:47 — +7 916 699 4700
+        </h4>
+      </div>
+      <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+      <div class="">
+        <h3 class="text-lg text-black font-bold">Название</h3>
+        <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+          <h4 class="text-lg text-blue-gray">
+            -
+          </h4>
+          <div class="flex flex-col">
+            <span class="text-lg text-blue-gray">Трубки 2</span>
+          </div>
+        </div>
+      </div>
+      <div class="">
+        <h3 class="text-lg text-black font-bold">Активно</h3>
+        <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+          <h4 class="text-lg text-blue-gray">
+            -
+          </h4>
+          <div class="flex flex-col">
+            <span class="text-lg text-blue-gray">Да</span>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+      >
+        @@include('shared/button.html', { title: "Закрыть", color: "bg-gray-200",
+        class: "!text-black h-fit !w-fit js-modal-close " })
+      </div>
+    </div>
+  </div>
+</div>
