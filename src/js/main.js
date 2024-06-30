@@ -84,57 +84,57 @@ if (paginations.length) {
     });
 }
 
-// table content
-
-document.addEventListener("DOMContentLoaded", () => {
-    const buttons = document.querySelectorAll("[table-item-button]");
-    const modals = document.querySelectorAll("[table-item-modal]");
-    const closeButtons = document.querySelectorAll("[table-close-modal]");
-
-    buttons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            modals[index].classList.remove("hidden");
-            const modalContent = modals[index].querySelector("[table-modal-content]");
-            requestAnimationFrame(() => {
-                modalContent.classList.remove("opacity-0", "translate-y-14");
-            });
-            document.body.classList.add("overflow-hidden");
-        });
-    });
-
-    closeButtons.forEach((button, index) => {
-        button.addEventListener("click", () => {
-            const modal = modals[index];
-            const modalContent = modal.querySelector("[table-modal-content]");
-            modalContent.classList.add("opacity-0", "translate-y-14");
-            modalContent.addEventListener(
-                "transitionend",
-                () => {
-                    modal.classList.add("hidden");
-                    document.body.classList.remove("overflow-hidden");
-                },
-                {once: true}
-            );
-        });
-    });
-
-    modals.forEach((modal) => {
-        modal.addEventListener("click", (event) => {
-            if (!event.target.closest("[table-modal-content]")) {
-                const modalContent = modal.querySelector("[table-modal-content]");
-                modalContent.classList.add("opacity-0", "translate-y-14");
-                modalContent.addEventListener(
-                    "transitionend",
-                    () => {
-                        modal.classList.add("hidden");
-                        document.body.classList.remove("overflow-hidden");
-                    },
-                    {once: true}
-                );
-            }
-        });
-    });
-});
+// // table content
+//
+// document.addEventListener("DOMContentLoaded", () => {
+//     const buttons = document.querySelectorAll("[table-item-button]");
+//     const modals = document.querySelectorAll("[table-item-modal]");
+//     const closeButtons = document.querySelectorAll("[table-close-modal]");
+//
+//     buttons.forEach((button, index) => {
+//         button.addEventListener("click", () => {
+//             modals[index].classList.remove("hidden");
+//             const modalContent = modals[index].querySelector("[table-modal-content]");
+//             requestAnimationFrame(() => {
+//                 modalContent.classList.remove("opacity-0", "translate-y-14");
+//             });
+//             document.body.classList.add("overflow-hidden");
+//         });
+//     });
+//
+//     closeButtons.forEach((button, index) => {
+//         button.addEventListener("click", () => {
+//             const modal = modals[index];
+//             const modalContent = modal.querySelector("[table-modal-content]");
+//             modalContent.classList.add("opacity-0", "translate-y-14");
+//             modalContent.addEventListener(
+//                 "transitionend",
+//                 () => {
+//                     modal.classList.add("hidden");
+//                     document.body.classList.remove("overflow-hidden");
+//                 },
+//                 {once: true}
+//             );
+//         });
+//     });
+//
+//     modals.forEach((modal) => {
+//         modal.addEventListener("click", (event) => {
+//             if (!event.target.closest("[table-modal-content]")) {
+//                 const modalContent = modal.querySelector("[table-modal-content]");
+//                 modalContent.classList.add("opacity-0", "translate-y-14");
+//                 modalContent.addEventListener(
+//                     "transitionend",
+//                     () => {
+//                         modal.classList.add("hidden");
+//                         document.body.classList.remove("overflow-hidden");
+//                     },
+//                     {once: true}
+//                 );
+//             }
+//         });
+//     });
+// });
 
 //  graph-modal
 
