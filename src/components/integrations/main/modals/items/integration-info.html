@@ -1,0 +1,167 @@
+<div
+  class="graph-modal__container"
+  style="width: 65%"
+  role="dialog"
+  aria-modal="true"
+  data-graph-target="integration-info"
+>
+  <div
+    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold">Просмотр интеграции с Avito Магазин</h3>
+      <a
+        href="#"
+        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+        >Интеграции
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <a
+        href="#"
+        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80 relative right-16 top-2"
+        >Фид
+      </a>
+      <button
+        aria-label="Закрыть модальное окно"
+        class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="CloseIcon"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-[60vh] overflow-y-scroll">
+          <div class="px-8">
+            <div class="flex flex-col gap-8 pb-8 pt-12">
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Название:
+                  <span class="text-danger">*</span>
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/input.html', { placeholder: "", value: "Avito Balashiha", type: "text",
+                  optional_attr: "disabled" })
+                </div>
+              </div>
+              <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">Настройки</h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Сборка:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Avito Balashiha", type: "text",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+              </div>
+              <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">API</h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Client ID:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "hxjdG52VV-Z6MiahwG19", type: "text",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Client secret:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "ku1jHj6xSbNI_K32X2c7ZqlVwTSr1QzjpGlYMVdB", type: "text",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+              </div>
+              <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">Максимум объявлений</h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Всего:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "50000", type: "text",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Новых в день:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "", type: "text",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+              </div>
+              <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/textarea.html', { placeholder: "",
+                  id: "",
+                  hint: "", optional_attr: "disabled"})
+                </div>
+              </div>
+              <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Комментарий для сотрудников, клиентам не отображается.</span
+                >
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Оффлайн режим:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/checkbox.html', { id: "active1", label: "", optional_attr: "checked disabled" })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Активно:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/checkbox.html', { id: "active1", label: "", optional_attr: "checked disabled" })
+                </div>
+              </div>
+              <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Отображается на сайте и доступно для выбора.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-between border-t-2 border-solid border-gray-200 p-5"
+        >
+          <div class="ml-auto flex w-fit items-center gap-4">
+            @@include('shared/button.html', { title: "Закрыть", color: "bg-gray-200", class: "!text-black h-fit !w-fit js-modal-close" })
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

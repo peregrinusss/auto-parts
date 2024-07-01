@@ -7,12 +7,15 @@
       <div class="relative w-[calc(100vw-288px)] px-4">
         @@include('header/branches.html')
         @@include('branches/main.html')
+
+        <div class="graph-modal">
+          @@include('branches/modals/layout.html')
+        </div>
+        @@include('branches/checkboxes-filter.html')
       </div>
     </div>
 
-    <div class="graph-modal">
-      @@include('branches/modals/layout.html')
-    </div>
+
 
     <script
       src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
