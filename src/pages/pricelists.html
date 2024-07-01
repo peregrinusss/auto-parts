@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+  @@include('head.html')
+  <body>
+    <div class="grid h-full grid-cols-[auto_1fr] gap-2">
+      @@include('sidebar.html')
+      <div class="relative w-[calc(100vw-288px)] px-4">
+        @@include('header/pricelists.html') @@include('integrations/pricelists/pricelists.html')
+
+        <div class="graph-modal">
+          @@include('integrations/pricelists/modals/layout.html')
+        </div>
+
+        @@include('global/handbooks/users/checkboxes-filter.html')
+      </div>
+    </div>
+
+    <script
+      src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+      type="module"
+    ></script>
+    <script
+      src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
+      type="module"
+    ></script>
+    <script src="../js/scripts.js"></script>
+  </body>
+</html>

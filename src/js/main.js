@@ -658,10 +658,10 @@ document.addEventListener("DOMContentLoaded", () => {
         const filterPoints = filters.querySelectorAll("[data-filter]");
         const filtersGroupKey = filters.getAttribute("data-filters");
 
-        filterPoints.forEach((point) => {
-            point.addEventListener("click", () => {
-                // Удаляем класс у всех фильтров в текущей группе
-                filterPoints.forEach(p => p.classList.remove("filter-choosed"));
+    filterPoints.forEach((point) => {
+      point.addEventListener("click", () => {
+        // Удаляем класс у всех фильтров в текущей группе
+        // filterPoints.forEach(p => p.classList.remove("filter-choosed"));
 
                 // Добавляем класс выбранному фильтру
                 point.classList.add("filter-choosed");
@@ -1018,9 +1018,9 @@ const mainCheckboxes = document.querySelectorAll("[data-table-checkbox-main]");
 const secondaryCheckboxes = document.querySelectorAll("[data-table-checkbox-secondary]");
 
 function updateSortingVisibility(CheckboxType) {
-    const sortingElement = document.querySelector(`[data-table-checkbox-filter='${CheckboxType}']`);
-    const anyMainChecked = document.querySelector(`[data-table-checkbox-main='${CheckboxType}']:checked`);
-    const anySecondaryChecked = document.querySelector(`[data-table-checkbox-secondary='${CheckboxType}']:checked`);
+  const sortingElement = document.querySelector(`[data-table-checkbox-filter='${CheckboxType}']`);
+  const anyMainChecked = document.querySelector(`[data-table-checkbox-main='${CheckboxType}']:checked`);
+  const anySecondaryChecked = document.querySelector(`[data-table-checkbox-secondary='${CheckboxType}']:checked`);
 
     if (anyMainChecked || anySecondaryChecked) {
         sortingElement.classList.remove("hidden");

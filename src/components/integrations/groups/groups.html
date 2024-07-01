@@ -1,0 +1,237 @@
+<div class="mb-8 mt-4">
+  @@include('filters.html', {area: "integrations"})
+  <div
+    class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+  >
+    <div class="overflow-x-auto rounded-xl">
+      <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+        <thead>
+          <tr>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+            >
+              <div class="inline-flex items-center">
+                @@include('shared/checkbox-input.html', {id: "orders-0",
+                optional_attr: 'data-table-checkbox-main="users" ' } )
+              </div>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+            >
+              <div
+                data-sorting-trigger
+                class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased"
+              >
+                <p
+                  data-sorting-title
+                  class="cursor-pointer font-semibold underline-offset-4 opacity-70"
+                >
+                  Название
+                </p>
+                <div data-sorting-wrapper class="hidden items-center gap-1">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    class="h-[15px] w-[2px] rotate-[15deg] rounded-full bg-[#8E8E8E]"
+                  ></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+            >
+              <div
+                data-sorting-trigger
+                class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased"
+              >
+                <p
+                  data-sorting-title
+                  class="cursor-pointer font-semibold underline-offset-4 opacity-70"
+                >
+                  Приоритет 
+                </p>
+                <div data-sorting-wrapper class="hidden items-center gap-1">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                  <span
+                    class="h-[15px] w-[2px] rotate-[15deg] rounded-full bg-[#8E8E8E]"
+                  ></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg
+                      width="20"
+                      height="20"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+            >
+              <p
+                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+              >
+                Отобрано
+              </p>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors md:w-[33rem]"
+            >
+              <p
+                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+              >
+                Объявлений
+              </p>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+            >
+              <p
+                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+              >
+                Состояние
+              </p>
+            </th>
+          </tr>
+          <tr>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+            ></th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            >
+              <div class="w-full">
+                @@include('shared/input-search.html', { placeholder: "Фильтр",
+                fontSize: "text-sm", 
+                hint: "", 
+                optional_attr: "", 
+                id: "", 
+                loupe: '<img src="../../../../img/icons/loupe.svg" />', 
+                width: "w-[150px]" })
+              </div>
+            </th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            ></th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            ></th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            ></th>
+            <th
+              class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+            ></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                @@include('shared/checkbox-input.html', {id: "orders-1",
+                optional_attr: "data-table-checkbox-secondary='users'" })
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="">
+                <button
+                  class="text-lg text-primary"
+                  type="button"
+                  data-graph-path="group-info"
+                >
+                  Avito Balashiha (склад Москва)
+                </button>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex flex-col justify-center gap-1">
+                0
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <h4
+                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+              >
+                321
+              </h4>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="">
+                <a href="#" class="text-lg text-primary"> 290 </a>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div
+                class="text-blue-gray-900 flex items-center gap-1 text-lg font-normal leading-normal antialiased"
+              >
+                <span class="font-medium text-success">OK</span>
+                @@include('shared/sprite.html', { name: "warning", class: "w-5 h-5 !text-[#E0AB18]" })
+                <a href="#" class="text-lg text-primary"> 9287 </a>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    @@include('global/parts-selection/toasts.html')
+  </div>
+  @@include('footer.html', {summary: "Всего 25 записей" } )
+</div>
