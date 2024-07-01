@@ -1,0 +1,620 @@
+<div
+  class="graph-modal__container"
+  style="width: 65%"
+  role="dialog"
+  aria-modal="true"
+  data-graph-target="group-info"
+>
+  <div
+    class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold">Просмотр группы (по запчастям)</h3>
+      <a
+        href="#"
+        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+        >Группы
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+        aria-label="Закрыть модальное окно"
+        class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+          class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+          focusable="false"
+          aria-hidden="true"
+          viewBox="0 0 24 24"
+          data-testid="CloseIcon"
+        >
+          <path
+            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+    class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-[60vh] overflow-y-scroll">
+          <div class="px-8">
+            <div class="flex flex-col gap-8 pb-8 pt-12">
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Название:
+                  <span class="text-danger">*</span>
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/input.html', { placeholder: "", value: "Avito Balashiha (склад Москва)", type: "text", optional_attr: "disabled" })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">
+                  Сборка:
+                  <span class="text-danger">*</span>
+                </h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/input.html', { placeholder: "", value: "Avito Balashiha", type: "text", optional_attr: "disabled" })
+                </div>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  По запчастям, у которых:
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Статус:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">В наличии</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Состояние:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Не важно", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Склад:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Москва</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Применимость:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Доноры:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Узел из категории:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Узел не из категории:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Узел:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Не узел:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray"
+                      >Аккумуляторная батарея</span
+                    >
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Есть группа:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                  <h4 class="text-lg text-blue-gray">Нет группы:</h4>
+                  <div class="relative flex h-fit w-full flex-col">
+                    <span class="text-lg text-blue-gray"
+                      >Авито - только НН</span
+                    >
+                    <span class="text-lg text-blue-gray"
+                      >Авито - только Рязань</span
+                    >
+                    <span class="text-lg text-blue-gray"
+                      >Не выгружать в Авито</span
+                    >
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Есть особенность:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Не важно", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Особенность:</h4>
+                  <div class="relative h-fit w-full">
+                    <span class="text-lg text-blue-gray">Не выбрано</span>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Цена:</h4>
+                  <div
+                    class="relative flex h-fit w-full min-w-[200px] items-center gap-5"
+                  >
+                    @@include('shared/input.html', { placeholder: "", value: "10000", type: "text", optional_attr: "disabled" })
+                    <span class="text-lg text-gray-500">—</span>
+                    @@include('shared/input.html', { placeholder: "", value: "",
+                    type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Достоверность цены:</h4>
+                  <div
+                    class="relative flex h-fit w-full min-w-[200px] items-center gap-5"
+                  >
+                    @@include('shared/input.html', { placeholder: "", value: "",
+                    type: "text", optional_attr: "disabled" })
+                    <span class="text-lg text-gray-500">—</span>
+                    @@include('shared/input.html', { placeholder: "", value: "",
+                    type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Дата добавления:</h4>
+                  <div
+                    class="relative flex h-fit w-full min-w-[200px] items-center gap-5"
+                  >
+                    @@include('shared/input.html', { placeholder: "", value: "",
+                    type: "date", optional_attr: "disabled" })
+                    <span class="text-lg text-gray-500">—</span>
+                    @@include('shared/input.html', { placeholder: "", value: "",
+                    type: "date", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Есть OEM:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/checkbox.html', { id: "active1", label: "", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Есть фото:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/checkbox.html', { id: "active2", label: "", optional_attr: "disabled checked" })
+                  </div>
+                </div>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  Описание товара
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Шаблоны названия:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/textarea.html', { placeholder: "", id: "",
+                    hint: "", optional_attr: "disabled"})
+                  </div>
+                </div>
+                <div
+                  class="-mt-3 grid grid-cols-[180px_1fr] items-center gap-2"
+                >
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600"
+                    >Разделитель шаблонов: <code>@@@</code> , пропуск шаблона:
+                    <code>@skip@</code></span
+                  >
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Шаблоны описания:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/textarea.html', { placeholder: "", id: "",
+                    hint: "", optional_attr: "disabled"})
+                  </div>
+                </div>
+                <div
+                  class="-mt-3 grid grid-cols-[180px_1fr] items-center gap-2"
+                >
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600"
+                    >Разделитель шаблонов: <code>@@@</code> , пропуск шаблона:
+                    <code>@skip@</code></span
+                  >
+                </div>
+                <div class="">
+                  <h4>Переменные:</h4>
+                  <ul class="list-base mt-3">
+                    <li>
+                      Запчасть:
+                      <ul>
+                        <li><code>{{ part.article }}</code>: Артикул</li>
+                        <li><code>{{ part.fullname }}</code>: Название</li>
+                        <li><code>{{ part.oem }}</code>: OEM</li>
+                        <li>
+                          <code>{{ part.oem_description }}</code>: Описание ОЕМа
+                        </li>
+                        <li>
+                          <code>{{ part.description }}</code>: Описание
+                          экземляра
+                        </li>
+                        <li>
+                          <code>{{ part.coalescent_description }}</code>:
+                          Объединённое описание OEMа и запчасти
+                        </li>
+                        <li>
+                          <code>{{ part.condition }}</code>: Состояние (<code
+                            >used</code
+                          >
+                          или <code>new</code>)
+                        </li>
+                        <li><code>{{ part.markdowned }}</code>: Уценено?</li>
+                        <li>
+                          <code>{{ part.feature }}</code>: Особенность
+                          <ul>
+                            <li>
+                              <code>{{ part.feature.name }}</code>: Название
+                            </li>
+                            <li>
+                              <code>{{ part.feature.comment }}</code>:
+                              Комментарий
+                            </li>
+                          </ul>
+                        </li>
+                        <li>
+                          <code>{{ part.type.seo_keywords }}</code>: Поисковый
+                          индекс по узлам.
+                        </li>
+                        <li>
+                          <code>{{ part.donor.vehicle_model_with_make }}</code>:
+                          Модель и производитель донора
+                        </li>
+                        <li>
+                          <code
+                            >{{ part.donor.vehicle_model_with_make_and_years
+                            }}</code
+                          >: Модель и производитель донора (с годами)
+                        </li>
+                        <li>
+                          <code>{{ part.applicability }}</code>: Применимость в
+                          различных форматах:
+                          <ul>
+                            <li>
+                              <code>{{ part.applicability.count }}</code>:
+                              Количество моделей второго уровня в применимости.
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v1 }}</code>: Модели
+                              первого уровня с производителями (через запятую).
+                              Заполняется если в применимости не более 5
+                              моделей.
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v2 }}</code>: Модели
+                              второго уровня с производителями и синонимами
+                              (уникальные, списком в курсиве). Заполняется если
+                              в применимости не более 40 моделей.
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v2a }}</code>:
+                              Аналогично v2, но без синонимов.
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v3 }}</code>: Только
+                              одна модель второго уровня с производителем и
+                              синонимами (в скобках).
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v3a }}</code>:
+                              Аналогично v3, но без синонимов.
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v4 }}</code>: Только
+                              производители (списком).
+                            </li>
+                            <li>
+                              <code>{{ part.applicability.v4a }}</code>:
+                              Аналогично v4, но без синонимов.
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </li>
+                    <li>
+                      Объявление:
+                      <ul>
+                        <li><code>{{ ad.uuid }}</code>: UUID</li>
+                        <li>
+                          <code>{{ ad.source_ids }}</code>: ID источников, на
+                          основе которых создано объявление.
+                        </li>
+                      </ul>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  Контактная информация
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Адрес:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Московская область, Балашиха", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="-mt-1 grid grid-cols-[180px_1fr] items-center gap-2">
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600"
+                  >Формат: Область, Город, Улица (опционально), Дом (опционально) <br>
+                  Примеры: "Кировская область, Киров, Ленина улица, 8" или "Москва, м. Выхино" <br>
+                  Названия населённых пунктов рекомендуется брать из <a href="https://autoload.avito.ru/format/Locations.xml" class="text-primary">Справочника</a>
+                  </span
+                  >
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Контактные телефоны:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/textarea.html', { placeholder: "", id: "",
+                    hint: "", optional_attr: "disabled"})
+                  </div>
+                </div>
+                <div class="-mt-3 grid grid-cols-[180px_1fr] items-center gap-2">
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600"
+                  >По одному в строке. Если указано несколько - будет выбран один "случайным" образом. Обязательно с указанием кода города <a href="http://autoload.avito.ru/format/zapchasti_i_aksessuary/#ContactPhone" class="text-primary">(примеры)</a>
+                  </span
+                  >
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Имя менеджера:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Дмитрий", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Способ связи:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "По телефону и в сообщениях", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  Настройки
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Приоритет:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "0", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Уменьшить цену на:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "0", type: "text", class: "!pr-8", optional_attr: "disabled" })
+                    <div class="absolute right-3 h-fit top-0 bottom-0 my-auto">
+                      <span class="text-lg text-gray-500">%</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                  <h4 class="text-lg text-blue-gray">Регионы показа:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/textarea.html', { placeholder: "", id: "",
+                    hint: "", optional_attr: "disabled"})
+                  </div>
+                </div>
+                <div class="-mt-3 grid grid-cols-[180px_1fr] items-center gap-2">
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600"
+                  >Значения из <a href="https://autoload.avito.ru/format/DisplayAreas.xml" class="text-primary">справочника</a>, каждое на отдельной строке
+                  </span
+                  >
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Платная услуга:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Нет", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    ID категории:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "6-406", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="-mt-1 grid grid-cols-[180px_1fr] items-center gap-2">
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600">
+                    Если не задано - берётся из узла запчасти <a href="http://autoload.avito.ru/format/zapchasti_i_aksessuary/#TypeId" class="text-primary">(справочник Avito)</a>
+                  </span>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Новый классификатор:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/checkbox.html', { id: "active3", label: "",
+                    optional_attr: "checked disabled" })
+                  </div>
+                </div>
+                <div class="-mt-1 grid grid-cols-[180px_1fr] items-center gap-2">
+                  <div class=""></div>
+                  <span class="text-sm font-normal text-gray-600">
+                    Экспериментальный классификатор на замену ID категории
+                  </span>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Не выгружать цены:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/checkbox.html', { id: "active3", label: "",
+                    optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Связанные запчасти:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "Выгружать только одну из связанных", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">Заглавное фото с ватермаркой особенности:</h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/checkbox.html', { id: "active3", label: "",
+                    optional_attr: "disabled checked" })
+                  </div>
+                </div>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  Расписание
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Дни недели:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Часы:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <span class="text-sm font-normal text-gray-600"> Часы и дни недели, в которые будет публиковаться новые объявления. Можно использовать диапазоны, например: <code>10-15, 17</code></span>
+              </div>
+              <span
+                class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="flex flex-col gap-2">
+                <h4 class="text-md font-medium text-gray-500">
+                  Максимум объявлений
+                </h4>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Всего:
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+                <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                  <h4 class="text-lg text-blue-gray">
+                    Avito Balashiha:
+                    <span class="text-danger">*</span>
+                  </h4>
+                  <div class="relative h-fit w-full min-w-[200px]">
+                    @@include('shared/input.html', { placeholder: "", value: "50000", type: "text", optional_attr: "disabled" })
+                  </div>
+                </div>
+              </div>
+              <span
+              class="h-1 w-full rounded-full bg-primary bg-opacity-70"
+              ></span>
+              <div class="grid grid-cols-[180px_1fr] items-start gap-2">
+                <h4 class="text-lg text-blue-gray">Комментарий:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/textarea.html', { placeholder: "", id: "",
+                  hint: "", optional_attr: "disabled"})
+                </div>
+              </div>
+              <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Комментарий для сотрудников, клиентам не отображается.</span
+                >
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Оффлайн режим:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/checkbox.html', { id: "active4", label: "",
+                  optional_attr: "checked disabled" })
+                </div>
+              </div>
+              <div class="grid grid-cols-[180px_1fr] items-center gap-2">
+                <h4 class="text-lg text-blue-gray">Активно:</h4>
+                <div class="relative h-fit w-full min-w-[200px]">
+                  @@include('shared/checkbox.html', { id: "active5", label: "",
+                  optional_attr: "checked disabled" })
+                </div>
+              </div>
+              <div class="-mt-8 grid grid-cols-[180px_1fr] items-center gap-2">
+                <div class=""></div>
+                <span class="text-sm font-normal text-gray-600"
+                  >Отображается на сайте и доступно для выбора.</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="flex justify-between border-t-2 border-solid border-gray-200 p-5"
+        >
+          <div class="ml-auto flex w-fit items-center gap-4">
+            @@include('shared/button.html', { title: "Закрыть", color: "bg-gray-200", class: "!text-black h-fit !w-fit js-modal-close" })
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

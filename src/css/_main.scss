@@ -775,3 +775,23 @@ html {
 .active {
   display: flex;
 }
+
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+
+.list-base {
+  list-style-type: disc !important;
+  padding-left: 20px;
+  font-size: 12px !important;
+  color: #747474;
+
+  & ul {
+    list-style-type: circle !important;
+    padding-left: 30px;
+  }
+}
