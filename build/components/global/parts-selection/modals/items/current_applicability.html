@@ -50,15 +50,21 @@
 
 
                 <div class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
-                    <div class="flex gap-2 ">
-                        <label
+                    <ul>
+                        <li>
+                            <div class="flex items-center cursor-pointer select-none gap-3">
+                                <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                    <span class=" bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px]"></span>
+                                    <span class=" bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px] transition-transform "></span>
+                                </button>
+                                <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="different"
+  htmlfor="tree-0-1"
 >
   <input
-    id="different"
+    id="tree-0-1"
     type="checkbox"
-    @@optional_attr
+    data-tree-checkbox 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -81,20 +87,26 @@
   </span>
 </label>
 
-                        <button type="button" class="px-4 py-1 transition-all rounded-lg  duration-400 bg-light-green-200 " data-nested-control="main-accordion">
-                            Renault
-                        </button>
-                    </div>
-                    <div data-nested-content="main-accordion" class="flex flex-col gap-2 ms-2">
-                        <div class="flex gap-2 ">
-                            <label
+                                <span class=" ">Daf</span>
+                            </div>
+                            <ul class="active nested ml-3 flex flex-col gap-2 my-2">
+                                <li>
+                                    <div class="flex items-center gap-3 cursor-pointer select-none ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="stroke-success" d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                            <span class="bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px]"></span>
+                                            <span class="bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px] transition-transform "></span>
+                                        </button>
+                                        <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="parts"
+  htmlfor="tree-0-1"
 >
   <input
-    id="parts"
+    id="tree-0-1"
     type="checkbox"
-    @@optional_attr
+    data-tree-checkbox 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -117,59 +129,53 @@
   </span>
 </label>
 
-                            <button type="button" class="px-4 py-1 transition-all rounded-lg  duration-400 bg-light-green-200" data-nested-control="nested-accordion-1">
-                                T
-                            </button>
-                        </div>
-                        <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg duration-400 bg-light-green-200 w-fit">
-                            <div
-  role="button"
-  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
+                                        <span>XF 105</span>
+                                    </div>
+                                    <ul class="active nested ml-3 flex flex-col gap-4 my-4">
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="stroke-success" d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="tree-0-3"
 >
-  <label htmlfor="nested-part" class="flex w-full cursor-pointer items-center">
-    <div class="mr-3 grid place-items-center">
-      <div class="inline-flex items-center">
-        <label
-          class="relative flex cursor-pointer items-center rounded-full p-0"
-          htmlfor="nested-part"
-        >
-          <input
-            id="nested-part"
-            type="checkbox"
-            
-            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
-          />
-          <span
-            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-3.5 w-3.5"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-              stroke="currentColor"
-              stroke-width="1"
-            >
-              <path
-                fill-rule="evenodd"
-                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                clip-rule="evenodd"
-              ></path>
-            </svg>
-          </span>
-        </label>
-      </div>
-    </div>
-    <h4
-      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
+  <input
+    id="tree-0-3"
+    type="checkbox"
+    data-tree-checkbox checked
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
     >
-      T (2013 - н/в)
-    </h4>
-  </label>
-</div>
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
 
-                        </div>
-                    </div>
+                                                <span>XF 105 (2005 - н/в)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
 
 

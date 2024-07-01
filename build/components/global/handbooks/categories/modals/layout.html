@@ -41,34 +41,39 @@
 
         <div class="">
             <form>
-                <div class="p-7 max-h-[65vh] overflow-y-auto flex flex-wrap gap-7">
+                <div class="p-7 max-h-[65vh] overflow-y-auto flex flex-wrap gap-6">
 
                     <div class="grid grid-cols-2 gap-6 w-full">
-                        <div class="w-full flex flex-col gap-4">
-                            <div class="flex flex-col gap-2 items-start">
-                                <h4 class="text-2lg text-blue-gray">
-                                    Название<span class="text-danger">*</span>:
-                                </h4>
-                                <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                    Агрегаты в сборе
-                                </h4>
-                            </div>
-                        </div>
-                        <div class="w-full flex flex-col gap-4">
-                            <div class="flex flex-col gap-2 items-start">
-                                <h4 class="text-2lg text-blue-gray">
-                                    ID в Авито::
-                                </h4>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Название:*
+                            </label>
+                            <div class="relative h-fit w-full min-w-[200px]">
                                 <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed text-2lg h-[52px]"
-  placeholder="ID"
-  value=""
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="OEM" readonly
+  value="Агрегаты в сборе"
   type="text"
-  
+
 />
 
-                                <a class="text-primary text-opacity-75 text-lg ">Справочник</a>
                             </div>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                ID в Авито:
+                            </label>
+                            <div class="relative h-fit w-full min-w-[200px]">
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="OEM" 
+  value=""
+  type="text"
+
+/>
+
+                            </div>
+                            <a class="text-primary text-opacity-75 text-lg ">Справочник</a>
                         </div>
                     </div>
                     <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
@@ -84,8 +89,9 @@
                             <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -100,7 +106,7 @@
                                             class="relative flex cursor-pointer items-center rounded-full"
                                     >
                                         <input
-                                                disabled
+                                                disabled checked
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
                                                 id="detail_active"
@@ -147,8 +153,8 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-        @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
@@ -156,7 +162,7 @@
                         <button
         type="button"
         @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Закрыть</h4>
 </button>

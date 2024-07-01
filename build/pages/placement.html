@@ -652,15 +652,14 @@
   <div class="mx-auto w-fit mt-5">
     <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed text-2lg h-[52px]"
-  placeholder="Штрихкод"
+  placeholder="Штрихкод" 
   value=""
   type="text"
-  
+
 />
 
   </div>
 </div>
-
         <!-- <div class="graph-modal">
         <div
   class="graph-modal__container"
@@ -809,10 +808,10 @@
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Введите название"
+  placeholder="Введите название" 
   value="Трубки 2"
   type="text"
-  
+
 />
 
                 </div>
@@ -825,10 +824,10 @@
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Введите сокращенное название"
+  placeholder="Введите сокращенное название" disabled
   value="Нижний Новгород"
   type="text"
-  disabled
+
 />
 
                 </div>
@@ -839,8 +838,9 @@
                   <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Введите комментарий"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -987,12 +987,12 @@
             </button>
             <button
         type="button"
-        @@optional_attr
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
         class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
- 
+
             <button
         type="button"
         @@optional_attr
@@ -1061,10 +1061,10 @@
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Введите название"
+  placeholder="Введите название" 
   value="Трубки 2"
   type="text"
-  
+
 />
 
                 </div>
@@ -1077,10 +1077,10 @@
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Введите сокращенное название"
+  placeholder="Введите сокращенное название" disabled
   value="Нижний Новгород"
   type="text"
-  disabled
+
 />
 
                 </div>
@@ -1091,8 +1091,9 @@
                   <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Введите комментарий"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -1228,12 +1229,12 @@
             </button>
             <button
         type="button"
-        @@optional_attr
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
         class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
- 
+
             <button
         type="button"
         @@optional_attr
@@ -1302,8 +1303,9 @@
                   <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Введите комментарий"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -1325,10 +1327,10 @@
                 <div class="relative h-fit w-full min-w-[200px]">
                   <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Введите сокращенное название"
+  placeholder="Введите сокращенное название" disabled
   value="Нижний Новгород"
   type="text"
-  disabled
+
 />
 
                 </div>
@@ -1398,12 +1400,13 @@
             </button>
             <button
         type="button"
-        @@optional_attr
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
         class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
- <button
+
+            <button
         type="button"
         @@optional_attr
         class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit js-modal-close whitespace-nowrap"

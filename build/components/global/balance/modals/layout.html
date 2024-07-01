@@ -1,0 +1,427 @@
+<div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="change-balance"
+>
+  <div
+          class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold"> Изменение баланса</h3>
+      <a
+              href="#"
+              class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+        Способы оплаты заказов
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+              aria-label="Закрыть модальное окно"
+              class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+                class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                focusable="false"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                data-testid="CloseIcon"
+        >
+          <path
+                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+          class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-fit overflow-y-scroll">
+          <div class="px-5">
+            <div class="flex flex-col gap-8 py-12">
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Дата:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    29.06.2024 03:10:00
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Сумма:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    -1 770
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Баланс (после операции):
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    23 430
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Описание:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    Ежедневное автоматическое списание
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Тарифный план:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    Оптима
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Базовая стоимость:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    650
+                  </h4>
+                </div>
+              </div>
+              <div>
+                <table class="w-full  table-auto overflow-x-auto text-left">
+                  <thead>
+                  <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                      Ресурс
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                      Кол-во
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                      Стоимость
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Карточки запчастей
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      27999
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Архивные карточки запчастей
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      978
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Филиалы
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      1
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Интеграции
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      25
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      210
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Объявления Авито
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      70161
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      210
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Группы Авито
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      43
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      700
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+                class="border-t-2 border-solid border-gray-200 p-5 flex justify-end"
+        >
+
+          <div class="ml-auto flex items-center gap-4 w-fit">
+            <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit js-modal-close whitespace-nowrap"
+>
+  <h4>Закрыть</h4>
+</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="planning-balance"
+>
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold"> Планируемое списание</h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+                История операций
+            </a>
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button
+                    aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+            >
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+            class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+    >
+        <div class="">
+            <form>
+                <div class="h-fit overflow-y-scroll">
+                    <div class="px-5">
+                        <div class="flex flex-col gap-8 py-12">
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Тарифный план:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        Оптима
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Базовая стоимость:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        650
+                                    </h4>
+                                </div>
+                            </div>
+                            <div>
+                                <table class="w-full  table-auto overflow-x-auto text-left">
+                                    <thead>
+                                    <tr>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                                        >
+                                            Ресурс
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            Кол-во
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            Стоимость
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Карточки запчастей
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            27999
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Архивные карточки запчастей
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            978
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Филиалы
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            1
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Интеграции
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            25
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            210
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Объявления Авито
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            70161
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            210
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Группы Авито
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            43
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            700
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Сумма списания:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        1 770
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="border-t-2 border-solid border-gray-200 p-5 flex justify-end"
+                >
+
+                    <div class="ml-auto flex items-center gap-4 w-fit">
+                        <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit js-modal-close whitespace-nowrap"
+>
+  <h4>Закрыть</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
