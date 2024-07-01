@@ -4,7 +4,7 @@ name: Deploy static content to Pages
 on:
   # Runs on pushes targeting the default branch
   push:
-    branches: ["gh-pages"]
+    branches: ["main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -33,11 +33,15 @@ jobs:
         uses: actions/checkout@v4
       - name: Setup Pages
         uses: actions/configure-pages@v5
+      - name: Build project
+        run: |
+          # Здесь добавьте ваши команды сборки, если они необходимы
+          # Например: npm install && npm run build
+          echo "Build step if required"
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # Upload entire repository
-          path: './build'
+          path: './build/'  # Убедитесь, что путь правильный
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
