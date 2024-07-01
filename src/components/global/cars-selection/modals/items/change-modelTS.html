@@ -52,12 +52,13 @@
                 >
 
                     <div
-                            data-tabs=""
+                            data-tabs data-applicability-tabs
                             class="bg-blue-gray-50/60 relative flex gap-2 rounded-lg p-1"
                     >
                         <button
+
                                 type="button"
-                                class="z-30 flex-auto rounded-lg px-2 text-center transition-all tab-active"
+                                class="z-30 flex-auto rounded-lg px-2 text-center transition-all "
                         >
                             <h4
                                     class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
@@ -67,7 +68,7 @@
                         </button>
                         <button
                                 type="button"
-                                class="z-30 flex-auto rounded-lg p-2 text-center transition-all"
+                                class="z-30 flex-auto rounded-lg p-2 text-center transition-all tab-active"
                         >
                             <h4
                                     class="text-slate-700 text-base z-30 mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 transition-all duration-200 ease-in-out"
@@ -85,72 +86,187 @@
                     })
                 </div>
 
-                <div class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
-                    <div class="flex gap-2">
-                        @@include('shared/checkbox-input.html', {
-                        id: "different",
-                        })
-                        <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="main-accordion">
-                            Разные
-                        </button>
-                    </div>
-                    <div data-nested-content="main-accordion" class="flex flex-col gap-2 ms-2">
-                        <div class="flex gap-2">
-                            @@include('shared/checkbox-input.html', {
-                            id: "cars",
-                            })
-                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-1">
-                                Автомобили
-                            </button>
-                        </div>
-                        <div data-nested-content="nested-accordion-1" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
-                            @@include('shared/checkbox.html', {
-                            id: "nested-cars",
-                            label: "Автомобили",
-                            optional_attr: ""
-                            })
-                        </div>
-                        <div class="flex gap-2">
-                            @@include('shared/checkbox-input.html', {
-                            id: "trucks",
-                            })
-                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-2">
-                                Грузовики
-                            </button>
-                        </div>
-                        <div data-nested-content="nested-accordion-2" class="ms-2 px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-light-green-200 w-fit">
-                            @@include('shared/checkbox.html', {
-                            id: "nested-trucks",
-                            label: "Грузовики",
-                            optional_attr: ""
-                            })
-                        </div>
-                        <div class="flex gap-2">
-                            @@include('shared/checkbox-input.html', {
-                            id: "spares",
-                            })
-                            <button type="button" class="px-4 py-1 transition-all rounded-lg bg-gray-100 duration-400 hover:bg-primary hover:text-light-gray" data-nested-control="nested-accordion-3">
-                                Запчасти
-                            </button>
-                        </div>
-                        <div data-nested-content="nested-accordion-3" class="ms-2  flex flex-col gap-2 ">
-                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
-                                @@include('shared/checkbox.html', {
-                                id: "nested-spares",
-                                label: "На обработку",
-                                optional_attr: ""
-                                })
+                <div data-applicability-lists class="flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
+                    <ul class="hidden">
+                        <li>
+                            <div class="flex items-center cursor-pointer select-none gap-3">
+                                <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                    <span class=" bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px]"></span>
+                                    <span class=" bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px] transition-transform "></span>
+                                </button>
+                                @@include('shared/checkbox-input.html',
+                                {id: "tree-0-1",
+                                optional_attr: 'data-tree-checkbox '
+                                }
+                                )
+                                <span class=" ">Daf</span>
                             </div>
-                            <div class=" px-4 py-1  transition-all rounded-lg bg-gray-100 hover:bg-light-green-200 duration-400  w-fit">
-                                @@include('shared/checkbox.html', {
-                                id: "nested-spares",
-                                label: "На отгрузку",
-                                optional_attr: ""
-                                })
-                            </div>
-                        </div>
+                            <ul class="active nested ml-3 flex flex-col gap-2 my-2">
+                                <li>
+                                    <div class="flex items-center gap-3 cursor-pointer select-none ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path class="stroke-success" d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20"  stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                            <span class="bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px]"></span>
+                                            <span class="bg-success absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2  rounded-lg h-[3px] w-[15px] transition-transform "></span>
+                                        </button>
+                                        @@include('shared/checkbox-input.html',
+                                        {id: "tree-0-1",
+                                        optional_attr: 'data-tree-checkbox '
+                                        }
+                                        )
+                                        <span>XF 105</span>
+                                    </div>
+                                    <ul class="active nested ml-3 flex flex-col gap-4 my-4">
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg  width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path class="stroke-success" d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                @@include('shared/checkbox-input.html',
+                                                {id: "tree-0-3",
+                                                optional_attr: 'data-tree-checkbox checked'
+                                                }
+                                                )
+                                                <span>XF 105 (2005 - н/в)</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
 
-                    </div>
+                            </ul>
+                        </li>
+                    </ul>
+
+
+                    <ul  >
+                        <li>
+                            <div class="flex items-center cursor-pointer select-none gap-3">
+                                <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                    <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px]"></span>
+                                    <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px] transition-transform rotate-90"></span>
+                                </button>
+                                @@include('shared/checkbox-input.html',
+                                {id: "tree-0",
+                                optional_attr: 'data-tree-checkbox '
+                                }
+                                )
+                                <span>Разные</span>
+                            </div>
+                            <ul class="nested ml-3 flex flex-col gap-2 my-2">
+                                <li>
+                                    <div class="flex items-center gap-3 cursor-pointer select-none ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px]"></span>
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px] transition-transform rotate-90"></span>
+                                        </button>
+                                        @@include('shared/checkbox-input.html',
+                                        {id: "tree-1",
+                                        optional_attr: 'data-tree-checkbox '
+                                        }
+                                        )
+                                        <span>Автомобили</span>
+                                    </div>
+                                    <ul class="nested ml-3 flex flex-col gap-4 my-4">
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                @@include('shared/checkbox-input.html',
+                                                {id: "tree-3",
+                                                optional_attr: 'data-tree-checkbox '
+                                                }
+                                                )
+                                                <span>Автомобили</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="flex items-center gap-3 cursor-pointer select-none ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px]"></span>
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px] transition-transform rotate-90"></span>
+                                        </button>
+                                        @@include('shared/checkbox-input.html',
+                                        {id: "tree-1",
+                                        optional_attr: 'data-tree-checkbox '
+                                        }
+                                        )
+                                        <span>Грузовики</span>
+                                    </div>
+                                    <ul class="nested ml-3 flex flex-col gap-4 my-4">
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                @@include('shared/checkbox-input.html',
+                                                {id: "tree-3",
+                                                optional_attr: 'data-tree-checkbox '
+                                                }
+                                                )
+                                                <span>Грузовики</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <div class="flex items-center gap-3 cursor-pointer select-none ">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                        <button type="button" data-tree-toggle class="relative w-[20px] h-[20px] cursor-pointer ">
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px]"></span>
+                                            <span class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-blue-gray rounded-lg h-[3px] w-[15px] transition-transform rotate-90"></span>
+                                        </button>
+                                        @@include('shared/checkbox-input.html',
+                                        {id: "tree-1",
+                                        optional_attr: 'data-tree-checkbox '
+                                        }
+                                        )
+                                        <span>Запчасти</span>
+                                    </div>
+                                    <ul class="nested ml-3 flex flex-col gap-4 my-4">
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                @@include('shared/checkbox-input.html',
+                                                {id: "tree-3",
+                                                optional_attr: 'data-tree-checkbox '
+                                                }
+                                                )
+                                                <span>На загрузку</span>
+                                            </div>
+                                        </li>
+                                        <li>
+                                            <div class="flex items-center gap-3 cursor-pointer select-none ms-[20px]">
+                                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M21 14H11C8.87827 14 6.84344 13.1571 5.34315 11.6569C3.84285 10.1566 3 8.12173 3 6L3 4M21 14L15 8M21 14L15 20" stroke="#212121" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                                @@include('shared/checkbox-input.html',
+                                                {id: "tree-3",
+                                                optional_attr: 'data-tree-checkbox '
+                                                }
+                                                )
+                                                <span>На отгрузку</span>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
 
 
@@ -162,7 +278,7 @@
                         @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
-                        class: "h-full", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
+                        class: "h-full js-modal-close", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
                         })
                     </div>
                 </div>

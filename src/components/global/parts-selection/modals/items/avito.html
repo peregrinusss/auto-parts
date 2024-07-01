@@ -55,7 +55,7 @@
                                     class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
                             >
                                 <div class="inline-flex items-center">
-                                    @@include('shared/checkbox-input.html', {id: "0"})
+
                                 </div>
                             </th>
                             <th
@@ -313,7 +313,8 @@
                         @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
-                        class: "h-full"
+                        class: "h-full js-modal-close",
+                        optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
                         })
                     </div>
                 </div>
