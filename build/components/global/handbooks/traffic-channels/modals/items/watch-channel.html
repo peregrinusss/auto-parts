@@ -1,4 +1,5 @@
-<div class="graph-modal__container " style="width: 80%;" role="dialog" aria-modal="true" data-graph-target="watch-channel">
+<div class="graph-modal__container " style="width: 80%;" role="dialog" aria-modal="true"
+     data-graph-target="watch-channel">
 
 
     <div
@@ -18,7 +19,8 @@
 
         </div>
         <div class="absolute right-5 top-5 flex items-center gap-3">
-            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+            <button aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
                 <svg
                         class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
                         focusable="false"
@@ -90,9 +92,21 @@
                                 <h4 class="text-2lg text-blue-gray">
                                     Адрес магазина:
                                 </h4>
-                                <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                    "Нижегородская область, посёлок Гнилицкие Дворики, 17
-                                </h4>
+                                <div data-popover-wrapper class="relative w-full ">
+                                    <div data-popover-trigger class="overflow-x-hidden">
+                                        <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                            "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                        </h4>
+                                    </div>
+
+                                    <div
+                                            data-popover-content
+                                            class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-1/2 z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                        <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75"></span>
+                                        "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="flex flex-col gap-2 items-start">
                                 <h4 class="text-2lg text-blue-gray">
@@ -109,13 +123,14 @@
                                 <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
 
                                 </h4>
-                                <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по тексту в формате: Город (Область)</h5>
+                                <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по
+                                    тексту в формате: Город (Область)</h5>
                             </div>
 
                         </div>
                     </div>
                     <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
-                    <div  class="grid grid-cols-2 gap-6">
+                    <div class="grid grid-cols-2 gap-6">
 
                         <div class="flex h-full flex-col gap-2">
                             <label
@@ -127,14 +142,16 @@
                             <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
 </label>
 
-                            <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не отображается.</h5>
+                            <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не
+                                отображается.</h5>
                         </div>
                         <div class="flex flex-col  gap-3">
                             <div class="flex flex-col gap-1">
@@ -146,6 +163,7 @@
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
                                                 id="detail_active"
+                                                checked disabled
                                         />
                                         <span
                                                 class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -198,7 +216,7 @@
                         <button
         type="button"
         @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Закрыть</h4>
 </button>

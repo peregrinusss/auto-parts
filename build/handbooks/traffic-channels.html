@@ -5,11 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Авторазбор</title>
-  <link rel="apple-touch-icon" sizes="180x180" href="/favicons/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/favicons/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/favicons/favicon-16x16.png">
-  <link rel="manifest" href="/favicons/site.webmanifest">
-  <link rel="mask-icon" href="/src/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <link rel="apple-touch-icon" sizes="180x180" href="/auto-parts/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/auto-parts/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/auto-parts/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/auto-parts/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/src/auto-parts/favicons/safari-pinned-tab.svg" color="#5bbad5">
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
   <link
@@ -653,7 +653,7 @@
                             minimodal-bottom-content
                             class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
                     >
-                        <div class="flex flex-col gap-2" data-filters>
+                        <div class="flex flex-col gap-2" data-filters="traffic">
                             <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="source">
                                 <span class="text-base font-normal text-black">Источник</span>
                             </div>
@@ -678,13 +678,13 @@
 </header>
 
         <main class="mb-8 mt-4">
-    <div data-filters-area></div>
+    <div data-filters-area="traffic"></div>
 
     <div
             class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
     >
         <div class="overflow-x-auto rounded-xl">
-            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+            <table class="w-full min-w-[1300px] table-auto overflow-x-auto text-left">
                 <thead>
                 <tr>
                     <th
@@ -693,12 +693,12 @@
                         <div class="inline-flex items-center">
                             <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="0"
+  htmlfor="traffic-0"
 >
   <input
-    id="0"
+    id="traffic-0"
     type="checkbox"
-    @@optional_attr
+    data-table-checkbox-main="traffic" 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -726,151 +726,127 @@
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Вес
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="min-w-[150px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Вес</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Источник
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Источник</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Тип
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Тип</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Кампания
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Кампания</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Геотаргетинг
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Геотаргетинг</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
                             class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-                        <p
-                                class="w-max text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Caller ID
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
+                        <div data-sorting-trigger class="min-w-[150px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                            <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Caller ID</p>
+                            <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
                     </th>
                     <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                            class=" border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
                     >
-
+                        <div class="min-w-[200px]"></div>
                     </th>
 
                 </tr>
@@ -900,7 +876,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -928,7 +904,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -956,7 +932,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -989,12 +965,12 @@
                         <div class="inline-flex items-center">
                             <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="1"
+  htmlfor="traffic-1"
 >
   <input
-    id="1"
+    id="traffic-1"
     type="checkbox"
-    @@optional_attr
+    data-table-checkbox-secondary="traffic" 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -1072,13 +1048,153 @@
                         </div>
                     </td>
                 </tr>
+                <tr class="disabled-item">
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="traffic-2"
+>
+  <input
+    id="traffic-2"
+    type="checkbox"
+    data-table-checkbox-secondary="traffic" 
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                        <button data-graph-path="watch-channel"  class="flex flex-col gap-1">
+                            <h4
+                                    class="text-start text-md text-primary transition-all group-hover:text-primary group-hover:opacity-75"
+                            >
+                                1
+                            </h4>
+                        </button>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex items-center gap-3">
+                            <h4 class="text-md">
+
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex  justify-start">
+                            <h4 class="text-md">
+
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex justify-start">
+                            <h4 class="text-md">
+
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex  justify-start">
+                            <h4 class="text-md">
+
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex  justify-start">
+                            <h4 class="text-md">
+
+                            </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex w-fit justify-start">
+                            <h4 class="text-md">
+                                +7 905 869 2357, +7 996 564 5029, +7 909 296 4479
+                                <span class="text-gray-500">Нижегородская область, посёлок Гнилицкие Дворики, 17</span>
+                            </h4>
+                        </div>
+                    </td>
+                </tr>
 
                 </tbody>
             </table>
         </div>
+        <div class="absolute top-0 right-0">
+    <div class="relative ">
+        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2 z-[10000]">
+            <div id="toast-success"
+                 class="flex hidden  items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    <span class="sr-only">Check icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Сохранено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-success').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="toast-danger"
+                 class="flex hidden items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                    </svg>
+                    <span class="sr-only">Error icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Удалено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-danger').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
     </div>
     <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
-  Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422720 р.)
+  Всего 2 записи
 </span>
 <div class="mt-3 flex items-center justify-between gap-5">
 <div class="flex items-center gap-2" data-pagination>
@@ -1247,7 +1363,8 @@
 
         <div class="graph-modal">
             
-<div class="graph-modal__container " style="width: 80%;" role="dialog" aria-modal="true" data-graph-target="watch-channel">
+<div class="graph-modal__container " style="width: 80%;" role="dialog" aria-modal="true"
+     data-graph-target="watch-channel">
 
 
     <div
@@ -1267,7 +1384,8 @@
 
         </div>
         <div class="absolute right-5 top-5 flex items-center gap-3">
-            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+            <button aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
                 <svg
                         class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
                         focusable="false"
@@ -1339,9 +1457,21 @@
                                 <h4 class="text-2lg text-blue-gray">
                                     Адрес магазина:
                                 </h4>
-                                <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                    "Нижегородская область, посёлок Гнилицкие Дворики, 17
-                                </h4>
+                                <div data-popover-wrapper class="relative w-full ">
+                                    <div data-popover-trigger class="overflow-x-hidden">
+                                        <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                            "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                        </h4>
+                                    </div>
+
+                                    <div
+                                            data-popover-content
+                                            class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-1/2 z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                        <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75"></span>
+                                        "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                    </div>
+                                </div>
+
                             </div>
                             <div class="flex flex-col gap-2 items-start">
                                 <h4 class="text-2lg text-blue-gray">
@@ -1358,13 +1488,14 @@
                                 <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
 
                                 </h4>
-                                <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по тексту в формате: Город (Область)</h5>
+                                <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по
+                                    тексту в формате: Город (Область)</h5>
                             </div>
 
                         </div>
                     </div>
                     <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
-                    <div  class="grid grid-cols-2 gap-6">
+                    <div class="grid grid-cols-2 gap-6">
 
                         <div class="flex h-full flex-col gap-2">
                             <label
@@ -1376,14 +1507,16 @@
                             <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
 </label>
 
-                            <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не отображается.</h5>
+                            <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не
+                                отображается.</h5>
                         </div>
                         <div class="flex flex-col  gap-3">
                             <div class="flex flex-col gap-1">
@@ -1395,6 +1528,7 @@
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
                                                 id="detail_active"
+                                                checked disabled
                                         />
                                         <span
                                                 class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -1447,7 +1581,7 @@
                         <button
         type="button"
         @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Закрыть</h4>
 </button>
@@ -1459,7 +1593,7 @@
         </div>
     </div>
 </div>
-a<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="changelog-channel">
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="changelog-channel">
 
     <div
             class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
@@ -1475,12 +1609,15 @@ a<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-
                 >Каналы трафика </a
                 >
                 <span> / </span>
-                <a>Просмотр канал трафика</a>
+                <a href="#"
+                   class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >Просмотр канал трафика</a>
             </div>
 
         </div>
         <div class="absolute right-5 top-5 flex items-center gap-3">
-            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+            <button aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
                 <svg
                         class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
                         focusable="false"
@@ -1496,24 +1633,340 @@ a<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-
         </div>
     </div>
     <div class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all">
-        <div class="p-7 pb-0 flex flex-col gap-7">
-            <div class="flex justify-center">
-                <h4 class=" text-2lg text-primary opacity-75">
-                    Изменений не найдено
-                </h4>
+        <div class="p-7 max-h-[65vh] overflow-y-auto grid grid-cols-[1fr_4px_1fr] gap-10">
+
+            <div class="flex flex-col gap-3">
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Вес:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                0
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Источник:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Тип:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Кампания:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Caller ID:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Адрес магазина:
+                            </h4>
+                            <div data-popover-wrapper class="relative w-full ">
+                                <div data-popover-trigger class="overflow-x-hidden">
+                                    <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                    </h4>
+                                </div>
+
+                                <div
+                                        data-popover-content
+                                        class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-1/2 z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                    <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75"></span>
+                                    "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Телефон магазина:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                +7 905 869 2357, +7 996 564 5029, +7 909 296 4479
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Геотаргетинг:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                            <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по
+                                тексту в формате: Город (Область)</h5>
+                        </div>
+
+                    </div>
+                </div>
+                <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                <div class="grid grid-cols-1 gap-6">
+
+                    <div class="flex h-full flex-col gap-2">
+                        <label
+
+                                class="mb-2 block text-2lg font-medium text-primary"
+                        >
+                            Комментарий:
+                        </label>
+                        <textarea
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
+        placeholder="Напишите что-нибудь"
+        readonly
+></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
+
+                        <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не
+                            отображается.</h5>
+                    </div>
+                    <div class="flex flex-col  gap-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="mt-10 flex items-center gap-[1rem]">
+                                <div
+                                        class="relative flex cursor-pointer items-center rounded-full"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
+                                            id="detail_active"
+                                            checked disabled
+                                    />
+                                    <span
+                                            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                    >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-3.5 w-3.5"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                    >
+                                      <path
+                                              fill-rule="evenodd"
+                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                              clip-rule="evenodd"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                </div>
+                                <label
+                                        for="detail_active"
+                                        class="text-2lg text-blue-gray"
+                                >Активно</label
+                                >
+                            </div>
+                            <h5 class="text-lg text-blue-gray opacity-75">
+                                Отображается на сайте и доступно для выбора.
+                            </h5>
+                        </div>
+
+                    </div>
+
+                </div>
             </div>
-            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+            <span class="block h-auto w-[4px] rounded-full bg-primary bg-opacity-70"></span>
+            <div class="flex flex-col gap-3">
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Вес:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                0
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Источник:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
 
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Тип:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
 
-            <div
-                    class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
-            >
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Кампания:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
 
-                <button type="button" aria-label="Закрыть модальное окно" class=" js-modal-close flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100 ">
-                    Закрыть
-                </button>
+                            </h4>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-col gap-4">
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Caller ID:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Адрес магазина:
+                            </h4>
+                            <div data-popover-wrapper class="relative w-full ">
+                                <div data-popover-trigger class="overflow-x-hidden">
+                                    <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                    </h4>
+                                </div>
+
+                                <div
+                                        data-popover-content
+                                        class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-1/2 z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                                    <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75"></span>
+                                    "Нижегородская область, посёлок Гнилицкие Дворики, 17"
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Телефон магазина:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                +7 905 869 2357, +7 996 564 5029, +7 909 296 4479
+                            </h4>
+                        </div>
+                        <div class="flex flex-col gap-2 items-start">
+                            <h4 class="text-2lg text-blue-gray">
+                                Геотаргетинг:
+                            </h4>
+                            <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                            </h4>
+                            <h5 class="text-gray-500 text-lg">Регулярное выражение для поиска без учёта регистра по
+                                тексту в формате: Город (Область)</h5>
+                        </div>
+
+                    </div>
+                </div>
+                <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                <div class="grid grid-cols-1 gap-6">
+
+                    <div class="flex h-full flex-col gap-2">
+                        <label
+
+                                class="mb-2 block text-2lg font-medium text-primary"
+                        >
+                            Комментарий:
+                        </label>
+                        <textarea
+        id=""
+        rows="5"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
+        placeholder="Напишите что-нибудь"
+        readonly
+></textarea>
+<label for="" class="text-blue-gray-700 text-sm">
+    
+</label>
+
+                        <h5 class="text-gray-500 text-lg">Комментарий для сотрудников, клиентам не
+                            отображается.</h5>
+                    </div>
+                    <div class="flex flex-col  gap-3">
+                        <div class="flex flex-col gap-1">
+                            <div class="mt-10 flex items-center gap-[1rem]">
+                                <div
+                                        class="relative flex cursor-pointer items-center rounded-full"
+                                >
+                                    <input
+                                            type="checkbox"
+                                            class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
+                                            id="detail_active-1"
+                                            checked disabled
+                                    />
+                                    <span
+                                            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+                                    >
+                                    <svg
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            class="h-3.5 w-3.5"
+                                            viewBox="0 0 20 20"
+                                            fill="currentColor"
+                                            stroke="currentColor"
+                                            stroke-width="1"
+                                    >
+                                      <path
+                                              fill-rule="evenodd"
+                                              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                                              clip-rule="evenodd"
+                                      ></path>
+                                    </svg>
+                                  </span>
+                                </div>
+                                <label
+                                        for="detail_active"
+                                        class="text-2lg text-blue-gray"
+                                >Активно</label
+                                >
+                            </div>
+                            <h5 class="text-lg text-blue-gray opacity-75">
+                                Отображается на сайте и доступно для выбора.
+                            </h5>
+                        </div>
+
+                    </div>
+
+                </div>
 
             </div>
+
+
+
+        </div>
+        <div
+                class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+        >
+            <div class="flex gap-4">
+                <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-danger p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
+>
+  <h4>Закрыть</h4>
+</button>
+
+            </div>
+
         </div>
 
     </div>
@@ -1522,6 +1975,43 @@ a<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-
 
 
         </div>
+        <div data-table-checkbox-filter="users" class="hidden sticky bottom-[20px]  w-full h-fit  rounded-lg backdrop-blur-lg ">
+    <div class="relative w-full h-full">
+        <div class="absolute w-full h-full rounded-lg bg-primary opacity-40"></div>
+        <div class="p-5 custom-select relative w-fit">
+            <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                <button
+                        type="button"
+                        class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                >
+                    <span class="selected-option"></span>
+                    <svg
+                            class="h-5 w-5"
+                            fill="none"
+                            stroke="currentColor"
+                            viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg"
+                    >
+                        <path
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                                stroke-width="2"
+                                d="M19 9l-7 7-7-7"
+                        ></path>
+                    </svg>
+                </button>
+            </div>
+            <ul
+                    class="dropdown-options pointer-events-none absolute min-w-[300px] translate-y-[-110%] z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+            >
+                <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Активировать</li>
+                <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Деактивировать</li>
+            </ul>
+
+        </div>
+    </div>
+
+</div>
     </div>
 </div>
 

@@ -63,10 +63,10 @@
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Имя клиента"
+  placeholder="Имя клиента" 
   value=""
   type="text"
-  
+
 />
 
                                 </div>
@@ -76,10 +76,10 @@
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Телефон"
+  placeholder="Телефон" 
   value=""
   type="text"
-  
+
 />
 
                                 </div>
@@ -317,7 +317,7 @@
                                     <div class="flex gap-2">
                                         <div class="group relative h-12 w-12 flex-shrink-0">
                                             <img
-                                                    src="./img/engine.png"
+                                                    src="../img/engine.png"
                                                     alt="engine"
                                                     class="h-full w-full rounded-[5px] object-cover"
                                             />
@@ -340,7 +340,7 @@
                                     <div class="flex gap-2">
                                         <div class="group relative h-12 w-12 flex-shrink-0">
                                             <img
-                                                    src="./img/engine.png"
+                                                    src="../img/engine.png"
                                                     alt="engine"
                                                     class="h-full w-full rounded-[5px] object-cover"
                                             />
@@ -381,8 +381,9 @@
                             <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -424,7 +425,7 @@
                     <div class="flex gap-4">
                         <button
         type="button"
-        @@optional_attr
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
         class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
 >
   <h4>Применить</h4>
@@ -501,7 +502,7 @@
                 <div class="h-[65vh] overflow-y-scroll p-4">
 
                     <div class="mb-8 mt-4">
-  <div data-filters-area></div>
+  <div data-filters-area="parts"></div>
 
   <div
     class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
@@ -789,7 +790,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -817,7 +818,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -845,7 +846,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -873,7 +874,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -901,7 +902,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <img src="../../../../img/icons/loupe.svg">
+      <img src="../img/icons/loupe.svg">
     </div>
     <input
             class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -1020,7 +1021,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1122,7 +1123,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1224,7 +1225,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1326,7 +1327,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1428,7 +1429,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1530,7 +1531,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1632,7 +1633,7 @@
             </td>
             <td class="border-blue-gray-50 border-b p-3">
               <button type="button" data-graph-path="current_applicability">
-                <h4 class="text-md">Renault T</h4>
+                <h4 class="text-md transition text-opacity-75 hover:text-primary">Renault T</h4>
               </button>
             </td>
             <td class="border-blue-gray-50 border-b p-3">
@@ -1656,7 +1657,7 @@
 
     <div class="absolute top-0 right-0">
     <div class="relative ">
-        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2">
+        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2 z-[10000]">
             <div id="toast-success"
                  class="flex hidden  items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
                  role="alert">
@@ -1890,8 +1891,8 @@
                     <div class="flex  gap-4">
                         <button
         type="button"
-        @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
@@ -1948,124 +1949,226 @@
     </div>
     <div class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all">
         <div class="p-7 pb-0 flex flex-col gap-7">
-            <div class="flex flex-col gap-2">
-                <h4 class="text-2lg text-primary opacity-75">
-                    06.06.2024 03:31:05 — +7 912 761 9299
-                </h4>
-                <div class="flex flex-col gap-1">
-                    <h4 class="text-2lg text-primary opacity-75">
-                        Источник
-                    </h4>
-                    <h4 class="text-2lg text-primary opacity-75">
-                        Avito Ryazan
-                    </h4>
-                </div>
-            </div>
-            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
-            <div class="flex flex-col gap-2">
-                <h4 class="text-2lg text-primary opacity-75">
-                    06.06.2024 03:31:05 — +7 912 761 9299
-                </h4>
-            </div>
-            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
 
-            <div class="grid grid-cols-2 gap-6">
-                <div class="w-full flex flex-col gap-2">
-                    <div class="flex flex-col gap-4 items-start">
-                        <h4 class="text-2lg text-blue-gray">
-                            Клиент:
+            <div class="grid grid-cols-[1fr_4px_1fr] gap-6">
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-2lg text-primary opacity-75">
+                            06.06.2024 03:31:05 — +7 912 761 9299
                         </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            Важно
-                        </h4>
+
                     </div>
-                    <div class="flex flex-col gap-4 items-start">
-                        <h4 class="text-2lg text-blue-gray">
-                            Телефон:
-                        </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            9205054565
-                        </h4>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="w-full flex flex-col gap-2">
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Клиент:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Важно
+                                </h4>
+                            </div>
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Телефон:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    9205054565
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="w-full flex flex-col gap-2">
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Добавление (артикул 69000):
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Пусто
+                                </h4>
+                            </div>
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Добавление (артикул 69186):
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Пусто
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex flex-col gap-6 justify-center">
+                            <div class="grid grid-cols-1 gap-4 ">
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Статус:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        В работе
+                                    </h4>
+                                </div>
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Сумма:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        6 000
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Комментарий:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    ооо нерудагро
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 justify-center">
+                            <div class="grid grid-cols-1 gap-4 ">
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Ответственный:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        Андрей Светиков
+                                    </h4>
+                                </div>
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Источник:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        Avito Ryazan
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Способ оплаты:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Безнал (по счёту)
+                                </h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="w-full flex flex-col gap-2">
-                    <div class="flex flex-col gap-4 items-start">
-                        <h4 class="text-2lg text-blue-gray">
-                            Добавление (артикул 69000):
+                <span class="h-auto w-[4px] rounded-full bg-primary bg-opacity-70"></span>
+                <div class="flex flex-col gap-4">
+                    <div class="flex flex-col gap-2">
+                        <h4 class="text-2lg text-primary opacity-75">
+                            06.06.2024 03:31:05 — +7 912 761 9299
                         </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            Пусто
-                        </h4>
+
                     </div>
-                    <div class="flex flex-col gap-4 items-start">
-                        <h4 class="text-2lg text-blue-gray">
-                            Добавление (артикул 69186):
-                        </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            Пусто
-                        </h4>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="w-full flex flex-col gap-2">
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Клиент:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Важно
+                                </h4>
+                            </div>
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Телефон:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    9205054565
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="w-full flex flex-col gap-2">
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Добавление (артикул 69000):
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Пусто
+                                </h4>
+                            </div>
+                            <div class="flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Добавление (артикул 69186):
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Пусто
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex flex-col gap-6 justify-center">
+                            <div class="grid grid-cols-1 gap-4 ">
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Статус:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        В работе
+                                    </h4>
+                                </div>
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Сумма:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        6 000
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="w-full flex flex-col gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Комментарий:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    ооо нерудагро
+                                </h4>
+                            </div>
+                        </div>
+                        <div class="flex flex-col gap-6 justify-center">
+                            <div class="grid grid-cols-1 gap-4 ">
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Ответственный:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        Андрей Светиков
+                                    </h4>
+                                </div>
+                                <div class="flex flex-col gap-2 items-start">
+                                    <h4 class="text-2lg text-blue-gray">
+                                        Источник:
+                                    </h4>
+                                    <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                        Avito Ryazan
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="w-full flex-col flex gap-2 items-start">
+                                <h4 class="text-2lg text-blue-gray">
+                                    Способ оплаты:
+                                </h4>
+                                <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                                    Безнал (по счёту)
+                                </h4>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-            <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
-            <div class="grid grid-cols-2 gap-6">
-                <div class="flex flex-col gap-6 justify-center">
-                    <div class="grid grid-cols-2 gap-4 ">
-                        <div class="flex gap-4 items-center">
-                            <h4 class="text-2lg text-blue-gray">
-                                Статус:
-                            </h4>
-                            <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                В работе
-                            </h4>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <h4 class="text-2lg text-blue-gray">
-                                Сумма:
-                            </h4>
-                            <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                6 000
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4 items-center">
-                        <h4 class="text-2lg text-blue-gray">
-                            Комментарий:
-                        </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            ооо нерудагро
-                        </h4>
-                    </div>
-                </div>
-                <div class="flex flex-col gap-6 justify-center">
-                    <div class="grid grid-cols-2 gap-4 ">
-                        <div class="flex gap-4 items-center">
-                            <h4 class="text-2lg text-blue-gray">
-                                Ответственный:
-                            </h4>
-                            <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                Андрей Светиков
-                            </h4>
-                        </div>
-                        <div class="flex gap-4 items-center">
-                            <h4 class="text-2lg text-blue-gray">
-                                Источник:
-                            </h4>
-                            <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                Avito Ryazan
-                            </h4>
-                        </div>
-                    </div>
-                    <div class="w-full flex gap-4 items-center">
-                        <h4 class="text-2lg text-blue-gray">
-                            Способ оплаты:
-                        </h4>
-                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                            Безнал (по счёту)
-                        </h4>
-                    </div>
-                </div>
-            </div>
+
+
             <div
                     class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
             >
