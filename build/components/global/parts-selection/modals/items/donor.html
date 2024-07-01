@@ -21,7 +21,8 @@
 
         </div>
         <div class="absolute right-5 top-5 flex items-center gap-3">
-            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+            <button aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
                 <svg
                         class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
                         focusable="false"
@@ -44,194 +45,408 @@
         <div class="">
             <form>
 
-                <div class="h-[65vh] overflow-y-scroll p-4">
+                <div
+                        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+                    <div class="flex gap-2">
+                        <div
+                                minimodal-bottom-toggle
+                                class="relative flex items-center justify-center"
+                        >
+                            <div
+                                    class="relative h-10 w-10 cursor-pointer transition-all hover:rotate-90 active:opacity-60"
+                            >
+                                <svg
+                                        class="h-full w-full"
+                                        viewBox="0 0 24 24"
+                                        fill="none"
+                                        xmlns="http://www.w3.org/2000/svg"
+                                >
+                                    <path
+                                            d="M13.675 4.317C13.249 2.561 10.751 2.561 10.325 4.317C10.049 5.452 8.749 5.99 7.753 5.382C6.209 4.442 4.443 6.209 5.383 7.752C5.5243 7.98375 5.60889 8.24559 5.62987 8.51621C5.65085 8.78683 5.60764 9.05859 5.50375 9.30935C5.39985 9.56011 5.23822 9.7828 5.032 9.95929C4.82578 10.1358 4.5808 10.2611 4.317 10.325C2.561 10.751 2.561 13.249 4.317 13.675C4.58056 13.7391 4.82529 13.8645 5.03127 14.0409C5.23726 14.2174 5.3987 14.44 5.50247 14.6906C5.60624 14.9412 5.64942 15.2128 5.62848 15.4832C5.60755 15.7537 5.5231 16.0153 5.382 16.247C4.442 17.791 6.209 19.557 7.752 18.617C7.98375 18.4757 8.24559 18.3911 8.51621 18.3701C8.78683 18.3491 9.05859 18.3924 9.30935 18.4963C9.56011 18.6001 9.7828 18.7618 9.95929 18.968C10.1358 19.1742 10.2611 19.4192 10.325 19.683C10.751 21.439 13.249 21.439 13.675 19.683C13.7391 19.4194 13.8645 19.1747 14.0409 18.9687C14.2174 18.7627 14.44 18.6013 14.6906 18.4975C14.9412 18.3938 15.2128 18.3506 15.4832 18.3715C15.7537 18.3924 16.0153 18.4769 16.247 18.618C17.791 19.558 19.557 17.791 18.617 16.248C18.4757 16.0162 18.3911 15.7544 18.3701 15.4838C18.3491 15.2132 18.3924 14.9414 18.4963 14.6907C18.6001 14.4399 18.7618 14.2172 18.968 14.0407C19.1742 13.8642 19.4192 13.7389 19.683 13.675C21.439 13.249 21.439 10.751 19.683 10.325C19.4194 10.2609 19.1747 10.1355 18.9687 9.95905C18.7627 9.78258 18.6013 9.55999 18.4975 9.30938C18.3938 9.05877 18.3506 8.78721 18.3715 8.51677C18.3924 8.24634 18.4769 7.98466 18.618 7.753C19.558 6.209 17.791 4.443 16.248 5.383C16.0162 5.5243 15.7544 5.60889 15.4838 5.62987C15.2132 5.65085 14.9414 5.60764 14.6907 5.50375C14.4399 5.39985 14.2172 5.23822 14.0407 5.032C13.8642 4.82578 13.7389 4.5808 13.675 4.317Z"
+                                            stroke="#212121"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                    />
+                                    <path
+                                            d="M14.1213 14.1213C14.6839 13.5587 15 12.7956 15 12C15 11.2044 14.6839 10.4413 14.1213 9.87868C13.5587 9.31607 12.7956 9 12 9C11.2044 9 10.4413 9.31607 9.87868 9.87868C9.31607 10.4413 9 11.2044 9 12C9 12.7956 9.31607 13.5587 9.87868 14.1213C10.4413 14.6839 11.2044 15 12 15C12.7956 15 13.5587 14.6839 14.1213 14.1213Z"
+                                            stroke="#212121"
+                                            stroke-width="2"
+                                            stroke-linecap="round"
+                                            stroke-linejoin="round"
+                                    />
+                                </svg>
+                            </div>
+                            <div
+                                    minimodal-bottom-content
+                                    class="absolute left-0 top-[7px] hidden w-max translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                            >
+                                <div class="flex flex-col gap-2">
 
-                    <div class="mb-8 mt-4">
-    <div data-filters-area></div>
-
-    <div
-            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
-    >
-        <div class="overflow-x-auto rounded-xl">
-            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
-                <thead>
-                <tr>
-
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
-                    >
-                        <div class="inline-flex items-center">
-                            <label
-  class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="0"
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                        <div
+  role="button"
+  class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-opacity-80 focus:bg-opacity-80 active:bg-opacity-80"
 >
-  <input
-    id="0"
-    type="checkbox"
-    @@optional_attr
-    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
-  />
-  <span
-    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
-  >
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="h-3.5 w-3.5"
-      viewBox="0 0 20 20"
-      fill="currentColor"
-      stroke="currentColor"
-      stroke-width="1"
+  <label htmlfor="price_sell" class="flex w-full cursor-pointer items-center">
+    <div class="mr-3 grid place-items-center">
+      <div class="inline-flex items-center">
+        <label
+          class="relative flex cursor-pointer items-center rounded-full p-0"
+          htmlfor="price_sell"
+        >
+          <input
+            id="price_sell"
+            type="checkbox"
+             data-column='9' data-table='cars-table' 
+            class="before:content[''] before:w-full before:h-full peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+          />
+          <span
+            class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-3.5 w-3.5"
+              viewBox="0 0 20 20"
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-width="1"
+            >
+              <path
+                fill-rule="evenodd"
+                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+                clip-rule="evenodd"
+              ></path>
+            </svg>
+          </span>
+        </label>
+      </div>
+    </div>
+    <h4
+      class="text-base text-black block font-sans font-medium leading-relaxed antialiased"
     >
-      <path
-        fill-rule="evenodd"
-        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-        clip-rule="evenodd"
-      ></path>
-    </svg>
-  </span>
-</label>
+      Филиал
+    </h4>
+  </label>
+</div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+                                minimodal-bottom-toggle
+                                class="relative flex cursor-pointer items-center gap-2 transition-all"
+                        >
+                            <button
+                                    type="button"
+                                    class="bg-primary flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                            >
+                                <h4>Фильтр</h4>
+                            </button>
+                            <div
+                                    minimodal-bottom-content
+                                    class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300 z-10"
+                            >
+                                <div class="flex flex-col gap-2" data-filters="donor">
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="name">
+                                        <span class="text-base font-normal text-black">Модель ТС</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="code">
+                                        <span class="text-base font-normal text-black">Код</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="year">
+                                        <span class="text-base font-normal text-black">Год</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="description">
+                                        <span class="text-base font-normal text-black">Описание</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="branch">
+                                        <span class="text-base font-normal text-black">Филиал</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="comment">
+                                      <span class="text-base font-normal text-black">Комментарий</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="created">
+                                        <span class="text-base font-normal text-black">Добавлена</span>
+                                    </div>
+                                    <div class="px-4 py-1 transition-all hover:bg-gray-100" data-filter="active">
+                                        <span class="text-base font-normal text-black">Активно</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div
+
+                                class="relative flex cursor-pointer items-center gap-2 transition-all"
+                        >
+                            <button
+                                    type="button"
+                                    data-graph-path="add-donor"
+                                    class="bg-primary flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                            >
+                                <h4>Добавить</h4>
+                            </button>
 
                         </div>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Модель ТС
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Код
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Год
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Тип двигателя
-                            <svg
-                                    xmlns="http://www.w3.org/2000/svg"
-                                    fill="none"
-                                    viewBox="0 0 24 24"
-                                    stroke-width="2"
-                                    stroke="currentColor"
-                                    aria-hidden="true"
-                                    class="h-4 w-4"
-                            >
-                                <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                                ></path>
-                            </svg>
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Объем двигателя
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            КПП
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Описание
-                        </p>
-                    </th>
-                    <th
-                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
-                    >
-                        <p
-                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-                        >
-                            Добавлена
-                        </p>
-                    </th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td class="border-blue-gray-50 border-b p-2">
-                        <div class="inline-flex items-center">
-                            <label
+                    </div>
+
+                </div>
+
+                <div class=" flex flex-col gap-4 border-t-2 border-solid border-gray-200 p-5">
+
+                    <div data-filters-area="donor"></div>
+
+                    <div class="overflow-x-scroll rounded-lg">
+                        <table id="cars-table" class="w-full min-w-[1300px] table-auto overflow-x-auto text-left">
+                            <thead>
+                            <tr>
+
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                                >
+
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+
+                                    <p data-sorting-title
+                                       class="font-sans text-md  font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                        Модель ТС</p>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                             Код</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class=" flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                             Год</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                            Тип двигателя</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                            Объем двигателя</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                             КПП</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                            Описание</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Филиал </p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                                <th
+                                        class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                >
+                                    <div data-sorting-trigger
+                                         class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                        <p data-sorting-title
+                                           class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                             Добавлена</p>
+                                        <div data-sorting-wrapper class="hidden gap-1 items-center">
+                                            <div data-sorting-ascending class="mb-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                            <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                                            <div data-sorting-descending class="mt-[5px]">
+                                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none"
+                                                     xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                          stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                                          stroke-linejoin="round"/>
+                                                </svg>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td class="border-blue-gray-50 border-b p-2">
+                                    <div class="inline-flex items-center">
+                                        <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
   htmlfor="1"
 >
@@ -261,65 +476,157 @@
   </span>
 </label>
 
-                        </div>
-                    </td>
-                    <td class="border-blue-gray-50 group border-b p-3">
-                        <button type="button"  data-graph-path="change-cars" class="flex flex-col gap-1">
-                            <div class="flex items-center gap-2">
-                                <div class="group relative h-12 w-12 flex-shrink-0">
-                                    <img
-                                            src="../img/engine.png"
-                                            alt="engine"
-                                            class="h-full w-full rounded-[5px] object-cover"
-                                    />
-                                </div>
-                                <h4
-                                        class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
-                                >
-                                    Абсорбер топливной системы
-                                </h4>
-                            </div>
-                        </button>
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <div class="flex w-min justify-start">
-                            <h4 class="text-md">К8</h4>
-                        </div>
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <div class="flex w-min justify-start">
-                            <h4 class="text-md">2 018</h4>
-                        </div>
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <h4
-                                class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
-                        >
-                            Дизель
-                        </h4>
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <h4 class="text-md">16 литров</h4>
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <h4 class="whitespace-nowrap text-md">МКПП</h4>
-                    </td>
-                    <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
-                        Город: Москва
-                        Двигатель: OM457LA V/3-06 401 л.с. Euro 5
-                        КПП: МКПП ZF 16S2220TD
-                        Редуктор: R440P 24000S 3.077
-                    </td>
-                    <td class="border-blue-gray-50 border-b p-3">
-                        <h4 class="text-md">06.06.2024</h4>
-                    </td>
-                </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-    <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
-  Всего 24983 записи на сумму 684 541 051 р. (продано 8944 записи на 330 422720 р.)
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 group border-b p-3">
+                                    <button type="button" data-graph-path="change-cars" class="flex flex-col gap-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="group relative h-12 w-12 flex-shrink-0">
+                                                <img
+                                                        src="../img/engine.png"
+                                                        alt="engine"
+                                                        class="h-full w-full rounded-[5px] object-cover"
+                                                />
+                                            </div>
+                                            <h4
+                                                    class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                            >
+                                                Абсорбер топливной системы
+                                            </h4>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <div class="flex w-min justify-start">
+                                        <h4 class="text-md">К8</h4>
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <div class="flex w-min justify-start">
+                                        <h4 class="w-max text-md">2 018</h4>
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4
+                                            class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                    >
+                                        Дизель
+                                    </h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">16 литров</h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="whitespace-nowrap text-md">МКПП</h4>
+                                </td>
+                                <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
+                                    Город: Москва
+                                    Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                                    КПП: МКПП ZF 16S2220TD
+                                    Редуктор: R440P 24000S 3.077
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">Основной</h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">06.06.2024</h4>
+                                </td>
+                            </tr>
+                            <tr class="disabled-item">
+                                <td class="border-blue-gray-50 border-b p-2">
+                                    <div class="inline-flex items-center">
+                                        <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="1"
+>
+  <input
+    id="1"
+    type="checkbox"
+    @@optional_attr
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 group border-b p-3">
+                                    <button type="button" data-graph-path="change-cars" class="flex flex-col gap-1">
+                                        <div class="flex items-center gap-2">
+                                            <div class="group relative h-12 w-12 flex-shrink-0">
+                                                <img
+                                                        src="../img/engine.png"
+                                                        alt="engine"
+                                                        class="h-full w-full rounded-[5px] object-cover"
+                                                />
+                                            </div>
+                                            <h4
+                                                    class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                            >
+                                                Абсорбер топливной системы
+                                            </h4>
+                                        </div>
+                                    </button>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <div class="flex w-min justify-start">
+                                        <h4 class="text-md">К8</h4>
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <div class="flex w-min justify-start">
+                                        <h4 class="w-max text-md">2 018</h4>
+                                    </div>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4
+                                            class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                    >
+                                        Дизель
+                                    </h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">16 литров</h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="whitespace-nowrap text-md">МКПП</h4>
+                                </td>
+                                <td class="max-w-[300px] border-blue-gray-50 border-b p-3">
+                                    Город: Москва
+                                    Двигатель: OM457LA V/3-06 401 л.с. Euro 5
+                                    КПП: МКПП ZF 16S2220TD
+                                    Редуктор: R440P 24000S 3.077
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">Основной</h4>
+                                </td>
+                                <td class="border-blue-gray-50 border-b p-3">
+                                    <h4 class="text-md">06.06.2024</h4>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
+  Всего 2 записи
 </span>
 <div class="mt-3 flex items-center justify-between gap-5">
 <div class="flex items-center gap-2" data-pagination>
@@ -483,12 +790,24 @@
   </div>
 </div>
 </div>
-</div>
-
-
-
                 </div>
 
+
+                <div
+                        class="relative bg-white z-10 flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+                >
+
+                    <div class="flex gap-4">
+                        <button
+        type="button"
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-full js-modal-close whitespace-nowrap"
+>
+  <h4>Применить</h4>
+</button>
+
+                    </div>
+                </div>
             </form>
         </div>
     </div>

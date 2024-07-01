@@ -49,7 +49,9 @@
                         >
 
                             <div class="flex flex-col gap-1">
-                                <h4 class="text-primary text-lg">Модель ТС:</h4>
+                                <h4 class="text-primary text-lg">Модель ТС:
+                                    <span class="text-danger text-opacity-75">*</span>
+                                </h4>
                                 
 <div>
 
@@ -64,7 +66,7 @@
             class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
             placeholder="Модель ТС"
             id="modelTS"
-            
+            readonly
     />
   </div>
   <label for="modelTS" class="text-blue-gray-700 text-sm">
@@ -77,10 +79,10 @@
                                 <h4 class="text-primary text-lg">Код:</h4>
                                 <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Код"
+  placeholder="Код" 
   value=""
   type="text"
-  
+
 />
 
                                 <h4 class="text-gray-500 text-md">внутренний код машины в системе.</h4>
@@ -89,10 +91,10 @@
                                 <h4 class="text-primary text-lg">Год:</h4>
                                 <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Год"
+  placeholder="Год" 
   value=""
   type="text"
-  
+
 />
 
                             </div>
@@ -174,10 +176,10 @@
                                 <h4 class="text-primary text-lg">Объем двигателя:</h4>
                                 <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Объем двигателя"
+  placeholder="Объем двигателя" 
   value=""
   type="text"
-  
+
 />
 
                                 <h4 class="text-gray-500 text-md">В кубических сантиментрах (например 1600).</h4>
@@ -192,8 +194,9 @@
                                     <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -247,28 +250,36 @@
                                 class="grid grid-cols-5 gap-4"
                         >
                             <div
-                                    class="w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
+                                    class="uploaded-card  relative w-full max-w-[300px] rounded-xl border-2 border-solid border-gray-200"
                             >
                                 <img
                                         class="h-full rounded-[8px] object-cover"
                                         src="../img/gallery-item.jpeg"
                                         alt="detail"
                                 />
+                                <span class="group delete-card cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
+                                   <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                       <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="currentColor" stroke-width="5"
+                                             stroke-linecap="round" stroke-linejoin="round"/>
+                                   </svg>
+                                </span>
+
                             </div>
                         </div>
                         <div class="flex w-full items-center justify-center">
-                            <div class="group relative w-fit upload cursor-pointer active:opacity-60">
+                            <div class="group relative  w-fit upload cursor-pointer active:opacity-60">
                                 <button
         type="button"
         @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 @@class whitespace-nowrap"
+        class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 cursor-pointer whitespace-nowrap"
 >
   <h4>Загрузить изображения +</h4>
 </button>
 
                                 <input
                                         id="fileInput"
-                                        class="absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
+                                        class="file:cursor-pointer absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
                                         multiple
                                         accept="image/*"
                                         type="file"
@@ -290,8 +301,9 @@
                             <textarea
         id=""
         rows="5"
-        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary disabled:border-0 min-h-[80px] max-h-[300px]"
+        class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
+        
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     
@@ -307,7 +319,7 @@
                                         <input
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
-                                                id="detail_active"
+                                                id="detail_active" checked
                                         />
                                         <span
                                                 class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
@@ -342,7 +354,7 @@
                                 <h4 class="text-2lg text-blue-gray">
                                     Добавлена:
                                 </h4>
-                                <h4 class="text-2lg text-primary opacity-75">
+                                <h4 class="text-2lg text-blue-gray opacity-75">
                                     25.05.2024 11:54 (Антон Маринин)
                                 </h4>
                             </div>
@@ -374,8 +386,8 @@
 
                         <button
         type="button"
-        @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit whitespace-nowrap"
+        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
+        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
 >
   <h4>Применить</h4>
 </button>
