@@ -7,13 +7,14 @@
       <div class="relative w-[calc(100vw-288px)] px-4">
 
         @@include('header/warehouse.html')
-        @@include('warehouse/warehouse.html')
+        @@include('global/warehouse/warehouses/main.html')
 
         <div class="graph-modal">
-        @@include('warehouse/modals/layout.html')
+          @@include('global/warehouse/warehouses/modals/layout.html')
         </div>
 
       </div>
+      @@include('global/warehouse/warehouses/checkboxes-filter.html')
     </div>
 
     <script

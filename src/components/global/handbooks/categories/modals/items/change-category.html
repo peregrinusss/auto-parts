@@ -40,33 +40,35 @@
 
         <div class="">
             <form>
-                <div class="p-7 max-h-[65vh] overflow-y-auto flex flex-wrap gap-7">
+                <div class="p-7 max-h-[65vh] overflow-y-auto flex flex-wrap gap-6">
 
                     <div class="grid grid-cols-2 gap-6 w-full">
-                        <div class="w-full flex flex-col gap-4">
-                            <div class="flex flex-col gap-2 items-start">
-                                <h4 class="text-2lg text-blue-gray">
-                                    Название<span class="text-danger">*</span>:
-                                </h4>
-                                <h4 class="whitespace-nowrap overflow-x-hidden h-[52px] w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
-                                    Агрегаты в сборе
-                                </h4>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Название:*
+                            </label>
+                            <div class="relative h-fit w-full min-w-[200px]">
+                                @@include('shared/input.html', {
+                                placeholder: "OEM",
+                                value: "Агрегаты в сборе",
+                                type: "text",
+                                optional_attr: "readonly"
+                                })
                             </div>
                         </div>
-                        <div class="w-full flex flex-col gap-4">
-                            <div class="flex flex-col gap-2 items-start">
-                                <h4 class="text-2lg text-blue-gray">
-                                    ID в Авито::
-                                </h4>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                ID в Авито:
+                            </label>
+                            <div class="relative h-fit w-full min-w-[200px]">
                                 @@include('shared/input.html', {
-                                placeholder: "ID",
+                                placeholder: "OEM",
                                 value: "",
-                                class: "text-2lg h-[52px]",
                                 type: "text",
                                 optional_attr: ""
                                 })
-                                <a class="text-primary text-opacity-75 text-lg ">Справочник</a>
                             </div>
+                            <a class="text-primary text-opacity-75 text-lg ">Справочник</a>
                         </div>
                     </div>
                     <span class="block h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
@@ -93,7 +95,7 @@
                                             class="relative flex cursor-pointer items-center rounded-full"
                                     >
                                         <input
-                                                disabled
+                                                disabled checked
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
                                                 id="detail_active"
@@ -141,12 +143,12 @@
                         @@include('shared/button.html', {
                         title: "Применить",
                         color: "bg-success",
-                        class: "h-fit", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
+                        class: "h-fit js-modal-close", optional_attr: 'onclick="document.querySelector(\'#toast-success\').classList.remove(\'hidden\')"'
                         })
                         @@include('shared/button.html', {
                         title: "Закрыть",
                         color: "bg-danger",
-                        class: "h-fit"
+                        class: "h-fit js-modal-close"
                         })
                     </div>
 
