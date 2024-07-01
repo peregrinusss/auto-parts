@@ -649,7 +649,7 @@
       <div class="block">
         <button
         type="button"
-        @@optional_attr
+         data-graph-path='planning-balance' 
         class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 @@class whitespace-nowrap"
 >
   <h4>Планируемое списание</h4>
@@ -659,7 +659,8 @@
     </div>
   </nav>
 </header>
- <main class="mb-8 mt-4">
+
+        <main class="mb-8 mt-4">
   <div
     class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
   >
@@ -673,12 +674,12 @@
               <div class="inline-flex items-center">
                 <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="0"
+  htmlfor="balance-0"
 >
   <input
-    id="0"
+    id="balance-0"
     type="checkbox"
-    @@optional_attr
+    data-table-checkbox-main="balance" 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -706,50 +707,42 @@
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Дата
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
+              <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Дата</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
             >
-              <p
-                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
-              >
-                Сумма
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke-width="2"
-                  stroke="currentColor"
-                  aria-hidden="true"
-                  class="h-4 w-4"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    d="M8.25 15L12 18.75 15.75 15m-7.5-6L12 5.25 15.75 9"
-                  ></path>
-                </svg>
-              </p>
+              <div data-sorting-trigger class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                <p data-sorting-title class="font-semibold underline-offset-4 cursor-pointer opacity-70">Сумма</p>
+                <div data-sorting-wrapper class="hidden gap-1 items-center">
+                  <div data-sorting-ascending class="mb-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                  <span class="w-[2px] h-[15px] bg-[#8E8E8E] rotate-[15deg] rounded-full"></span>
+                  <div data-sorting-descending class="mt-[5px]">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
             </th>
             <th
               class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
@@ -762,12 +755,12 @@
               <div class="inline-flex items-center">
                 <label
   class="relative flex cursor-pointer items-center rounded-full p-0"
-  htmlfor="1"
+  htmlfor="balance-1"
 >
   <input
-    id="1"
+    id="balance-1"
     type="checkbox"
-    @@optional_attr
+    data-table-checkbox-secondary='balance' 
     class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
   />
   <span
@@ -793,9 +786,64 @@
               </div>
             </td>
             <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
-              <button table-item-button class="flex flex-col gap-1">
+              <button data-graph-path="change-balance" class="flex flex-col gap-1">
                 <h4
                   class="text-start text-md transition-all group-hover:text-primary text-primary group-hover:opacity-75"
+                >
+                  Сегодня 03:10
+                </h4>
+              </button>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex items-center gap-3">
+                <h4 class="text-md">‐1 455</h4>
+              </div>
+            </td>
+            <td class="border-blue-gray-50 border-b p-3">
+              <div class="flex w-min justify-start">
+                <h4 class="text-md">Ежедневное автоматическое списание</h4>
+              </div>
+            </td>
+          </tr>
+          <tr class="disabled-item">
+            <td class="border-blue-gray-50 border-b p-2">
+              <div class="inline-flex items-center">
+                <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="balance-1"
+>
+  <input
+    id="balance-1"
+    type="checkbox"
+    data-table-checkbox-secondary='balance' 
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+              </div>
+            </td>
+            <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+              <button data-graph-path="change-balance" class="flex flex-col gap-1">
+                <h4
+                        class="text-start text-md transition-all group-hover:text-primary text-primary group-hover:opacity-75"
                 >
                   Сегодня 03:10
                 </h4>
@@ -983,6 +1031,440 @@
 </div>
 </main>
 
+
+        <div class="graph-modal">
+          <div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="change-balance"
+>
+  <div
+          class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+  >
+    <div class="flex flex-col justify-center gap-2">
+      <h3 class="text-xl font-bold"> Изменение баланса</h3>
+      <a
+              href="#"
+              class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+        Способы оплаты заказов
+      </a>
+    </div>
+    <div class="absolute right-5 top-5 flex items-center gap-3">
+      <button
+              aria-label="Закрыть модальное окно"
+              class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+      >
+        <svg
+                class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                focusable="false"
+                aria-hidden="true"
+                viewBox="0 0 24 24"
+                data-testid="CloseIcon"
+        >
+          <path
+                  d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+          ></path>
+        </svg>
+      </button>
+    </div>
+  </div>
+  <div
+          class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+  >
+    <div class="">
+      <form>
+        <div class="h-fit overflow-y-scroll">
+          <div class="px-5">
+            <div class="flex flex-col gap-8 py-12">
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Дата:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    29.06.2024 03:10:00
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Сумма:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    -1 770
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Баланс (после операции):
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    23 430
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Описание:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    Ежедневное автоматическое списание
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Тарифный план:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    Оптима
+                  </h4>
+                </div>
+              </div>
+              <div class="flex justify-start gap-3">
+                <div class="relative h-fit w-max">
+                  <h4 class="text-lg text-blue-gray font-bold">
+                    Базовая стоимость:
+                  </h4>
+                </div>
+                <div class="relative h-fit w-max ">
+                  <h4 class="text-lg text-blue-gray">
+                    650
+                  </h4>
+                </div>
+              </div>
+              <div>
+                <table class="w-full  table-auto overflow-x-auto text-left">
+                  <thead>
+                  <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                      Ресурс
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                      Кол-во
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+                      Стоимость
+                    </th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Карточки запчастей
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      27999
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Архивные карточки запчастей
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      978
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Филиалы
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      1
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      0
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Интеграции
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      25
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      210
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Объявления Авито
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      70161
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      210
+                    </td>
+                  </tr>
+                  <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                      Группы Авито
+                    </td>
+                    <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                      43
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                      700
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div
+                class="border-t-2 border-solid border-gray-200 p-5 flex justify-end"
+        >
+
+          <div class="ml-auto flex items-center gap-4 w-fit">
+            <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit js-modal-close whitespace-nowrap"
+>
+  <h4>Закрыть</h4>
+</button>
+
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div
+        class="graph-modal__container"
+        style="width: 50%"
+        role="dialog"
+        aria-modal="true"
+        data-graph-target="planning-balance"
+>
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold"> Планируемое списание</h3>
+            <a
+                    href="#"
+                    class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80">
+                История операций
+            </a>
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button
+                    aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center"
+            >
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div
+            class="graph-modal__content justify-center overflow-hidden bg-white shadow-lg transition-all"
+    >
+        <div class="">
+            <form>
+                <div class="h-fit overflow-y-scroll">
+                    <div class="px-5">
+                        <div class="flex flex-col gap-8 py-12">
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Тарифный план:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        Оптима
+                                    </h4>
+                                </div>
+                            </div>
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Базовая стоимость:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        650
+                                    </h4>
+                                </div>
+                            </div>
+                            <div>
+                                <table class="w-full  table-auto overflow-x-auto text-left">
+                                    <thead>
+                                    <tr>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                                        >
+                                            Ресурс
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            Кол-во
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            Стоимость
+                                        </th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Карточки запчастей
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            27999
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Архивные карточки запчастей
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            978
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Филиалы
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            1
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            0
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Интеграции
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            25
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            210
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Объявления Авито
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            70161
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            210
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+                                            Группы Авито
+                                        </td>
+                                        <td class="border-blue-gray-50 group cursor-pointer border-b p-3">
+                                            43
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            700
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <div class="flex justify-start gap-3">
+                                <div class="relative h-fit w-max">
+                                    <h4 class="text-lg text-blue-gray font-bold">
+                                        Сумма списания:
+                                    </h4>
+                                </div>
+                                <div class="relative h-fit w-max ">
+                                    <h4 class="text-lg text-blue-gray">
+                                        1 770
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div
+                        class="border-t-2 border-solid border-gray-200 p-5 flex justify-end"
+                >
+
+                    <div class="ml-auto flex items-center gap-4 w-fit">
+                        <button
+        type="button"
+        @@optional_attr
+        class="flex w-full items-center gap-2 rounded-lg bg-gray-200 p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 !text-black h-fit !w-fit js-modal-close whitespace-nowrap"
+>
+  <h4>Закрыть</h4>
+</button>
+
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+        </div>
+        <div data-table-checkbox-filter="balance" class="hidden sticky bottom-[20px]  w-full h-fit  rounded-lg backdrop-blur-lg ">
+
+</div>
       </div>
     </div>
 
