@@ -1105,4 +1105,30 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 });
 
+// orders
+const PriceChangers = document.querySelectorAll('[data-price-wrapper]');
 
+PriceChangers.forEach(el => {
+    const priceStatic = el.querySelector('[data-price-static]');
+    const priceClick = el.querySelector('[data-price-click]');
+    const priceChange = el.querySelector('[data-price-change]');
+
+    priceStatic.addEventListener("click", function () {
+        priceStatic.classList.add('hidden');
+        priceChange.classList.remove('hidden');
+        priceChange.focus(); // Опционально: фокус на поле ввода
+    });
+
+    priceChange.addEventListener("blur", function () {
+        const newValue = priceChange.value;
+        priceClick.textContent = newValue;
+        priceStatic.classList.remove('hidden');
+        priceChange.classList.add('hidden');
+    });
+
+    // Обновление значения в режиме реального времени
+    priceChange.addEventListener("input", function () {
+        const newValue = priceChange.value;
+        priceClick.textContent = newValue;
+    });
+});
