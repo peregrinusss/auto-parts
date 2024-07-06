@@ -1,16 +1,11 @@
-<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="change">
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="add-linked">
 
     <div
             class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
     >
         <div class="flex flex-col justify-center gap-2">
             <h3 class="text-xl font-bold">
-                Изменение запчасти
-                <a
-                        href="#"
-                        class="opacity-85 text-base text-primary transition-all hover:opacity-80"
-                >показать на сайте</a
-                >
+                Добавление запчасти
             </h3>
             <a
                     href="#"
@@ -44,6 +39,11 @@
         <div class="">
             <form>
                 <div class="h-[65vh] overflow-y-scroll">
+                    <div class="bg-yellow m-[10px] py-[10px] px-[50px] rounded-lg">
+                        <p class="text-2lg text-blue-gray">
+                            Изменение Описания OEMа и Применимости затронет также другие запчасти: 1 шт.
+                        </p>
+                    </div>
                     <div class="grid grid-cols-3 px-12">
                         <div
                                 class="flex flex-col justify-between gap-4 border-r-2 border-solid border-gray-200 px-4 pb-8 pt-12"
@@ -155,7 +155,7 @@
                                         src="../img/gallery-item.jpeg"
                                         alt="detail"
                                 />
-                                <span class="group  delete-card block cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
+                                <span class="group delete-card cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                        <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="currentColor" stroke-width="5"
@@ -193,9 +193,9 @@
                             >Описание OEMа:</label
                             >
                             @@include('shared/textarea.html', {
-                              placeholder: "Напишите что-нибудь",
-                              id: "",
-                              hint: 'Например: "На американца", "Под парктроник" и т.д. НЕ ПИШИТЕ здесь характеристики отдельной запчасти (цвет, состояние, комплектацию и подобное).', optional_attr: ""
+                            placeholder: "Напишите что-нибудь",
+                            id: "",
+                            hint: 'Например: "На американца", "Под парктроник" и т.д. НЕ ПИШИТЕ здесь характеристики отдельной запчасти (цвет, состояние, комплектацию и подобное).', optional_attr: ""
                             })
                         </div>
                         <div class="flex flex-col gap-2">
@@ -205,7 +205,7 @@
                             >Описание экземпляра запчасти:</label
                             >
                             @@include('shared/textarea.html', {
-                              placeholder: "Напишите что-нибудь",
+                            placeholder: "Напишите что-нибудь",
                             id: "",
                             hint: 'Состояние, цвет, комплектация и прочее, отличающее эту конкретную запчасть от других с таким же OEMом. Например, "Красный", "В комплекте с обвесом", "Состояние хорошее" и т.п.', optional_attr: ""
                             })
@@ -442,7 +442,7 @@
                                 Комментарий:
                             </label>
                             @@include('shared/textarea.html', {
-                              placeholder: "Напишите что-нибудь",
+                            placeholder: "Напишите что-нибудь",
                             id: "", optional_attr: "",
                             hint: "Комментарий для сотрудников, клиентам не отображается."
                             })
@@ -507,101 +507,9 @@
                 </div>
 
                 <div
-                        class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
+                        class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
                 >
-                    <div class="flex gap-4">
-                        <button
-                                class="group relative h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
-                        >
-                            <svg
-                                    class="w-full"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        d="M3 17V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H11L13 7H19C19.5304 7 20.0391 7.21071 20.4142 7.58579C20.7893 7.96086 21 8.46957 21 9V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17Z"
-                                        stroke="#FFFFFF"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                            </svg>
-                            <div
-                                    class="invisible opacity-0 -top-[60px] -left-[210%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
-                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
-                                </span>
-                                Переместить в архив
-                            </div>
-                        </button>
-                        <div
-                                minimodal-top-toggle
-                                class=" h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
-                        >
-                            <div class="group flex items-center gap-1 ">
-                                <svg
-                                        class="h-full w-auto"
-                                        width="20"
-                                        height="20"
-                                        viewBox="0 0 24 24"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                >
-                                    <path
-                                            class="stroke-blue-gray"
-                                            d="M12.0601 16.5V11.5"
-                                            stroke="#171717"
-                                            stroke-width="1.5"
-                                            stroke-miterlimit="10"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                    />
-                                    <path
-                                            class="stroke-blue-gray"
-                                            d="M14.5 14H9.5"
-                                            stroke="#171717"
-                                            stroke-width="1.5"
-                                            stroke-miterlimit="10"
-                                            stroke-linecap="round"
-                                            stroke-linejoin="round"
-                                    />
-                                    <path
-                                            class="stroke-blue-gray"
-                                            d="M22 11V17C22 21 21 22 17 22H7C3 22 2 21 2 17V7C2 3 3 2 7 2H8.5C10 2 10.33 2.44 10.9 3.2L12.4 5.2C12.78 5.7 13 6 14 6H17C21 6 22 7 22 11Z"
-                                            stroke="#171717"
-                                            stroke-width="1.5"
-                                            stroke-miterlimit="10"
-                                    />
-                                </svg>
-                                <h5 class="text-lg">Связанная</h5>
 
-                                <div
-                                        class="invisible opacity-0 -top-[63px] -left-[105%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
-                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
-                                </span>
-                                    Добавить запчасть, связанную с этой
-                                </div>
-                            </div>
-
-                            <div
-                                    minimodal-top-content
-                                    class="absolute bottom-[120%] left-0 flex hidden w-full translate-y-14 flex-col gap-2 rounded-lg border-2 border-blue-gray bg-light-gray bg-opacity-60 p-2 opacity-0 backdrop-blur-[12px] transition-all duration-300"
-                            >
-                                <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
-                                >
-                                    Б/у
-                                </button>
-                                <button
-                                        class="flex w-full cursor-pointer items-center justify-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-lg font-medium leading-tight text-light-gray transition-all"
-                                >
-                                    Новая
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                     <div class="flex gap-4">
                         <button
                                 data-graph-path="barcodes"
