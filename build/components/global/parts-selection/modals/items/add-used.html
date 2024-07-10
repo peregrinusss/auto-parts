@@ -1,4 +1,4 @@
-<div class="graph-modal__container " style="width: 50%;" role="dialog" aria-modal="true" data-graph-target="add-used">
+<div class="graph-modal__container " style="width: 70%;" role="dialog" aria-modal="true" data-graph-target="add-used">
 
 
     <div
@@ -20,7 +20,8 @@
 
         </div>
         <div class="absolute right-5 top-5 flex items-center gap-3">
-            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+            <button aria-label="Закрыть модальное окно"
+                    class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
                 <svg
                         class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
                         focusable="false"
@@ -48,7 +49,7 @@
 
                     <div>
                         <label class="mb-2 block text-2lg font-medium text-primary">
-                            OEM:
+                            OEM:<span class="text-danger text-opacity-75">*</span>
                         </label>
                         <div class="relative h-fit w-full min-w-[200px]">
                             <input
@@ -64,7 +65,7 @@
                     <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
                     <div>
                         <label class="mb-2 block text-2lg font-medium text-primary">
-                            Узел:
+                            Узел: <span class="text-danger text-opacity-75">*</span>
                         </label>
                         
 <div>
@@ -84,16 +85,791 @@
     />
   </div>
   <label for="hub" class="text-blue-gray-700 text-sm">
-    Категории: Салон, Оснащение кузова
+    Категория: Разное
   </label>
 </div>
 
                     </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div>
+                        <label class="mb-2 block text-2lg font-medium text-primary">
+                            Донор:
+                        </label>
+                        
+<div>
+
+  <div class="relative  w-full min-w-[200px] h-auto @@width">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+    </div>
+    <input
+            class="text-blue-gray-700 text-lg cursor-default disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Донор"
+            id=""
+            readonly
+    />
+  </div>
+  <label for="" class="text-blue-gray-700 text-sm">
+    внесено: 25.11.2022
+  </label>
+</div>
+
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div
+                            class="flex flex-col items-center justify-center gap-3 px-4 pb-8 pt-12"
+                    >
+                        <p class="text-xl text-primary">Применимость:</p>
+                        <div class="flex flex-col gap-2">
+
+                            <button type="button" class="cursor-pointer text-primary" data-graph-path="applicability">
+                                Выбрать...
+                            </button>
+                        </div>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="mb-8 mt-4">
+                        <div
+                                class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+                        >
+                            <div class="overflow-x-auto rounded-xl">
+                                <table id="parts-table"
+                                       class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                                    <thead>
+                                    <tr class="h-[100px]">
+
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                                        >
+
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50  border-b p-3 transition-colors"
+                                        >
+                                            <div data-sorting-trigger
+                                                 class="flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased ">
+                                                <p class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                                    Артикул</p>
+                                            </div>
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            <p class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                                Название</p>
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            <p
+                                                    class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                                            >
+                                                Узел
+
+                                            </p>
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            <p
+                                                    class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                                            >
+                                                ОЕМ
+                                            </p>
+                                        </th>
+                                        <th
+                                                class=" border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-default border-b p-3 transition-colors"
+                                        >
+                                            <div class="flex gap-2 items-center">
+                                                <p
+                                                        class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                                                >
+                                                    Применимость
+                                                </p>
+                                                <div data-popover-wrapper class="relative  ">
+                                                    <div data-popover-trigger class="w-[20px] h-[20px]">
+                                                        <svg width="100%" height="100%" viewBox="0 0 24 24" fill="none"
+                                                             xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12 8V12M12 16H12.01M21 12C21 13.1819 20.7672 14.3522 20.3149 15.4442C19.8626 16.5361 19.1997 17.5282 18.364 18.364C17.5282 19.1997 16.5361 19.8626 15.4442 20.3149C14.3522 20.7672 13.1819 21 12 21C10.8181 21 9.64778 20.7672 8.55585 20.3149C7.46392 19.8626 6.47177 19.1997 5.63604 18.364C4.80031 17.5282 4.13738 16.5361 3.68508 15.4442C3.23279 14.3522 3 13.1819 3 12C3 9.61305 3.94821 7.32387 5.63604 5.63604C7.32387 3.94821 9.61305 3 12 3C14.3869 3 16.6761 3.94821 18.364 5.63604C20.0518 7.32387 21 9.61305 21 12Z"
+                                                                  stroke="currentColor" stroke-width="2"
+                                                                  stroke-linecap="round" stroke-linejoin="round"/>
+                                                        </svg>
+                                                    </div>
+
+                                                    <div
+                                                            data-popover-content
+                                                            class="invisible opacity-0 transition-opacity duration-300 cursor-default w-[400px] absolute top-full  left-[-125px] z-[999] mt-3 -translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
+                    <span class="absolute -top-1.5 left-[84%] z-[990] h-3 w-3  border-gray-300 -translate-x-1/2 rotate-45  bg-blue-gray-900 opacity-75">
+                    </span>
+                                                        При отображении применимости моделей, применимость к которым
+                                                        была определена через каталоги, модели будут выделены <i>курсивом</i>.<br/>
+                                                        При отображении применимости по производителям данные выводятся
+                                                        в формате: <i>Производитель: прямые + каталожные</i>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </th>
+                                        <th
+                                                class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                                        >
+                                            <p class="font-semibold underline-offset-4 cursor-pointer opacity-70">
+                                                Цена</p>
+                                        </th>
+                                    </tr>
+
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex items-center gap-3">
+                                                <h4 class="text-md">59513-1</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 group border-b p-3">
 
 
+                                            <div
+                                                    minimodal-bottom-toggle
+                                                    class="relative flex cursor-pointer items-center gap-2 transition-all"
+                                            >
+                                                <button type="button" class="flex flex-col gap-1">
+                                                    <div class="flex items-center gap-2">
+                                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                                            <img
+                                                                    src="../img/engine.png"
+                                                                    alt="engine"
+                                                                    class="h-full w-full rounded-[5px] object-cover"
+                                                            />
+                                                        </div>
+                                                        <h4
+                                                                class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                                        >
+                                                            Абсорбер топливной системы
+                                                        </h4>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-1">
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>в работе</span>
+                                                        </div>
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>омск</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div
+                                                        minimodal-bottom-content
+                                                        class="absolute z-[100000] left-0 top-0 hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                                >
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="view-part"
+                                                                  class="text-base font-normal text-black">Подробнее о запчасти</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="change"
+                                                                  class="text-base font-normal text-black">Изменить запчасть</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="add-linked" class="text-base font-normal text-black">Добавить связанную запчасть</span>
+                                                        </div>
 
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex w-min justify-start">
+                                                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4
+                                                    class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                            >
+                                                A9402940701
+                                            </h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <button type="button" data-graph-path="current_applicability">
+                                                <h4 class="text-md transition text-opacity-75 hover:text-primary">
+                                                    Renault T</h4>
+                                            </button>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3"></td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">1</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">S1-3</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">21 июня 09:22</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex items-center gap-3">
+                                                <h4 class="text-md">59513-1</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 group border-b p-3">
+
+
+                                            <div
+                                                    minimodal-bottom-toggle
+                                                    class="relative flex cursor-pointer items-center gap-2 transition-all"
+                                            >
+                                                <button type="button" class="flex flex-col gap-1">
+                                                    <div class="flex items-center gap-2">
+                                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                                            <img
+                                                                    src="../img/engine.png"
+                                                                    alt="engine"
+                                                                    class="h-full w-full rounded-[5px] object-cover"
+                                                            />
+                                                        </div>
+                                                        <h4
+                                                                class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                                        >
+                                                            Абсорбер топливной системы
+                                                        </h4>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-1">
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>в работе</span>
+                                                        </div>
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>омск</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div
+                                                        minimodal-bottom-content
+                                                        class="absolute z-[100000] left-0 top-0 hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                                >
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="view-part"
+                                                                  class="text-base font-normal text-black">Подробнее о запчасти</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="change"
+                                                                  class="text-base font-normal text-black">Изменить запчасть</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="add-linked" class="text-base font-normal text-black">Добавить связанную запчасть</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex w-min justify-start">
+                                                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4
+                                                    class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                            >
+                                                A9402940701
+                                            </h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <button type="button" data-graph-path="current_applicability">
+                                                <h4 class="text-md transition text-opacity-75 hover:text-primary">
+                                                    Renault T</h4>
+                                            </button>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3"></td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">1</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">S1-3</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">21 июня 09:22</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex items-center gap-3">
+                                                <h4 class="text-md">59513-1</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 group border-b p-3">
+
+
+                                            <div
+                                                    minimodal-bottom-toggle
+                                                    class="relative flex cursor-pointer items-center gap-2 transition-all"
+                                            >
+                                                <button type="button" class="flex flex-col gap-1">
+                                                    <div class="flex items-center gap-2">
+                                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                                            <img
+                                                                    src="../img/engine.png"
+                                                                    alt="engine"
+                                                                    class="h-full w-full rounded-[5px] object-cover"
+                                                            />
+                                                        </div>
+                                                        <h4
+                                                                class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                                        >
+                                                            Абсорбер топливной системы
+                                                        </h4>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-1">
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>в работе</span>
+                                                        </div>
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>омск</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div
+                                                        minimodal-bottom-content
+                                                        class="absolute z-[100000] left-0 top-0 hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                                >
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="view-part"
+                                                                  class="text-base font-normal text-black">Подробнее о запчасти</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="change"
+                                                                  class="text-base font-normal text-black">Изменить запчасть</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="add-linked" class="text-base font-normal text-black">Добавить связанную запчасть</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex w-min justify-start">
+                                                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4
+                                                    class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                            >
+                                                A9402940701
+                                            </h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <button type="button" data-graph-path="current_applicability">
+                                                <h4 class="text-md transition text-opacity-75 hover:text-primary">
+                                                    Renault T</h4>
+                                            </button>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3"></td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">1</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">S1-3</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">21 июня 09:22</h4>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td class="border-blue-gray-50 border-b p-2">
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex items-center gap-3">
+                                                <h4 class="text-md">59513-1</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 group border-b p-3">
+
+
+                                            <div
+                                                    minimodal-bottom-toggle
+                                                    class="relative flex cursor-pointer items-center gap-2 transition-all"
+                                            >
+                                                <button type="button" class="flex flex-col gap-1">
+                                                    <div class="flex items-center gap-2">
+                                                        <div class="group relative h-12 w-12 flex-shrink-0">
+                                                            <img
+                                                                    src="../img/engine.png"
+                                                                    alt="engine"
+                                                                    class="h-full w-full rounded-[5px] object-cover"
+                                                            />
+                                                        </div>
+                                                        <h4
+                                                                class="text-md transition-all group-hover:text-primary group-hover:opacity-75 text-start"
+                                                        >
+                                                            Абсорбер топливной системы
+                                                        </h4>
+                                                    </div>
+                                                    <div class="flex flex-wrap gap-1">
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-blue-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>в работе</span>
+                                                        </div>
+                                                        <div
+                                                                class="relative inline w-fit rounded-md bg-red-500 px-1 py-0.5 font-sans text-[10px] font-bold uppercase text-white"
+                                                        >
+                                                            <span>омск</span>
+                                                        </div>
+                                                    </div>
+                                                </button>
+                                                <div
+                                                        minimodal-bottom-content
+                                                        class="absolute z-[100000] left-0 top-0 hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                                                >
+                                                    <div class="flex flex-col gap-2">
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="view-part"
+                                                                  class="text-base font-normal text-black">Подробнее о запчасти</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="change"
+                                                                  class="text-base font-normal text-black">Изменить запчасть</span>
+                                                        </div>
+                                                        <div class="px-4 py-1 transition-all hover:bg-gray-100">
+                                                            <span data-graph-path="add-linked" class="text-base font-normal text-black">Добавить связанную запчасть</span>
+                                                        </div>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <div class="flex w-min justify-start">
+                                                <h4 class="text-md">Патрубок воздушного фильтра</h4>
+                                            </div>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4
+                                                    class="text-blue-gray-900 text-md font-normal leading-normal antialiased"
+                                            >
+                                                A9402940701
+                                            </h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <button type="button" data-graph-path="current_applicability">
+                                                <h4 class="text-md transition text-opacity-75 hover:text-primary">
+                                                    Renault T</h4>
+                                            </button>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="whitespace-nowrap text-md">2 999 р.</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3"></td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">1</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">S1-3</h4>
+                                        </td>
+                                        <td class="border-blue-gray-50 border-b p-3">
+                                            <h4 class="text-md">21 июня 09:22</h4>
+                                        </td>
+                                    </tr>
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="absolute top-0 right-0">
+    <div class="relative ">
+        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2 z-[10000]">
+            <div id="toast-success"
+                 class="flex hidden  items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    <span class="sr-only">Check icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Сохранено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-success').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="toast-danger"
+                 class="flex hidden items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                    </svg>
+                    <span class="sr-only">Error icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Удалено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-danger').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+                        </div>
+                        <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
+  Найдено 1 , показано 20
+</span>
+<div class="mt-3 flex items-center justify-between gap-5">
+<div class="flex items-center gap-2" data-pagination>
+  <button
+    disabled
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-prev
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+      ></path>
+    </svg>
+  </button>
+  <div class="flex items-center gap-1">
+    <button
+      class="pagination-active relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        1
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        2
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        3
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        4
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        5
+      </span>
+    </button>
+  </div>
+  <button
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-next
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+      ></path>
+    </svg>
+  </button>
+</div>
+<div class="flex items-center gap-3">
+  <span
+    class="text-blue-gray-600 text-sm font-normal leading-normal antialiased"
+    >На страницу</span
+  >
+
+  <div
+    id="preheader_tabs"
+    data-tabs
+    class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
+  >
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">20</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">50</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">100</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">500</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">1000</span>
+      </h4>
+    </button>
+  </div>
+</div>
+</div>
+
+
+                    </div>
+
+                    <div class=" w-full flex justify-start items-center">
+                        <button
+                                data-graph-path="add-unlinked"
+                                type="button"
+                                class="bg-primary flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all  focus:bg-primary hover:bg-light-gray hover:text-primary"
+                        >
+                            <h4>Добавить отдельную запчасть</h4>
+                        </button>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class=" w-full flex justify-center items-center">
+
+                        <button
+                                onclick="document.querySelector('#toast-success').classList.remove('hidden')"
+                                type="button"
+                                class="bg-primary flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all  focus:bg-primary hover:bg-light-gray hover:text-primary"
+                        >
+                            <h4>Добавить запчасть</h4>
+                        </button>
+                    </div>
 
                 </div>
+
 
 
                 <div

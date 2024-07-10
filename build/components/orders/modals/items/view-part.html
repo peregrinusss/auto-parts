@@ -1,11 +1,11 @@
-<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="change">
+<div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="view-part">
 
     <div
             class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
     >
         <div class="flex flex-col justify-center gap-2">
             <h3 class="text-xl font-bold">
-                Изменение запчасти
+                Просмотр запчасти
                 <a
                         href="#"
                         class="opacity-85 text-base text-primary transition-all hover:opacity-80"
@@ -39,6 +39,8 @@
         </div>
     </div>
     <div
+
+            class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all"
     >
 
         <div class="">
@@ -55,7 +57,7 @@
                                 <div class="relative h-fit w-full min-w-[200px]">
                                     <input
   class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="OEM" 
+  placeholder="OEM" readonly
   value=""
   type="text"
 
@@ -75,7 +77,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <button type="button" data-graph-path="hub"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+      
     </div>
     <input
             class="text-blue-gray-700 text-lg cursor-default disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -102,7 +104,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <button type="button" data-graph-path="donor"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+      
     </div>
     <input
             class="text-blue-gray-700 text-lg cursor-default disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -132,11 +134,10 @@
                                 <p class="text-2lg text-blue-gray">
                                     Scania 5-series R
                                 </p>
-                                <button type="button" class="cursor-pointer text-primary" data-graph-path="applicability">
-                                    Выбрать...
-                                </button>
+<!--                                <button type="button" class="cursor-pointer text-primary" data-graph-path="applicability">-->
+<!--                                    Выбрать...-->
+<!--                                </button>-->
                             </div>
-
                         </div>
                         <div
                                 class="flex flex-col justify-between gap-4 border-l-2 border-solid border-gray-200 px-4 pb-8 pt-12"
@@ -154,7 +155,7 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <button type="button" data-graph-path="avito"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+      
     </div>
     <input
             class="text-blue-gray-700 text-lg cursor-default disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
@@ -182,13 +183,13 @@
     <div
             class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
     >
-      <button type="button" data-graph-path="partname"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" aria-hidden="true" class="h-5 w-5"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg></button>
+      
     </div>
     <input
             class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
             placeholder="Название"
             id=""
-            
+            readonly
     />
   </div>
   <label for="" class="text-blue-gray-700 text-sm">
@@ -203,6 +204,11 @@
                     <div
                             class="flex flex-col gap-6 border-t-2 border-solid border-gray-200 px-12 py-8"
                     >
+                        <style>
+                            .uploaded-card > span{
+                                display: none;
+                            }
+                        </style>
                         <div
                                 id="preview-container"
                                 class="grid grid-cols-5 gap-4"
@@ -215,7 +221,7 @@
                                         src="../img/gallery-item.jpeg"
                                         alt="detail"
                                 />
-                                <span class="group  delete-card block cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
+                                <span class="group delete-card cursor-pointer absolute top-0 right-0 p-2.5  font-extrabold text-lg ">
                                    <svg width="22" height="22" viewBox="0 0 22 22" fill="none"
                                         xmlns="http://www.w3.org/2000/svg">
                                        <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="currentColor" stroke-width="5"
@@ -223,25 +229,6 @@
                                    </svg>
                                 </span>
 
-                            </div>
-                        </div>
-                        <div class="flex w-full items-center justify-center">
-                            <div class="group relative  w-fit upload cursor-pointer active:opacity-60">
-                                <button
-        type="button"
-        @@optional_attr
-        class="flex w-full items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 cursor-pointer whitespace-nowrap"
->
-  <h4>Загрузить изображения +</h4>
-</button>
-
-                                <input
-                                        id="fileInput"
-                                        class="file:cursor-pointer absolute inset-0 z-[999] w-full opacity-0 cursor-pointer"
-                                        multiple
-                                        accept="image/*"
-                                        type="file"
-                                />
                             </div>
                         </div>
                     </div>
@@ -260,7 +247,7 @@
         rows="5"
         class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
-        
+        readonly
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     Например: "На американца", "Под парктроник" и т.д. НЕ ПИШИТЕ здесь характеристики отдельной запчасти (цвет, состояние, комплектацию и подобное).
@@ -278,242 +265,18 @@
         rows="5"
         class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
-        
+        readonly
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     Состояние, цвет, комплектация и прочее, отличающее эту конкретную запчасть от других с таким же OEMом. Например, "Красный", "В комплекте с обвесом", "Состояние хорошее" и т.п.
 </label>
 
                         </div>
-
-
-                        <div class="grid grid-cols-1 gap-2">
-
-                            <div>
-                                <label class="mb-2 block text-2lg font-medium text-primary">
-                                    Группы:
-                                </label>
-                                <div
-                                        class="flex   h-fit items-center justify-center rounded-lg border border-solid border-gray-700 border-opacity-50 bg-gray-50 p-2"
-                                >
-
-                                    <button type="button" class="cursor-pointer text-primary" data-graph-path="groups">
-                                        Выбрать...
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="w-full flex justify-center">
-                                <ul class="w-full grid grid-cols-2 place-items-center m-auto flex-col gap-2">
-                                    <li class="w-full border border-solid border-gray-700 border-opacity-50 text-center p-2 bg-gray-50 rounded-lg ">Daf XF106</li>
-                                    <li class="w-full border border-solid border-gray-700 border-opacity-50 text-center p-2 bg-gray-50 rounded-lg ">Daf XF106</li>
-                                    <li class="w-full border border-solid border-gray-700 border-opacity-50 text-center p-2 bg-gray-50 rounded-lg ">Daf XF106</li>
-                                    <li class="w-full border border-solid border-gray-700 border-opacity-50 text-center p-2 bg-gray-50 rounded-lg ">Daf XF106</li>
-                                    <li class="w-full border border-solid border-gray-700 border-opacity-50 text-center p-2 bg-gray-50 rounded-lg ">Daf XF106</li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="flex flex-col gap-3">
-                            <div>
-                                <label class="mb-2 block text-2lg font-medium text-primary">
-                                    Склад:
-                                </label>
-                                <div class=" custom-select relative w-full">
-                                    <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
-                                        <button
-                                                type="button"
-                                                class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
-                                        >
-                                            <span class="selected-option"></span>
-                                            <svg
-                                                    class="h-5 w-5"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 9l-7 7-7-7"
-                                                ></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <ul
-                                            class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
-                                    >
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний Новгород</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100"> Рязань</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <div>
-                                <label class="mb-2 block text-2lg font-medium text-primary">
-                                    Складское место:
-                                </label>
-                                <div class=" custom-select relative w-full">
-                                    <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
-                                        <button
-                                                type="button"
-                                                class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
-                                        >
-                                            <span class="selected-option"></span>
-                                            <svg
-                                                    class="h-5 w-5"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 9l-7 7-7-7"
-                                                ></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <ul
-                                            class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
-                                    >
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-1</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-2</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-3</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-4</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-                            <div>
-                                <label class="mb-2 block text-2lg font-medium text-primary">
-                                    Особенность:
-                                </label>
-                                <div class=" custom-select relative w-full">
-                                    <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
-                                        <button
-                                                type="button"
-                                                class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
-                                        >
-                                            <span class="selected-option"></span>
-                                            <svg
-                                                    class="h-5 w-5"
-                                                    fill="none"
-                                                    stroke="currentColor"
-                                                    viewBox="0 0 24 24"
-                                                    xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                                <path
-                                                        stroke-linecap="round"
-                                                        stroke-linejoin="round"
-                                                        stroke-width="2"
-                                                        d="M19 9l-7 7-7-7"
-                                                ></path>
-                                            </svg>
-                                        </button>
-                                    </div>
-                                    <ul
-                                            class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
-                                    >
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Рязань</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний новгород</li>
-                                        <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
-                                    </ul>
-
-                                </div>
-                            </div>
-
-                        </div>
-                        <div class="flex flex-col justify-between gap-2">
-                            <div class="flex flex-col gap-2">
-                                <label class="mb-2 block text-2lg font-medium text-primary">
-                                    Габариты:
-                                </label>
-                                <div class="flex gap-1">
-                                    <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Длина (см)" 
-  value=""
-  type="text"
-
-/>
-
-                                    <span>
-                              <svg
-                                      class="h-full w-[25px]  fill-blue-gray "
-                                      focusable="false"
-                                      aria-hidden="true"
-                                      viewBox="0 0 24 24"
-                                      data-testid="CloseIcon"
-                              >
-                                <path
-                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                ></path>
-                              </svg>
-                            </span>
-                                    <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Ширина (см)" 
-  value=""
-  type="text"
-
-/>
-
-                                    <span>
-                              <svg
-                                      class="h-full w-[25px]  fill-blue-gray "
-                                      focusable="false"
-                                      aria-hidden="true"
-                                      viewBox="0 0 24 24"
-                                      data-testid="CloseIcon"
-                              >
-                                <path
-                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                ></path>
-                              </svg>
-                            </span>
-                                    <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Высота (см)" 
-  value=""
-  type="text"
-
-/>
-
-                                    <span>
-                              <svg
-                                      class="h-full w-[25px]  fill-blue-gray "
-                                      focusable="false"
-                                      aria-hidden="true"
-                                      viewBox="0 0 24 24"
-                                      data-testid="CloseIcon"
-                              >
-                                <path
-                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
-                                ></path>
-                              </svg>
-                            </span>
-                                    <input
-  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
-  placeholder="Вес (кг)" 
-  value=""
-  type="text"
-
-/>
-
-                                </div>
-                            </div>
-                            <div class="grid grid-cols-2 gap-2">
-                                <div class="flex flex-col gap-2">
-                                    <label class=" block text-2lg font-medium text-primary">
-                                        Ссылка на видео:
-                                    </label>
-                                    
+                        <div class="flex flex-col gap-2">
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Ссылка на видео:
+                            </label>
+                            
 <div>
 
   <div class="relative  w-full min-w-[200px] h-auto @@width">
@@ -527,7 +290,7 @@
             class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
             placeholder="Ссылка на видео"
             id=""
-            
+            readonly
     />
   </div>
   <label for="" class="text-blue-gray-700 text-sm">
@@ -535,12 +298,51 @@
   </label>
 </div>
 
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Склад:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            type="button" disabled
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option">Омск</span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
                                 </div>
-                                <div class="relative h-full w-full min-w-[200px]">
-                                    <label class="mb-2 block text-2lg font-medium text-primary">
-                                        Цена:
-                                    </label>
-                                    
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний Новгород</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100"> Рязань</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-2 gap-2">
+                            <div class="relative h-full w-full min-w-[200px]">
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Цена:
+                                </label>
+                                
 <div>
 
   <div class="relative  w-full min-w-[200px] h-auto @@width">
@@ -554,7 +356,7 @@
             class="text-blue-gray-700 text-lg disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
             placeholder="Цена"
             id=""
-            
+            readonly
     />
   </div>
   <label for="" class="text-blue-gray-700 text-sm">
@@ -563,7 +365,173 @@
 </div>
 
 
+                            </div>
+                            <div>
+                                <label class="mb-2 block text-2lg font-medium text-primary">
+                                    Группы:
+                                </label>
+                                <div
+                                        class="flex   h-fit items-center justify-center rounded-lg border border-solid border-gray-700 border-opacity-50 bg-gray-50 p-2"
+                                >
+
+                                    не выбрано
                                 </div>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Складское место:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            disabled
+                                            type="button"
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option">A-1-1-1</span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-1</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-2</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-3</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">A-1-1-4</li>
+                                </ul>
+
+                            </div>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Габариты:
+                            </label>
+                            <div class="flex gap-1">
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Длина (см)" readonly
+  value=""
+  type="text"
+
+/>
+
+                                <span>
+                              <svg
+                                      class="h-full w-[25px]  fill-blue-gray "
+                                      focusable="false"
+                                      aria-hidden="true"
+                                      viewBox="0 0 24 24"
+                                      data-testid="CloseIcon"
+                              >
+                                <path
+                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                ></path>
+                              </svg>
+                            </span>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Ширина (см)" readonly
+  value=""
+  type="text"
+
+/>
+
+                                <span>
+                              <svg
+                                      class="h-full w-[25px]  fill-blue-gray "
+                                      focusable="false"
+                                      aria-hidden="true"
+                                      viewBox="0 0 24 24"
+                                      data-testid="CloseIcon"
+                              >
+                                <path
+                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                ></path>
+                              </svg>
+                            </span>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Высота (см)" readonly
+  value=""
+  type="text"
+
+/>
+
+                                <span>
+                              <svg
+                                      class="h-full w-[25px]  fill-blue-gray "
+                                      focusable="false"
+                                      aria-hidden="true"
+                                      viewBox="0 0 24 24"
+                                      data-testid="CloseIcon"
+                              >
+                                <path
+                                        d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                                ></path>
+                              </svg>
+                            </span>
+                                <input
+  class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:opacity-60 disabled:cursor-not-allowed @@class"
+  placeholder="Вес (кг)" readonly
+  value=""
+  type="text"
+
+/>
+
+                            </div>
+                        </div>
+                        <div>
+                            <label class="mb-2 block text-2lg font-medium text-primary">
+                                Особенность:
+                            </label>
+                            <div class=" custom-select relative w-full">
+                                <div class="border-blue-gray-200 rounded-lg border bg-white shadow-sm">
+                                    <button
+                                            disabled
+                                            type="button"
+                                            class="min-w-[300px] select-button flex w-full items-center justify-between px-3 py-2 text-left"
+                                    >
+                                        <span class="selected-option">Москва</span>
+                                        <svg
+                                                class="h-5 w-5"
+                                                fill="none"
+                                                stroke="currentColor"
+                                                viewBox="0 0 24 24"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                            <path
+                                                    stroke-linecap="round"
+                                                    stroke-linejoin="round"
+                                                    stroke-width="2"
+                                                    d="M19 9l-7 7-7-7"
+                                            ></path>
+                                        </svg>
+                                    </button>
+                                </div>
+                                <ul
+                                        class="dropdown-options pointer-events-none absolute  z-10 mt-1 w-full scale-95 transform overflow-hidden rounded-lg border border-gray-300 bg-white opacity-0 shadow-sm transition"
+                                >
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Рязань</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Омск</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Нижний новгород</li>
+                                    <li class="cursor-pointer px-3 py-2 hover:bg-gray-100">Москва</li>
+                                </ul>
+
                             </div>
                         </div>
                         <div class="flex h-full flex-col gap-2">
@@ -578,7 +546,7 @@
         rows="5"
         class="text-blue-gray-700 disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans text-base font-normal outline-0 transition-all placeholder-shown:border focus:outline-0 focus:outline-primary focus:border-primary min-h-[80px] max-h-[300px] disabled:opacity-60 disabled:cursor-not-allowed"
         placeholder="Напишите что-нибудь"
-         style='height: 115px' 
+        readonly
 ></textarea>
 <label for="" class="text-blue-gray-700 text-sm">
     Комментарий для сотрудников, клиентам не отображается.
@@ -592,6 +560,7 @@
                                             class="relative flex cursor-pointer items-center rounded-full"
                                     >
                                         <input
+                                                disabled checked
                                                 type="checkbox"
                                                 class="before:content[''] border-blue-gray-200 before:bg-blue-gray-500 peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:opacity-0 before:transition-opacity checked:border-blue-500 checked:bg-blue-500 checked:before:bg-blue-500"
                                                 id="detail_active"
@@ -648,32 +617,7 @@
                         class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
                 >
                     <div class="flex gap-4">
-                        <!-- <button
-                                class="group relative h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
-                        >
-                            <svg
-                                    class="w-full"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        d="M3 17V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H11L13 7H19C19.5304 7 20.0391 7.21071 20.4142 7.58579C20.7893 7.96086 21 8.46957 21 9V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17Z"
-                                        stroke="#FFFFFF"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                            </svg>
-                            <div
-                                    class="invisible opacity-0 -top-[60px] -left-[210%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
-                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
-                                </span>
-                                Переместить в архив
-                            </div>
-                        </button> -->
+
                         <div
                                 minimodal-top-toggle
                                 class=" h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
@@ -739,8 +683,64 @@
                                 </button>
                             </div>
                         </div>
+                        <button
+                                type="button"
+                                class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
+                        >
+                            <svg
+                                    class="stroke-blue-gray"
+                                    width="20"
+                                    height="20"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    xmlns="http://www.w3.org/2000/svg"
+                            >
+                                <path
+                                        d="M7.25 7H16.75V5C16.75 3 16 2 13.75 2H10.25C8 2 7.25 3 7.25 5V7Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M16 15V19C16 21 15 22 13 22H11C9 22 8 21 8 19V15H16Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M21 10V15C21 17 20 18 18 18H16V15H8V18H6C4 18 3 17 3 15V10C3 8 4 7 6 7H18C20 7 21 8 21 10Z"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M17 15H15.79H7"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                                <path
+                                        d="M7 11H10"
+                                        stroke="#171717"
+                                        stroke-width="1.5"
+                                        stroke-miterlimit="10"
+                                        stroke-linecap="round"
+                                        stroke-linejoin="round"
+                                />
+                            </svg>
+                            Похожие
+                        </button>
                     </div>
                     <div class="flex gap-4">
+
                         <button
                                 data-graph-path="barcodes"
                                 data-clear-stack="true"
@@ -798,14 +798,6 @@
                             </svg>
                             Печать
                         </button>
-                        <button
-        type="button"
-        onclick="document.querySelector('#toast-success').classList.remove('hidden')"
-        class="flex w-full items-center gap-2 rounded-lg bg-success p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:text-light-gray cursor-pointer active:opacity-60 h-fit js-modal-close whitespace-nowrap"
->
-  <h4>Применить</h4>
-</button>
-
 
                         <button
         type="button"
