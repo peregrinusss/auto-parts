@@ -795,3 +795,8 @@ code {
     padding-left: 30px;
   }
 }
+
+input[type="checkbox"]:disabled {
+  cursor: not-allowed !important;
+  opacity: 0.7 !important;
+}
