@@ -1,0 +1,1767 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <title>Авторазбор</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/auto-parts/favicons/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/auto-parts/favicons/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/auto-parts/favicons/favicon-16x16.png">
+  <link rel="manifest" href="/auto-parts/favicons/site.webmanifest">
+  <link rel="mask-icon" href="/src/auto-parts/favicons/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  <link
+    rel="stylesheet"
+    href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css"
+  />
+  <link rel="stylesheet" type="text/css" href="../css/style.css" />
+
+</head>
+
+<body>
+<div class="grid h-full grid-cols-[auto_1fr] gap-2">
+    <div
+  class="shadow-blue-gray-900/5 relative flex h-full w-[280px] px-3 flex-col bg-white bg-clip-border p-2 text-blue-gray shadow-xl"
+>
+  <div class="mb-2 flex items-center gap-4 p-4 px-3 max-w-[160px]">
+    <img src="../img/logo.svg" alt="">
+  </div>
+
+  <nav
+    class="text-blue-gray-700 flex flex-col gap-1 font-sans text-sm font-normal"
+  >
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray sidebar-active"
+    >
+      <div class="mr-2 grid place-items-center flex-shrink-0">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Запчасти</h5>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Заказы</h5>
+      <div class="ml-auto grid place-items-center justify-self-end">
+        <div
+          class="relative flex h-7 w-7 select-none items-center justify-center whitespace-nowrap rounded-full text-xs"
+        >
+          <span class="text-base font-sans font-bold text-primary">14</span>
+        </div>
+      </div>
+    </a>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#truck"
+  ></use>
+</svg>
+
+      </div>
+
+      <h5 class="text-lg font-normal">Машины</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#depot"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Склад
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+          >
+            <nav
+              class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+            >
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Размещение</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Инвентаризация</h5>
+              </a>
+              <a
+                href="#"
+                role="button"
+                class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <div class="mr-2 grid flex-shrink-0 place-items-center">
+                  <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#document-text"
+  ></use>
+</svg>
+
+                </div>
+                <h5 class="text-lg font-normal">Склады</h5>
+              </a>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a
+      href="#"
+      role="button"
+      class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+    >
+      <div class="mr-2 grid flex-shrink-0 place-items-center">
+        <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#template"
+  ></use>
+</svg>
+
+      </div>
+      <h5 class="text-lg font-normal">Интеграции</h5>
+    </a>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#book-open"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            Справочники
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div class="max-h-0 overflow-hidden" data-accordion-content>
+        <div
+          class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+        >
+          <nav
+            class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+          >
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user-group"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Пользователи</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#models"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Марки и модели ТС</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#star"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Отзывы на сайте</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#traffic"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Каналы трафика</h5>
+            </a>
+            <a
+              href="#"
+              role="button"
+              class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+            >
+              <div class="mr-2 grid flex-shrink-0 place-items-center">
+                <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#branches"
+  ></use>
+</svg>
+
+              </div>
+              <h5 class="text-lg font-normal">Филиалы</h5>
+            </a>
+
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#cog"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Запчасти
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#hub"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Узлы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#category"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Категории</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#bookmark-alt"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Группы</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#sparkles"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Особенности</h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="relative block w-full" data-accordion-item>
+              <div
+                role="button"
+                class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+              >
+                <button
+                  data-accordion-button
+                  type="button"
+                  class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+                >
+                  <div class="mr-2 grid flex-shrink-0 place-items-center">
+                    <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#shopping-cart"
+  ></use>
+</svg>
+
+                  </div>
+                  <p
+                    class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+                  >
+                    Заказы
+                  </p>
+                  <span class="ml-4">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke-width="2.5"
+                      stroke="currentColor"
+                      aria-hidden="true"
+                      class="mx-auto h-4 w-4 transition-transform"
+                      data-accordion-arrow
+                    >
+                      <path
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+                      ></path>
+                    </svg>
+                  </span>
+                </button>
+              </div>
+              <div>
+                <div
+                  class="max-h-0 overflow-hidden transition-[max-height] duration-200"
+                  data-accordion-content=""
+                >
+                  <div
+                    class="block w-full py-1 font-sans text-sm font-light leading-normal text-blue-gray antialiased"
+                  >
+                    <nav
+                      class="text-blue-gray-700 ms-2 flex flex-col gap-1 p-0 font-sans text-sm font-normal"
+                    >
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid flex-shrink-0 place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#clipboard-list"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">Истроия заказов</h5>
+                      </a>
+                      <a
+                        href="#"
+                        role="button"
+                        class="flex w-full items-center rounded-lg px-2 py-3 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+                      >
+                        <div class="mr-2 grid place-items-center">
+                          <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#credit-card"
+  ></use>
+</svg>
+
+                        </div>
+                        <h5 class="text-lg font-normal">
+                          Способы оплаты заказов
+                        </h5>
+                      </a>
+                    </nav>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="relative block w-full" data-accordion-item>
+      <div
+        role="button"
+        class="flex w-full items-center rounded-lg p-0 text-start leading-tight outline-none transition-all hover:bg-light-gray hover:bg-opacity-80 hover:text-blue-gray focus:bg-light-gray focus:bg-opacity-80 focus:text-blue-gray active:bg-light-gray active:bg-opacity-80 active:text-blue-gray"
+      >
+        <button
+          data-accordion-button
+          type="button"
+          class="border-b-blue-gray-100 text-blue-gray-700 flex w-full select-none items-center justify-between border-b-0 px-2 py-3 text-left font-sans text-xl font-semibold leading-snug antialiased transition-colors hover:text-blue-gray"
+        >
+          <div class="mr-2 grid flex-shrink-0 place-items-center">
+            <svg class="transition-all duration-300 text-black w-6 h-6">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#user"
+  ></use>
+</svg>
+
+          </div>
+          <p
+            class="mr-auto block font-sans text-lg font-normal leading-relaxed text-blue-gray antialiased"
+          >
+            +7 912 761 9299
+          </p>
+          <span class="ml-4">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="2.5"
+              stroke="currentColor"
+              aria-hidden="true"
+              class="mx-auto h-4 w-4 transition-transform"
+              data-accordion-arrow
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M19.5 8.25l-7.5 7.5-7.5-7.5"
+              ></path>
+            </svg>
+          </span>
+        </button>
+      </div>
+      <div>
+        <div
+          class="flex max-h-0 flex-col gap-2 overflow-hidden transition-[max-height] duration-200"
+          data-accordion-content=""
+        >
+          <div
+            class="group mt-2.5 flex w-full flex-col gap-2 rounded-lg bg-[#F3F5F6] p-2.5 font-sans text-sm font-light leading-normal antialiased transition-all"
+          >
+            <button>
+              <p
+                class="mr-auto block font-sans text-lg font-bold leading-relaxed text-primary antialiased"
+              >
+                Выйти
+              </p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </nav>
+</div>
+
+    <div class="relative w-[calc(100vw-288px)] px-4">
+        <header class="sticky left-0 top-0 z-40 -mx-2 rounded-lg">
+    <nav
+            class="border-blue-gray-50 block w-full border-b bg-opacity-80 px-2 py-5 text-white backdrop-blur-2xl backdrop-saturate-200"
+    >
+        <div class="text-blue-gray-900 flex items-center justify-between">
+            <h2 class="text-2xl font-bold text-blue-gray">Объявления</h2>
+            <div class="flex items-center gap-4">
+
+
+                <div
+                        minimodal-bottom-toggle
+                        class="relative flex cursor-pointer items-center gap-2 transition-all"
+                >
+                    <button
+                            class="bg-blue-gray-50/50 flex w-full items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start font-medium leading-tight transition-all hover:bg-primary hover:text-light-gray focus:bg-primary focus:text-light-gray"
+                    >
+                        <h4>Фильтр</h4>
+                    </button>
+
+
+
+
+
+
+
+
+
+
+
+                    <div
+                            minimodal-bottom-content
+                            class="absolute right-0 top-[7px] hidden w-max min-w-[200px] translate-y-14 flex-col rounded-lg bg-white py-3 opacity-0 shadow-lg transition-all duration-300"
+                    >
+                        <div class="flex flex-col gap-2" data-filters="advertisements">
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="name"
+                            >
+                                <span class="text-base font-normal text-black">Название</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="service"
+                            >
+                                <span class="text-base font-normal text-black"> Avito ID</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="created"
+                            >
+                                <span class="text-base font-normal text-black">UUID</span
+                >
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Описание</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Цена</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Группа</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Сборка</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Магазин</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">С проблемами</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Успешно опубликовано</span>
+                            </div>
+                            <div
+                                    class="px-4 py-1 transition-all hover:bg-gray-100"
+                                    data-filter="active"
+                            >
+                                <span class="text-base font-normal text-black">Дата добавления</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a
+                        href="/pages/integrations-groups.html"
+                        class="flex w-fit items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                >
+                    <h4>Группы</h4>
+                </a>
+                <a
+                        href="/pages/integrations-bundles.html"
+                        class="flex w-fit items-center gap-2 rounded-lg bg-primary p-3 py-2 pr-4 text-start font-medium leading-tight text-white transition-all hover:bg-primary hover:text-light-gray focus:bg-primary"
+                >
+                    <h4>Сборки</h4>
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+        <div class="mb-8 mt-4">
+    <div data-filters-area="advertisements"></div>
+
+    <div
+            class="relative flex h-full w-full flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
+    >
+        <div class="overflow-x-auto rounded-xl">
+            <table class="w-full min-w-[1000px] table-auto overflow-x-auto text-left">
+                <thead>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-2 transition-colors"
+                    >
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="advertisements-0"
+>
+  <input
+    id="advertisements-0"
+    type="checkbox"
+    data-table-checkbox-main="advertisements" 
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <div
+                                data-sorting-trigger
+                                class="min-w-[400px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased"
+                        >
+                            <p
+                                    data-sorting-title
+                                    class="cursor-pointer font-semibold underline-offset-4 opacity-70"
+                            >
+                                Название
+                            </p>
+                            <div data-sorting-wrapper class="hidden items-center gap-1">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <span
+                                        class="h-[15px] w-[2px] rotate-[15deg] rounded-full bg-[#8E8E8E]"
+                                ></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <div
+                                data-sorting-trigger
+                                class="min-w-[150px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased"
+                        >
+                            <p
+                                    data-sorting-title
+                                    class="cursor-pointer font-semibold underline-offset-4 opacity-70"
+                            >
+                                Цена
+                            </p>
+                            <div data-sorting-wrapper class="hidden items-center gap-1">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <span
+                                        class="h-[15px] w-[2px] rotate-[15deg] rounded-full bg-[#8E8E8E]"
+                                ></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <div
+                                data-sorting-trigger
+                                class="min-w-[180px] flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased"
+                        >
+                            <p
+                                    data-sorting-title
+                                    class="cursor-pointer font-semibold underline-offset-4 opacity-70"
+                            >
+                                До (включая)
+                            </p>
+                            <div data-sorting-wrapper class="hidden items-center gap-1">
+                                <div data-sorting-ascending class="mb-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 8V20M3 4H16H3ZM3 8H12H3ZM3 12H9H3ZM13 12L17 8L13 12ZM17 8L21 12L17 8Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                                <span
+                                        class="h-[15px] w-[2px] rotate-[15deg] rounded-full bg-[#8E8E8E]"
+                                ></span>
+                                <div data-sorting-descending class="mt-[5px]">
+                                    <svg
+                                            width="20"
+                                            height="20"
+                                            viewBox="0 0 24 24"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                        <path
+                                                d="M17 20L21 16M3 4H16H3ZM3 8H12H3ZM3 12H12H3ZM17 8V20V8ZM17 20L13 16L17 20Z"
+                                                stroke="currentColor"
+                                                stroke-width="2"
+                                                stroke-linecap="round"
+                                                stroke-linejoin="round"
+                                        />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                    </th>
+                    <th
+                            class="min-w-[180px] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors md:w-[33rem]"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Группа
+                        </p>
+                    </th>
+                    <th
+                            class="min-w-[180px] border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 w-[150px] cursor-pointer border-b p-3 transition-colors"
+                    >
+                        <p
+                                class="text-blue-gray-900 flex items-center justify-between gap-2 font-sans text-md font-normal leading-none antialiased opacity-70"
+                        >
+                            Avito ID
+                        </p>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-b p-3 transition-colors"
+                    >
+
+                    </th>
+                </tr>
+                <tr>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-2 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="w-full">
+                            
+<div>
+
+  <div class="relative  w-full min-w-[200px] h-auto w-[150px]">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../img/icons/loupe.svg" />
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
+  </div>
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
+</div>
+
+                        </div>
+                    </th>
+
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    >
+                        <div class="w-full">
+                            
+<div>
+
+  <div class="relative  w-full min-w-[200px] h-auto w-[150px]">
+
+    <div
+            class="text-blue-gray-500 absolute right-3 top-2/4 grid h-5 w-5 -translate-y-2/4 place-items-center"
+    >
+      <img src="../img/icons/loupe.svg" />
+    </div>
+    <input
+            class="text-blue-gray-700 text-sm disabled:bg-blue-gray-50 placeholder-shown:border-blue-gray-200 placeholder-shown:border-t-blue-gray-200 border-t-blue-gray-200 border-blue-gray-200 peer h-full w-full rounded-[7px] border bg-transparent px-3 py-2.5 font-sans  font-normal outline outline-0 transition-all placeholder-shown:border focus:outline-1 focus:outline-primary focus:border-primary disabled:border-0 !pr-10"
+            placeholder="Фильтр"
+            id=""
+            
+    />
+  </div>
+  <label for="" class="text-blue-gray-700 text-sm">
+    
+  </label>
+</div>
+
+                        </div>
+                    </th>
+                    <th
+                            class="border-blue-gray-100 bg-blue-gray-50/50 hover:bg-blue-gray-50 cursor-pointer border-y p-3 transition-colors"
+                    ></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="advertisements-1"
+>
+  <input
+    id="advertisements-1"
+    type="checkbox"
+    data-table-checkbox-secondary='advertisements'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="">
+                            <button
+                                    class="text-lg text-primary"
+                                    type="button"
+                                    data-graph-path="view-ad"
+                            >
+                                Кабина 2020г Daf XF106
+                            </button>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col justify-center gap-1">
+                            2 500 000 р.
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col justify-center gap-1"></div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="">
+                            <h4
+                                    class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                            > Avito Balashiha - Остальные </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            3996184076
+                        </h4>
+                    </td>
+
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div
+                                class="text-blue-gray-900 flex items-center gap-1 text-lg font-normal leading-normal antialiased"
+                        >
+                            <svg class="transition-all duration-300 text-black w-5 h-5 !text-[#E0AB18]">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#warning"
+  ></use>
+</svg>
+
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="border-blue-gray-50 border-b p-2">
+                        <div class="inline-flex items-center">
+                            <label
+  class="relative flex cursor-pointer items-center rounded-full p-0"
+  htmlfor="advertisements-1"
+>
+  <input
+    id="advertisements-1"
+    type="checkbox"
+    data-table-checkbox-secondary='advertisements'
+    class="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-gray-600 transition-all before:absolute before:left-2/4 before:top-2/4 before:block before:h-12 before:w-12 before:-translate-x-2/4 before:-translate-y-2/4 before:rounded-full before:bg-primary before:opacity-0 before:transition-opacity checked:border-primary checked:bg-primary checked:before:bg-primary hover:before:opacity-0"
+  />
+  <span
+    class="pointer-events-none absolute left-2/4 top-2/4 -translate-x-2/4 -translate-y-2/4 text-white opacity-0 transition-opacity peer-checked:opacity-100"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-3.5 w-3.5"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      stroke="currentColor"
+      stroke-width="1"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+        clip-rule="evenodd"
+      ></path>
+    </svg>
+  </span>
+</label>
+
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="">
+                            <button
+                                    class="text-lg text-primary"
+                                    type="button"
+                                    data-graph-path="view-ad"
+                            >
+                                Двигатель 910.15-450 2023г. КАМАЗ 54901
+                            </button>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col justify-center gap-1">
+                            2 300 000 р.
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="flex flex-col justify-center gap-1"></div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div class="">
+                            <h4
+                                    class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                            > Avito Balashiha - Остальные </h4>
+                        </div>
+                    </td>
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <h4
+                                class="text-blue-gray-900 text-lg font-normal leading-normal antialiased"
+                        >
+                            4059969971
+                        </h4>
+                    </td>
+
+                    <td class="border-blue-gray-50 border-b p-3">
+                        <div
+                                class="text-blue-gray-900 flex items-center gap-1 text-lg font-normal leading-normal antialiased"
+                        >
+                            <svg class="transition-all duration-300 text-black w-5 h-5 !text-[#E0AB18]">
+  <use
+    class="w-full h-full object-contain"
+    href="../img/icons/sprite.svg#warning"
+  ></use>
+</svg>
+
+                        </div>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="absolute top-0 right-0">
+    <div class="relative ">
+        <div class="absolute right-0 top-0 p-2.5 flex flex-col gap-2 z-[10000]">
+            <div id="toast-success"
+                 class="flex hidden  items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-green-500 bg-green-100 rounded-lg dark:bg-green-800 dark:text-green-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 8.207-4 4a1 1 0 0 1-1.414 0l-2-2a1 1 0 0 1 1.414-1.414L9 10.586l3.293-3.293a1 1 0 0 1 1.414 1.414Z" />
+                    </svg>
+                    <span class="sr-only">Check icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Сохранено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-success').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+            <div id="toast-danger"
+                 class="flex hidden items-center w-full gap-2  p-4 mb-4 text-gray-500 bg-white rounded-lg shadow dark:text-gray-400 dark:bg-gray-800"
+                 role="alert">
+                <div
+                        class="inline-flex items-center justify-center flex-shrink-0 w-8 h-8 text-red-500 bg-red-100 rounded-lg dark:bg-red-800 dark:text-red-200">
+                    <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                         viewBox="0 0 20 20">
+                        <path
+                                d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5Zm3.707 11.793a1 1 0 1 1-1.414 1.414L10 11.414l-2.293 2.293a1 1 0 0 1-1.414-1.414L8.586 10 6.293 7.707a1 1 0 0 1 1.414-1.414L10 8.586l2.293-2.293a1 1 0 0 1 1.414 1.414L11.414 10l2.293 2.293Z" />
+                    </svg>
+                    <span class="sr-only">Error icon</span>
+                </div>
+                <div class="ml-3 w-max text-md text-blue-gray font-normal">Удалено</div>
+                <button type="button"
+                        class="ml-auto -mx-1.5 -my-1.5 bg-white text-gray-400 hover:text-gray-900 rounded-lg focus:ring-2 focus:ring-gray-300 p-1.5 hover:bg-gray-100 inline-flex items-center justify-center h-8 w-8 dark:text-gray-500 dark:hover:text-white dark:bg-gray-800 dark:hover:bg-gray-700"
+                        aria-label="Close"
+                        onclick="document.querySelector('#toast-danger').classList.add('hidden')">
+                    <span class="sr-only">Close</span>
+                    <svg class="w-3 h-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 14">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+    </div>
+    <span class="text-blue-gray-600 mt-5 block text-end text-md font-normal leading-normal antialiased">
+  Всего 25 записей
+</span>
+<div class="mt-3 flex items-center justify-between gap-5">
+<div class="flex items-center gap-2" data-pagination>
+  <button
+    disabled
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-prev
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
+      ></path>
+    </svg>
+  </button>
+  <div class="flex items-center gap-1">
+    <button
+      class="pagination-active relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        1
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        2
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        3
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        4
+      </span>
+    </button>
+    <button
+      class="relative h-10 max-h-[40px] w-10 max-w-[40px] select-none rounded-lg text-center align-middle font-sans text-sm font-medium uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+      type="button"
+      data-pagination-item
+    >
+      <span
+        class="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 transform"
+      >
+        5
+      </span>
+    </button>
+  </div>
+  <button
+    class="flex select-none items-center gap-2 rounded-lg px-6 py-3 text-center align-middle font-sans text-xs font-bold uppercase text-gray-900 transition-all hover:bg-gray-900/10 active:bg-gray-900/20 disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+    type="button"
+    data-pagination-next
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke-width="2"
+      stroke="currentColor"
+      aria-hidden="true"
+      class="h-4 w-4"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"
+      ></path>
+    </svg>
+  </button>
+</div>
+<div class="flex items-center gap-3">
+  <span
+    class="text-blue-gray-600 text-sm font-normal leading-normal antialiased"
+    >На страницу</span
+  >
+
+  <div
+    id="preheader_tabs"
+    data-tabs
+    class="bg-blue-gray-50/60 relative flex list-none flex-wrap rounded-lg p-1"
+  >
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all tab-active"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">20</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">50</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">100</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">500</span>
+      </h4>
+    </button>
+    <button
+      class=" flex-auto rounded-md p-1 px-2 text-center transition-all"
+    >
+      <h4
+        class="text-slate-700  mb-0 flex w-full cursor-pointer items-center justify-center rounded-lg border-0 bg-inherit px-0 text-sm transition-all duration-200 ease-in-out"
+      >
+        <span class="">1000</span>
+      </h4>
+    </button>
+  </div>
+</div>
+</div>
+</div>
+
+
+        <div class="graph-modal">
+            
+
+    <div class="graph-modal__container" role="dialog" aria-modal="true" data-graph-target="view-ad">
+
+    <div
+            class="relative flex items-center justify-between border-b-2 border-gray-200 border-opacity-80 p-5"
+    >
+        <div class="flex flex-col justify-center gap-2">
+            <h3 class="text-xl font-bold">
+                Просмотр объявления
+            </h3>
+            <div class="flex gap-1 ">
+                <a
+                        href="#"
+                        class="opacity-85 text-base w-fit text-primary transition-all hover:opacity-80"
+                >объявления </a>
+            </div>
+            <h4 class="text-lg font-bold">
+                Авито ID:
+                <a href="#" class="opacity-85  w-fit text-primary transition-all hover:opacity-80"
+                >#3964327262
+                </a>
+            </h4>
+
+        </div>
+        <div class="absolute right-5 top-5 flex items-center gap-3">
+            <button aria-label="Закрыть модальное окно" class="btn-reset graph-modal__close js-modal-close flex h-8 w-8 items-center">
+                <svg
+                        class="h-full w-auto cursor-pointer fill-blue-gray transition-all hover:fill-primary"
+                        focusable="false"
+                        aria-hidden="true"
+                        viewBox="0 0 24 24"
+                        data-testid="CloseIcon"
+                >
+                    <path
+                            d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+                    ></path>
+                </svg>
+            </button>
+        </div>
+    </div>
+    <div class="graph-modal__content justify-center overflow-hidden  bg-white shadow-lg transition-all">
+        <div class="p-7 pb-0 flex flex-col gap-7">
+            <div class="flex bg-[#F2DEDE] text-[#A94442] rounded-lg p-4">
+                <h4 class="text-2lg">
+                    Объявление было связано с объявлением на Авито по указанному в XML-файле номеру: 3964327262.:
+                </h4>
+            </div>
+            <div class="flex flex-col gap-6">
+                <div class="grid grid-cols-1 gap-6">
+                    <h2 class="text-xl text-primary">Описание товара</h2>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Название:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Кабина в сборе Mercedes-Benz Actros
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Описание:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Артикул 68457. Пожалуйста, назовите его при звонке.<br>
+                            [арт. 68457] Кабина в сборе<br>
+                            Номер производителя: A9436000020<br>
+                            <br>
+                            A9436000020 9436000020 A9436001101 9436001101 9436001201 A9436001201 A9436001301 9436001301 9436001401 A9436001401 A9436001501 9436001501 A9436001601 9436001601 A9436000505 9436000505 A9436200301 9436200301 A9436400002 9436400002 A9416571609 9416571609 A9416710710 9416710710 A0006711810 0006711810 A9436903725 9436903725 A9436908225 9436908225 A9436903825 9436903825 A9436908325 9436908325 A9437201505 9437201505 A9437201705 A9417200037 9417200037 9417200837 A9417200837 A0007230241 0007230241 A9437512018 9437512018 A9438170016 9438170016 A6738100018 6738100018 A9438170016 9438170016 A9437500109 9437500109 A9417909044 9417909044 A9417909144 9417909144 A9417900088 9417900088 A9438200026 9438200026 A0018306260 0018306260 A0038300508 0038300508 A0048309361 0048309361 A0004469429 0004469429 A0038357301 0038357301 A0028308608 0028308608 A0008305842 0008305842 A0008309142 0008309142 A0008301165 0008301165 A9438100176 9438100176 A9438100036 9438100036 A9439102602 9439102602 A0009100833 0009100833 A0029103930 0029103930 A0009132928 0009132928 A0048206315 0048206315 A9439702449 9439702449 A9439770014 9439770014 A9439770114 9439770114 A0009702349 0009702349 A0009702649 0009702649 A0009700058 0009700058 A0009703649 0009703649 A0009700597 0009700597 A9439702349 9439702349 A9434601131 9434601131 A9414620405 9414620405<br>
+                            Кабина в хорошем состоянии 2010 года.<br>
+                            Стоимость указана за кабину в сборе,с зеркалами, с блоками управления!<br>
+                            Полный пакет документов: таможенная декларация, договор купли-продажи, товарный чек с гарантией!<br>
+                            Рассмотрим вариант обмена на Вашу старую кабину!<br>
+                            Кабина в сборе, АКПП, под автоматическую коробку переключения передач.<br>
+                            <br>
+                            Подходит на Mercedes-Benz Actros MP3 (Mercedes, Мерцедес, Мерседес , Актрос, МП3)
+                            <br>
+                            ・・・
+                            <br>
+                            Запчасть б/у, в наличии на собственном складе.<br><br>
+
+                            Почему именно Truckstar?<br><br>
+
+                            1. Даем гарантию на проверку 14 дней с момента оплаты или получения товара.<br>
+                            2. Отправляем транспортными компаниями.<br>
+                            3. Осуществляем доставку своим транспортном по области и регионам.<br>
+                            4. Оплата любым для Вас удобным способом: Наличными, Безналичной оплатой, Переводом на карту.<br>
+                            5. Продажа со всеми необходимыми документами.<br>
+                            6. Отправляем дополнительные фотографии и видео по любой запчасти.<br>
+                            7. Весь товар находится на собственном складе и в филиалах России.<br>
+                            8. Решение о применимости запчасти на свой автомобиль принимает клиент!<br>
+
+                            С Уважением, компания Truckstar!<br><br>
+
+
+                            Код: XrVacw8KpgBHRB74f8F9M9 <br> <br>
+
+                            Кабина в сборе.
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Цена:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            800 000 р.
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Фото:
+                        </h4>
+                        <div
+                                class="h-full grid grid-cols-3 gap-4"
+                        >
+                            <div
+                                    class="w-full max-w-[260px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="../img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                            <div
+                                    class="w-full max-w-[260px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="../img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                            <div
+                                    class="w-full max-w-[260px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="../img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                            <div
+                                    class="w-full max-w-[260px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="../img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                            <div
+                                    class="w-full max-w-[260px] rounded-xl border-2 border-solid border-gray-200"
+                            >
+                                <img
+                                        class="h-full rounded-[8px] object-cover"
+                                        src="../img/gallery-item.jpeg"
+                                        alt="detail"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                </div>
+
+
+
+                <div class="grid grid-cols-1 gap-6">
+                    <h2 class="text-xl text-primary">Контактная информация</h2>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Адрес:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Московская область, Балашиха
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Контактный телефон:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            89058692387
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Имя менеджера:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Дмитрий
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Способ связи:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            По телефону и в сообщениях
+                        </h4>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                </div>
+
+
+
+                <div class="grid grid-cols-1 gap-6">
+                    <h2 class="text-xl text-primary">Отладка</h2>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            UUID:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            XrVacw8KpgBHRB74f8F9M9
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Тип:
+                        </h4>
+                        <h4 class="w-full h-[52px] rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Платная услуга:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Free
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Создано:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            24.05.2024 11:54
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Статус в Avito:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Объявление активно
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Группа:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Avito Balashiha - Остальные
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Сборка:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Avito Balashiha
+                        </h4>
+                    </div>
+                    <div class="flex flex-col gap-4 items-start">
+                        <h4 class="text-2lg text-blue-gray">
+                            Магазин:
+                        </h4>
+                        <h4 class="w-full rounded-lg border border-gray-400 border-opacity-70 bg-gray-100 p-2.5 text-2lg text-blue-gray">
+                            Avito Balashihan
+                        </h4>
+                    </div>
+                    <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
+                </div>
+
+            </div>
+
+            <div
+                    class="flex justify-end gap-6 border-t-2 border-solid border-gray-200 p-5"
+            >
+
+                <button type="button" aria-label="Закрыть модальное окно" class=" js-modal-close flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100 ">
+                    Закрыть
+                </button>
+
+            </div>
+        </div>
+
+    </div>
+</div>
+        </div>
+
+        <div data-table-checkbox-filter="advertisements" class="hidden sticky bottom-[20px]  w-full h-fit  rounded-lg backdrop-blur-lg ">
+
+</div>
+    </div>
+</div>
+
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/popover.js"
+        type="module"
+></script>
+<script
+        src="https://unpkg.com/@material-tailwind/html@latest/scripts/tabs.js"
+        type="module"
+></script>
+<script src="../js/scripts.js"></script>
+</body>
+</html>
