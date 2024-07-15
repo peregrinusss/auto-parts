@@ -1132,3 +1132,5 @@ PriceChangers.forEach(el => {
         priceClick.textContent = newValue;
     });
 });
+
+
