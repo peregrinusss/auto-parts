@@ -1,8 +1,6392 @@
-!function t(e,n,i){function s(r,a){if(!n[r]){if(!e[r]){var l="function"==typeof require&&require;if(!a&&l)return l(r,!0);if(o)return o(r,!0);var c=new Error("Cannot find module '"+r+"'");throw c.code="MODULE_NOT_FOUND",c}var d=n[r]={exports:{}};e[r][0].call(d.exports,(function(t){return s(e[r][1][t]||t)}),d,d.exports,t,e,n,i)}return n[r].exports}for(var o="function"==typeof require&&require,r=0;r<i.length;r++)s(i[r]);return s}({1:[function(t,e,n){"use strict";var i=Object.defineProperty,s=(t,e,n)=>(((t,e,n)=>{e in t?i(t,e,{enumerable:!0,configurable:!0,writable:!0,value:n}):t[e]=n})(t,"symbol"!=typeof e?e+"":e,n),n);e.exports=class{constructor(t={}){s(this,"toggleContentEls"),s(this,"toggleButtonEls"),s(this,"itemsState",{}),s(this,"options");const e="object"==typeof t&&"nameSpace"in t?t.nameSpace:"hc",n={nameSpace:"hc",toggleButtonAttr:`data-${e}-control`,toggleContentAttr:`data-${e}-content`,activeClass:"is-active",isAnimation:!0,closeOthers:!0,animationSpeed:400,cssEasing:"ease-in-out",onSlideStart:()=>{},onSlideEnd:()=>{}};this.options={...n,...t},this.toggleContentEls=[].slice.call(document.querySelectorAll(`[${this.options.toggleContentAttr}]`)),this.toggleButtonEls=[].slice.call(document.querySelectorAll(`[${this.options.toggleButtonAttr}]`)),0!==this.toggleContentEls.length&&this.initContentsState(this.toggleContentEls),0!==this.toggleButtonEls.length&&this.handleButtonsEvent(this.toggleButtonEls)}initContentsState(t){this.itemsState={},t.forEach((t=>{t.style.overflow="hidden",t.style.maxHeight="none";const e=t.classList.contains(this.options.activeClass),n=t.getAttribute(this.options.toggleContentAttr);!n||(this.setItemState(n,e),e?this.open(n,!1,!1):this.close(n,!1,!1))}))}handleButtonsEvent(t){t.forEach((t=>{const e=t.getAttribute(this.options.toggleButtonAttr);e&&t.addEventListener("click",(t=>{t.preventDefault(),this.toggleSlide(e,!0)}),!1)}))}setItemState(t,e){this.itemsState[t]={isOpen:e,isAnimating:!1}}toggleSlide(t,e=!0){var n,i;null!=(n=this.itemsState[t])&&n.isAnimating||(!1===(null==(i=this.itemsState[t])?void 0:i.isOpen)?this.open(t,e,this.options.isAnimation):this.close(t,e,this.options.isAnimation))}open(t,e=!0,n=!0){if(!t)return;Object.prototype.hasOwnProperty.call(this.itemsState,t)||this.setItemState(t,!1);const i=document.querySelector(`[${this.options.toggleContentAttr}='${t}']`);if(!i)return;this.itemsState[t].isAnimating=!0,this.options.closeOthers&&[].slice.call(this.toggleContentEls).forEach((e=>{const i=e.getAttribute(this.options.toggleContentAttr);i&&i!==t&&this.close(i,!1,n)})),!1!==e&&this.options.onSlideStart(!0,t);const s=this.getTargetHeight(i);i.style.visibility="visible",i.classList.add(this.options.activeClass);const o=document.querySelectorAll(`[${this.options.toggleButtonAttr}='${t}']`);o.length>0&&[].slice.call(o).forEach((t=>{t.classList.add(this.options.activeClass),t.hasAttribute("aria-expanded")&&t.setAttribute("aria-expanded","true")})),n?(i.style.overflow="hidden",i.style.transition=`${this.options.animationSpeed}ms ${this.options.cssEasing}`,i.style.maxHeight=(s||"1000")+"px",setTimeout((()=>{!1!==e&&this.options.onSlideEnd(!0,t),i.style.maxHeight="none",i.style.transition="",i.style.overflow="",this.itemsState[t].isAnimating=!1}),this.options.animationSpeed)):(i.style.maxHeight="none",i.style.overflow="",this.itemsState[t].isAnimating=!1),this.itemsState[t].isOpen=!0,i.hasAttribute("aria-hidden")&&i.setAttribute("aria-hidden","false")}close(t,e=!0,n=!0){if(!t)return;Object.prototype.hasOwnProperty.call(this.itemsState,t)||this.setItemState(t,!1),this.itemsState[t].isAnimating=!0,!1!==e&&this.options.onSlideStart(!1,t);const i=document.querySelector(`[${this.options.toggleContentAttr}='${t}']`);i.style.overflow="hidden",i.classList.remove(this.options.activeClass),i.style.maxHeight=i.clientHeight+"px",setTimeout((()=>{i.style.maxHeight="0px"}),5);const s=document.querySelectorAll(`[${this.options.toggleButtonAttr}='${t}']`);s.length>0&&[].slice.call(s).forEach((t=>{t.classList.remove(this.options.activeClass),t.hasAttribute("aria-expanded")&&t.setAttribute("aria-expanded","false")})),n?(i.style.transition=`${this.options.animationSpeed}ms ${this.options.cssEasing}`,setTimeout((()=>{!1!==e&&this.options.onSlideEnd(!1,t),i.style.transition="",this.itemsState[t].isAnimating=!1,i.style.visibility="hidden"}),this.options.animationSpeed)):(this.options.onSlideEnd(!1,t),this.itemsState[t].isAnimating=!1,i.style.visibility="hidden"),Object.prototype.hasOwnProperty.call(this.itemsState,t)&&(this.itemsState[t].isOpen=!1),i.hasAttribute("aria-hidden")&&i.setAttribute("aria-hidden","true")}getTargetHeight(t){if(!t)return;const e=t.cloneNode(!0),n=t.parentNode;if(!n)return;const i=[].slice.call(e.querySelectorAll("input[name]"));if(0!==i.length){const t="-"+(new Date).getTime();i.forEach((e=>{e.name+=t}))}e.style.maxHeight="none",e.style.opacity="0",n.appendChild(e);const s=e.clientHeight;return n.removeChild(e),s}}},{}],2:[function(t,e,n){var i,s;i=this,s=function(){"use strict";function t(t,e){t.split(/\s+/).forEach((t=>{e(t)}))}class e{constructor(){this._events=void 0,this._events={}}on(e,n){t(e,(t=>{const e=this._events[t]||[];e.push(n),this._events[t]=e}))}off(e,n){var i=arguments.length;0!==i?t(e,(t=>{if(1===i)return void delete this._events[t];const e=this._events[t];void 0!==e&&(e.splice(e.indexOf(n),1),this._events[t]=e)})):this._events={}}trigger(e,...n){var i=this;t(e,(t=>{const e=i._events[t];void 0!==e&&e.forEach((t=>{t.apply(i,n)}))}))}}
-/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */
-const n=t=>(t=t.filter(Boolean)).length<2?t[0]||"":1==a(t)?"["+t.join("")+"]":"(?:"+t.join("|")+")",i=t=>{if(!o(t))return t.join("");let e="",n=0;const i=()=>{n>1&&(e+="{"+n+"}")};return t.forEach(((s,o)=>{s!==t[o-1]?(i(),e+=s,n=1):n++})),i(),e},s=t=>{let e=c(t);return n(e)},o=t=>new Set(t).size!==t.length,r=t=>(t+"").replace(/([\$\(\)\*\+\.\?\[\]\^\{\|\}\\])/gu,"\\$1"),a=t=>t.reduce(((t,e)=>Math.max(t,l(e))),0),l=t=>c(t).length,c=t=>Array.from(t)
-/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */,d=t=>{if(1===t.length)return[[t]];let e=[];const n=t.substring(1);return d(n).forEach((function(n){let i=n.slice(0);i[0]=t.charAt(0)+i[0],e.push(i),i=n.slice(0),i.unshift(t.charAt(0)),e.push(i)})),e},u=[[0,65535]];let p,h;const g={},m={"/":"⁄∕",0:"߀",a:"ⱥɐɑ",aa:"ꜳ",ae:"æǽǣ",ao:"ꜵ",au:"ꜷ",av:"ꜹꜻ",ay:"ꜽ",b:"ƀɓƃ",c:"ꜿƈȼↄ",d:"đɗɖᴅƌꮷԁɦ",e:"ɛǝᴇɇ",f:"ꝼƒ",g:"ǥɠꞡᵹꝿɢ",h:"ħⱨⱶɥ",i:"ɨı",j:"ɉȷ",k:"ƙⱪꝁꝃꝅꞣ",l:"łƚɫⱡꝉꝇꞁɭ",m:"ɱɯϻ",n:"ꞥƞɲꞑᴎлԉ",o:"øǿɔɵꝋꝍᴑ",oe:"œ",oi:"ƣ",oo:"ꝏ",ou:"ȣ",p:"ƥᵽꝑꝓꝕρ",q:"ꝗꝙɋ",r:"ɍɽꝛꞧꞃ",s:"ßȿꞩꞅʂ",t:"ŧƭʈⱦꞇ",th:"þ",tz:"ꜩ",u:"ʉ",v:"ʋꝟʌ",vy:"ꝡ",w:"ⱳ",y:"ƴɏỿ",z:"ƶȥɀⱬꝣ",hv:"ƕ"};for(let t in m){let e=m[t]||"";for(let n=0;n<e.length;n++){let i=e.substring(n,n+1);g[i]=t}}const f=new RegExp(Object.keys(g).join("|")+"|[̀-ͯ·ʾʼ]","gu"),v=(t,e="NFKD")=>t.normalize(e),y=t=>c(t).reduce(((t,e)=>t+b(e)),""),b=t=>(t=v(t).toLowerCase().replace(f,(t=>g[t]||"")),v(t,"NFC")),L=t=>{const e={},n=(t,n)=>{const i=e[t]||new Set,o=new RegExp("^"+s(i)+"$","iu");n.match(o)||(i.add(r(n)),e[t]=i)};for(let e of function*(t){for(const[e,n]of t)for(let t=e;t<=n;t++){let e=String.fromCharCode(t),n=y(e);n!=e.toLowerCase()&&(n.length>3||0!=n.length&&(yield{folded:n,composed:e,code_point:t}))}}(t))n(e.folded,e.folded),n(e.folded,e.composed);return e},S=t=>{const e=L(t),i={};let o=[];for(let t in e){let n=e[t];n&&(i[t]=s(n)),t.length>1&&o.push(r(t))}o.sort(((t,e)=>e.length-t.length));const a=n(o);return h=new RegExp("^"+a,"u"),i},w=(t,e=1)=>(e=Math.max(e,t.length-1),n(d(t).map((t=>((t,e=1)=>{let n=0;return t=t.map((t=>(p[t]&&(n+=t.length),p[t]||t))),n>=e?i(t):""})(t,e))))),O=(t,e=!0)=>{let s=t.length>1?1:0;return n(t.map((t=>{let n=[];const o=e?t.length():t.length()-1;for(let e=0;e<o;e++)n.push(w(t.substrs[e]||"",s));return i(n)})))},C=(t,e)=>{for(const n of e){if(n.start!=t.start||n.end!=t.end)continue;if(n.substrs.join("")!==t.substrs.join(""))continue;let e=t.parts;const i=t=>{for(const n of e){if(n.start===t.start&&n.substr===t.substr)return!1;if(1!=t.length&&1!=n.length){if(t.start<n.start&&t.end>n.start)return!0;if(n.start<t.start&&n.end>t.start)return!0}}return!1};if(!(n.parts.filter(i).length>0))return!0}return!1};class E{constructor(){this.parts=[],this.substrs=[],this.start=0,this.end=0}add(t){t&&(this.parts.push(t),this.substrs.push(t.substr),this.start=Math.min(t.start,this.start),this.end=Math.max(t.end,this.end))}last(){return this.parts[this.parts.length-1]}length(){return this.parts.length}clone(t,e){let n=new E,i=JSON.parse(JSON.stringify(this.parts)),s=i.pop();for(const t of i)n.add(t);let o=e.substr.substring(0,t-s.start),r=o.length;return n.add({start:s.start,end:s.start+r,length:r,substr:o}),n}}const x=t=>{var e;void 0===p&&(p=S(e||u)),t=y(t);let n="",i=[new E];for(let e=0;e<t.length;e++){let s=t.substring(e).match(h);const o=t.substring(e,e+1),r=s?s[0]:null;let a=[],l=new Set;for(const t of i){const n=t.last();if(!n||1==n.length||n.end<=e)if(r){const n=r.length;t.add({start:e,end:e+n,length:n,substr:r}),l.add("1")}else t.add({start:e,end:e+1,length:1,substr:o}),l.add("2");else if(r){let i=t.clone(e,n);const s=r.length;i.add({start:e,end:e+s,length:s,substr:r}),a.push(i)}else l.add("3")}if(a.length>0){a=a.sort(((t,e)=>t.length()-e.length()));for(let t of a)C(t,i)||i.push(t)}else if(e>0&&1==l.size&&!l.has("3")){n+=O(i,!1);let t=new E;const e=i[0];e&&t.add(e.last()),i=[t]}}return n+=O(i,!0),n},A=(t,e)=>{if(t)return t[e]},k=(t,e)=>{if(t){for(var n,i=e.split(".");(n=i.shift())&&(t=t[n]););return t}},_=(t,e,n)=>{var i,s;return t?(t+="",null==e.regex||-1===(s=t.search(e.regex))?0:(i=e.string.length/t.length,0===s&&(i+=.5),i*n)):0},I=(t,e)=>{var n=t[e];if("function"==typeof n)return n;n&&!Array.isArray(n)&&(t[e]=[n])},q=(t,e)=>{if(Array.isArray(t))t.forEach(e);else for(var n in t)t.hasOwnProperty(n)&&e(t[n],n)},F=(t,e)=>"number"==typeof t&&"number"==typeof e?t>e?1:t<e?-1:0:(t=y(t+"").toLowerCase())>(e=y(e+"").toLowerCase())?1:e>t?-1:0;
-/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
-/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
-class T{constructor(t,e){this.items=void 0,this.settings=void 0,this.items=t,this.settings=e||{diacritics:!0}}tokenize(t,e,n){if(!t||!t.length)return[];const i=[],s=t.split(/\s+/);var o;return n&&(o=new RegExp("^("+Object.keys(n).map(r).join("|")+"):(.*)$")),s.forEach((t=>{let n,s=null,a=null;o&&(n=t.match(o))&&(s=n[1],t=n[2]),t.length>0&&(a=this.settings.diacritics?x(t)||null:r(t),a&&e&&(a="\\b"+a)),i.push({string:t,regex:a?new RegExp(a,"iu"):null,field:s})})),i}getScoreFunction(t,e){var n=this.prepareSearch(t,e);return this._getScoreFunction(n)}_getScoreFunction(t){const e=t.tokens,n=e.length;if(!n)return function(){return 0};const i=t.options.fields,s=t.weights,o=i.length,r=t.getAttrFn;if(!o)return function(){return 1};const a=1===o?function(t,e){const n=i[0].field;return _(r(e,n),t,s[n]||1)}:function(t,e){var n=0;if(t.field){const i=r(e,t.field);!t.regex&&i?n+=1/o:n+=_(i,t,1)}else q(s,((i,s)=>{n+=_(r(e,s),t,i)}));return n/o};return 1===n?function(t){return a(e[0],t)}:"and"===t.options.conjunction?function(t){var i,s=0;for(let n of e){if((i=a(n,t))<=0)return 0;s+=i}return s/n}:function(t){var i=0;return q(e,(e=>{i+=a(e,t)})),i/n}}getSortFunction(t,e){var n=this.prepareSearch(t,e);return this._getSortFunction(n)}_getSortFunction(t){var e,n=[];const i=this,s=t.options,o=!t.query&&s.sort_empty?s.sort_empty:s.sort;if("function"==typeof o)return o.bind(this);const r=function(e,n){return"$score"===e?n.score:t.getAttrFn(i.items[n.id],e)};if(o)for(let e of o)(t.query||"$score"!==e.field)&&n.push(e);if(t.query){e=!0;for(let t of n)if("$score"===t.field){e=!1;break}e&&n.unshift({field:"$score",direction:"desc"})}else n=n.filter((t=>"$score"!==t.field));return n.length?function(t,e){var i,s;for(let o of n)if(s=o.field,i=("desc"===o.direction?-1:1)*F(r(s,t),r(s,e)))return i;return 0}:null}prepareSearch(t,e){const n={};var i=Object.assign({},e);if(I(i,"sort"),I(i,"sort_empty"),i.fields){I(i,"fields");const t=[];i.fields.forEach((e=>{"string"==typeof e&&(e={field:e,weight:1}),t.push(e),n[e.field]="weight"in e?e.weight:1})),i.fields=t}return{options:i,query:t.toLowerCase().trim(),tokens:this.tokenize(t,i.respect_word_boundaries,n),total:0,items:[],weights:n,getAttrFn:i.nesting?k:A}}search(t,e){var n,i,s=this;i=this.prepareSearch(t,e),e=i.options,t=i.query;const o=e.score||s._getScoreFunction(i);t.length?q(s.items,((t,s)=>{n=o(t),(!1===e.filter||n>0)&&i.items.push({score:n,id:s})})):q(s.items,((t,e)=>{i.items.push({score:1,id:e})}));const r=s._getSortFunction(i);return r&&i.items.sort(r),i.total=i.items.length,"number"==typeof e.limit&&(i.items=i.items.slice(0,e.limit)),i}}const P=(t,e)=>{if(Array.isArray(t))t.forEach(e);else for(var n in t)t.hasOwnProperty(n)&&e(t[n],n)},j=t=>{if(t.jquery)return t[0];if(t instanceof HTMLElement)return t;if($(t)){var e=document.createElement("template");return e.innerHTML=t.trim(),e.content.firstChild}return document.querySelector(t)},$=t=>"string"==typeof t&&t.indexOf("<")>-1,D=(t,e)=>{var n=document.createEvent("HTMLEvents");n.initEvent(e,!0,!1),t.dispatchEvent(n)},M=(t,e)=>{Object.assign(t.style,e)},N=(t,...e)=>{var n=H(e);(t=V(t)).map((t=>{n.map((e=>{t.classList.add(e)}))}))},B=(t,...e)=>{var n=H(e);(t=V(t)).map((t=>{n.map((e=>{t.classList.remove(e)}))}))},H=t=>{var e=[];return P(t,(t=>{"string"==typeof t&&(t=t.trim().split(/[\11\12\14\15\40]/)),Array.isArray(t)&&(e=e.concat(t))})),e.filter(Boolean)},V=t=>(Array.isArray(t)||(t=[t]),t),R=(t,e,n)=>{if(!n||n.contains(t))for(;t&&t.matches;){if(t.matches(e))return t;t=t.parentNode}},z=(t,e=0)=>e>0?t[t.length-1]:t[0],K=(t,e)=>{if(!t)return-1;e=e||t.nodeName;for(var n=0;t=t.previousElementSibling;)t.matches(e)&&n++;return n},Q=(t,e)=>{P(e,((e,n)=>{null==e?t.removeAttribute(n):t.setAttribute(n,""+e)}))},U=(t,e)=>{t.parentNode&&t.parentNode.replaceChild(e,t)},G=(t,e)=>{if(null===e)return;if("string"==typeof e){if(!e.length)return;e=new RegExp(e,"i")}const n=t=>3===t.nodeType?(t=>{var n=t.data.match(e);if(n&&t.data.length>0){var i=document.createElement("span");i.className="highlight";var s=t.splitText(n.index);s.splitText(n[0].length);var o=s.cloneNode(!0);return i.appendChild(o),U(s,i),1}return 0})(t):((t=>{1!==t.nodeType||!t.childNodes||/(script|style)/i.test(t.tagName)||"highlight"===t.className&&"SPAN"===t.tagName||Array.from(t.childNodes).forEach((t=>{n(t)}))})(t),0);n(t)},W="undefined"!=typeof navigator&&/Mac/.test(navigator.userAgent)?"metaKey":"ctrlKey";var J={options:[],optgroups:[],plugins:[],delimiter:",",splitOn:null,persist:!0,diacritics:!0,create:null,createOnBlur:!1,createFilter:null,highlight:!0,openOnFocus:!0,shouldOpen:null,maxOptions:50,maxItems:null,hideSelected:null,duplicates:!1,addPrecedence:!1,selectOnTab:!1,preload:null,allowEmptyOption:!1,refreshThrottle:300,loadThrottle:300,loadingClass:"loading",dataAttr:null,optgroupField:"optgroup",valueField:"value",labelField:"text",disabledField:"disabled",optgroupLabelField:"label",optgroupValueField:"value",lockOptgroupOrder:!1,sortField:"$order",searchField:["text"],searchConjunction:"and",mode:null,wrapperClass:"ts-wrapper",controlClass:"ts-control",dropdownClass:"ts-dropdown",dropdownContentClass:"ts-dropdown-content",itemClass:"item",optionClass:"option",dropdownParent:null,controlInput:'<input type="text" autocomplete="off" size="1" />',copyClassesToDropdown:!1,placeholder:null,hidePlaceholder:null,shouldLoad:function(t){return t.length>0},render:{}};const Y=t=>null==t?null:X(t),X=t=>"boolean"==typeof t?t?"1":"0":t+"",Z=t=>(t+"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;"),tt=(t,e)=>{var n;return function(i,s){var o=this;n&&(o.loading=Math.max(o.loading-1,0),clearTimeout(n)),n=setTimeout((function(){n=null,o.loadedSearches[i]=!0,t.call(o,i,s)}),e)}},et=(t,e,n)=>{var i,s=t.trigger,o={};for(i of(t.trigger=function(){var n=arguments[0];if(-1===e.indexOf(n))return s.apply(t,arguments);o[n]=arguments},n.apply(t,[]),t.trigger=s,e))i in o&&s.apply(t,o[i])},nt=(t,e=!1)=>{t&&(t.preventDefault(),e&&t.stopPropagation())},it=(t,e,n,i)=>{t.addEventListener(e,n,i)},st=(t,e)=>!!e&&!!e[t]&&1==(e.altKey?1:0)+(e.ctrlKey?1:0)+(e.shiftKey?1:0)+(e.metaKey?1:0),ot=(t,e)=>{const n=t.getAttribute("id");return n||(t.setAttribute("id",e),e)},rt=t=>t.replace(/[\\"']/g,"\\$&"),at=(t,e)=>{e&&t.append(e)};function lt(t,e){var n=Object.assign({},J,e),i=n.dataAttr,s=n.labelField,o=n.valueField,r=n.disabledField,a=n.optgroupField,l=n.optgroupLabelField,c=n.optgroupValueField,d=t.tagName.toLowerCase(),u=t.getAttribute("placeholder")||t.getAttribute("data-placeholder");if(!u&&!n.allowEmptyOption){let e=t.querySelector('option[value=""]');e&&(u=e.textContent)}var p={placeholder:u,options:[],optgroups:[],items:[],maxItems:null};return"select"===d?(()=>{var e,d=p.options,u={},h=1;let g=0;var m=t=>{var e=Object.assign({},t.dataset),n=i&&e[i];return"string"==typeof n&&n.length&&(e=Object.assign(e,JSON.parse(n))),e},f=(t,e)=>{var i=Y(t.value);if(null!=i&&(i||n.allowEmptyOption)){if(u.hasOwnProperty(i)){if(e){var l=u[i][a];l?Array.isArray(l)?l.push(e):u[i][a]=[l,e]:u[i][a]=e}}else{var c=m(t);c[s]=c[s]||t.textContent,c[o]=c[o]||i,c[r]=c[r]||t.disabled,c[a]=c[a]||e,c.$option=t,c.$order=c.$order||++g,u[i]=c,d.push(c)}t.selected&&p.items.push(i)}};p.maxItems=t.hasAttribute("multiple")?null:1,P(t.children,(t=>{var n,i,s;"optgroup"===(e=t.tagName.toLowerCase())?((s=m(n=t))[l]=s[l]||n.getAttribute("label")||"",s[c]=s[c]||h++,s[r]=s[r]||n.disabled,s.$order=s.$order||++g,p.optgroups.push(s),i=s[c],P(n.children,(t=>{f(t,i)}))):"option"===e&&f(t)}))})():(()=>{const e=t.getAttribute(i);if(e)p.options=JSON.parse(e),P(p.options,(t=>{p.items.push(t[o])}));else{var r=t.value.trim()||"";if(!n.allowEmptyOption&&!r.length)return;const e=r.split(n.delimiter);P(e,(t=>{const e={};e[s]=t,e[o]=t,p.options.push(e)})),p.items=e}})(),Object.assign({},J,p,e)}var ct=0;class dt extends(function(t){return t.plugins={},class extends t{constructor(...t){super(...t),this.plugins={names:[],settings:{},requested:{},loaded:{}}}static define(e,n){t.plugins[e]={name:e,fn:n}}initializePlugins(t){var e,n;const i=this,s=[];if(Array.isArray(t))t.forEach((t=>{"string"==typeof t?s.push(t):(i.plugins.settings[t.name]=t.options,s.push(t.name))}));else if(t)for(e in t)t.hasOwnProperty(e)&&(i.plugins.settings[e]=t[e],s.push(e));for(;n=s.shift();)i.require(n)}loadPlugin(e){var n=this,i=n.plugins,s=t.plugins[e];if(!t.plugins.hasOwnProperty(e))throw new Error('Unable to find "'+e+'" plugin');i.requested[e]=!0,i.loaded[e]=s.fn.apply(n,[n.plugins.settings[e]||{}]),i.names.push(e)}require(t){var e=this,n=e.plugins;if(!e.plugins.loaded.hasOwnProperty(t)){if(n.requested[t])throw new Error('Plugin has circular dependency ("'+t+'")');e.loadPlugin(t)}return n.loaded[t]}}}(e)){constructor(t,e){var n;super(),this.control_input=void 0,this.wrapper=void 0,this.dropdown=void 0,this.control=void 0,this.dropdown_content=void 0,this.focus_node=void 0,this.order=0,this.settings=void 0,this.input=void 0,this.tabIndex=void 0,this.is_select_tag=void 0,this.rtl=void 0,this.inputId=void 0,this._destroy=void 0,this.sifter=void 0,this.isOpen=!1,this.isDisabled=!1,this.isReadOnly=!1,this.isRequired=void 0,this.isInvalid=!1,this.isValid=!0,this.isLocked=!1,this.isFocused=!1,this.isInputHidden=!1,this.isSetup=!1,this.ignoreFocus=!1,this.ignoreHover=!1,this.hasOptions=!1,this.currentResults=void 0,this.lastValue="",this.caretPos=0,this.loading=0,this.loadedSearches={},this.activeOption=null,this.activeItems=[],this.optgroups={},this.options={},this.userOptions={},this.items=[],this.refreshTimeout=null,ct++;var i=j(t);if(i.tomselect)throw new Error("Tom Select already initialized on this element");i.tomselect=this,n=(window.getComputedStyle&&window.getComputedStyle(i,null)).getPropertyValue("direction");const s=lt(i,e);this.settings=s,this.input=i,this.tabIndex=i.tabIndex||0,this.is_select_tag="select"===i.tagName.toLowerCase(),this.rtl=/rtl/i.test(n),this.inputId=ot(i,"tomselect-"+ct),this.isRequired=i.required,this.sifter=new T(this.options,{diacritics:s.diacritics}),s.mode=s.mode||(1===s.maxItems?"single":"multi"),"boolean"!=typeof s.hideSelected&&(s.hideSelected="multi"===s.mode),"boolean"!=typeof s.hidePlaceholder&&(s.hidePlaceholder="multi"!==s.mode);var o=s.createFilter;"function"!=typeof o&&("string"==typeof o&&(o=new RegExp(o)),o instanceof RegExp?s.createFilter=t=>o.test(t):s.createFilter=t=>this.settings.duplicates||!this.options[t]),this.initializePlugins(s.plugins),this.setupCallbacks(),this.setupTemplates();const r=j("<div>"),a=j("<div>"),l=this._render("dropdown"),c=j('<div role="listbox" tabindex="-1">'),d=this.input.getAttribute("class")||"",u=s.mode;var p;N(r,s.wrapperClass,d,u),N(a,s.controlClass),at(r,a),N(l,s.dropdownClass,u),s.copyClassesToDropdown&&N(l,d),N(c,s.dropdownContentClass),at(l,c),j(s.dropdownParent||r).appendChild(l),$(s.controlInput)?(p=j(s.controlInput),q(["autocorrect","autocapitalize","autocomplete","spellcheck"],(t=>{i.getAttribute(t)&&Q(p,{[t]:i.getAttribute(t)})})),p.tabIndex=-1,a.appendChild(p),this.focus_node=p):s.controlInput?(p=j(s.controlInput),this.focus_node=p):(p=j("<input/>"),this.focus_node=a),this.wrapper=r,this.dropdown=l,this.dropdown_content=c,this.control=a,this.control_input=p,this.setup()}setup(){const t=this,e=t.settings,n=t.control_input,i=t.dropdown,s=t.dropdown_content,o=t.wrapper,a=t.control,l=t.input,c=t.focus_node,d={passive:!0},u=t.inputId+"-ts-dropdown";Q(s,{id:u}),Q(c,{role:"combobox","aria-haspopup":"listbox","aria-expanded":"false","aria-controls":u});const p=ot(c,t.inputId+"-ts-control"),h="label[for='"+(t=>t.replace(/['"\\]/g,"\\$&"))(t.inputId)+"']",g=document.querySelector(h),m=t.focus.bind(t);if(g){it(g,"click",m),Q(g,{for:p});const e=ot(g,t.inputId+"-ts-label");Q(c,{"aria-labelledby":e}),Q(s,{"aria-labelledby":e})}if(o.style.width=l.style.width,t.plugins.names.length){const e="plugin-"+t.plugins.names.join(" plugin-");N([o,i],e)}(null===e.maxItems||e.maxItems>1)&&t.is_select_tag&&Q(l,{multiple:"multiple"}),e.placeholder&&Q(n,{placeholder:e.placeholder}),!e.splitOn&&e.delimiter&&(e.splitOn=new RegExp("\\s*"+r(e.delimiter)+"+\\s*")),e.load&&e.loadThrottle&&(e.load=tt(e.load,e.loadThrottle)),it(i,"mousemove",(()=>{t.ignoreHover=!1})),it(i,"mouseenter",(e=>{var n=R(e.target,"[data-selectable]",i);n&&t.onOptionHover(e,n)}),{capture:!0}),it(i,"click",(e=>{const n=R(e.target,"[data-selectable]");n&&(t.onOptionSelect(e,n),nt(e,!0))})),it(a,"click",(e=>{var i=R(e.target,"[data-ts-item]",a);i&&t.onItemSelect(e,i)?nt(e,!0):""==n.value&&(t.onClick(),nt(e,!0))})),it(c,"keydown",(e=>t.onKeyDown(e))),it(n,"keypress",(e=>t.onKeyPress(e))),it(n,"input",(e=>t.onInput(e))),it(c,"blur",(e=>t.onBlur(e))),it(c,"focus",(e=>t.onFocus(e))),it(n,"paste",(e=>t.onPaste(e)));const f=e=>{const s=e.composedPath()[0];if(!o.contains(s)&&!i.contains(s))return t.isFocused&&t.blur(),void t.inputState();s==n&&t.isOpen?e.stopPropagation():nt(e,!0)},v=()=>{t.isOpen&&t.positionDropdown()};it(document,"mousedown",f),it(window,"scroll",v,d),it(window,"resize",v,d),this._destroy=()=>{document.removeEventListener("mousedown",f),window.removeEventListener("scroll",v),window.removeEventListener("resize",v),g&&g.removeEventListener("click",m)},this.revertSettings={innerHTML:l.innerHTML,tabIndex:l.tabIndex},l.tabIndex=-1,l.insertAdjacentElement("afterend",t.wrapper),t.sync(!1),e.items=[],delete e.optgroups,delete e.options,it(l,"invalid",(()=>{t.isValid&&(t.isValid=!1,t.isInvalid=!0,t.refreshState())})),t.updateOriginalInput(),t.refreshItems(),t.close(!1),t.inputState(),t.isSetup=!0,l.disabled?t.disable():l.readOnly?t.setReadOnly(!0):t.enable(),t.on("change",this.onChange),N(l,"tomselected","ts-hidden-accessible"),t.trigger("initialize"),!0===e.preload&&t.preload()}setupOptions(t=[],e=[]){this.addOptions(t),q(e,(t=>{this.registerOptionGroup(t)}))}setupTemplates(){var t=this,e=t.settings.labelField,n=t.settings.optgroupLabelField,i={optgroup:t=>{let e=document.createElement("div");return e.className="optgroup",e.appendChild(t.options),e},optgroup_header:(t,e)=>'<div class="optgroup-header">'+e(t[n])+"</div>",option:(t,n)=>"<div>"+n(t[e])+"</div>",item:(t,n)=>"<div>"+n(t[e])+"</div>",option_create:(t,e)=>'<div class="create">Add <strong>'+e(t.input)+"</strong>&hellip;</div>",no_results:()=>'<div class="no-results">No results found</div>',loading:()=>'<div class="spinner"></div>',not_loading:()=>{},dropdown:()=>"<div></div>"};t.settings.render=Object.assign({},i,t.settings.render)}setupCallbacks(){var t,e,n={initialize:"onInitialize",change:"onChange",item_add:"onItemAdd",item_remove:"onItemRemove",item_select:"onItemSelect",clear:"onClear",option_add:"onOptionAdd",option_remove:"onOptionRemove",option_clear:"onOptionClear",optgroup_add:"onOptionGroupAdd",optgroup_remove:"onOptionGroupRemove",optgroup_clear:"onOptionGroupClear",dropdown_open:"onDropdownOpen",dropdown_close:"onDropdownClose",type:"onType",load:"onLoad",focus:"onFocus",blur:"onBlur"};for(t in n)(e=this.settings[n[t]])&&this.on(t,e)}sync(t=!0){const e=this,n=t?lt(e.input,{delimiter:e.settings.delimiter}):e.settings;e.setupOptions(n.options,n.optgroups),e.setValue(n.items||[],!0),e.lastQuery=null}onClick(){var t=this;if(t.activeItems.length>0)return t.clearActiveItems(),void t.focus();t.isFocused&&t.isOpen?t.blur():t.focus()}onMouseDown(){}onChange(){D(this.input,"input"),D(this.input,"change")}onPaste(t){var e=this;e.isInputHidden||e.isLocked?nt(t):e.settings.splitOn&&setTimeout((()=>{var t=e.inputValue();if(t.match(e.settings.splitOn)){var n=t.trim().split(e.settings.splitOn);q(n,(t=>{Y(t)&&(this.options[t]?e.addItem(t):e.createItem(t))}))}}),0)}onKeyPress(t){var e=this;if(!e.isLocked){var n=String.fromCharCode(t.keyCode||t.which);return e.settings.create&&"multi"===e.settings.mode&&n===e.settings.delimiter?(e.createItem(),void nt(t)):void 0}nt(t)}onKeyDown(t){var e=this;if(e.ignoreHover=!0,e.isLocked)9!==t.keyCode&&nt(t);else{switch(t.keyCode){case 65:if(st(W,t)&&""==e.control_input.value)return nt(t),void e.selectAll();break;case 27:return e.isOpen&&(nt(t,!0),e.close()),void e.clearActiveItems();case 40:if(!e.isOpen&&e.hasOptions)e.open();else if(e.activeOption){let t=e.getAdjacent(e.activeOption,1);t&&e.setActiveOption(t)}return void nt(t);case 38:if(e.activeOption){let t=e.getAdjacent(e.activeOption,-1);t&&e.setActiveOption(t)}return void nt(t);case 13:return void(e.canSelect(e.activeOption)?(e.onOptionSelect(t,e.activeOption),nt(t)):(e.settings.create&&e.createItem()||document.activeElement==e.control_input&&e.isOpen)&&nt(t));case 37:return void e.advanceSelection(-1,t);case 39:return void e.advanceSelection(1,t);case 9:return void(e.settings.selectOnTab&&(e.canSelect(e.activeOption)&&(e.onOptionSelect(t,e.activeOption),nt(t)),e.settings.create&&e.createItem()&&nt(t)));case 8:case 46:return void e.deleteSelection(t)}e.isInputHidden&&!st(W,t)&&nt(t)}}onInput(t){if(this.isLocked)return;const e=this.inputValue();this.lastValue!==e&&(this.lastValue=e,""!=e?(this.refreshTimeout&&clearTimeout(this.refreshTimeout),this.refreshTimeout=((t,e)=>e>0?setTimeout(t,e):(t.call(null),null))((()=>{this.refreshTimeout=null,this._onInput()}),this.settings.refreshThrottle)):this._onInput())}_onInput(){const t=this.lastValue;this.settings.shouldLoad.call(this,t)&&this.load(t),this.refreshOptions(),this.trigger("type",t)}onOptionHover(t,e){this.ignoreHover||this.setActiveOption(e,!1)}onFocus(t){var e=this,n=e.isFocused;if(e.isDisabled||e.isReadOnly)return e.blur(),void nt(t);e.ignoreFocus||(e.isFocused=!0,"focus"===e.settings.preload&&e.preload(),n||e.trigger("focus"),e.activeItems.length||(e.inputState(),e.refreshOptions(!!e.settings.openOnFocus)),e.refreshState())}onBlur(t){if(!1!==document.hasFocus()){var e=this;if(e.isFocused){e.isFocused=!1,e.ignoreFocus=!1;var n=()=>{e.close(),e.setActiveItem(),e.setCaret(e.items.length),e.trigger("blur")};e.settings.create&&e.settings.createOnBlur?e.createItem(null,n):n()}}}onOptionSelect(t,e){var n,i=this;e.parentElement&&e.parentElement.matches("[data-disabled]")||(e.classList.contains("create")?i.createItem(null,(()=>{i.settings.closeAfterSelect&&i.close()})):void 0!==(n=e.dataset.value)&&(i.lastQuery=null,i.addItem(n),i.settings.closeAfterSelect&&i.close(),!i.settings.hideSelected&&t.type&&/click/.test(t.type)&&i.setActiveOption(e)))}canSelect(t){return!!(this.isOpen&&t&&this.dropdown_content.contains(t))}onItemSelect(t,e){var n=this;return!n.isLocked&&"multi"===n.settings.mode&&(nt(t),n.setActiveItem(e,t),!0)}canLoad(t){return!!this.settings.load&&!this.loadedSearches.hasOwnProperty(t)}load(t){const e=this;if(!e.canLoad(t))return;N(e.wrapper,e.settings.loadingClass),e.loading++;const n=e.loadCallback.bind(e);e.settings.load.call(e,t,n)}loadCallback(t,e){const n=this;n.loading=Math.max(n.loading-1,0),n.lastQuery=null,n.clearActiveOption(),n.setupOptions(t,e),n.refreshOptions(n.isFocused&&!n.isInputHidden),n.loading||B(n.wrapper,n.settings.loadingClass),n.trigger("load",t,e)}preload(){var t=this.wrapper.classList;t.contains("preloaded")||(t.add("preloaded"),this.load(""))}setTextboxValue(t=""){var e=this.control_input;e.value!==t&&(e.value=t,D(e,"update"),this.lastValue=t)}getValue(){return this.is_select_tag&&this.input.hasAttribute("multiple")?this.items:this.items.join(this.settings.delimiter)}setValue(t,e){et(this,e?[]:["change"],(()=>{this.clear(e),this.addItems(t,e)}))}setMaxItems(t){0===t&&(t=null),this.settings.maxItems=t,this.refreshState()}setActiveItem(t,e){var n,i,s,o,r,a,l=this;if("single"!==l.settings.mode){if(!t)return l.clearActiveItems(),void(l.isFocused&&l.inputState());if("click"===(n=e&&e.type.toLowerCase())&&st("shiftKey",e)&&l.activeItems.length){for(a=l.getLastActive(),(s=Array.prototype.indexOf.call(l.control.children,a))>(o=Array.prototype.indexOf.call(l.control.children,t))&&(r=s,s=o,o=r),i=s;i<=o;i++)t=l.control.children[i],-1===l.activeItems.indexOf(t)&&l.setActiveItemClass(t);nt(e)}else"click"===n&&st(W,e)||"keydown"===n&&st("shiftKey",e)?t.classList.contains("active")?l.removeActiveItem(t):l.setActiveItemClass(t):(l.clearActiveItems(),l.setActiveItemClass(t));l.inputState(),l.isFocused||l.focus()}}setActiveItemClass(t){const e=this,n=e.control.querySelector(".last-active");n&&B(n,"last-active"),N(t,"active last-active"),e.trigger("item_select",t),-1==e.activeItems.indexOf(t)&&e.activeItems.push(t)}removeActiveItem(t){var e=this.activeItems.indexOf(t);this.activeItems.splice(e,1),B(t,"active")}clearActiveItems(){B(this.activeItems,"active"),this.activeItems=[]}setActiveOption(t,e=!0){t!==this.activeOption&&(this.clearActiveOption(),t&&(this.activeOption=t,Q(this.focus_node,{"aria-activedescendant":t.getAttribute("id")}),Q(t,{"aria-selected":"true"}),N(t,"active"),e&&this.scrollToOption(t)))}scrollToOption(t,e){if(!t)return;const n=this.dropdown_content,i=n.clientHeight,s=n.scrollTop||0,o=t.offsetHeight,r=t.getBoundingClientRect().top-n.getBoundingClientRect().top+s;r+o>i+s?this.scroll(r-i+o,e):r<s&&this.scroll(r,e)}scroll(t,e){const n=this.dropdown_content;e&&(n.style.scrollBehavior=e),n.scrollTop=t,n.style.scrollBehavior=""}clearActiveOption(){this.activeOption&&(B(this.activeOption,"active"),Q(this.activeOption,{"aria-selected":null})),this.activeOption=null,Q(this.focus_node,{"aria-activedescendant":null})}selectAll(){const t=this;if("single"===t.settings.mode)return;const e=t.controlChildren();e.length&&(t.inputState(),t.close(),t.activeItems=e,q(e,(e=>{t.setActiveItemClass(e)})))}inputState(){var t=this;t.control.contains(t.control_input)&&(Q(t.control_input,{placeholder:t.settings.placeholder}),t.activeItems.length>0||!t.isFocused&&t.settings.hidePlaceholder&&t.items.length>0?(t.setTextboxValue(),t.isInputHidden=!0):(t.settings.hidePlaceholder&&t.items.length>0&&Q(t.control_input,{placeholder:""}),t.isInputHidden=!1),t.wrapper.classList.toggle("input-hidden",t.isInputHidden))}inputValue(){return this.control_input.value.trim()}focus(){var t=this;t.isDisabled||t.isReadOnly||(t.ignoreFocus=!0,t.control_input.offsetWidth?t.control_input.focus():t.focus_node.focus(),setTimeout((()=>{t.ignoreFocus=!1,t.onFocus()}),0))}blur(){this.focus_node.blur(),this.onBlur()}getScoreFunction(t){return this.sifter.getScoreFunction(t,this.getSearchOptions())}getSearchOptions(){var t=this.settings,e=t.sortField;return"string"==typeof t.sortField&&(e=[{field:t.sortField}]),{fields:t.searchField,conjunction:t.searchConjunction,sort:e,nesting:t.nesting}}search(t){var e,n,i=this,s=this.getSearchOptions();if(i.settings.score&&"function"!=typeof(n=i.settings.score.call(i,t)))throw new Error('Tom Select "score" setting must be a function that returns a function');return t!==i.lastQuery?(i.lastQuery=t,e=i.sifter.search(t,Object.assign(s,{score:n})),i.currentResults=e):e=Object.assign({},i.currentResults),i.settings.hideSelected&&(e.items=e.items.filter((t=>{let e=Y(t.id);return!(e&&-1!==i.items.indexOf(e))}))),e}refreshOptions(t=!0){var e,n,i,s,o,r,a,l,c,d;const u={},p=[];var h=this,g=h.inputValue();const m=g===h.lastQuery||""==g&&null==h.lastQuery;var f=h.search(g),v=null,y=h.settings.shouldOpen||!1,b=h.dropdown_content;m&&(v=h.activeOption)&&(c=v.closest("[data-group]")),s=f.items.length,"number"==typeof h.settings.maxOptions&&(s=Math.min(s,h.settings.maxOptions)),s>0&&(y=!0);const L=(t,e)=>{let n=u[t];if(void 0!==n){let t=p[n];if(void 0!==t)return[n,t.fragment]}let i=document.createDocumentFragment();return n=p.length,p.push({fragment:i,order:e,optgroup:t}),[n,i]};for(e=0;e<s;e++){let t=f.items[e];if(!t)continue;let s=t.id,a=h.options[s];if(void 0===a)continue;let l=X(s),d=h.getOption(l,!0);for(h.settings.hideSelected||d.classList.toggle("selected",h.items.includes(l)),o=a[h.settings.optgroupField]||"",n=0,i=(r=Array.isArray(o)?o:[o])&&r.length;n<i;n++){o=r[n];let t=a.$order,e=h.optgroups[o];void 0===e?o="":t=e.$order;const[i,l]=L(o,t);n>0&&(d=d.cloneNode(!0),Q(d,{id:a.$id+"-clone-"+n,"aria-selected":null}),d.classList.add("ts-cloned"),B(d,"active"),h.activeOption&&h.activeOption.dataset.value==s&&c&&c.dataset.group===o.toString()&&(v=d)),l.appendChild(d),""!=o&&(u[o]=i)}}var S;h.settings.lockOptgroupOrder&&p.sort(((t,e)=>t.order-e.order)),a=document.createDocumentFragment(),q(p,(t=>{let e=t.fragment,n=t.optgroup;if(!e||!e.children.length)return;let i=h.optgroups[n];if(void 0!==i){let t=document.createDocumentFragment(),n=h.render("optgroup_header",i);at(t,n),at(t,e);let s=h.render("optgroup",{group:i,options:t});at(a,s)}else at(a,e)})),b.innerHTML="",at(b,a),h.settings.highlight&&(S=b.querySelectorAll("span.highlight"),Array.prototype.forEach.call(S,(function(t){var e=t.parentNode;e.replaceChild(t.firstChild,t),e.normalize()})),f.query.length&&f.tokens.length&&q(f.tokens,(t=>{G(b,t.regex)})));var w=t=>{let e=h.render(t,{input:g});return e&&(y=!0,b.insertBefore(e,b.firstChild)),e};if(h.loading?w("loading"):h.settings.shouldLoad.call(h,g)?0===f.items.length&&w("no_results"):w("not_loading"),(l=h.canCreate(g))&&(d=w("option_create")),h.hasOptions=f.items.length>0||l,y){if(f.items.length>0){if(v||"single"!==h.settings.mode||null==h.items[0]||(v=h.getOption(h.items[0])),!b.contains(v)){let t=0;d&&!h.settings.addPrecedence&&(t=1),v=h.selectable()[t]}}else d&&(v=d);t&&!h.isOpen&&(h.open(),h.scrollToOption(v,"auto")),h.setActiveOption(v)}else h.clearActiveOption(),t&&h.isOpen&&h.close(!1)}selectable(){return this.dropdown_content.querySelectorAll("[data-selectable]")}addOption(t,e=!1){const n=this;if(Array.isArray(t))return n.addOptions(t,e),!1;const i=Y(t[n.settings.valueField]);return null!==i&&!n.options.hasOwnProperty(i)&&(t.$order=t.$order||++n.order,t.$id=n.inputId+"-opt-"+t.$order,n.options[i]=t,n.lastQuery=null,e&&(n.userOptions[i]=e,n.trigger("option_add",i,t)),i)}addOptions(t,e=!1){q(t,(t=>{this.addOption(t,e)}))}registerOption(t){return this.addOption(t)}registerOptionGroup(t){var e=Y(t[this.settings.optgroupValueField]);return null!==e&&(t.$order=t.$order||++this.order,this.optgroups[e]=t,e)}addOptionGroup(t,e){var n;e[this.settings.optgroupValueField]=t,(n=this.registerOptionGroup(e))&&this.trigger("optgroup_add",n,e)}removeOptionGroup(t){this.optgroups.hasOwnProperty(t)&&(delete this.optgroups[t],this.clearCache(),this.trigger("optgroup_remove",t))}clearOptionGroups(){this.optgroups={},this.clearCache(),this.trigger("optgroup_clear")}updateOption(t,e){const n=this;var i,s;const o=Y(t),r=Y(e[n.settings.valueField]);if(null===o)return;const a=n.options[o];if(null==a)return;if("string"!=typeof r)throw new Error("Value must be set in option data");const l=n.getOption(o),c=n.getItem(o);if(e.$order=e.$order||a.$order,delete n.options[o],n.uncacheValue(r),n.options[r]=e,l){if(n.dropdown_content.contains(l)){const t=n._render("option",e);U(l,t),n.activeOption===l&&n.setActiveOption(t)}l.remove()}c&&(-1!==(s=n.items.indexOf(o))&&n.items.splice(s,1,r),i=n._render("item",e),c.classList.contains("active")&&N(i,"active"),U(c,i)),n.lastQuery=null}removeOption(t,e){const n=this;t=X(t),n.uncacheValue(t),delete n.userOptions[t],delete n.options[t],n.lastQuery=null,n.trigger("option_remove",t),n.removeItem(t,e)}clearOptions(t){const e=(t||this.clearFilter).bind(this);this.loadedSearches={},this.userOptions={},this.clearCache();const n={};q(this.options,((t,i)=>{e(t,i)&&(n[i]=t)})),this.options=this.sifter.items=n,this.lastQuery=null,this.trigger("option_clear")}clearFilter(t,e){return this.items.indexOf(e)>=0}getOption(t,e=!1){const n=Y(t);if(null===n)return null;const i=this.options[n];if(null!=i){if(i.$div)return i.$div;if(e)return this._render("option",i)}return null}getAdjacent(t,e,n="option"){var i;if(!t)return null;i="item"==n?this.controlChildren():this.dropdown_content.querySelectorAll("[data-selectable]");for(let n=0;n<i.length;n++)if(i[n]==t)return e>0?i[n+1]:i[n-1];return null}getItem(t){if("object"==typeof t)return t;var e=Y(t);return null!==e?this.control.querySelector(`[data-value="${rt(e)}"]`):null}addItems(t,e){var n=this,i=Array.isArray(t)?t:[t];const s=(i=i.filter((t=>-1===n.items.indexOf(t))))[i.length-1];i.forEach((t=>{n.isPending=t!==s,n.addItem(t,e)}))}addItem(t,e){et(this,e?[]:["change","dropdown_close"],(()=>{var n,i;const s=this,o=s.settings.mode,r=Y(t);if((!r||-1===s.items.indexOf(r)||("single"===o&&s.close(),"single"!==o&&s.settings.duplicates))&&null!==r&&s.options.hasOwnProperty(r)&&("single"===o&&s.clear(e),"multi"!==o||!s.isFull())){if(n=s._render("item",s.options[r]),s.control.contains(n)&&(n=n.cloneNode(!0)),i=s.isFull(),s.items.splice(s.caretPos,0,r),s.insertAtCaret(n),s.isSetup){if(!s.isPending&&s.settings.hideSelected){let t=s.getOption(r),e=s.getAdjacent(t,1);e&&s.setActiveOption(e)}s.isPending||s.settings.closeAfterSelect||s.refreshOptions(s.isFocused&&"single"!==o),0!=s.settings.closeAfterSelect&&s.isFull()?s.close():s.isPending||s.positionDropdown(),s.trigger("item_add",r,n),s.isPending||s.updateOriginalInput({silent:e})}(!s.isPending||!i&&s.isFull())&&(s.inputState(),s.refreshState())}}))}removeItem(t=null,e){const n=this;if(!(t=n.getItem(t)))return;var i,s;const o=t.dataset.value;i=K(t),t.remove(),t.classList.contains("active")&&(s=n.activeItems.indexOf(t),n.activeItems.splice(s,1),B(t,"active")),n.items.splice(i,1),n.lastQuery=null,!n.settings.persist&&n.userOptions.hasOwnProperty(o)&&n.removeOption(o,e),i<n.caretPos&&n.setCaret(n.caretPos-1),n.updateOriginalInput({silent:e}),n.refreshState(),n.positionDropdown(),n.trigger("item_remove",o,t)}createItem(t=null,e=(()=>{})){3===arguments.length&&(e=arguments[2]),"function"!=typeof e&&(e=()=>{});var n,i=this,s=i.caretPos;if(t=t||i.inputValue(),!i.canCreate(t))return e(),!1;i.lock();var o=!1,r=t=>{if(i.unlock(),!t||"object"!=typeof t)return e();var n=Y(t[i.settings.valueField]);if("string"!=typeof n)return e();i.setTextboxValue(),i.addOption(t,!0),i.setCaret(s),i.addItem(n),e(t),o=!0};return n="function"==typeof i.settings.create?i.settings.create.call(this,t,r):{[i.settings.labelField]:t,[i.settings.valueField]:t},o||r(n),!0}refreshItems(){var t=this;t.lastQuery=null,t.isSetup&&t.addItems(t.items),t.updateOriginalInput(),t.refreshState()}refreshState(){const t=this;t.refreshValidityState();const e=t.isFull(),n=t.isLocked;t.wrapper.classList.toggle("rtl",t.rtl);const i=t.wrapper.classList;var s;i.toggle("focus",t.isFocused),i.toggle("disabled",t.isDisabled),i.toggle("readonly",t.isReadOnly),i.toggle("required",t.isRequired),i.toggle("invalid",!t.isValid),i.toggle("locked",n),i.toggle("full",e),i.toggle("input-active",t.isFocused&&!t.isInputHidden),i.toggle("dropdown-active",t.isOpen),i.toggle("has-options",(s=t.options,0===Object.keys(s).length)),i.toggle("has-items",t.items.length>0)}refreshValidityState(){var t=this;t.input.validity&&(t.isValid=t.input.validity.valid,t.isInvalid=!t.isValid)}isFull(){return null!==this.settings.maxItems&&this.items.length>=this.settings.maxItems}updateOriginalInput(t={}){const e=this;var n,i;const s=e.input.querySelector('option[value=""]');if(e.is_select_tag){const o=[],r=e.input.querySelectorAll("option:checked").length;function a(t,n,i){return t||(t=j('<option value="'+Z(n)+'">'+Z(i)+"</option>")),t!=s&&e.input.append(t),o.push(t),(t!=s||r>0)&&(t.selected=!0),t}e.input.querySelectorAll("option:checked").forEach((t=>{t.selected=!1})),0==e.items.length&&"single"==e.settings.mode?a(s,"",""):e.items.forEach((t=>{n=e.options[t],i=n[e.settings.labelField]||"",o.includes(n.$option)?a(e.input.querySelector(`option[value="${rt(t)}"]:not(:checked)`),t,i):n.$option=a(n.$option,t,i)}))}else e.input.value=e.getValue();e.isSetup&&(t.silent||e.trigger("change",e.getValue()))}open(){var t=this;t.isLocked||t.isOpen||"multi"===t.settings.mode&&t.isFull()||(t.isOpen=!0,Q(t.focus_node,{"aria-expanded":"true"}),t.refreshState(),M(t.dropdown,{visibility:"hidden",display:"block"}),t.positionDropdown(),M(t.dropdown,{visibility:"visible",display:"block"}),t.focus(),t.trigger("dropdown_open",t.dropdown))}close(t=!0){var e=this,n=e.isOpen;t&&(e.setTextboxValue(),"single"===e.settings.mode&&e.items.length&&e.inputState()),e.isOpen=!1,Q(e.focus_node,{"aria-expanded":"false"}),M(e.dropdown,{display:"none"}),e.settings.hideSelected&&e.clearActiveOption(),e.refreshState(),n&&e.trigger("dropdown_close",e.dropdown)}positionDropdown(){if("body"===this.settings.dropdownParent){var t=this.control,e=t.getBoundingClientRect(),n=t.offsetHeight+e.top+window.scrollY,i=e.left+window.scrollX;M(this.dropdown,{width:e.width+"px",top:n+"px",left:i+"px"})}}clear(t){var e=this;if(e.items.length){var n=e.controlChildren();q(n,(t=>{e.removeItem(t,!0)})),e.inputState(),t||e.updateOriginalInput(),e.trigger("clear")}}insertAtCaret(t){const e=this,n=e.caretPos,i=e.control;i.insertBefore(t,i.children[n]||null),e.setCaret(n+1)}deleteSelection(t){var e,n,i,s,o,r=this;e=t&&8===t.keyCode?-1:1,n={start:(o=r.control_input).selectionStart||0,length:(o.selectionEnd||0)-(o.selectionStart||0)};const a=[];if(r.activeItems.length)s=z(r.activeItems,e),i=K(s),e>0&&i++,q(r.activeItems,(t=>a.push(t)));else if((r.isFocused||"single"===r.settings.mode)&&r.items.length){const t=r.controlChildren();let i;e<0&&0===n.start&&0===n.length?i=t[r.caretPos-1]:e>0&&n.start===r.inputValue().length&&(i=t[r.caretPos]),void 0!==i&&a.push(i)}if(!r.shouldDelete(a,t))return!1;for(nt(t,!0),void 0!==i&&r.setCaret(i);a.length;)r.removeItem(a.pop());return r.inputState(),r.positionDropdown(),r.refreshOptions(!1),!0}shouldDelete(t,e){const n=t.map((t=>t.dataset.value));return!(!n.length||"function"==typeof this.settings.onDelete&&!1===this.settings.onDelete(n,e))}advanceSelection(t,e){var n,i,s=this;s.rtl&&(t*=-1),s.inputValue().length||(st(W,e)||st("shiftKey",e)?(i=(n=s.getLastActive(t))?n.classList.contains("active")?s.getAdjacent(n,t,"item"):n:t>0?s.control_input.nextElementSibling:s.control_input.previousElementSibling)&&(i.classList.contains("active")&&s.removeActiveItem(n),s.setActiveItemClass(i)):s.moveCaret(t))}moveCaret(t){}getLastActive(t){let e=this.control.querySelector(".last-active");if(e)return e;var n=this.control.querySelectorAll(".active");return n?z(n,t):void 0}setCaret(t){this.caretPos=this.items.length}controlChildren(){return Array.from(this.control.querySelectorAll("[data-ts-item]"))}lock(){this.setLocked(!0)}unlock(){this.setLocked(!1)}setLocked(t=this.isReadOnly||this.isDisabled){this.isLocked=t,this.refreshState()}disable(){this.setDisabled(!0),this.close()}enable(){this.setDisabled(!1)}setDisabled(t){this.focus_node.tabIndex=t?-1:this.tabIndex,this.isDisabled=t,this.input.disabled=t,this.control_input.disabled=t,this.setLocked()}setReadOnly(t){this.isReadOnly=t,this.input.readOnly=t,this.control_input.readOnly=t,this.setLocked()}destroy(){var t=this,e=t.revertSettings;t.trigger("destroy"),t.off(),t.wrapper.remove(),t.dropdown.remove(),t.input.innerHTML=e.innerHTML,t.input.tabIndex=e.tabIndex,B(t.input,"tomselected","ts-hidden-accessible"),t._destroy(),delete t.input.tomselect}render(t,e){var n,i;const s=this;if("function"!=typeof this.settings.render[t])return null;if(!(i=s.settings.render[t].call(this,e,Z)))return null;if(i=j(i),"option"===t||"option_create"===t?e[s.settings.disabledField]?Q(i,{"aria-disabled":"true"}):Q(i,{"data-selectable":""}):"optgroup"===t&&(n=e.group[s.settings.optgroupValueField],Q(i,{"data-group":n}),e.group[s.settings.disabledField]&&Q(i,{"data-disabled":""})),"option"===t||"item"===t){const n=X(e[s.settings.valueField]);Q(i,{"data-value":n}),"item"===t?(N(i,s.settings.itemClass),Q(i,{"data-ts-item":""})):(N(i,s.settings.optionClass),Q(i,{role:"option",id:e.$id}),e.$div=i,s.options[n]=e)}return i}_render(t,e){const n=this.render(t,e);if(null==n)throw"HTMLElement expected";return n}clearCache(){q(this.options,(t=>{t.$div&&(t.$div.remove(),delete t.$div)}))}uncacheValue(t){const e=this.getOption(t);e&&e.remove()}canCreate(t){return this.settings.create&&t.length>0&&this.settings.createFilter.call(this,t)}hook(t,e,n){var i=this,s=i[e];i[e]=function(){var e,o;return"after"===t&&(e=s.apply(i,arguments)),o=n.apply(i,arguments),"instead"===t?o:("before"===t&&(e=s.apply(i,arguments)),e)}}}return dt.define("change_listener",(function(){it(this.input,"change",(()=>{this.sync()}))})),dt.define("checkbox_options",(function(t){var e=this,n=e.onOptionSelect;e.settings.hideSelected=!1;const i=Object.assign({className:"tomselect-checkbox",checkedClassNames:void 0,uncheckedClassNames:void 0},t);var s=function(t,e){e?(t.checked=!0,i.uncheckedClassNames&&t.classList.remove(...i.uncheckedClassNames),i.checkedClassNames&&t.classList.add(...i.checkedClassNames)):(t.checked=!1,i.checkedClassNames&&t.classList.remove(...i.checkedClassNames),i.uncheckedClassNames&&t.classList.add(...i.uncheckedClassNames))},o=function(t){setTimeout((()=>{var e=t.querySelector("input."+i.className);e instanceof HTMLInputElement&&s(e,t.classList.contains("selected"))}),1)};e.hook("after","setupTemplates",(()=>{var t=e.settings.render.option;e.settings.render.option=(n,o)=>{var r=j(t.call(e,n,o)),a=document.createElement("input");i.className&&a.classList.add(i.className),a.addEventListener("click",(function(t){nt(t)})),a.type="checkbox";const l=Y(n[e.settings.valueField]);return s(a,!!(l&&e.items.indexOf(l)>-1)),r.prepend(a),r}})),e.on("item_remove",(t=>{var n=e.getOption(t);n&&(n.classList.remove("selected"),o(n))})),e.on("item_add",(t=>{var n=e.getOption(t);n&&o(n)})),e.hook("instead","onOptionSelect",((t,i)=>{if(i.classList.contains("selected"))return i.classList.remove("selected"),e.removeItem(i.dataset.value),e.refreshOptions(),void nt(t,!0);n.call(e,t,i),o(i)}))})),dt.define("clear_button",(function(t){const e=this,n=Object.assign({className:"clear-button",title:"Clear All",html:t=>`<div class="${t.className}" title="${t.title}">&#10799;</div>`},t);e.on("initialize",(()=>{var t=j(n.html(n));t.addEventListener("click",(t=>{e.isLocked||(e.clear(),"single"===e.settings.mode&&e.settings.allowEmptyOption&&e.addItem(""),t.preventDefault(),t.stopPropagation())})),e.control.appendChild(t)}))})),dt.define("drag_drop",(function(){var t=this;if("multi"!==t.settings.mode)return;var e=t.lock,n=t.unlock;let i,s=!0;t.hook("after","setupTemplates",(()=>{var e=t.settings.render.item;t.settings.render.item=(n,o)=>{const r=j(e.call(t,n,o));Q(r,{draggable:"true"});const a=t=>{t.preventDefault(),r.classList.add("ts-drag-over"),l(r,i)},l=(t,e)=>{var n,i,s;void 0!==e&&(((t,e)=>{do{var n;if(t==(e=null==(n=e)?void 0:n.previousElementSibling))return!0}while(e&&e.previousElementSibling);return!1})(e,r)?(i=e,null==(s=(n=t).parentNode)||s.insertBefore(i,n.nextSibling)):((t,e)=>{var n;null==(n=t.parentNode)||n.insertBefore(e,t)})(t,e))};return it(r,"mousedown",(t=>{s||nt(t),t.stopPropagation()})),it(r,"dragstart",(t=>{i=r,setTimeout((()=>{r.classList.add("ts-dragging")}),0)})),it(r,"dragenter",a),it(r,"dragover",a),it(r,"dragleave",(()=>{r.classList.remove("ts-drag-over")})),it(r,"dragend",(()=>{var e;document.querySelectorAll(".ts-drag-over").forEach((t=>t.classList.remove("ts-drag-over"))),null==(e=i)||e.classList.remove("ts-dragging"),i=void 0;var n=[];t.control.querySelectorAll("[data-value]").forEach((t=>{if(t.dataset.value){let e=t.dataset.value;e&&n.push(e)}})),t.setValue(n)})),r}})),t.hook("instead","lock",(()=>(s=!1,e.call(t)))),t.hook("instead","unlock",(()=>(s=!0,n.call(t))))})),dt.define("dropdown_header",(function(t){const e=this,n=Object.assign({title:"Untitled",headerClass:"dropdown-header",titleRowClass:"dropdown-header-title",labelClass:"dropdown-header-label",closeClass:"dropdown-header-close",html:t=>'<div class="'+t.headerClass+'"><div class="'+t.titleRowClass+'"><span class="'+t.labelClass+'">'+t.title+'</span><a class="'+t.closeClass+'">&times;</a></div></div>'},t);e.on("initialize",(()=>{var t=j(n.html(n)),i=t.querySelector("."+n.closeClass);i&&i.addEventListener("click",(t=>{nt(t,!0),e.close()})),e.dropdown.insertBefore(t,e.dropdown.firstChild)}))})),dt.define("caret_position",(function(){var t=this;t.hook("instead","setCaret",(e=>{"single"!==t.settings.mode&&t.control.contains(t.control_input)?(e=Math.max(0,Math.min(t.items.length,e)))==t.caretPos||t.isPending||t.controlChildren().forEach(((n,i)=>{i<e?t.control_input.insertAdjacentElement("beforebegin",n):t.control.appendChild(n)})):e=t.items.length,t.caretPos=e})),t.hook("instead","moveCaret",(e=>{if(!t.isFocused)return;const n=t.getLastActive(e);if(n){const i=K(n);t.setCaret(e>0?i+1:i),t.setActiveItem(),B(n,"last-active")}else t.setCaret(t.caretPos+e)}))})),dt.define("dropdown_input",(function(){const t=this;t.settings.shouldOpen=!0,t.hook("before","setup",(()=>{t.focus_node=t.control,N(t.control_input,"dropdown-input");const e=j('<div class="dropdown-input-wrap">');e.append(t.control_input),t.dropdown.insertBefore(e,t.dropdown.firstChild);const n=j('<input class="items-placeholder" tabindex="-1" />');n.placeholder=t.settings.placeholder||"",t.control.append(n)})),t.on("initialize",(()=>{t.control_input.addEventListener("keydown",(e=>{switch(e.keyCode){case 27:return t.isOpen&&(nt(e,!0),t.close()),void t.clearActiveItems();case 9:t.focus_node.tabIndex=-1}return t.onKeyDown.call(t,e)})),t.on("blur",(()=>{t.focus_node.tabIndex=t.isDisabled?-1:t.tabIndex})),t.on("dropdown_open",(()=>{t.control_input.focus()}));const e=t.onBlur;t.hook("instead","onBlur",(n=>{if(!n||n.relatedTarget!=t.control_input)return e.call(t)})),it(t.control_input,"blur",(()=>t.onBlur())),t.hook("before","close",(()=>{t.isOpen&&t.focus_node.focus({preventScroll:!0})}))}))})),dt.define("input_autogrow",(function(){var t=this;t.on("initialize",(()=>{var e=document.createElement("span"),n=t.control_input;e.style.cssText="position:absolute; top:-99999px; left:-99999px; width:auto; padding:0; white-space:pre; ",t.wrapper.appendChild(e);for(const t of["letterSpacing","fontSize","fontFamily","fontWeight","textTransform"])e.style[t]=n.style[t];var i=()=>{e.textContent=n.value,n.style.width=e.clientWidth+"px"};i(),t.on("update item_add item_remove",i),it(n,"input",i),it(n,"keyup",i),it(n,"blur",i),it(n,"update",i)}))})),dt.define("no_backspace_delete",(function(){var t=this,e=t.deleteSelection;this.hook("instead","deleteSelection",(n=>!!t.activeItems.length&&e.call(t,n)))})),dt.define("no_active_items",(function(){this.hook("instead","setActiveItem",(()=>{})),this.hook("instead","selectAll",(()=>{}))})),dt.define("optgroup_columns",(function(){var t=this,e=t.onKeyDown;t.hook("instead","onKeyDown",(n=>{var i,s,o,r;if(!t.isOpen||37!==n.keyCode&&39!==n.keyCode)return e.call(t,n);t.ignoreHover=!0,r=R(t.activeOption,"[data-group]"),i=K(t.activeOption,"[data-selectable]"),r&&(r=37===n.keyCode?r.previousSibling:r.nextSibling)&&(s=(o=r.querySelectorAll("[data-selectable]"))[Math.min(o.length-1,i)])&&t.setActiveOption(s)}))})),dt.define("remove_button",(function(t){const e=Object.assign({label:"&times;",title:"Remove",className:"remove",append:!0},t);var n=this;if(e.append){var i='<a href="javascript:void(0)" class="'+e.className+'" tabindex="-1" title="'+Z(e.title)+'">'+e.label+"</a>";n.hook("after","setupTemplates",(()=>{var t=n.settings.render.item;n.settings.render.item=(e,s)=>{var o=j(t.call(n,e,s)),r=j(i);return o.appendChild(r),it(r,"mousedown",(t=>{nt(t,!0)})),it(r,"click",(t=>{n.isLocked||(nt(t,!0),n.isLocked||n.shouldDelete([o],t)&&(n.removeItem(o),n.refreshOptions(!1),n.inputState()))})),o}}))}})),dt.define("restore_on_backspace",(function(t){const e=this,n=Object.assign({text:t=>t[e.settings.labelField]},t);e.on("item_remove",(function(t){if(e.isFocused&&""===e.control_input.value.trim()){var i=e.options[t];i&&e.setTextboxValue(n.text.call(e,i))}}))})),dt.define("virtual_scroll",(function(){const t=this,e=t.canLoad,n=t.clearActiveOption,i=t.loadCallback;var s,o,r={},a=!1,l=[];if(t.settings.shouldLoadMore||(t.settings.shouldLoadMore=()=>{if(s.clientHeight/(s.scrollHeight-s.scrollTop)>.9)return!0;if(t.activeOption){var e=t.selectable();if(Array.from(e).indexOf(t.activeOption)>=e.length-2)return!0}return!1}),!t.settings.firstUrl)throw"virtual_scroll plugin requires a firstUrl() method";t.settings.sortField=[{field:"$order"},{field:"$score"}];const c=e=>!("number"==typeof t.settings.maxOptions&&s.children.length>=t.settings.maxOptions||!(e in r)||!r[e]),d=(e,n)=>t.items.indexOf(n)>=0||l.indexOf(n)>=0;t.setNextUrl=(t,e)=>{r[t]=e},t.getUrl=e=>{if(e in r){const t=r[e];return r[e]=!1,t}return t.clearPagination(),t.settings.firstUrl.call(t,e)},t.clearPagination=()=>{r={}},t.hook("instead","clearActiveOption",(()=>{if(!a)return n.call(t)})),t.hook("instead","canLoad",(n=>n in r?c(n):e.call(t,n))),t.hook("instead","loadCallback",((e,n)=>{if(a){if(o){const n=e[0];void 0!==n&&(o.dataset.value=n[t.settings.valueField])}}else t.clearOptions(d);i.call(t,e,n),a=!1})),t.hook("after","refreshOptions",(()=>{const e=t.lastValue;var n;c(e)?(n=t.render("loading_more",{query:e}))&&(n.setAttribute("data-selectable",""),o=n):e in r&&!s.querySelector(".no-results")&&(n=t.render("no_more_results",{query:e})),n&&(N(n,t.settings.optionClass),s.append(n))})),t.on("initialize",(()=>{l=Object.keys(t.options),s=t.dropdown_content,t.settings.render=Object.assign({},{loading_more:()=>'<div class="loading-more-results">Loading more results ... </div>',no_more_results:()=>'<div class="no-more-results">No more results</div>'},t.settings.render),s.addEventListener("scroll",(()=>{t.settings.shouldLoadMore.call(t)&&c(t.lastValue)&&(a||(a=!0,t.load.call(t,t.lastValue)))}))}))})),dt},"object"==typeof n&&void 0!==e?e.exports=s():"function"==typeof define&&define.amd?define(s):(i="undefined"!=typeof globalThis?globalThis:i||self).TomSelect=s()},{}],3:[function(t,e,n){"use strict";function i(t){return i="function"==typeof Symbol&&"symbol"==typeof Symbol.iterator?function(t){return typeof t}:function(t){return t&&"function"==typeof Symbol&&t.constructor===Symbol&&t!==Symbol.prototype?"symbol":typeof t},i(t)}function s(t,e){for(var n=0;n<e.length;n++){var i=e[n];i.enumerable=i.enumerable||!1,i.configurable=!0,"value"in i&&(i.writable=!0),Object.defineProperty(t,o(i.key),i)}}function o(t){var e=function(t,e){if("object"!=i(t)||!t)return t;var n=t[Symbol.toPrimitive];if(void 0!==n){var s=n.call(t,e||"default");if("object"!=i(s))return s;throw new TypeError("@@toPrimitive must return a primitive value.")}return("string"===e?String:Number)(t)}(t,"string");return"symbol"==i(e)?e:e+""}var r=function(){return t=function t(e){!function(t,e){if(!(t instanceof e))throw new TypeError("Cannot call a class as a function")}(this,t),this.options=Object.assign({isOpen:function(){},isClose:function(){}},e),this.speed=300,this.animation="fade",this.modalContainer=null,this.isOpen=!1,this.previousActiveElement=null,this._focusElements=["a[href]","input","select","textarea","button","iframe","[contenteditable]",'[tabindex]:not([tabindex^="-"])'],this._fixBlocks=document.querySelectorAll(".fix-block"),this.openModalsStack=[],this.events()},e=[{key:"events",value:function(){var t=this;document.addEventListener("click",(function(e){var n=e.target.closest("[data-graph-path]");if(n){var i=n.dataset.graphPath,s=n.dataset.graphAnimation,o=n.dataset.graphSpeed;return t.animation=s||"fade",t.speed=o?parseInt(o):300,t._nextContainer=document.querySelector('[data-graph-target="'.concat(i,'"]')),t._nextContainer&&"true"===t._nextContainer.dataset.clearStack&&(t.openModalsStack=[]),void t.open(n.closest(".graph-modal__container"))}e.target.closest(".js-modal-close")&&t.close()})),window.addEventListener("keydown",(function(e){27===e.keyCode&&t.isOpen&&t.close(),9===e.which&&t.isOpen&&t.focusCatch(e)})),document.addEventListener("click",(function(e){e.target.classList.contains("graph-modal__container")&&e.target.classList.contains("is-open")&&t.close()}))}},{key:"open",value:function(t){var e=this;this.previousActiveElement=document.activeElement,this.isOpen&&this.openModalsStack.push(this.modalContainer),this.modalContainer=this._nextContainer,t&&(this.modalContainer.setAttribute("data-parent",t.dataset.graphTarget),t.classList.remove("graph-modal-open")),this.modalContainer.scrollTo(0,0),this.modalContainer.style.setProperty("--transition-time","".concat(this.speed/1e3,"s")),this.modalContainer.closest(".graph-modal").classList.add("is-open"),this.modalContainer.classList.add("graph-modal-open"),document.body.style.scrollBehavior="auto",document.documentElement.style.scrollBehavior="auto",this.disableScroll(),this.modalContainer.classList.add(this.animation),setTimeout((function(){e.options.isOpen(e),e.modalContainer.classList.add("animate-open"),e.isOpen=!0,e.focusTrap()}),this.speed)}},{key:"close",value:function(){var t=this;this.modalContainer&&(this.modalContainer.classList.remove("animate-open"),this.modalContainer.classList.remove(this.animation),this.modalContainer.classList.remove("graph-modal-open"),this.enableScroll(),document.body.style.scrollBehavior="auto",document.documentElement.style.scrollBehavior="auto",this.options.isClose(this),this.isOpen=!1,this.openModalsStack.length>0?(this.modalContainer=this.openModalsStack.pop(),this.modalContainer.classList.add("graph-modal-open"),setTimeout((function(){t.modalContainer.classList.add("animate-open"),t.isOpen=!0,t.focusTrap()}),this.speed)):(this.modalContainer.closest(".graph-modal").classList.remove("is-open"),this.focusTrap()))}},{key:"focusCatch",value:function(t){var e=this.modalContainer.querySelectorAll(this._focusElements),n=Array.prototype.slice.call(e),i=n.indexOf(document.activeElement);t.shiftKey&&0===i&&(n[n.length-1].focus(),t.preventDefault()),t.shiftKey||i!==n.length-1||(n[0].focus(),t.preventDefault())}},{key:"focusTrap",value:function(){var t=this.modalContainer.querySelectorAll(this._focusElements);this.isOpen?t.length&&t[0].focus():this.previousActiveElement.focus()}},{key:"disableScroll",value:function(){var t=window.scrollY;this.lockPadding(),document.body.classList.add("disable-scroll"),document.body.dataset.position=t,document.body.style.top=-t+"px"}},{key:"enableScroll",value:function(){var t=parseInt(document.body.dataset.position,10);this.unlockPadding(),document.body.style.top="auto",document.body.classList.remove("disable-scroll"),window.scrollTo({top:t,left:0}),document.body.removeAttribute("data-position")}},{key:"lockPadding",value:function(){var t="".concat(window.innerWidth-document.body.offsetWidth,"px");this._fixBlocks.forEach((function(e){e.style.paddingRight=t})),document.body.style.paddingRight=t}},{key:"unlockPadding",value:function(){this._fixBlocks.forEach((function(t){t.style.paddingRight="0px"})),document.body.style.paddingRight="0px"}}],e&&s(t.prototype,e),n&&s(t,n),Object.defineProperty(t,"prototype",{writable:!1}),t;var t,e,n}();document.addEventListener("DOMContentLoaded",(function(){new r})),e.exports=r},{}],4:[function(t,e,n){"use strict";var i=t("tom-select"),s=t("handy-collapse");t("../js/libs/graph-modal"),new s({nameSpace:"nested",closeOthers:!1,isAnimation:!0,animationSpeed:400});document.querySelectorAll("[data-accordion-item]").forEach((function(t){var e=t.querySelector("[data-accordion-button]"),n=t.querySelector("[data-accordion-content]");e.addEventListener("click",(function(){n.classList.toggle("max-h-0");var e=t.querySelector("[data-accordion-arrow]");e&&e.classList.toggle("rotate-180")}))}));var o=document.querySelectorAll("[data-tabs]");o.length&&o.forEach((function(t){var e=t.querySelectorAll("button");e.forEach((function(t){t.addEventListener("click",(function(){e.forEach((function(t){return t.classList.remove("tab-active")})),t.classList.add("tab-active")}))}))}));var r=document.querySelectorAll("[data-pagination]");r.length&&r.forEach((function(t){var e=t.querySelectorAll("[data-pagination-item]");e.forEach((function(t,e){t.classList.contains("pagination-active")&&e+1})),e.forEach((function(t){t.addEventListener("click",(function(){e.forEach((function(t){t.classList.remove("pagination-active"),t.classList.add("hover:bg-gray-900/10")})),t.classList.add("pagination-active"),t.classList.remove("hover:bg-gray-900/10")}))}))})),document.addEventListener("DOMContentLoaded",(function(){var t=document.getElementById("fileInput"),e=document.getElementById("preview-container");t.addEventListener("change",(function(){Array.from(t.files).forEach((function(t){var n=new FileReader;n.onload=function(t){var n=document.createElement("div");n.classList.add("uploaded-card","relative","w-full","max-w-[300px]","rounded-xl","border-2","border-solid","border-gray-200");var i=document.createElement("img");i.src=t.target.result,i.alt="detail",i.classList.add("h-full","rounded-[8px]","object-cover");var s=document.createElement("span");s.classList.add("group","delete-card","cursor-pointer","absolute","top-0","right-0","p-2.5","text-primary","font-extrabold","text-lg"),s.innerHTML='\n          <svg width="22" height="22" viewBox="0 0 22 22" fill="none"\n               xmlns="http://www.w3.org/2000/svg">\n            <path class="transition  group-hover:stroke-primary" d="M3 19L19 3M3 3L19 19" stroke="#212121" stroke-width="5"\n                  stroke-linecap="round" stroke-linejoin="round"/>\n          </svg>\n        ',s.addEventListener("click",(function(){n.remove()})),n.appendChild(i),n.appendChild(s),e.appendChild(n)},n.readAsDataURL(t)}))})),e.addEventListener("click",(function(t){t.target.closest(".delete-card")&&t.target.closest(".uploaded-card").remove()}))})),document.addEventListener("DOMContentLoaded",(function(){var t=document.querySelectorAll("[minimodal-top-toggle]"),e=document.querySelectorAll("[minimodal-top-content]");t.forEach((function(t,n){t.addEventListener("click",(function(){var t=e[n];t&&(t.classList.contains("hidden")?(t.classList.remove("hidden"),setTimeout((function(){requestAnimationFrame((function(){t.classList.remove("translate-y-14","opacity-0")}))}),10),document.body.classList.add("overflow-hidden")):(t.classList.add("opacity-0","translate-y-14"),t.addEventListener("transitionend",(function(){t.classList.add("hidden"),document.body.classList.remove("overflow-hidden")}),{once:!0})))}))})),document.addEventListener("click",(function(n){e.forEach((function(e,i){var s=t[i];e.contains(n.target)||s.contains(n.target)||e.classList.contains("hidden")||(e.classList.add("opacity-0","translate-y-14"),e.addEventListener("transitionend",(function(){e.classList.add("hidden"),document.body.classList.remove("overflow-hidden")}),{once:!0}))}))})),e.forEach((function(t){t.addEventListener("click",(function(t){t.stopPropagation()}))}))})),document.addEventListener("DOMContentLoaded",(function(){var t=document.querySelectorAll("[minimodal-bottom-toggle]"),e=document.querySelectorAll("[minimodal-bottom-content]");t.forEach((function(t,n){t.addEventListener("click",(function(){var t=e[n];t&&(t.classList.contains("hidden")?(t.classList.remove("hidden"),setTimeout((function(){requestAnimationFrame((function(){t.classList.remove("translate-y-full","opacity-0")}))}),10),document.body.classList.add("overflow-hidden")):(t.classList.add("opacity-0","translate-y-full"),t.addEventListener("transitionend",(function(){t.classList.add("hidden"),document.body.classList.remove("overflow-hidden")}),{once:!0})))}))})),document.addEventListener("click",(function(n){e.forEach((function(e,i){var s=t[i];e.contains(n.target)||s.contains(n.target)||e.classList.contains("hidden")||(e.classList.add("opacity-0","translate-y-full"),e.addEventListener("transitionend",(function(){e.classList.add("hidden"),document.body.classList.remove("overflow-hidden")}),{once:!0}))}))}))})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("select[data-tom-select]").forEach((function(t){new i(t,{create:!1,sortField:{field:"text",direction:"asc"}})}))})),document.addEventListener("DOMContentLoaded",(function(){!function(){function t(){document.querySelectorAll(".dropdown-options").forEach((function(t){t.classList.contains("hidden")||e(t)}))}function e(t){t.classList.remove("opacity-100","scale-100"),t.classList.add("opacity-0","scale-95","pointer-events-none")}document.querySelectorAll(".custom-select").forEach((function(n){var i=n.querySelector(".select-button"),s=n.querySelector(".dropdown-options"),o=n.querySelector(".selected-option");o.textContent="-",i.addEventListener("click",(function(n){var i;t(),s.classList.contains("opacity-0")?((i=s).classList.remove("opacity-0","scale-95","pointer-events-none"),i.classList.add("opacity-100","scale-100")):e(s)}));var r=s.querySelectorAll("li");r.forEach((function(t){t.addEventListener("click",(function(){r.forEach((function(t){return t.classList.remove("text-primary","font-bold")})),this.classList.add("text-primary","font-bold"),o.textContent=this.textContent,e(s)}))})),document.addEventListener("click",(function(t){n.contains(t.target)||e(s)}))})),document.addEventListener("click",(function(e){e.target.closest(".custom-select")||t()}))}()})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("[data-more]").forEach((function(t){t.querySelector("[data-more-title]");var e=t.querySelector("[data-more-content]");t.addEventListener("mouseenter",(function(t){document.querySelectorAll("[data-more-content]").forEach((function(t){t.classList.remove("tooltip-more-active")})),e.classList.add("tooltip-more-active")})),t.addEventListener("mouseleave",(function(){e.classList.remove("tooltip-more-active")}))}))}));var a=document.getElementById("colorPick");function l(t){var e=t.querySelector(".select-button"),n=t.querySelector(".dropdown-options"),i=t.querySelector(".selected-option");function s(t){t.classList.remove("opacity-100","scale-100"),t.classList.add("opacity-0","scale-95","pointer-events-none")}i.textContent="-",e.addEventListener("click",(function(t){var e;t.stopPropagation(),document.querySelectorAll(".dropdown-options").forEach((function(t){t.classList.contains("pointer-events-none")||s(t)})),n.classList.contains("opacity-0")?((e=n).classList.remove("opacity-0","scale-95","pointer-events-none"),e.classList.add("opacity-100","scale-100")):s(n)}));var o=n.querySelectorAll("li");o.forEach((function(t){t.addEventListener("click",(function(){o.forEach((function(t){return t.classList.remove("text-primary","font-bold")})),this.classList.add("text-primary","font-bold"),i.textContent=this.textContent,s(n)}))})),document.addEventListener("click",(function(e){t.contains(e.target)||s(n)}))}a&&a.addEventListener("input",(function(t){var e=document.getElementById("colorBox"),n=t.target.value;e.style.backgroundColor=n})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("[data-password]").forEach((function(t){var e=t.querySelector("[data-password-trigger]"),n=t.querySelector("[data-password-line]"),i=t.querySelector("input"),s=!1;e.addEventListener("click",(function(t){s?(i.type="password",n.classList.remove("crossline-hidden"),s=!1):(i.type="text",n.classList.add("crossline-hidden"),s=!0)}))}))})),document.querySelectorAll("[data-popover-wrapper]").forEach((function(t){var e=t.querySelector("[data-popover-trigger]"),n=t.querySelector("[data-popover-content]");e.addEventListener("click",(function(t){t.stopPropagation(),n.classList.contains("opacity-0")?(n.classList.remove("opacity-0","invisible"),n.classList.add("opacity-80")):(n.classList.remove("opacity-80"),n.classList.add("opacity-0"))})),document.addEventListener("click",(function(e){t.contains(e.target)||n.classList.contains("opacity-80")&&(n.classList.remove("opacity-80"),n.classList.add("opacity-0"),n.addEventListener("transitionend",(function t(){n.classList.add("invisible"),n.removeEventListener("transitionend",t)})))}))})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll('input[type="checkbox"][data-column][data-table]').forEach((function(t){var e=t.getAttribute("data-table"),n=t.getAttribute("data-column");document.getElementById(e);document.querySelectorAll("#".concat(e," tr")).forEach((function(e){var i=Array.from(e.children)[n-1];i&&(t.checked||i.classList.add("hidden"))})),t.addEventListener("change",(function(){var t=this;document.querySelectorAll("#".concat(e," tr")).forEach((function(e){var i=Array.from(e.children)[n-1];i&&(t.checked?i.classList.remove("hidden"):i.classList.add("hidden"))}))}))}))})),document.addEventListener("DOMContentLoaded",(function(){var t=document.querySelectorAll("[data-sorting-trigger]");function e(e){t.forEach((function(t){if(t!==e){var n=t.querySelector("[data-sorting-ascending]"),i=t.querySelector("[data-sorting-descending]"),s=t.querySelector("[data-sorting-title]");n&&n.classList.remove("text-primary"),i&&i.classList.remove("text-primary"),s&&s.classList.remove("underline");var o=t.querySelector("[data-sorting-wrapper]");o&&(o.classList.add("hidden"),o.classList.remove("flex"))}}))}t.forEach((function(t){var n=t.querySelector("[data-sorting-ascending]"),i=t.querySelector("[data-sorting-descending]"),s=t.querySelector("[data-sorting-title]"),o=t.querySelector("[data-sorting-wrapper]");o&&o.classList.add("hidden"),s&&(s.classList.add("text-primary"),s.addEventListener("click",(function(){s.classList.toggle("underline"),o&&(o.classList.toggle("hidden"),o.classList.toggle("flex")),e(t)}))),n&&n.addEventListener("click",(function(){n.classList.toggle("text-primary")&&s.classList.add("text-primary"),i&&i.classList.remove("text-primary"),e(t)})),i&&i.addEventListener("click",(function(){i.classList.toggle("text-primary")&&s.classList.add("text-primary"),n&&n.classList.remove("text-primary"),e(t)}))}))})),document.addEventListener("DOMContentLoaded",(function(){document.querySelectorAll("[data-filters]").forEach((function(t){var e=t.querySelectorAll("[data-filter]"),n=t.getAttribute("data-filters");e.forEach((function(t){t.addEventListener("click",(function(){t.classList.add("filter-choosed");var e=document.querySelector('[data-filters-area="'.concat(n,'"]'));e.querySelector("[data-filter-container]")||function(t){var e=document.createElement("div");e.dataset.filterContainer=!0,e.classList.add("mb-5","flex","flex-col","gap-5","mt-5");var n=document.createElement("div");n.classList.add("flex","items-center","gap-5");var i=document.createElement("button");i.type="button",i.classList.add("flex","w-full","items-center","gap-2","rounded-lg","bg-success","p-3","py-2","pr-4","text-start","font-medium","leading-tight","text-white","transition-all","hover:text-light-gray","cursor-pointer","active:opacity-60","!w-fit","whitespace-nowrap"),i.textContent="Применить фильтры",n.appendChild(i);var s=document.createElement("button");s.type="button",s.classList.add("flex","w-full","items-center","gap-2","rounded-lg","bg-danger","p-3","py-2","pr-4","text-start","font-medium","leading-tight","text-white","transition-all","hover:text-light-gray","cursor-pointer","active:opacity-60","!w-fit","whitespace-nowrap"),s.textContent="Очистить фильтры",s.addEventListener("click",(function(){!function(t){var e=t.querySelector("[data-filter-container]");e&&e.remove();var n=t.querySelector("[data-filter-list]");n&&n.remove();document.querySelectorAll("[data-filter]").forEach((function(t){t.classList.remove("filter-choosed")}))}(t)})),n.appendChild(s),e.appendChild(n);var o=document.createElement("div");o.dataset.filterList=!0,o.classList.add("flex","flex-col","gap-5"),t.appendChild(o),t.appendChild(e)}(e),function(t,e,n){var i=document.createElement("div");i.classList.add("flex","items-center","gap-10");var s=document.createElement("div");s.classList.add("flex","cursor-pointer","items-center","gap-4","transition-all","hover:opacity-70","w-44");var o=document.createElement("div");o.classList.add("relative","h-4","w-4");var r='\n  <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="h-full w-full">\n    <path d="M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z" fill="#0F0F0F"></path>\n  </svg>\n  ';o.innerHTML=r,s.appendChild(o);var a=document.createElement("span");a.textContent="".concat(t,":"),s.appendChild(a),i.appendChild(s),s.addEventListener("click",(function(){i.remove(),e.classList.remove("filter-choosed");var t=n.querySelector("[data-filter-list]");if(!t||0===t.children.length){var s=n.querySelector("[data-filter-container]");s&&s.remove()}}));var c=document.createElement("div");c.classList.add("grid","grid-cols-2","items-center","gap-4");var d=document.createElement("div");d.classList.add("custom-select","relative","w-full");var u=document.createElement("div");u.classList.add("border-blue-gray-200","rounded-lg","border","bg-white","shadow-sm");var p=document.createElement("button");p.type="button",p.classList.add("select-button","flex","w-full","items-center","justify-between","px-3","py-2","text-left");var h=document.createElement("span");h.classList.add("selected-option"),h.textContent="-";var g='\n  <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">\n    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>\n  </svg>\n  ';p.innerHTML+=h.outerHTML+g,u.appendChild(p),d.appendChild(u);var m=document.createElement("ul");m.classList.add("dropdown-options","pointer-events-none","absolute","z-10","mt-1","w-full","scale-95","transform","overflow-hidden","rounded-lg","border","border-gray-300","bg-white","opacity-0","shadow-sm","transition"),["равно","не равно","содержит","не содержит","отсутствует","существует"].forEach((function(t){var e=document.createElement("li");e.classList.add("cursor-pointer","px-3","py-2","hover:bg-gray-100"),e.textContent=t,m.appendChild(e)})),d.appendChild(m),c.appendChild(d);var f=document.createElement("input");f.classList.add("text-blue-gray-700","disabled:bg-blue-gray-50","placeholder-shown:border-blue-gray-200","border-t-blue-gray-200","border-blue-gray-200","peer","h-full","w-full","rounded-[7px]","border","bg-transparent","px-3","py-2.5","font-sans","text-base","font-normal","outline","outline-0","transition-all","placeholder-shown:border","focus:outline-1","focus:outline-primary","focus:border-primary","disabled:border-0"),f.placeholder="",f.value="",f.type="text",c.appendChild(f),i.appendChild(c),n.querySelector("[data-filter-list]").appendChild(i),l(d)}(t.querySelector("span").textContent,t,e),function(t){t.querySelectorAll(".custom-select").forEach((function(t){l(t)}))}(e)}))}))}))})),document.addEventListener("DOMContentLoaded",(function(){var t=document.querySelector("[data-inventories]");t&&t.querySelectorAll("[data-inventory]").forEach((function(t){var e=t.querySelector("[data-inventory-checkbox]"),n=e.querySelector("input[type='checkbox']");n.addEventListener("change",(function(){if(n.checked){var i=(new Date).toLocaleString(),s=document.createElement("span");s.classList.add("text-sm","text-success","font-normal"),s.textContent="".concat(i),t.classList.add("invetory-active"),e.innerHTML="",e.appendChild(s)}}))}))}));var c=document.querySelectorAll("[data-table-checkbox-main]"),d=document.querySelectorAll("[data-table-checkbox-secondary]");function u(t){var e=document.querySelector("[data-table-checkbox-filter='".concat(t,"']")),n=document.querySelector("[data-table-checkbox-main='".concat(t,"']:checked")),i=document.querySelector("[data-table-checkbox-secondary='".concat(t,"']:checked"));n||i?e.classList.remove("hidden"):e.classList.add("hidden")}c.forEach((function(t){t.addEventListener("change",(function(){var e=t.getAttribute("data-table-checkbox-main");document.querySelectorAll("[data-table-checkbox-secondary='".concat(e,"']")).forEach((function(e){e.checked=t.checked})),u(e)}))})),d.forEach((function(t){t.addEventListener("change",(function(){u(t.getAttribute("data-table-checkbox-secondary"))}))})),document.addEventListener("DOMContentLoaded",(function(){for(var t=document.querySelectorAll("[data-tree-toggle]"),e=0;e<t.length;e++)t[e].addEventListener("click",(function(){var t=this.closest("div").nextElementSibling;if(t){t.classList.toggle("active");var e=this.children[1];e&&e.classList.toggle("rotate-90")}}));var n=document.querySelectorAll("[data-tree-checkbox]");for(e=0;e<n.length;e++)n[e].addEventListener("change",(function(){var t=this,e=this.closest("div").nextElementSibling;e&&e.querySelectorAll("[data-tree-checkbox]").forEach((function(e){e.checked=t.checked}))}));var i=document.querySelector("[data-applicability-lists]"),s=document.querySelector("[data-applicability-tabs]");s.firstElementChild.addEventListener("click",(function(){i.firstElementChild.classList.remove("hidden"),i.lastElementChild.classList.add("hidden")})),s.lastElementChild.addEventListener("click",(function(){i.firstElementChild.classList.add("hidden"),i.lastElementChild.classList.remove("hidden")}))})),document.querySelectorAll("[data-price-wrapper]").forEach((function(t){var e=t.querySelector("[data-price-static]"),n=t.querySelector("[data-price-click]"),i=t.querySelector("[data-price-change]");e.addEventListener("click",(function(){e.classList.add("hidden"),i.classList.remove("hidden"),i.focus()})),i.addEventListener("blur",(function(){var t=i.value;n.textContent=t,e.classList.remove("hidden"),i.classList.add("hidden")})),i.addEventListener("input",(function(){var t=i.value;n.textContent=t}))}))},{"../js/libs/graph-modal":3,"handy-collapse":1,"tom-select":2}]},{},[4]);
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
+"use strict";var c=Object.defineProperty;var g=(l,t,s)=>t in l?c(l,t,{enumerable:!0,configurable:!0,writable:!0,value:s}):l[t]=s;var r=(l,t,s)=>(g(l,typeof t!="symbol"?t+"":t,s),s);class p{constructor(t={}){r(this,"toggleContentEls");r(this,"toggleButtonEls");r(this,"itemsState",{});r(this,"options");const s=typeof t=="object"&&"nameSpace"in t?t.nameSpace:"hc",i={nameSpace:"hc",toggleButtonAttr:`data-${s}-control`,toggleContentAttr:`data-${s}-content`,activeClass:"is-active",isAnimation:!0,closeOthers:!0,animationSpeed:400,cssEasing:"ease-in-out",onSlideStart:()=>{},onSlideEnd:()=>{}};this.options={...i,...t},this.toggleContentEls=[].slice.call(document.querySelectorAll(`[${this.options.toggleContentAttr}]`)),this.toggleButtonEls=[].slice.call(document.querySelectorAll(`[${this.options.toggleButtonAttr}]`)),this.toggleContentEls.length!==0&&this.initContentsState(this.toggleContentEls),this.toggleButtonEls.length!==0&&this.handleButtonsEvent(this.toggleButtonEls)}initContentsState(t){this.itemsState={},t.forEach(s=>{s.style.overflow="hidden",s.style.maxHeight="none";const i=s.classList.contains(this.options.activeClass),e=s.getAttribute(this.options.toggleContentAttr);!e||(this.setItemState(e,i),i?this.open(e,!1,!1):this.close(e,!1,!1))})}handleButtonsEvent(t){t.forEach(s=>{const i=s.getAttribute(this.options.toggleButtonAttr);i&&s.addEventListener("click",e=>{e.preventDefault(),this.toggleSlide(i,!0)},!1)})}setItemState(t,s){this.itemsState[t]={isOpen:s,isAnimating:!1}}toggleSlide(t,s=!0){var i,e;(i=this.itemsState[t])!=null&&i.isAnimating||(((e=this.itemsState[t])==null?void 0:e.isOpen)===!1?this.open(t,s,this.options.isAnimation):this.close(t,s,this.options.isAnimation))}open(t,s=!0,i=!0){if(!t)return;Object.prototype.hasOwnProperty.call(this.itemsState,t)||this.setItemState(t,!1);const e=document.querySelector(`[${this.options.toggleContentAttr}='${t}']`);if(!e)return;this.itemsState[t].isAnimating=!0,this.options.closeOthers&&[].slice.call(this.toggleContentEls).forEach(n=>{const h=n.getAttribute(this.options.toggleContentAttr);h&&h!==t&&this.close(h,!1,i)}),s!==!1&&this.options.onSlideStart(!0,t);const a=this.getTargetHeight(e);e.style.visibility="visible",e.classList.add(this.options.activeClass);const o=document.querySelectorAll(`[${this.options.toggleButtonAttr}='${t}']`);o.length>0&&[].slice.call(o).forEach(n=>{n.classList.add(this.options.activeClass),n.hasAttribute("aria-expanded")&&n.setAttribute("aria-expanded","true")}),i?(e.style.overflow="hidden",e.style.transition=`${this.options.animationSpeed}ms ${this.options.cssEasing}`,e.style.maxHeight=(a||"1000")+"px",setTimeout(()=>{s!==!1&&this.options.onSlideEnd(!0,t),e.style.maxHeight="none",e.style.transition="",e.style.overflow="",this.itemsState[t].isAnimating=!1},this.options.animationSpeed)):(e.style.maxHeight="none",e.style.overflow="",this.itemsState[t].isAnimating=!1),this.itemsState[t].isOpen=!0,e.hasAttribute("aria-hidden")&&e.setAttribute("aria-hidden","false")}close(t,s=!0,i=!0){if(!t)return;Object.prototype.hasOwnProperty.call(this.itemsState,t)||this.setItemState(t,!1),this.itemsState[t].isAnimating=!0,s!==!1&&this.options.onSlideStart(!1,t);const e=document.querySelector(`[${this.options.toggleContentAttr}='${t}']`);e.style.overflow="hidden",e.classList.remove(this.options.activeClass),e.style.maxHeight=e.clientHeight+"px",setTimeout(()=>{e.style.maxHeight="0px"},5);const a=document.querySelectorAll(`[${this.options.toggleButtonAttr}='${t}']`);a.length>0&&[].slice.call(a).forEach(o=>{o.classList.remove(this.options.activeClass),o.hasAttribute("aria-expanded")&&o.setAttribute("aria-expanded","false")}),i?(e.style.transition=`${this.options.animationSpeed}ms ${this.options.cssEasing}`,setTimeout(()=>{s!==!1&&this.options.onSlideEnd(!1,t),e.style.transition="",this.itemsState[t].isAnimating=!1,e.style.visibility="hidden"},this.options.animationSpeed)):(this.options.onSlideEnd(!1,t),this.itemsState[t].isAnimating=!1,e.style.visibility="hidden"),Object.prototype.hasOwnProperty.call(this.itemsState,t)&&(this.itemsState[t].isOpen=!1),e.hasAttribute("aria-hidden")&&e.setAttribute("aria-hidden","true")}getTargetHeight(t){if(!t)return;const s=t.cloneNode(!0),i=t.parentNode;if(!i)return;const e=[].slice.call(s.querySelectorAll("input[name]"));if(e.length!==0){const o="-"+new Date().getTime();e.forEach(n=>{n.name+=o})}s.style.maxHeight="none",s.style.opacity="0",i.appendChild(s);const a=s.clientHeight;return i.removeChild(s),a}}module.exports=p;
+
+},{}],2:[function(require,module,exports){
+/**
+* Tom Select v2.3.1
+* Licensed under the Apache License, Version 2.0 (the "License");
+*/
+
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
+	typeof define === 'function' && define.amd ? define(factory) :
+	(global = typeof globalThis !== 'undefined' ? globalThis : global || self, global.TomSelect = factory());
+})(this, (function () { 'use strict';
+
+	/**
+	 * MicroEvent - to make any js object an event emitter
+	 *
+	 * - pure javascript - server compatible, browser compatible
+	 * - dont rely on the browser doms
+	 * - super simple - you get it immediatly, no mistery, no magic involved
+	 *
+	 * @author Jerome Etienne (https://github.com/jeromeetienne)
+	 */
+
+	/**
+	 * Execute callback for each event in space separated list of event names
+	 *
+	 */
+	function forEvents(events, callback) {
+	  events.split(/\s+/).forEach(event => {
+	    callback(event);
+	  });
+	}
+	class MicroEvent {
+	  constructor() {
+	    this._events = void 0;
+	    this._events = {};
+	  }
+	  on(events, fct) {
+	    forEvents(events, event => {
+	      const event_array = this._events[event] || [];
+	      event_array.push(fct);
+	      this._events[event] = event_array;
+	    });
+	  }
+	  off(events, fct) {
+	    var n = arguments.length;
+	    if (n === 0) {
+	      this._events = {};
+	      return;
+	    }
+	    forEvents(events, event => {
+	      if (n === 1) {
+	        delete this._events[event];
+	        return;
+	      }
+	      const event_array = this._events[event];
+	      if (event_array === undefined) return;
+	      event_array.splice(event_array.indexOf(fct), 1);
+	      this._events[event] = event_array;
+	    });
+	  }
+	  trigger(events, ...args) {
+	    var self = this;
+	    forEvents(events, event => {
+	      const event_array = self._events[event];
+	      if (event_array === undefined) return;
+	      event_array.forEach(fct => {
+	        fct.apply(self, args);
+	      });
+	    });
+	  }
+	}
+
+	/**
+	 * microplugin.js
+	 * Copyright (c) 2013 Brian Reavis & contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 * @author Brian Reavis <brian@thirdroute.com>
+	 */
+
+	function MicroPlugin(Interface) {
+	  Interface.plugins = {};
+	  return class extends Interface {
+	    constructor(...args) {
+	      super(...args);
+	      this.plugins = {
+	        names: [],
+	        settings: {},
+	        requested: {},
+	        loaded: {}
+	      };
+	    }
+	    /**
+	     * Registers a plugin.
+	     *
+	     * @param {function} fn
+	     */
+	    static define(name, fn) {
+	      Interface.plugins[name] = {
+	        'name': name,
+	        'fn': fn
+	      };
+	    }
+
+	    /**
+	     * Initializes the listed plugins (with options).
+	     * Acceptable formats:
+	     *
+	     * List (without options):
+	     *   ['a', 'b', 'c']
+	     *
+	     * List (with options):
+	     *   [{'name': 'a', options: {}}, {'name': 'b', options: {}}]
+	     *
+	     * Hash (with options):
+	     *   {'a': { ... }, 'b': { ... }, 'c': { ... }}
+	     *
+	     * @param {array|object} plugins
+	     */
+	    initializePlugins(plugins) {
+	      var key, name;
+	      const self = this;
+	      const queue = [];
+	      if (Array.isArray(plugins)) {
+	        plugins.forEach(plugin => {
+	          if (typeof plugin === 'string') {
+	            queue.push(plugin);
+	          } else {
+	            self.plugins.settings[plugin.name] = plugin.options;
+	            queue.push(plugin.name);
+	          }
+	        });
+	      } else if (plugins) {
+	        for (key in plugins) {
+	          if (plugins.hasOwnProperty(key)) {
+	            self.plugins.settings[key] = plugins[key];
+	            queue.push(key);
+	          }
+	        }
+	      }
+	      while (name = queue.shift()) {
+	        self.require(name);
+	      }
+	    }
+	    loadPlugin(name) {
+	      var self = this;
+	      var plugins = self.plugins;
+	      var plugin = Interface.plugins[name];
+	      if (!Interface.plugins.hasOwnProperty(name)) {
+	        throw new Error('Unable to find "' + name + '" plugin');
+	      }
+	      plugins.requested[name] = true;
+	      plugins.loaded[name] = plugin.fn.apply(self, [self.plugins.settings[name] || {}]);
+	      plugins.names.push(name);
+	    }
+
+	    /**
+	     * Initializes a plugin.
+	     *
+	     */
+	    require(name) {
+	      var self = this;
+	      var plugins = self.plugins;
+	      if (!self.plugins.loaded.hasOwnProperty(name)) {
+	        if (plugins.requested[name]) {
+	          throw new Error('Plugin has circular dependency ("' + name + '")');
+	        }
+	        self.loadPlugin(name);
+	      }
+	      return plugins.loaded[name];
+	    }
+	  };
+	}
+
+	/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */
+	/**
+	 * Convert array of strings to a regular expression
+	 *	ex ['ab','a'] => (?:ab|a)
+	 * 	ex ['a','b'] => [ab]
+	 * @param {string[]} chars
+	 * @return {string}
+	 */
+	const arrayToPattern = chars => {
+	  chars = chars.filter(Boolean);
+
+	  if (chars.length < 2) {
+	    return chars[0] || '';
+	  }
+
+	  return maxValueLength(chars) == 1 ? '[' + chars.join('') + ']' : '(?:' + chars.join('|') + ')';
+	};
+	/**
+	 * @param {string[]} array
+	 * @return {string}
+	 */
+
+	const sequencePattern = array => {
+	  if (!hasDuplicates(array)) {
+	    return array.join('');
+	  }
+
+	  let pattern = '';
+	  let prev_char_count = 0;
+
+	  const prev_pattern = () => {
+	    if (prev_char_count > 1) {
+	      pattern += '{' + prev_char_count + '}';
+	    }
+	  };
+
+	  array.forEach((char, i) => {
+	    if (char === array[i - 1]) {
+	      prev_char_count++;
+	      return;
+	    }
+
+	    prev_pattern();
+	    pattern += char;
+	    prev_char_count = 1;
+	  });
+	  prev_pattern();
+	  return pattern;
+	};
+	/**
+	 * Convert array of strings to a regular expression
+	 *	ex ['ab','a'] => (?:ab|a)
+	 * 	ex ['a','b'] => [ab]
+	 * @param {Set<string>} chars
+	 * @return {string}
+	 */
+
+	const setToPattern = chars => {
+	  let array = toArray(chars);
+	  return arrayToPattern(array);
+	};
+	/**
+	 *
+	 * https://stackoverflow.com/questions/7376598/in-javascript-how-do-i-check-if-an-array-has-duplicate-values
+	 * @param {any[]} array
+	 */
+
+	const hasDuplicates = array => {
+	  return new Set(array).size !== array.length;
+	};
+	/**
+	 * https://stackoverflow.com/questions/63006601/why-does-u-throw-an-invalid-escape-error
+	 * @param {string} str
+	 * @return {string}
+	 */
+
+	const escape_regex = str => {
+	  return (str + '').replace(/([\$\(\)\*\+\.\?\[\]\^\{\|\}\\])/gu, '\\$1');
+	};
+	/**
+	 * Return the max length of array values
+	 * @param {string[]} array
+	 *
+	 */
+
+	const maxValueLength = array => {
+	  return array.reduce((longest, value) => Math.max(longest, unicodeLength(value)), 0);
+	};
+	/**
+	 * @param {string} str
+	 */
+
+	const unicodeLength = str => {
+	  return toArray(str).length;
+	};
+	/**
+	 * @param {any} p
+	 * @return {any[]}
+	 */
+
+	const toArray = p => Array.from(p);
+
+	/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */
+	/**
+	 * Get all possible combinations of substrings that add up to the given string
+	 * https://stackoverflow.com/questions/30169587/find-all-the-combination-of-substrings-that-add-up-to-the-given-string
+	 * @param {string} input
+	 * @return {string[][]}
+	 */
+	const allSubstrings = input => {
+	  if (input.length === 1) return [[input]];
+	  /** @type {string[][]} */
+
+	  let result = [];
+	  const start = input.substring(1);
+	  const suba = allSubstrings(start);
+	  suba.forEach(function (subresult) {
+	    let tmp = subresult.slice(0);
+	    tmp[0] = input.charAt(0) + tmp[0];
+	    result.push(tmp);
+	    tmp = subresult.slice(0);
+	    tmp.unshift(input.charAt(0));
+	    result.push(tmp);
+	  });
+	  return result;
+	};
+
+	/*! @orchidjs/unicode-variants | https://github.com/orchidjs/unicode-variants | Apache License (v2) */
+
+	/**
+	 * @typedef {{[key:string]:string}} TUnicodeMap
+	 * @typedef {{[key:string]:Set<string>}} TUnicodeSets
+	 * @typedef {[[number,number]]} TCodePoints
+	 * @typedef {{folded:string,composed:string,code_point:number}} TCodePointObj
+	 * @typedef {{start:number,end:number,length:number,substr:string}} TSequencePart
+	 */
+	/** @type {TCodePoints} */
+
+	const code_points = [[0, 65535]];
+	const accent_pat = '[\u0300-\u036F\u{b7}\u{2be}\u{2bc}]';
+	/** @type {TUnicodeMap} */
+
+	let unicode_map;
+	/** @type {RegExp} */
+
+	let multi_char_reg;
+	const max_char_length = 3;
+	/** @type {TUnicodeMap} */
+
+	const latin_convert = {};
+	/** @type {TUnicodeMap} */
+
+	const latin_condensed = {
+	  '/': '⁄∕',
+	  '0': '߀',
+	  "a": "ⱥɐɑ",
+	  "aa": "ꜳ",
+	  "ae": "æǽǣ",
+	  "ao": "ꜵ",
+	  "au": "ꜷ",
+	  "av": "ꜹꜻ",
+	  "ay": "ꜽ",
+	  "b": "ƀɓƃ",
+	  "c": "ꜿƈȼↄ",
+	  "d": "đɗɖᴅƌꮷԁɦ",
+	  "e": "ɛǝᴇɇ",
+	  "f": "ꝼƒ",
+	  "g": "ǥɠꞡᵹꝿɢ",
+	  "h": "ħⱨⱶɥ",
+	  "i": "ɨı",
+	  "j": "ɉȷ",
+	  "k": "ƙⱪꝁꝃꝅꞣ",
+	  "l": "łƚɫⱡꝉꝇꞁɭ",
+	  "m": "ɱɯϻ",
+	  "n": "ꞥƞɲꞑᴎлԉ",
+	  "o": "øǿɔɵꝋꝍᴑ",
+	  "oe": "œ",
+	  "oi": "ƣ",
+	  "oo": "ꝏ",
+	  "ou": "ȣ",
+	  "p": "ƥᵽꝑꝓꝕρ",
+	  "q": "ꝗꝙɋ",
+	  "r": "ɍɽꝛꞧꞃ",
+	  "s": "ßȿꞩꞅʂ",
+	  "t": "ŧƭʈⱦꞇ",
+	  "th": "þ",
+	  "tz": "ꜩ",
+	  "u": "ʉ",
+	  "v": "ʋꝟʌ",
+	  "vy": "ꝡ",
+	  "w": "ⱳ",
+	  "y": "ƴɏỿ",
+	  "z": "ƶȥɀⱬꝣ",
+	  "hv": "ƕ"
+	};
+
+	for (let latin in latin_condensed) {
+	  let unicode = latin_condensed[latin] || '';
+
+	  for (let i = 0; i < unicode.length; i++) {
+	    let char = unicode.substring(i, i + 1);
+	    latin_convert[char] = latin;
+	  }
+	}
+
+	const convert_pat = new RegExp(Object.keys(latin_convert).join('|') + '|' + accent_pat, 'gu');
+	/**
+	 * Initialize the unicode_map from the give code point ranges
+	 *
+	 * @param {TCodePoints=} _code_points
+	 */
+
+	const initialize = _code_points => {
+	  if (unicode_map !== undefined) return;
+	  unicode_map = generateMap(_code_points || code_points);
+	};
+	/**
+	 * Helper method for normalize a string
+	 * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/normalize
+	 * @param {string} str
+	 * @param {string} form
+	 */
+
+	const normalize = (str, form = 'NFKD') => str.normalize(form);
+	/**
+	 * Remove accents without reordering string
+	 * calling str.normalize('NFKD') on \u{594}\u{595}\u{596} becomes \u{596}\u{594}\u{595}
+	 * via https://github.com/krisk/Fuse/issues/133#issuecomment-318692703
+	 * @param {string} str
+	 * @return {string}
+	 */
+
+	const asciifold = str => {
+	  return toArray(str).reduce(
+	  /**
+	   * @param {string} result
+	   * @param {string} char
+	   */
+	  (result, char) => {
+	    return result + _asciifold(char);
+	  }, '');
+	};
+	/**
+	 * @param {string} str
+	 * @return {string}
+	 */
+
+	const _asciifold = str => {
+	  str = normalize(str).toLowerCase().replace(convert_pat, (
+	  /** @type {string} */
+	  char) => {
+	    return latin_convert[char] || '';
+	  }); //return str;
+
+	  return normalize(str, 'NFC');
+	};
+	/**
+	 * Generate a list of unicode variants from the list of code points
+	 * @param {TCodePoints} code_points
+	 * @yield {TCodePointObj}
+	 */
+
+	function* generator(code_points) {
+	  for (const [code_point_min, code_point_max] of code_points) {
+	    for (let i = code_point_min; i <= code_point_max; i++) {
+	      let composed = String.fromCharCode(i);
+	      let folded = asciifold(composed);
+
+	      if (folded == composed.toLowerCase()) {
+	        continue;
+	      } // skip when folded is a string longer than 3 characters long
+	      // bc the resulting regex patterns will be long
+	      // eg:
+	      // folded صلى الله عليه وسلم length 18 code point 65018
+	      // folded جل جلاله length 8 code point 65019
+
+
+	      if (folded.length > max_char_length) {
+	        continue;
+	      }
+
+	      if (folded.length == 0) {
+	        continue;
+	      }
+
+	      yield {
+	        folded: folded,
+	        composed: composed,
+	        code_point: i
+	      };
+	    }
+	  }
+	}
+	/**
+	 * Generate a unicode map from the list of code points
+	 * @param {TCodePoints} code_points
+	 * @return {TUnicodeSets}
+	 */
+
+	const generateSets = code_points => {
+	  /** @type {{[key:string]:Set<string>}} */
+	  const unicode_sets = {};
+	  /**
+	   * @param {string} folded
+	   * @param {string} to_add
+	   */
+
+	  const addMatching = (folded, to_add) => {
+	    /** @type {Set<string>} */
+	    const folded_set = unicode_sets[folded] || new Set();
+	    const patt = new RegExp('^' + setToPattern(folded_set) + '$', 'iu');
+
+	    if (to_add.match(patt)) {
+	      return;
+	    }
+
+	    folded_set.add(escape_regex(to_add));
+	    unicode_sets[folded] = folded_set;
+	  };
+
+	  for (let value of generator(code_points)) {
+	    addMatching(value.folded, value.folded);
+	    addMatching(value.folded, value.composed);
+	  }
+
+	  return unicode_sets;
+	};
+	/**
+	 * Generate a unicode map from the list of code points
+	 * ae => (?:(?:ae|Æ|Ǽ|Ǣ)|(?:A|Ⓐ|Ａ...)(?:E|ɛ|Ⓔ...))
+	 *
+	 * @param {TCodePoints} code_points
+	 * @return {TUnicodeMap}
+	 */
+
+	const generateMap = code_points => {
+	  /** @type {TUnicodeSets} */
+	  const unicode_sets = generateSets(code_points);
+	  /** @type {TUnicodeMap} */
+
+	  const unicode_map = {};
+	  /** @type {string[]} */
+
+	  let multi_char = [];
+
+	  for (let folded in unicode_sets) {
+	    let set = unicode_sets[folded];
+
+	    if (set) {
+	      unicode_map[folded] = setToPattern(set);
+	    }
+
+	    if (folded.length > 1) {
+	      multi_char.push(escape_regex(folded));
+	    }
+	  }
+
+	  multi_char.sort((a, b) => b.length - a.length);
+	  const multi_char_patt = arrayToPattern(multi_char);
+	  multi_char_reg = new RegExp('^' + multi_char_patt, 'u');
+	  return unicode_map;
+	};
+	/**
+	 * Map each element of an array from it's folded value to all possible unicode matches
+	 * @param {string[]} strings
+	 * @param {number} min_replacement
+	 * @return {string}
+	 */
+
+	const mapSequence = (strings, min_replacement = 1) => {
+	  let chars_replaced = 0;
+	  strings = strings.map(str => {
+	    if (unicode_map[str]) {
+	      chars_replaced += str.length;
+	    }
+
+	    return unicode_map[str] || str;
+	  });
+
+	  if (chars_replaced >= min_replacement) {
+	    return sequencePattern(strings);
+	  }
+
+	  return '';
+	};
+	/**
+	 * Convert a short string and split it into all possible patterns
+	 * Keep a pattern only if min_replacement is met
+	 *
+	 * 'abc'
+	 * 		=> [['abc'],['ab','c'],['a','bc'],['a','b','c']]
+	 *		=> ['abc-pattern','ab-c-pattern'...]
+	 *
+	 *
+	 * @param {string} str
+	 * @param {number} min_replacement
+	 * @return {string}
+	 */
+
+	const substringsToPattern = (str, min_replacement = 1) => {
+	  min_replacement = Math.max(min_replacement, str.length - 1);
+	  return arrayToPattern(allSubstrings(str).map(sub_pat => {
+	    return mapSequence(sub_pat, min_replacement);
+	  }));
+	};
+	/**
+	 * Convert an array of sequences into a pattern
+	 * [{start:0,end:3,length:3,substr:'iii'}...] => (?:iii...)
+	 *
+	 * @param {Sequence[]} sequences
+	 * @param {boolean} all
+	 */
+
+	const sequencesToPattern = (sequences, all = true) => {
+	  let min_replacement = sequences.length > 1 ? 1 : 0;
+	  return arrayToPattern(sequences.map(sequence => {
+	    let seq = [];
+	    const len = all ? sequence.length() : sequence.length() - 1;
+
+	    for (let j = 0; j < len; j++) {
+	      seq.push(substringsToPattern(sequence.substrs[j] || '', min_replacement));
+	    }
+
+	    return sequencePattern(seq);
+	  }));
+	};
+	/**
+	 * Return true if the sequence is already in the sequences
+	 * @param {Sequence} needle_seq
+	 * @param {Sequence[]} sequences
+	 */
+
+
+	const inSequences = (needle_seq, sequences) => {
+	  for (const seq of sequences) {
+	    if (seq.start != needle_seq.start || seq.end != needle_seq.end) {
+	      continue;
+	    }
+
+	    if (seq.substrs.join('') !== needle_seq.substrs.join('')) {
+	      continue;
+	    }
+
+	    let needle_parts = needle_seq.parts;
+	    /**
+	     * @param {TSequencePart} part
+	     */
+
+	    const filter = part => {
+	      for (const needle_part of needle_parts) {
+	        if (needle_part.start === part.start && needle_part.substr === part.substr) {
+	          return false;
+	        }
+
+	        if (part.length == 1 || needle_part.length == 1) {
+	          continue;
+	        } // check for overlapping parts
+	        // a = ['::=','==']
+	        // b = ['::','===']
+	        // a = ['r','sm']
+	        // b = ['rs','m']
+
+
+	        if (part.start < needle_part.start && part.end > needle_part.start) {
+	          return true;
+	        }
+
+	        if (needle_part.start < part.start && needle_part.end > part.start) {
+	          return true;
+	        }
+	      }
+
+	      return false;
+	    };
+
+	    let filtered = seq.parts.filter(filter);
+
+	    if (filtered.length > 0) {
+	      continue;
+	    }
+
+	    return true;
+	  }
+
+	  return false;
+	};
+
+	class Sequence {
+	  constructor() {
+	    /** @type {TSequencePart[]} */
+	    this.parts = [];
+	    /** @type {string[]} */
+
+	    this.substrs = [];
+	    this.start = 0;
+	    this.end = 0;
+	  }
+	  /**
+	   * @param {TSequencePart|undefined} part
+	   */
+
+
+	  add(part) {
+	    if (part) {
+	      this.parts.push(part);
+	      this.substrs.push(part.substr);
+	      this.start = Math.min(part.start, this.start);
+	      this.end = Math.max(part.end, this.end);
+	    }
+	  }
+
+	  last() {
+	    return this.parts[this.parts.length - 1];
+	  }
+
+	  length() {
+	    return this.parts.length;
+	  }
+	  /**
+	   * @param {number} position
+	   * @param {TSequencePart} last_piece
+	   */
+
+
+	  clone(position, last_piece) {
+	    let clone = new Sequence();
+	    let parts = JSON.parse(JSON.stringify(this.parts));
+	    let last_part = parts.pop();
+
+	    for (const part of parts) {
+	      clone.add(part);
+	    }
+
+	    let last_substr = last_piece.substr.substring(0, position - last_part.start);
+	    let clone_last_len = last_substr.length;
+	    clone.add({
+	      start: last_part.start,
+	      end: last_part.start + clone_last_len,
+	      length: clone_last_len,
+	      substr: last_substr
+	    });
+	    return clone;
+	  }
+
+	}
+	/**
+	 * Expand a regular expression pattern to include unicode variants
+	 * 	eg /a/ becomes /aⓐａẚàáâầấẫẩãāăằắẵẳȧǡäǟảåǻǎȁȃạậặḁąⱥɐɑAⒶＡÀÁÂẦẤẪẨÃĀĂẰẮẴẲȦǠÄǞẢÅǺǍȀȂẠẬẶḀĄȺⱯ/
+	 *
+	 * Issue:
+	 *  ﺊﺋ [ 'ﺊ = \\u{fe8a}', 'ﺋ = \\u{fe8b}' ]
+	 *	becomes:	ئئ [ 'ي = \\u{64a}', 'ٔ = \\u{654}', 'ي = \\u{64a}', 'ٔ = \\u{654}' ]
+	 *
+	 *	İĲ = IIJ = ⅡJ
+	 *
+	 * 	1/2/4
+	 *
+	 * @param {string} str
+	 * @return {string|undefined}
+	 */
+
+
+	const getPattern = str => {
+	  initialize();
+	  str = asciifold(str);
+	  let pattern = '';
+	  let sequences = [new Sequence()];
+
+	  for (let i = 0; i < str.length; i++) {
+	    let substr = str.substring(i);
+	    let match = substr.match(multi_char_reg);
+	    const char = str.substring(i, i + 1);
+	    const match_str = match ? match[0] : null; // loop through sequences
+	    // add either the char or multi_match
+
+	    let overlapping = [];
+	    let added_types = new Set();
+
+	    for (const sequence of sequences) {
+	      const last_piece = sequence.last();
+
+	      if (!last_piece || last_piece.length == 1 || last_piece.end <= i) {
+	        // if we have a multi match
+	        if (match_str) {
+	          const len = match_str.length;
+	          sequence.add({
+	            start: i,
+	            end: i + len,
+	            length: len,
+	            substr: match_str
+	          });
+	          added_types.add('1');
+	        } else {
+	          sequence.add({
+	            start: i,
+	            end: i + 1,
+	            length: 1,
+	            substr: char
+	          });
+	          added_types.add('2');
+	        }
+	      } else if (match_str) {
+	        let clone = sequence.clone(i, last_piece);
+	        const len = match_str.length;
+	        clone.add({
+	          start: i,
+	          end: i + len,
+	          length: len,
+	          substr: match_str
+	        });
+	        overlapping.push(clone);
+	      } else {
+	        // don't add char
+	        // adding would create invalid patterns: 234 => [2,34,4]
+	        added_types.add('3');
+	      }
+	    } // if we have overlapping
+
+
+	    if (overlapping.length > 0) {
+	      // ['ii','iii'] before ['i','i','iii']
+	      overlapping = overlapping.sort((a, b) => {
+	        return a.length() - b.length();
+	      });
+
+	      for (let clone of overlapping) {
+	        // don't add if we already have an equivalent sequence
+	        if (inSequences(clone, sequences)) {
+	          continue;
+	        }
+
+	        sequences.push(clone);
+	      }
+
+	      continue;
+	    } // if we haven't done anything unique
+	    // clean up the patterns
+	    // helps keep patterns smaller
+	    // if str = 'r₨㎧aarss', pattern will be 446 instead of 655
+
+
+	    if (i > 0 && added_types.size == 1 && !added_types.has('3')) {
+	      pattern += sequencesToPattern(sequences, false);
+	      let new_seq = new Sequence();
+	      const old_seq = sequences[0];
+
+	      if (old_seq) {
+	        new_seq.add(old_seq.last());
+	      }
+
+	      sequences = [new_seq];
+	    }
+	  }
+
+	  pattern += sequencesToPattern(sequences, true);
+	  return pattern;
+	};
+
+	/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
+
+	/**
+	 * A property getter resolving dot-notation
+	 * @param  {Object}  obj     The root object to fetch property on
+	 * @param  {String}  name    The optionally dotted property name to fetch
+	 * @return {Object}          The resolved property value
+	 */
+	const getAttr = (obj, name) => {
+	  if (!obj) return;
+	  return obj[name];
+	};
+	/**
+	 * A property getter resolving dot-notation
+	 * @param  {Object}  obj     The root object to fetch property on
+	 * @param  {String}  name    The optionally dotted property name to fetch
+	 * @return {Object}          The resolved property value
+	 */
+
+	const getAttrNesting = (obj, name) => {
+	  if (!obj) return;
+	  var part,
+	      names = name.split(".");
+
+	  while ((part = names.shift()) && (obj = obj[part]));
+
+	  return obj;
+	};
+	/**
+	 * Calculates how close of a match the
+	 * given value is against a search token.
+	 *
+	 */
+
+	const scoreValue = (value, token, weight) => {
+	  var score, pos;
+	  if (!value) return 0;
+	  value = value + '';
+	  if (token.regex == null) return 0;
+	  pos = value.search(token.regex);
+	  if (pos === -1) return 0;
+	  score = token.string.length / value.length;
+	  if (pos === 0) score += 0.5;
+	  return score * weight;
+	};
+	/**
+	 * Cast object property to an array if it exists and has a value
+	 *
+	 */
+
+	const propToArray = (obj, key) => {
+	  var value = obj[key];
+	  if (typeof value == 'function') return value;
+
+	  if (value && !Array.isArray(value)) {
+	    obj[key] = [value];
+	  }
+	};
+	/**
+	 * Iterates over arrays and hashes.
+	 *
+	 * ```
+	 * iterate(this.items, function(item, id) {
+	 *    // invoked for each item
+	 * });
+	 * ```
+	 *
+	 */
+
+	const iterate$1 = (object, callback) => {
+	  if (Array.isArray(object)) {
+	    object.forEach(callback);
+	  } else {
+	    for (var key in object) {
+	      if (object.hasOwnProperty(key)) {
+	        callback(object[key], key);
+	      }
+	    }
+	  }
+	};
+	const cmp = (a, b) => {
+	  if (typeof a === 'number' && typeof b === 'number') {
+	    return a > b ? 1 : a < b ? -1 : 0;
+	  }
+
+	  a = asciifold(a + '').toLowerCase();
+	  b = asciifold(b + '').toLowerCase();
+	  if (a > b) return 1;
+	  if (b > a) return -1;
+	  return 0;
+	};
+
+	/*! sifter.js | https://github.com/orchidjs/sifter.js | Apache License (v2) */
+
+	/**
+	 * sifter.js
+	 * Copyright (c) 2013–2020 Brian Reavis & contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 * @author Brian Reavis <brian@thirdroute.com>
+	 */
+
+	class Sifter {
+	  // []|{};
+
+	  /**
+	   * Textually searches arrays and hashes of objects
+	   * by property (or multiple properties). Designed
+	   * specifically for autocomplete.
+	   *
+	   */
+	  constructor(items, settings) {
+	    this.items = void 0;
+	    this.settings = void 0;
+	    this.items = items;
+	    this.settings = settings || {
+	      diacritics: true
+	    };
+	  }
+
+	  /**
+	   * Splits a search string into an array of individual
+	   * regexps to be used to match results.
+	   *
+	   */
+	  tokenize(query, respect_word_boundaries, weights) {
+	    if (!query || !query.length) return [];
+	    const tokens = [];
+	    const words = query.split(/\s+/);
+	    var field_regex;
+
+	    if (weights) {
+	      field_regex = new RegExp('^(' + Object.keys(weights).map(escape_regex).join('|') + ')\:(.*)$');
+	    }
+
+	    words.forEach(word => {
+	      let field_match;
+	      let field = null;
+	      let regex = null; // look for "field:query" tokens
+
+	      if (field_regex && (field_match = word.match(field_regex))) {
+	        field = field_match[1];
+	        word = field_match[2];
+	      }
+
+	      if (word.length > 0) {
+	        if (this.settings.diacritics) {
+	          regex = getPattern(word) || null;
+	        } else {
+	          regex = escape_regex(word);
+	        }
+
+	        if (regex && respect_word_boundaries) regex = "\\b" + regex;
+	      }
+
+	      tokens.push({
+	        string: word,
+	        regex: regex ? new RegExp(regex, 'iu') : null,
+	        field: field
+	      });
+	    });
+	    return tokens;
+	  }
+
+	  /**
+	   * Returns a function to be used to score individual results.
+	   *
+	   * Good matches will have a higher score than poor matches.
+	   * If an item is not a match, 0 will be returned by the function.
+	   *
+	   * @returns {T.ScoreFn}
+	   */
+	  getScoreFunction(query, options) {
+	    var search = this.prepareSearch(query, options);
+	    return this._getScoreFunction(search);
+	  }
+	  /**
+	   * @returns {T.ScoreFn}
+	   *
+	   */
+
+
+	  _getScoreFunction(search) {
+	    const tokens = search.tokens,
+	          token_count = tokens.length;
+
+	    if (!token_count) {
+	      return function () {
+	        return 0;
+	      };
+	    }
+
+	    const fields = search.options.fields,
+	          weights = search.weights,
+	          field_count = fields.length,
+	          getAttrFn = search.getAttrFn;
+
+	    if (!field_count) {
+	      return function () {
+	        return 1;
+	      };
+	    }
+	    /**
+	     * Calculates the score of an object
+	     * against the search query.
+	     *
+	     */
+
+
+	    const scoreObject = function () {
+	      if (field_count === 1) {
+	        return function (token, data) {
+	          const field = fields[0].field;
+	          return scoreValue(getAttrFn(data, field), token, weights[field] || 1);
+	        };
+	      }
+
+	      return function (token, data) {
+	        var sum = 0; // is the token specific to a field?
+
+	        if (token.field) {
+	          const value = getAttrFn(data, token.field);
+
+	          if (!token.regex && value) {
+	            sum += 1 / field_count;
+	          } else {
+	            sum += scoreValue(value, token, 1);
+	          }
+	        } else {
+	          iterate$1(weights, (weight, field) => {
+	            sum += scoreValue(getAttrFn(data, field), token, weight);
+	          });
+	        }
+
+	        return sum / field_count;
+	      };
+	    }();
+
+	    if (token_count === 1) {
+	      return function (data) {
+	        return scoreObject(tokens[0], data);
+	      };
+	    }
+
+	    if (search.options.conjunction === 'and') {
+	      return function (data) {
+	        var score,
+	            sum = 0;
+
+	        for (let token of tokens) {
+	          score = scoreObject(token, data);
+	          if (score <= 0) return 0;
+	          sum += score;
+	        }
+
+	        return sum / token_count;
+	      };
+	    } else {
+	      return function (data) {
+	        var sum = 0;
+	        iterate$1(tokens, token => {
+	          sum += scoreObject(token, data);
+	        });
+	        return sum / token_count;
+	      };
+	    }
+	  }
+
+	  /**
+	   * Returns a function that can be used to compare two
+	   * results, for sorting purposes. If no sorting should
+	   * be performed, `null` will be returned.
+	   *
+	   * @return function(a,b)
+	   */
+	  getSortFunction(query, options) {
+	    var search = this.prepareSearch(query, options);
+	    return this._getSortFunction(search);
+	  }
+
+	  _getSortFunction(search) {
+	    var implicit_score,
+	        sort_flds = [];
+	    const self = this,
+	          options = search.options,
+	          sort = !search.query && options.sort_empty ? options.sort_empty : options.sort;
+
+	    if (typeof sort == 'function') {
+	      return sort.bind(this);
+	    }
+	    /**
+	     * Fetches the specified sort field value
+	     * from a search result item.
+	     *
+	     */
+
+
+	    const get_field = function get_field(name, result) {
+	      if (name === '$score') return result.score;
+	      return search.getAttrFn(self.items[result.id], name);
+	    }; // parse options
+
+
+	    if (sort) {
+	      for (let s of sort) {
+	        if (search.query || s.field !== '$score') {
+	          sort_flds.push(s);
+	        }
+	      }
+	    } // the "$score" field is implied to be the primary
+	    // sort field, unless it's manually specified
+
+
+	    if (search.query) {
+	      implicit_score = true;
+
+	      for (let fld of sort_flds) {
+	        if (fld.field === '$score') {
+	          implicit_score = false;
+	          break;
+	        }
+	      }
+
+	      if (implicit_score) {
+	        sort_flds.unshift({
+	          field: '$score',
+	          direction: 'desc'
+	        });
+	      } // without a search.query, all items will have the same score
+
+	    } else {
+	      sort_flds = sort_flds.filter(fld => fld.field !== '$score');
+	    } // build function
+
+
+	    const sort_flds_count = sort_flds.length;
+
+	    if (!sort_flds_count) {
+	      return null;
+	    }
+
+	    return function (a, b) {
+	      var result, field;
+
+	      for (let sort_fld of sort_flds) {
+	        field = sort_fld.field;
+	        let multiplier = sort_fld.direction === 'desc' ? -1 : 1;
+	        result = multiplier * cmp(get_field(field, a), get_field(field, b));
+	        if (result) return result;
+	      }
+
+	      return 0;
+	    };
+	  }
+
+	  /**
+	   * Parses a search query and returns an object
+	   * with tokens and fields ready to be populated
+	   * with results.
+	   *
+	   */
+	  prepareSearch(query, optsUser) {
+	    const weights = {};
+	    var options = Object.assign({}, optsUser);
+	    propToArray(options, 'sort');
+	    propToArray(options, 'sort_empty'); // convert fields to new format
+
+	    if (options.fields) {
+	      propToArray(options, 'fields');
+	      const fields = [];
+	      options.fields.forEach(field => {
+	        if (typeof field == 'string') {
+	          field = {
+	            field: field,
+	            weight: 1
+	          };
+	        }
+
+	        fields.push(field);
+	        weights[field.field] = 'weight' in field ? field.weight : 1;
+	      });
+	      options.fields = fields;
+	    }
+
+	    return {
+	      options: options,
+	      query: query.toLowerCase().trim(),
+	      tokens: this.tokenize(query, options.respect_word_boundaries, weights),
+	      total: 0,
+	      items: [],
+	      weights: weights,
+	      getAttrFn: options.nesting ? getAttrNesting : getAttr
+	    };
+	  }
+
+	  /**
+	   * Searches through all items and returns a sorted array of matches.
+	   *
+	   */
+	  search(query, options) {
+	    var self = this,
+	        score,
+	        search;
+	    search = this.prepareSearch(query, options);
+	    options = search.options;
+	    query = search.query; // generate result scoring function
+
+	    const fn_score = options.score || self._getScoreFunction(search); // perform search and sort
+
+
+	    if (query.length) {
+	      iterate$1(self.items, (item, id) => {
+	        score = fn_score(item);
+
+	        if (options.filter === false || score > 0) {
+	          search.items.push({
+	            'score': score,
+	            'id': id
+	          });
+	        }
+	      });
+	    } else {
+	      iterate$1(self.items, (_, id) => {
+	        search.items.push({
+	          'score': 1,
+	          'id': id
+	        });
+	      });
+	    }
+
+	    const fn_sort = self._getSortFunction(search);
+
+	    if (fn_sort) search.items.sort(fn_sort); // apply limits
+
+	    search.total = search.items.length;
+
+	    if (typeof options.limit === 'number') {
+	      search.items = search.items.slice(0, options.limit);
+	    }
+
+	    return search;
+	  }
+
+	}
+
+	/**
+	 * Iterates over arrays and hashes.
+	 *
+	 * ```
+	 * iterate(this.items, function(item, id) {
+	 *    // invoked for each item
+	 * });
+	 * ```
+	 *
+	 */
+	const iterate = (object, callback) => {
+	  if (Array.isArray(object)) {
+	    object.forEach(callback);
+	  } else {
+	    for (var key in object) {
+	      if (object.hasOwnProperty(key)) {
+	        callback(object[key], key);
+	      }
+	    }
+	  }
+	};
+
+	/**
+	 * Return a dom element from either a dom query string, jQuery object, a dom element or html string
+	 * https://stackoverflow.com/questions/494143/creating-a-new-dom-element-from-an-html-string-using-built-in-dom-methods-or-pro/35385518#35385518
+	 *
+	 * param query should be {}
+	 */
+	const getDom = query => {
+	  if (query.jquery) {
+	    return query[0];
+	  }
+	  if (query instanceof HTMLElement) {
+	    return query;
+	  }
+	  if (isHtmlString(query)) {
+	    var tpl = document.createElement('template');
+	    tpl.innerHTML = query.trim(); // Never return a text node of whitespace as the result
+	    return tpl.content.firstChild;
+	  }
+	  return document.querySelector(query);
+	};
+	const isHtmlString = arg => {
+	  if (typeof arg === 'string' && arg.indexOf('<') > -1) {
+	    return true;
+	  }
+	  return false;
+	};
+	const escapeQuery = query => {
+	  return query.replace(/['"\\]/g, '\\$&');
+	};
+
+	/**
+	 * Dispatch an event
+	 *
+	 */
+	const triggerEvent = (dom_el, event_name) => {
+	  var event = document.createEvent('HTMLEvents');
+	  event.initEvent(event_name, true, false);
+	  dom_el.dispatchEvent(event);
+	};
+
+	/**
+	 * Apply CSS rules to a dom element
+	 *
+	 */
+	const applyCSS = (dom_el, css) => {
+	  Object.assign(dom_el.style, css);
+	};
+
+	/**
+	 * Add css classes
+	 *
+	 */
+	const addClasses = (elmts, ...classes) => {
+	  var norm_classes = classesArray(classes);
+	  elmts = castAsArray(elmts);
+	  elmts.map(el => {
+	    norm_classes.map(cls => {
+	      el.classList.add(cls);
+	    });
+	  });
+	};
+
+	/**
+	 * Remove css classes
+	 *
+	 */
+	const removeClasses = (elmts, ...classes) => {
+	  var norm_classes = classesArray(classes);
+	  elmts = castAsArray(elmts);
+	  elmts.map(el => {
+	    norm_classes.map(cls => {
+	      el.classList.remove(cls);
+	    });
+	  });
+	};
+
+	/**
+	 * Return arguments
+	 *
+	 */
+	const classesArray = args => {
+	  var classes = [];
+	  iterate(args, _classes => {
+	    if (typeof _classes === 'string') {
+	      _classes = _classes.trim().split(/[\11\12\14\15\40]/);
+	    }
+	    if (Array.isArray(_classes)) {
+	      classes = classes.concat(_classes);
+	    }
+	  });
+	  return classes.filter(Boolean);
+	};
+
+	/**
+	 * Create an array from arg if it's not already an array
+	 *
+	 */
+	const castAsArray = arg => {
+	  if (!Array.isArray(arg)) {
+	    arg = [arg];
+	  }
+	  return arg;
+	};
+
+	/**
+	 * Get the closest node to the evt.target matching the selector
+	 * Stops at wrapper
+	 *
+	 */
+	const parentMatch = (target, selector, wrapper) => {
+	  if (wrapper && !wrapper.contains(target)) {
+	    return;
+	  }
+	  while (target && target.matches) {
+	    if (target.matches(selector)) {
+	      return target;
+	    }
+	    target = target.parentNode;
+	  }
+	};
+
+	/**
+	 * Get the first or last item from an array
+	 *
+	 * > 0 - right (last)
+	 * <= 0 - left (first)
+	 *
+	 */
+	const getTail = (list, direction = 0) => {
+	  if (direction > 0) {
+	    return list[list.length - 1];
+	  }
+	  return list[0];
+	};
+
+	/**
+	 * Return true if an object is empty
+	 *
+	 */
+	const isEmptyObject = obj => {
+	  return Object.keys(obj).length === 0;
+	};
+
+	/**
+	 * Get the index of an element amongst sibling nodes of the same type
+	 *
+	 */
+	const nodeIndex = (el, amongst) => {
+	  if (!el) return -1;
+	  amongst = amongst || el.nodeName;
+	  var i = 0;
+	  while (el = el.previousElementSibling) {
+	    if (el.matches(amongst)) {
+	      i++;
+	    }
+	  }
+	  return i;
+	};
+
+	/**
+	 * Set attributes of an element
+	 *
+	 */
+	const setAttr = (el, attrs) => {
+	  iterate(attrs, (val, attr) => {
+	    if (val == null) {
+	      el.removeAttribute(attr);
+	    } else {
+	      el.setAttribute(attr, '' + val);
+	    }
+	  });
+	};
+
+	/**
+	 * Replace a node
+	 */
+	const replaceNode = (existing, replacement) => {
+	  if (existing.parentNode) existing.parentNode.replaceChild(replacement, existing);
+	};
+
+	/**
+	 * highlight v3 | MIT license | Johann Burkard <jb@eaio.com>
+	 * Highlights arbitrary terms in a node.
+	 *
+	 * - Modified by Marshal <beatgates@gmail.com> 2011-6-24 (added regex)
+	 * - Modified by Brian Reavis <brian@thirdroute.com> 2012-8-27 (cleanup)
+	 */
+
+	const highlight = (element, regex) => {
+	  if (regex === null) return;
+
+	  // convet string to regex
+	  if (typeof regex === 'string') {
+	    if (!regex.length) return;
+	    regex = new RegExp(regex, 'i');
+	  }
+
+	  // Wrap matching part of text node with highlighting <span>, e.g.
+	  // Soccer  ->  <span class="highlight">Soc</span>cer  for regex = /soc/i
+	  const highlightText = node => {
+	    var match = node.data.match(regex);
+	    if (match && node.data.length > 0) {
+	      var spannode = document.createElement('span');
+	      spannode.className = 'highlight';
+	      var middlebit = node.splitText(match.index);
+	      middlebit.splitText(match[0].length);
+	      var middleclone = middlebit.cloneNode(true);
+	      spannode.appendChild(middleclone);
+	      replaceNode(middlebit, spannode);
+	      return 1;
+	    }
+	    return 0;
+	  };
+
+	  // Recurse element node, looking for child text nodes to highlight, unless element
+	  // is childless, <script>, <style>, or already highlighted: <span class="hightlight">
+	  const highlightChildren = node => {
+	    if (node.nodeType === 1 && node.childNodes && !/(script|style)/i.test(node.tagName) && (node.className !== 'highlight' || node.tagName !== 'SPAN')) {
+	      Array.from(node.childNodes).forEach(element => {
+	        highlightRecursive(element);
+	      });
+	    }
+	  };
+	  const highlightRecursive = node => {
+	    if (node.nodeType === 3) {
+	      return highlightText(node);
+	    }
+	    highlightChildren(node);
+	    return 0;
+	  };
+	  highlightRecursive(element);
+	};
+
+	/**
+	 * removeHighlight fn copied from highlight v5 and
+	 * edited to remove with(), pass js strict mode, and use without jquery
+	 */
+	const removeHighlight = el => {
+	  var elements = el.querySelectorAll("span.highlight");
+	  Array.prototype.forEach.call(elements, function (el) {
+	    var parent = el.parentNode;
+	    parent.replaceChild(el.firstChild, el);
+	    parent.normalize();
+	  });
+	};
+
+	const KEY_A = 65;
+	const KEY_RETURN = 13;
+	const KEY_ESC = 27;
+	const KEY_LEFT = 37;
+	const KEY_UP = 38;
+	const KEY_RIGHT = 39;
+	const KEY_DOWN = 40;
+	const KEY_BACKSPACE = 8;
+	const KEY_DELETE = 46;
+	const KEY_TAB = 9;
+	const IS_MAC = typeof navigator === 'undefined' ? false : /Mac/.test(navigator.userAgent);
+	const KEY_SHORTCUT = IS_MAC ? 'metaKey' : 'ctrlKey'; // ctrl key or apple key for ma
+
+	var defaults = {
+	  options: [],
+	  optgroups: [],
+	  plugins: [],
+	  delimiter: ',',
+	  splitOn: null,
+	  // regexp or string for splitting up values from a paste command
+	  persist: true,
+	  diacritics: true,
+	  create: null,
+	  createOnBlur: false,
+	  createFilter: null,
+	  highlight: true,
+	  openOnFocus: true,
+	  shouldOpen: null,
+	  maxOptions: 50,
+	  maxItems: null,
+	  hideSelected: null,
+	  duplicates: false,
+	  addPrecedence: false,
+	  selectOnTab: false,
+	  preload: null,
+	  allowEmptyOption: false,
+	  //closeAfterSelect: false,
+	  refreshThrottle: 300,
+	  loadThrottle: 300,
+	  loadingClass: 'loading',
+	  dataAttr: null,
+	  //'data-data',
+	  optgroupField: 'optgroup',
+	  valueField: 'value',
+	  labelField: 'text',
+	  disabledField: 'disabled',
+	  optgroupLabelField: 'label',
+	  optgroupValueField: 'value',
+	  lockOptgroupOrder: false,
+	  sortField: '$order',
+	  searchField: ['text'],
+	  searchConjunction: 'and',
+	  mode: null,
+	  wrapperClass: 'ts-wrapper',
+	  controlClass: 'ts-control',
+	  dropdownClass: 'ts-dropdown',
+	  dropdownContentClass: 'ts-dropdown-content',
+	  itemClass: 'item',
+	  optionClass: 'option',
+	  dropdownParent: null,
+	  controlInput: '<input type="text" autocomplete="off" size="1" />',
+	  copyClassesToDropdown: false,
+	  placeholder: null,
+	  hidePlaceholder: null,
+	  shouldLoad: function (query) {
+	    return query.length > 0;
+	  },
+	  /*
+	  load                 : null, // function(query, callback) { ... }
+	  score                : null, // function(search) { ... }
+	  onInitialize         : null, // function() { ... }
+	  onChange             : null, // function(value) { ... }
+	  onItemAdd            : null, // function(value, $item) { ... }
+	  onItemRemove         : null, // function(value) { ... }
+	  onClear              : null, // function() { ... }
+	  onOptionAdd          : null, // function(value, data) { ... }
+	  onOptionRemove       : null, // function(value) { ... }
+	  onOptionClear        : null, // function() { ... }
+	  onOptionGroupAdd     : null, // function(id, data) { ... }
+	  onOptionGroupRemove  : null, // function(id) { ... }
+	  onOptionGroupClear   : null, // function() { ... }
+	  onDropdownOpen       : null, // function(dropdown) { ... }
+	  onDropdownClose      : null, // function(dropdown) { ... }
+	  onType               : null, // function(str) { ... }
+	  onDelete             : null, // function(values) { ... }
+	  */
+
+	  render: {
+	    /*
+	    item: null,
+	    optgroup: null,
+	    optgroup_header: null,
+	    option: null,
+	    option_create: null
+	    */
+	  }
+	};
+
+	/**
+	 * Converts a scalar to its best string representation
+	 * for hash keys and HTML attribute values.
+	 *
+	 * Transformations:
+	 *   'str'     -> 'str'
+	 *   null      -> ''
+	 *   undefined -> ''
+	 *   true      -> '1'
+	 *   false     -> '0'
+	 *   0         -> '0'
+	 *   1         -> '1'
+	 *
+	 */
+	const hash_key = value => {
+	  if (typeof value === 'undefined' || value === null) return null;
+	  return get_hash(value);
+	};
+	const get_hash = value => {
+	  if (typeof value === 'boolean') return value ? '1' : '0';
+	  return value + '';
+	};
+
+	/**
+	 * Escapes a string for use within HTML.
+	 *
+	 */
+	const escape_html = str => {
+	  return (str + '').replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+	};
+
+	/**
+	 * use setTimeout if timeout > 0 
+	 */
+	const timeout = (fn, timeout) => {
+	  if (timeout > 0) {
+	    return setTimeout(fn, timeout);
+	  }
+	  fn.call(null);
+	  return null;
+	};
+
+	/**
+	 * Debounce the user provided load function
+	 *
+	 */
+	const loadDebounce = (fn, delay) => {
+	  var timeout;
+	  return function (value, callback) {
+	    var self = this;
+	    if (timeout) {
+	      self.loading = Math.max(self.loading - 1, 0);
+	      clearTimeout(timeout);
+	    }
+	    timeout = setTimeout(function () {
+	      timeout = null;
+	      self.loadedSearches[value] = true;
+	      fn.call(self, value, callback);
+	    }, delay);
+	  };
+	};
+
+	/**
+	 * Debounce all fired events types listed in `types`
+	 * while executing the provided `fn`.
+	 *
+	 */
+	const debounce_events = (self, types, fn) => {
+	  var type;
+	  var trigger = self.trigger;
+	  var event_args = {};
+
+	  // override trigger method
+	  self.trigger = function () {
+	    var type = arguments[0];
+	    if (types.indexOf(type) !== -1) {
+	      event_args[type] = arguments;
+	    } else {
+	      return trigger.apply(self, arguments);
+	    }
+	  };
+
+	  // invoke provided function
+	  fn.apply(self, []);
+	  self.trigger = trigger;
+
+	  // trigger queued events
+	  for (type of types) {
+	    if (type in event_args) {
+	      trigger.apply(self, event_args[type]);
+	    }
+	  }
+	};
+
+	/**
+	 * Determines the current selection within a text input control.
+	 * Returns an object containing:
+	 *   - start
+	 *   - length
+	 *
+	 * Note: "selectionStart, selectionEnd ... apply only to inputs of types text, search, URL, tel and password"
+	 * 	- https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/setSelectionRange
+	 */
+	const getSelection = input => {
+	  return {
+	    start: input.selectionStart || 0,
+	    length: (input.selectionEnd || 0) - (input.selectionStart || 0)
+	  };
+	};
+
+	/**
+	 * Prevent default
+	 *
+	 */
+	const preventDefault = (evt, stop = false) => {
+	  if (evt) {
+	    evt.preventDefault();
+	    if (stop) {
+	      evt.stopPropagation();
+	    }
+	  }
+	};
+
+	/**
+	 * Add event helper
+	 *
+	 */
+	const addEvent = (target, type, callback, options) => {
+	  target.addEventListener(type, callback, options);
+	};
+
+	/**
+	 * Return true if the requested key is down
+	 * Will return false if more than one control character is pressed ( when [ctrl+shift+a] != [ctrl+a] )
+	 * The current evt may not always set ( eg calling advanceSelection() )
+	 *
+	 */
+	const isKeyDown = (key_name, evt) => {
+	  if (!evt) {
+	    return false;
+	  }
+	  if (!evt[key_name]) {
+	    return false;
+	  }
+	  var count = (evt.altKey ? 1 : 0) + (evt.ctrlKey ? 1 : 0) + (evt.shiftKey ? 1 : 0) + (evt.metaKey ? 1 : 0);
+	  if (count === 1) {
+	    return true;
+	  }
+	  return false;
+	};
+
+	/**
+	 * Get the id of an element
+	 * If the id attribute is not set, set the attribute with the given id
+	 *
+	 */
+	const getId = (el, id) => {
+	  const existing_id = el.getAttribute('id');
+	  if (existing_id) {
+	    return existing_id;
+	  }
+	  el.setAttribute('id', id);
+	  return id;
+	};
+
+	/**
+	 * Returns a string with backslashes added before characters that need to be escaped.
+	 */
+	const addSlashes = str => {
+	  return str.replace(/[\\"']/g, '\\$&');
+	};
+
+	/**
+	 *
+	 */
+	const append = (parent, node) => {
+	  if (node) parent.append(node);
+	};
+
+	function getSettings(input, settings_user) {
+	  var settings = Object.assign({}, defaults, settings_user);
+	  var attr_data = settings.dataAttr;
+	  var field_label = settings.labelField;
+	  var field_value = settings.valueField;
+	  var field_disabled = settings.disabledField;
+	  var field_optgroup = settings.optgroupField;
+	  var field_optgroup_label = settings.optgroupLabelField;
+	  var field_optgroup_value = settings.optgroupValueField;
+	  var tag_name = input.tagName.toLowerCase();
+	  var placeholder = input.getAttribute('placeholder') || input.getAttribute('data-placeholder');
+	  if (!placeholder && !settings.allowEmptyOption) {
+	    let option = input.querySelector('option[value=""]');
+	    if (option) {
+	      placeholder = option.textContent;
+	    }
+	  }
+	  var settings_element = {
+	    placeholder: placeholder,
+	    options: [],
+	    optgroups: [],
+	    items: [],
+	    maxItems: null
+	  };
+
+	  /**
+	   * Initialize from a <select> element.
+	   *
+	   */
+	  var init_select = () => {
+	    var tagName;
+	    var options = settings_element.options;
+	    var optionsMap = {};
+	    var group_count = 1;
+	    let $order = 0;
+	    var readData = el => {
+	      var data = Object.assign({}, el.dataset); // get plain object from DOMStringMap
+	      var json = attr_data && data[attr_data];
+	      if (typeof json === 'string' && json.length) {
+	        data = Object.assign(data, JSON.parse(json));
+	      }
+	      return data;
+	    };
+	    var addOption = (option, group) => {
+	      var value = hash_key(option.value);
+	      if (value == null) return;
+	      if (!value && !settings.allowEmptyOption) return;
+
+	      // if the option already exists, it's probably been
+	      // duplicated in another optgroup. in this case, push
+	      // the current group to the "optgroup" property on the
+	      // existing option so that it's rendered in both places.
+	      if (optionsMap.hasOwnProperty(value)) {
+	        if (group) {
+	          var arr = optionsMap[value][field_optgroup];
+	          if (!arr) {
+	            optionsMap[value][field_optgroup] = group;
+	          } else if (!Array.isArray(arr)) {
+	            optionsMap[value][field_optgroup] = [arr, group];
+	          } else {
+	            arr.push(group);
+	          }
+	        }
+	      } else {
+	        var option_data = readData(option);
+	        option_data[field_label] = option_data[field_label] || option.textContent;
+	        option_data[field_value] = option_data[field_value] || value;
+	        option_data[field_disabled] = option_data[field_disabled] || option.disabled;
+	        option_data[field_optgroup] = option_data[field_optgroup] || group;
+	        option_data.$option = option;
+	        option_data.$order = option_data.$order || ++$order;
+	        optionsMap[value] = option_data;
+	        options.push(option_data);
+	      }
+	      if (option.selected) {
+	        settings_element.items.push(value);
+	      }
+	    };
+	    var addGroup = optgroup => {
+	      var id, optgroup_data;
+	      optgroup_data = readData(optgroup);
+	      optgroup_data[field_optgroup_label] = optgroup_data[field_optgroup_label] || optgroup.getAttribute('label') || '';
+	      optgroup_data[field_optgroup_value] = optgroup_data[field_optgroup_value] || group_count++;
+	      optgroup_data[field_disabled] = optgroup_data[field_disabled] || optgroup.disabled;
+	      optgroup_data.$order = optgroup_data.$order || ++$order;
+	      settings_element.optgroups.push(optgroup_data);
+	      id = optgroup_data[field_optgroup_value];
+	      iterate(optgroup.children, option => {
+	        addOption(option, id);
+	      });
+	    };
+	    settings_element.maxItems = input.hasAttribute('multiple') ? null : 1;
+	    iterate(input.children, child => {
+	      tagName = child.tagName.toLowerCase();
+	      if (tagName === 'optgroup') {
+	        addGroup(child);
+	      } else if (tagName === 'option') {
+	        addOption(child);
+	      }
+	    });
+	  };
+
+	  /**
+	   * Initialize from a <input type="text"> element.
+	   *
+	   */
+	  var init_textbox = () => {
+	    const data_raw = input.getAttribute(attr_data);
+	    if (!data_raw) {
+	      var value = input.value.trim() || '';
+	      if (!settings.allowEmptyOption && !value.length) return;
+	      const values = value.split(settings.delimiter);
+	      iterate(values, value => {
+	        const option = {};
+	        option[field_label] = value;
+	        option[field_value] = value;
+	        settings_element.options.push(option);
+	      });
+	      settings_element.items = values;
+	    } else {
+	      settings_element.options = JSON.parse(data_raw);
+	      iterate(settings_element.options, opt => {
+	        settings_element.items.push(opt[field_value]);
+	      });
+	    }
+	  };
+	  if (tag_name === 'select') {
+	    init_select();
+	  } else {
+	    init_textbox();
+	  }
+	  return Object.assign({}, defaults, settings_element, settings_user);
+	}
+
+	var instance_i = 0;
+	class TomSelect extends MicroPlugin(MicroEvent) {
+	  constructor(input_arg, user_settings) {
+	    super();
+	    this.control_input = void 0;
+	    this.wrapper = void 0;
+	    this.dropdown = void 0;
+	    this.control = void 0;
+	    this.dropdown_content = void 0;
+	    this.focus_node = void 0;
+	    this.order = 0;
+	    this.settings = void 0;
+	    this.input = void 0;
+	    this.tabIndex = void 0;
+	    this.is_select_tag = void 0;
+	    this.rtl = void 0;
+	    this.inputId = void 0;
+	    this._destroy = void 0;
+	    this.sifter = void 0;
+	    this.isOpen = false;
+	    this.isDisabled = false;
+	    this.isReadOnly = false;
+	    this.isRequired = void 0;
+	    this.isInvalid = false;
+	    // @deprecated 1.8
+	    this.isValid = true;
+	    this.isLocked = false;
+	    this.isFocused = false;
+	    this.isInputHidden = false;
+	    this.isSetup = false;
+	    this.ignoreFocus = false;
+	    this.ignoreHover = false;
+	    this.hasOptions = false;
+	    this.currentResults = void 0;
+	    this.lastValue = '';
+	    this.caretPos = 0;
+	    this.loading = 0;
+	    this.loadedSearches = {};
+	    this.activeOption = null;
+	    this.activeItems = [];
+	    this.optgroups = {};
+	    this.options = {};
+	    this.userOptions = {};
+	    this.items = [];
+	    this.refreshTimeout = null;
+	    instance_i++;
+	    var dir;
+	    var input = getDom(input_arg);
+	    if (input.tomselect) {
+	      throw new Error('Tom Select already initialized on this element');
+	    }
+	    input.tomselect = this;
+
+	    // detect rtl environment
+	    var computedStyle = window.getComputedStyle && window.getComputedStyle(input, null);
+	    dir = computedStyle.getPropertyValue('direction');
+
+	    // setup default state
+	    const settings = getSettings(input, user_settings);
+	    this.settings = settings;
+	    this.input = input;
+	    this.tabIndex = input.tabIndex || 0;
+	    this.is_select_tag = input.tagName.toLowerCase() === 'select';
+	    this.rtl = /rtl/i.test(dir);
+	    this.inputId = getId(input, 'tomselect-' + instance_i);
+	    this.isRequired = input.required;
+
+	    // search system
+	    this.sifter = new Sifter(this.options, {
+	      diacritics: settings.diacritics
+	    });
+
+	    // option-dependent defaults
+	    settings.mode = settings.mode || (settings.maxItems === 1 ? 'single' : 'multi');
+	    if (typeof settings.hideSelected !== 'boolean') {
+	      settings.hideSelected = settings.mode === 'multi';
+	    }
+	    if (typeof settings.hidePlaceholder !== 'boolean') {
+	      settings.hidePlaceholder = settings.mode !== 'multi';
+	    }
+
+	    // set up createFilter callback
+	    var filter = settings.createFilter;
+	    if (typeof filter !== 'function') {
+	      if (typeof filter === 'string') {
+	        filter = new RegExp(filter);
+	      }
+	      if (filter instanceof RegExp) {
+	        settings.createFilter = input => filter.test(input);
+	      } else {
+	        settings.createFilter = value => {
+	          return this.settings.duplicates || !this.options[value];
+	        };
+	      }
+	    }
+	    this.initializePlugins(settings.plugins);
+	    this.setupCallbacks();
+	    this.setupTemplates();
+
+	    // Create all elements
+	    const wrapper = getDom('<div>');
+	    const control = getDom('<div>');
+	    const dropdown = this._render('dropdown');
+	    const dropdown_content = getDom(`<div role="listbox" tabindex="-1">`);
+	    const classes = this.input.getAttribute('class') || '';
+	    const inputMode = settings.mode;
+	    var control_input;
+	    addClasses(wrapper, settings.wrapperClass, classes, inputMode);
+	    addClasses(control, settings.controlClass);
+	    append(wrapper, control);
+	    addClasses(dropdown, settings.dropdownClass, inputMode);
+	    if (settings.copyClassesToDropdown) {
+	      addClasses(dropdown, classes);
+	    }
+	    addClasses(dropdown_content, settings.dropdownContentClass);
+	    append(dropdown, dropdown_content);
+	    getDom(settings.dropdownParent || wrapper).appendChild(dropdown);
+
+	    // default controlInput
+	    if (isHtmlString(settings.controlInput)) {
+	      control_input = getDom(settings.controlInput);
+
+	      // set attributes
+	      var attrs = ['autocorrect', 'autocapitalize', 'autocomplete', 'spellcheck'];
+	      iterate$1(attrs, attr => {
+	        if (input.getAttribute(attr)) {
+	          setAttr(control_input, {
+	            [attr]: input.getAttribute(attr)
+	          });
+	        }
+	      });
+	      control_input.tabIndex = -1;
+	      control.appendChild(control_input);
+	      this.focus_node = control_input;
+
+	      // dom element
+	    } else if (settings.controlInput) {
+	      control_input = getDom(settings.controlInput);
+	      this.focus_node = control_input;
+	    } else {
+	      control_input = getDom('<input/>');
+	      this.focus_node = control;
+	    }
+	    this.wrapper = wrapper;
+	    this.dropdown = dropdown;
+	    this.dropdown_content = dropdown_content;
+	    this.control = control;
+	    this.control_input = control_input;
+	    this.setup();
+	  }
+
+	  /**
+	   * set up event bindings.
+	   *
+	   */
+	  setup() {
+	    const self = this;
+	    const settings = self.settings;
+	    const control_input = self.control_input;
+	    const dropdown = self.dropdown;
+	    const dropdown_content = self.dropdown_content;
+	    const wrapper = self.wrapper;
+	    const control = self.control;
+	    const input = self.input;
+	    const focus_node = self.focus_node;
+	    const passive_event = {
+	      passive: true
+	    };
+	    const listboxId = self.inputId + '-ts-dropdown';
+	    setAttr(dropdown_content, {
+	      id: listboxId
+	    });
+	    setAttr(focus_node, {
+	      role: 'combobox',
+	      'aria-haspopup': 'listbox',
+	      'aria-expanded': 'false',
+	      'aria-controls': listboxId
+	    });
+	    const control_id = getId(focus_node, self.inputId + '-ts-control');
+	    const query = "label[for='" + escapeQuery(self.inputId) + "']";
+	    const label = document.querySelector(query);
+	    const label_click = self.focus.bind(self);
+	    if (label) {
+	      addEvent(label, 'click', label_click);
+	      setAttr(label, {
+	        for: control_id
+	      });
+	      const label_id = getId(label, self.inputId + '-ts-label');
+	      setAttr(focus_node, {
+	        'aria-labelledby': label_id
+	      });
+	      setAttr(dropdown_content, {
+	        'aria-labelledby': label_id
+	      });
+	    }
+	    wrapper.style.width = input.style.width;
+	    if (self.plugins.names.length) {
+	      const classes_plugins = 'plugin-' + self.plugins.names.join(' plugin-');
+	      addClasses([wrapper, dropdown], classes_plugins);
+	    }
+	    if ((settings.maxItems === null || settings.maxItems > 1) && self.is_select_tag) {
+	      setAttr(input, {
+	        multiple: 'multiple'
+	      });
+	    }
+	    if (settings.placeholder) {
+	      setAttr(control_input, {
+	        placeholder: settings.placeholder
+	      });
+	    }
+
+	    // if splitOn was not passed in, construct it from the delimiter to allow pasting universally
+	    if (!settings.splitOn && settings.delimiter) {
+	      settings.splitOn = new RegExp('\\s*' + escape_regex(settings.delimiter) + '+\\s*');
+	    }
+
+	    // debounce user defined load() if loadThrottle > 0
+	    // after initializePlugins() so plugins can create/modify user defined loaders
+	    if (settings.load && settings.loadThrottle) {
+	      settings.load = loadDebounce(settings.load, settings.loadThrottle);
+	    }
+	    addEvent(dropdown, 'mousemove', () => {
+	      self.ignoreHover = false;
+	    });
+	    addEvent(dropdown, 'mouseenter', e => {
+	      var target_match = parentMatch(e.target, '[data-selectable]', dropdown);
+	      if (target_match) self.onOptionHover(e, target_match);
+	    }, {
+	      capture: true
+	    });
+
+	    // clicking on an option should select it
+	    addEvent(dropdown, 'click', evt => {
+	      const option = parentMatch(evt.target, '[data-selectable]');
+	      if (option) {
+	        self.onOptionSelect(evt, option);
+	        preventDefault(evt, true);
+	      }
+	    });
+	    addEvent(control, 'click', evt => {
+	      var target_match = parentMatch(evt.target, '[data-ts-item]', control);
+	      if (target_match && self.onItemSelect(evt, target_match)) {
+	        preventDefault(evt, true);
+	        return;
+	      }
+
+	      // retain focus (see control_input mousedown)
+	      if (control_input.value != '') {
+	        return;
+	      }
+	      self.onClick();
+	      preventDefault(evt, true);
+	    });
+
+	    // keydown on focus_node for arrow_down/arrow_up
+	    addEvent(focus_node, 'keydown', e => self.onKeyDown(e));
+
+	    // keypress and input/keyup
+	    addEvent(control_input, 'keypress', e => self.onKeyPress(e));
+	    addEvent(control_input, 'input', e => self.onInput(e));
+	    addEvent(focus_node, 'blur', e => self.onBlur(e));
+	    addEvent(focus_node, 'focus', e => self.onFocus(e));
+	    addEvent(control_input, 'paste', e => self.onPaste(e));
+	    const doc_mousedown = evt => {
+	      // blur if target is outside of this instance
+	      // dropdown is not always inside wrapper
+	      const target = evt.composedPath()[0];
+	      if (!wrapper.contains(target) && !dropdown.contains(target)) {
+	        if (self.isFocused) {
+	          self.blur();
+	        }
+	        self.inputState();
+	        return;
+	      }
+
+	      // retain focus by preventing native handling. if the
+	      // event target is the input it should not be modified.
+	      // otherwise, text selection within the input won't work.
+	      // Fixes bug #212 which is no covered by tests
+	      if (target == control_input && self.isOpen) {
+	        evt.stopPropagation();
+
+	        // clicking anywhere in the control should not blur the control_input (which would close the dropdown)
+	      } else {
+	        preventDefault(evt, true);
+	      }
+	    };
+	    const win_scroll = () => {
+	      if (self.isOpen) {
+	        self.positionDropdown();
+	      }
+	    };
+	    addEvent(document, 'mousedown', doc_mousedown);
+	    addEvent(window, 'scroll', win_scroll, passive_event);
+	    addEvent(window, 'resize', win_scroll, passive_event);
+	    this._destroy = () => {
+	      document.removeEventListener('mousedown', doc_mousedown);
+	      window.removeEventListener('scroll', win_scroll);
+	      window.removeEventListener('resize', win_scroll);
+	      if (label) label.removeEventListener('click', label_click);
+	    };
+
+	    // store original html and tab index so that they can be
+	    // restored when the destroy() method is called.
+	    this.revertSettings = {
+	      innerHTML: input.innerHTML,
+	      tabIndex: input.tabIndex
+	    };
+	    input.tabIndex = -1;
+	    input.insertAdjacentElement('afterend', self.wrapper);
+	    self.sync(false);
+	    settings.items = [];
+	    delete settings.optgroups;
+	    delete settings.options;
+	    addEvent(input, 'invalid', () => {
+	      if (self.isValid) {
+	        self.isValid = false;
+	        self.isInvalid = true;
+	        self.refreshState();
+	      }
+	    });
+	    self.updateOriginalInput();
+	    self.refreshItems();
+	    self.close(false);
+	    self.inputState();
+	    self.isSetup = true;
+	    if (input.disabled) {
+	      self.disable();
+	    } else if (input.readOnly) {
+	      self.setReadOnly(true);
+	    } else {
+	      self.enable(); //sets tabIndex
+	    }
+
+	    self.on('change', this.onChange);
+	    addClasses(input, 'tomselected', 'ts-hidden-accessible');
+	    self.trigger('initialize');
+
+	    // preload options
+	    if (settings.preload === true) {
+	      self.preload();
+	    }
+	  }
+
+	  /**
+	   * Register options and optgroups
+	   *
+	   */
+	  setupOptions(options = [], optgroups = []) {
+	    // build options table
+	    this.addOptions(options);
+
+	    // build optgroup table
+	    iterate$1(optgroups, optgroup => {
+	      this.registerOptionGroup(optgroup);
+	    });
+	  }
+
+	  /**
+	   * Sets up default rendering functions.
+	   */
+	  setupTemplates() {
+	    var self = this;
+	    var field_label = self.settings.labelField;
+	    var field_optgroup = self.settings.optgroupLabelField;
+	    var templates = {
+	      'optgroup': data => {
+	        let optgroup = document.createElement('div');
+	        optgroup.className = 'optgroup';
+	        optgroup.appendChild(data.options);
+	        return optgroup;
+	      },
+	      'optgroup_header': (data, escape) => {
+	        return '<div class="optgroup-header">' + escape(data[field_optgroup]) + '</div>';
+	      },
+	      'option': (data, escape) => {
+	        return '<div>' + escape(data[field_label]) + '</div>';
+	      },
+	      'item': (data, escape) => {
+	        return '<div>' + escape(data[field_label]) + '</div>';
+	      },
+	      'option_create': (data, escape) => {
+	        return '<div class="create">Add <strong>' + escape(data.input) + '</strong>&hellip;</div>';
+	      },
+	      'no_results': () => {
+	        return '<div class="no-results">No results found</div>';
+	      },
+	      'loading': () => {
+	        return '<div class="spinner"></div>';
+	      },
+	      'not_loading': () => {},
+	      'dropdown': () => {
+	        return '<div></div>';
+	      }
+	    };
+	    self.settings.render = Object.assign({}, templates, self.settings.render);
+	  }
+
+	  /**
+	   * Maps fired events to callbacks provided
+	   * in the settings used when creating the control.
+	   */
+	  setupCallbacks() {
+	    var key, fn;
+	    var callbacks = {
+	      'initialize': 'onInitialize',
+	      'change': 'onChange',
+	      'item_add': 'onItemAdd',
+	      'item_remove': 'onItemRemove',
+	      'item_select': 'onItemSelect',
+	      'clear': 'onClear',
+	      'option_add': 'onOptionAdd',
+	      'option_remove': 'onOptionRemove',
+	      'option_clear': 'onOptionClear',
+	      'optgroup_add': 'onOptionGroupAdd',
+	      'optgroup_remove': 'onOptionGroupRemove',
+	      'optgroup_clear': 'onOptionGroupClear',
+	      'dropdown_open': 'onDropdownOpen',
+	      'dropdown_close': 'onDropdownClose',
+	      'type': 'onType',
+	      'load': 'onLoad',
+	      'focus': 'onFocus',
+	      'blur': 'onBlur'
+	    };
+	    for (key in callbacks) {
+	      fn = this.settings[callbacks[key]];
+	      if (fn) this.on(key, fn);
+	    }
+	  }
+
+	  /**
+	   * Sync the Tom Select instance with the original input or select
+	   *
+	   */
+	  sync(get_settings = true) {
+	    const self = this;
+	    const settings = get_settings ? getSettings(self.input, {
+	      delimiter: self.settings.delimiter
+	    }) : self.settings;
+	    self.setupOptions(settings.options, settings.optgroups);
+	    self.setValue(settings.items || [], true); // silent prevents recursion
+
+	    self.lastQuery = null; // so updated options will be displayed in dropdown
+	  }
+
+	  /**
+	   * Triggered when the main control element
+	   * has a click event.
+	   *
+	   */
+	  onClick() {
+	    var self = this;
+	    if (self.activeItems.length > 0) {
+	      self.clearActiveItems();
+	      self.focus();
+	      return;
+	    }
+	    if (self.isFocused && self.isOpen) {
+	      self.blur();
+	    } else {
+	      self.focus();
+	    }
+	  }
+
+	  /**
+	   * @deprecated v1.7
+	   *
+	   */
+	  onMouseDown() {}
+
+	  /**
+	   * Triggered when the value of the control has been changed.
+	   * This should propagate the event to the original DOM
+	   * input / select element.
+	   */
+	  onChange() {
+	    triggerEvent(this.input, 'input');
+	    triggerEvent(this.input, 'change');
+	  }
+
+	  /**
+	   * Triggered on <input> paste.
+	   *
+	   */
+	  onPaste(e) {
+	    var self = this;
+	    if (self.isInputHidden || self.isLocked) {
+	      preventDefault(e);
+	      return;
+	    }
+
+	    // If a regex or string is included, this will split the pasted
+	    // input and create Items for each separate value
+	    if (!self.settings.splitOn) {
+	      return;
+	    }
+
+	    // Wait for pasted text to be recognized in value
+	    setTimeout(() => {
+	      var pastedText = self.inputValue();
+	      if (!pastedText.match(self.settings.splitOn)) {
+	        return;
+	      }
+	      var splitInput = pastedText.trim().split(self.settings.splitOn);
+	      iterate$1(splitInput, piece => {
+	        const hash = hash_key(piece);
+	        if (hash) {
+	          if (this.options[piece]) {
+	            self.addItem(piece);
+	          } else {
+	            self.createItem(piece);
+	          }
+	        }
+	      });
+	    }, 0);
+	  }
+
+	  /**
+	   * Triggered on <input> keypress.
+	   *
+	   */
+	  onKeyPress(e) {
+	    var self = this;
+	    if (self.isLocked) {
+	      preventDefault(e);
+	      return;
+	    }
+	    var character = String.fromCharCode(e.keyCode || e.which);
+	    if (self.settings.create && self.settings.mode === 'multi' && character === self.settings.delimiter) {
+	      self.createItem();
+	      preventDefault(e);
+	      return;
+	    }
+	  }
+
+	  /**
+	   * Triggered on <input> keydown.
+	   *
+	   */
+	  onKeyDown(e) {
+	    var self = this;
+	    self.ignoreHover = true;
+	    if (self.isLocked) {
+	      if (e.keyCode !== KEY_TAB) {
+	        preventDefault(e);
+	      }
+	      return;
+	    }
+	    switch (e.keyCode) {
+	      // ctrl+A: select all
+	      case KEY_A:
+	        if (isKeyDown(KEY_SHORTCUT, e)) {
+	          if (self.control_input.value == '') {
+	            preventDefault(e);
+	            self.selectAll();
+	            return;
+	          }
+	        }
+	        break;
+
+	      // esc: close dropdown
+	      case KEY_ESC:
+	        if (self.isOpen) {
+	          preventDefault(e, true);
+	          self.close();
+	        }
+	        self.clearActiveItems();
+	        return;
+
+	      // down: open dropdown or move selection down
+	      case KEY_DOWN:
+	        if (!self.isOpen && self.hasOptions) {
+	          self.open();
+	        } else if (self.activeOption) {
+	          let next = self.getAdjacent(self.activeOption, 1);
+	          if (next) self.setActiveOption(next);
+	        }
+	        preventDefault(e);
+	        return;
+
+	      // up: move selection up
+	      case KEY_UP:
+	        if (self.activeOption) {
+	          let prev = self.getAdjacent(self.activeOption, -1);
+	          if (prev) self.setActiveOption(prev);
+	        }
+	        preventDefault(e);
+	        return;
+
+	      // return: select active option
+	      case KEY_RETURN:
+	        if (self.canSelect(self.activeOption)) {
+	          self.onOptionSelect(e, self.activeOption);
+	          preventDefault(e);
+
+	          // if the option_create=null, the dropdown might be closed
+	        } else if (self.settings.create && self.createItem()) {
+	          preventDefault(e);
+
+	          // don't submit form when searching for a value
+	        } else if (document.activeElement == self.control_input && self.isOpen) {
+	          preventDefault(e);
+	        }
+	        return;
+
+	      // left: modifiy item selection to the left
+	      case KEY_LEFT:
+	        self.advanceSelection(-1, e);
+	        return;
+
+	      // right: modifiy item selection to the right
+	      case KEY_RIGHT:
+	        self.advanceSelection(1, e);
+	        return;
+
+	      // tab: select active option and/or create item
+	      case KEY_TAB:
+	        if (self.settings.selectOnTab) {
+	          if (self.canSelect(self.activeOption)) {
+	            self.onOptionSelect(e, self.activeOption);
+
+	            // prevent default [tab] behaviour of jump to the next field
+	            // if select isFull, then the dropdown won't be open and [tab] will work normally
+	            preventDefault(e);
+	          }
+	          if (self.settings.create && self.createItem()) {
+	            preventDefault(e);
+	          }
+	        }
+	        return;
+
+	      // delete|backspace: delete items
+	      case KEY_BACKSPACE:
+	      case KEY_DELETE:
+	        self.deleteSelection(e);
+	        return;
+	    }
+
+	    // don't enter text in the control_input when active items are selected
+	    if (self.isInputHidden && !isKeyDown(KEY_SHORTCUT, e)) {
+	      preventDefault(e);
+	    }
+	  }
+
+	  /**
+	   * Triggered on <input> keyup.
+	   *
+	   */
+	  onInput(e) {
+	    if (this.isLocked) {
+	      return;
+	    }
+	    const value = this.inputValue();
+	    if (this.lastValue === value) return;
+	    this.lastValue = value;
+	    if (value == '') {
+	      this._onInput();
+	      return;
+	    }
+	    if (this.refreshTimeout) {
+	      clearTimeout(this.refreshTimeout);
+	    }
+	    this.refreshTimeout = timeout(() => {
+	      this.refreshTimeout = null;
+	      this._onInput();
+	    }, this.settings.refreshThrottle);
+	  }
+	  _onInput() {
+	    const value = this.lastValue;
+	    if (this.settings.shouldLoad.call(this, value)) {
+	      this.load(value);
+	    }
+	    this.refreshOptions();
+	    this.trigger('type', value);
+	  }
+
+	  /**
+	   * Triggered when the user rolls over
+	   * an option in the autocomplete dropdown menu.
+	   *
+	   */
+	  onOptionHover(evt, option) {
+	    if (this.ignoreHover) return;
+	    this.setActiveOption(option, false);
+	  }
+
+	  /**
+	   * Triggered on <input> focus.
+	   *
+	   */
+	  onFocus(e) {
+	    var self = this;
+	    var wasFocused = self.isFocused;
+	    if (self.isDisabled || self.isReadOnly) {
+	      self.blur();
+	      preventDefault(e);
+	      return;
+	    }
+	    if (self.ignoreFocus) return;
+	    self.isFocused = true;
+	    if (self.settings.preload === 'focus') self.preload();
+	    if (!wasFocused) self.trigger('focus');
+	    if (!self.activeItems.length) {
+	      self.inputState();
+	      self.refreshOptions(!!self.settings.openOnFocus);
+	    }
+	    self.refreshState();
+	  }
+
+	  /**
+	   * Triggered on <input> blur.
+	   *
+	   */
+	  onBlur(e) {
+	    if (document.hasFocus() === false) return;
+	    var self = this;
+	    if (!self.isFocused) return;
+	    self.isFocused = false;
+	    self.ignoreFocus = false;
+	    var deactivate = () => {
+	      self.close();
+	      self.setActiveItem();
+	      self.setCaret(self.items.length);
+	      self.trigger('blur');
+	    };
+	    if (self.settings.create && self.settings.createOnBlur) {
+	      self.createItem(null, deactivate);
+	    } else {
+	      deactivate();
+	    }
+	  }
+
+	  /**
+	   * Triggered when the user clicks on an option
+	   * in the autocomplete dropdown menu.
+	   *
+	   */
+	  onOptionSelect(evt, option) {
+	    var value,
+	      self = this;
+
+	    // should not be possible to trigger a option under a disabled optgroup
+	    if (option.parentElement && option.parentElement.matches('[data-disabled]')) {
+	      return;
+	    }
+	    if (option.classList.contains('create')) {
+	      self.createItem(null, () => {
+	        if (self.settings.closeAfterSelect) {
+	          self.close();
+	        }
+	      });
+	    } else {
+	      value = option.dataset.value;
+	      if (typeof value !== 'undefined') {
+	        self.lastQuery = null;
+	        self.addItem(value);
+	        if (self.settings.closeAfterSelect) {
+	          self.close();
+	        }
+	        if (!self.settings.hideSelected && evt.type && /click/.test(evt.type)) {
+	          self.setActiveOption(option);
+	        }
+	      }
+	    }
+	  }
+
+	  /**
+	   * Return true if the given option can be selected
+	   *
+	   */
+	  canSelect(option) {
+	    if (this.isOpen && option && this.dropdown_content.contains(option)) {
+	      return true;
+	    }
+	    return false;
+	  }
+
+	  /**
+	   * Triggered when the user clicks on an item
+	   * that has been selected.
+	   *
+	   */
+	  onItemSelect(evt, item) {
+	    var self = this;
+	    if (!self.isLocked && self.settings.mode === 'multi') {
+	      preventDefault(evt);
+	      self.setActiveItem(item, evt);
+	      return true;
+	    }
+	    return false;
+	  }
+
+	  /**
+	   * Determines whether or not to invoke
+	   * the user-provided option provider / loader
+	   *
+	   * Note, there is a subtle difference between
+	   * this.canLoad() and this.settings.shouldLoad();
+	   *
+	   *	- settings.shouldLoad() is a user-input validator.
+	   *	When false is returned, the not_loading template
+	   *	will be added to the dropdown
+	   *
+	   *	- canLoad() is lower level validator that checks
+	   * 	the Tom Select instance. There is no inherent user
+	   *	feedback when canLoad returns false
+	   *
+	   */
+	  canLoad(value) {
+	    if (!this.settings.load) return false;
+	    if (this.loadedSearches.hasOwnProperty(value)) return false;
+	    return true;
+	  }
+
+	  /**
+	   * Invokes the user-provided option provider / loader.
+	   *
+	   */
+	  load(value) {
+	    const self = this;
+	    if (!self.canLoad(value)) return;
+	    addClasses(self.wrapper, self.settings.loadingClass);
+	    self.loading++;
+	    const callback = self.loadCallback.bind(self);
+	    self.settings.load.call(self, value, callback);
+	  }
+
+	  /**
+	   * Invoked by the user-provided option provider
+	   *
+	   */
+	  loadCallback(options, optgroups) {
+	    const self = this;
+	    self.loading = Math.max(self.loading - 1, 0);
+	    self.lastQuery = null;
+	    self.clearActiveOption(); // when new results load, focus should be on first option
+	    self.setupOptions(options, optgroups);
+	    self.refreshOptions(self.isFocused && !self.isInputHidden);
+	    if (!self.loading) {
+	      removeClasses(self.wrapper, self.settings.loadingClass);
+	    }
+	    self.trigger('load', options, optgroups);
+	  }
+	  preload() {
+	    var classList = this.wrapper.classList;
+	    if (classList.contains('preloaded')) return;
+	    classList.add('preloaded');
+	    this.load('');
+	  }
+
+	  /**
+	   * Sets the input field of the control to the specified value.
+	   *
+	   */
+	  setTextboxValue(value = '') {
+	    var input = this.control_input;
+	    var changed = input.value !== value;
+	    if (changed) {
+	      input.value = value;
+	      triggerEvent(input, 'update');
+	      this.lastValue = value;
+	    }
+	  }
+
+	  /**
+	   * Returns the value of the control. If multiple items
+	   * can be selected (e.g. <select multiple>), this returns
+	   * an array. If only one item can be selected, this
+	   * returns a string.
+	   *
+	   */
+	  getValue() {
+	    if (this.is_select_tag && this.input.hasAttribute('multiple')) {
+	      return this.items;
+	    }
+	    return this.items.join(this.settings.delimiter);
+	  }
+
+	  /**
+	   * Resets the selected items to the given value.
+	   *
+	   */
+	  setValue(value, silent) {
+	    var events = silent ? [] : ['change'];
+	    debounce_events(this, events, () => {
+	      this.clear(silent);
+	      this.addItems(value, silent);
+	    });
+	  }
+
+	  /**
+	   * Resets the number of max items to the given value
+	   *
+	   */
+	  setMaxItems(value) {
+	    if (value === 0) value = null; //reset to unlimited items.
+	    this.settings.maxItems = value;
+	    this.refreshState();
+	  }
+
+	  /**
+	   * Sets the selected item.
+	   *
+	   */
+	  setActiveItem(item, e) {
+	    var self = this;
+	    var eventName;
+	    var i, begin, end, swap;
+	    var last;
+	    if (self.settings.mode === 'single') return;
+
+	    // clear the active selection
+	    if (!item) {
+	      self.clearActiveItems();
+	      if (self.isFocused) {
+	        self.inputState();
+	      }
+	      return;
+	    }
+
+	    // modify selection
+	    eventName = e && e.type.toLowerCase();
+	    if (eventName === 'click' && isKeyDown('shiftKey', e) && self.activeItems.length) {
+	      last = self.getLastActive();
+	      begin = Array.prototype.indexOf.call(self.control.children, last);
+	      end = Array.prototype.indexOf.call(self.control.children, item);
+	      if (begin > end) {
+	        swap = begin;
+	        begin = end;
+	        end = swap;
+	      }
+	      for (i = begin; i <= end; i++) {
+	        item = self.control.children[i];
+	        if (self.activeItems.indexOf(item) === -1) {
+	          self.setActiveItemClass(item);
+	        }
+	      }
+	      preventDefault(e);
+	    } else if (eventName === 'click' && isKeyDown(KEY_SHORTCUT, e) || eventName === 'keydown' && isKeyDown('shiftKey', e)) {
+	      if (item.classList.contains('active')) {
+	        self.removeActiveItem(item);
+	      } else {
+	        self.setActiveItemClass(item);
+	      }
+	    } else {
+	      self.clearActiveItems();
+	      self.setActiveItemClass(item);
+	    }
+
+	    // ensure control has focus
+	    self.inputState();
+	    if (!self.isFocused) {
+	      self.focus();
+	    }
+	  }
+
+	  /**
+	   * Set the active and last-active classes
+	   *
+	   */
+	  setActiveItemClass(item) {
+	    const self = this;
+	    const last_active = self.control.querySelector('.last-active');
+	    if (last_active) removeClasses(last_active, 'last-active');
+	    addClasses(item, 'active last-active');
+	    self.trigger('item_select', item);
+	    if (self.activeItems.indexOf(item) == -1) {
+	      self.activeItems.push(item);
+	    }
+	  }
+
+	  /**
+	   * Remove active item
+	   *
+	   */
+	  removeActiveItem(item) {
+	    var idx = this.activeItems.indexOf(item);
+	    this.activeItems.splice(idx, 1);
+	    removeClasses(item, 'active');
+	  }
+
+	  /**
+	   * Clears all the active items
+	   *
+	   */
+	  clearActiveItems() {
+	    removeClasses(this.activeItems, 'active');
+	    this.activeItems = [];
+	  }
+
+	  /**
+	   * Sets the selected item in the dropdown menu
+	   * of available options.
+	   *
+	   */
+	  setActiveOption(option, scroll = true) {
+	    if (option === this.activeOption) {
+	      return;
+	    }
+	    this.clearActiveOption();
+	    if (!option) return;
+	    this.activeOption = option;
+	    setAttr(this.focus_node, {
+	      'aria-activedescendant': option.getAttribute('id')
+	    });
+	    setAttr(option, {
+	      'aria-selected': 'true'
+	    });
+	    addClasses(option, 'active');
+	    if (scroll) this.scrollToOption(option);
+	  }
+
+	  /**
+	   * Sets the dropdown_content scrollTop to display the option
+	   *
+	   */
+	  scrollToOption(option, behavior) {
+	    if (!option) return;
+	    const content = this.dropdown_content;
+	    const height_menu = content.clientHeight;
+	    const scrollTop = content.scrollTop || 0;
+	    const height_item = option.offsetHeight;
+	    const y = option.getBoundingClientRect().top - content.getBoundingClientRect().top + scrollTop;
+	    if (y + height_item > height_menu + scrollTop) {
+	      this.scroll(y - height_menu + height_item, behavior);
+	    } else if (y < scrollTop) {
+	      this.scroll(y, behavior);
+	    }
+	  }
+
+	  /**
+	   * Scroll the dropdown to the given position
+	   *
+	   */
+	  scroll(scrollTop, behavior) {
+	    const content = this.dropdown_content;
+	    if (behavior) {
+	      content.style.scrollBehavior = behavior;
+	    }
+	    content.scrollTop = scrollTop;
+	    content.style.scrollBehavior = '';
+	  }
+
+	  /**
+	   * Clears the active option
+	   *
+	   */
+	  clearActiveOption() {
+	    if (this.activeOption) {
+	      removeClasses(this.activeOption, 'active');
+	      setAttr(this.activeOption, {
+	        'aria-selected': null
+	      });
+	    }
+	    this.activeOption = null;
+	    setAttr(this.focus_node, {
+	      'aria-activedescendant': null
+	    });
+	  }
+
+	  /**
+	   * Selects all items (CTRL + A).
+	   */
+	  selectAll() {
+	    const self = this;
+	    if (self.settings.mode === 'single') return;
+	    const activeItems = self.controlChildren();
+	    if (!activeItems.length) return;
+	    self.inputState();
+	    self.close();
+	    self.activeItems = activeItems;
+	    iterate$1(activeItems, item => {
+	      self.setActiveItemClass(item);
+	    });
+	  }
+
+	  /**
+	   * Determines if the control_input should be in a hidden or visible state
+	   *
+	   */
+	  inputState() {
+	    var self = this;
+	    if (!self.control.contains(self.control_input)) return;
+	    setAttr(self.control_input, {
+	      placeholder: self.settings.placeholder
+	    });
+	    if (self.activeItems.length > 0 || !self.isFocused && self.settings.hidePlaceholder && self.items.length > 0) {
+	      self.setTextboxValue();
+	      self.isInputHidden = true;
+	    } else {
+	      if (self.settings.hidePlaceholder && self.items.length > 0) {
+	        setAttr(self.control_input, {
+	          placeholder: ''
+	        });
+	      }
+	      self.isInputHidden = false;
+	    }
+	    self.wrapper.classList.toggle('input-hidden', self.isInputHidden);
+	  }
+
+	  /**
+	   * Get the input value
+	   */
+	  inputValue() {
+	    return this.control_input.value.trim();
+	  }
+
+	  /**
+	   * Gives the control focus.
+	   */
+	  focus() {
+	    var self = this;
+	    if (self.isDisabled || self.isReadOnly) return;
+	    self.ignoreFocus = true;
+	    if (self.control_input.offsetWidth) {
+	      self.control_input.focus();
+	    } else {
+	      self.focus_node.focus();
+	    }
+	    setTimeout(() => {
+	      self.ignoreFocus = false;
+	      self.onFocus();
+	    }, 0);
+	  }
+
+	  /**
+	   * Forces the control out of focus.
+	   *
+	   */
+	  blur() {
+	    this.focus_node.blur();
+	    this.onBlur();
+	  }
+
+	  /**
+	   * Returns a function that scores an object
+	   * to show how good of a match it is to the
+	   * provided query.
+	   *
+	   * @return {function}
+	   */
+	  getScoreFunction(query) {
+	    return this.sifter.getScoreFunction(query, this.getSearchOptions());
+	  }
+
+	  /**
+	   * Returns search options for sifter (the system
+	   * for scoring and sorting results).
+	   *
+	   * @see https://github.com/orchidjs/sifter.js
+	   * @return {object}
+	   */
+	  getSearchOptions() {
+	    var settings = this.settings;
+	    var sort = settings.sortField;
+	    if (typeof settings.sortField === 'string') {
+	      sort = [{
+	        field: settings.sortField
+	      }];
+	    }
+	    return {
+	      fields: settings.searchField,
+	      conjunction: settings.searchConjunction,
+	      sort: sort,
+	      nesting: settings.nesting
+	    };
+	  }
+
+	  /**
+	   * Searches through available options and returns
+	   * a sorted array of matches.
+	   *
+	   */
+	  search(query) {
+	    var result, calculateScore;
+	    var self = this;
+	    var options = this.getSearchOptions();
+
+	    // validate user-provided result scoring function
+	    if (self.settings.score) {
+	      calculateScore = self.settings.score.call(self, query);
+	      if (typeof calculateScore !== 'function') {
+	        throw new Error('Tom Select "score" setting must be a function that returns a function');
+	      }
+	    }
+
+	    // perform search
+	    if (query !== self.lastQuery) {
+	      self.lastQuery = query;
+	      result = self.sifter.search(query, Object.assign(options, {
+	        score: calculateScore
+	      }));
+	      self.currentResults = result;
+	    } else {
+	      result = Object.assign({}, self.currentResults);
+	    }
+
+	    // filter out selected items
+	    if (self.settings.hideSelected) {
+	      result.items = result.items.filter(item => {
+	        let hashed = hash_key(item.id);
+	        return !(hashed && self.items.indexOf(hashed) !== -1);
+	      });
+	    }
+	    return result;
+	  }
+
+	  /**
+	   * Refreshes the list of available options shown
+	   * in the autocomplete dropdown menu.
+	   *
+	   */
+	  refreshOptions(triggerDropdown = true) {
+	    var i, j, k, n, optgroup, optgroups, html, has_create_option, active_group;
+	    var create;
+	    const groups = {};
+	    const groups_order = [];
+	    var self = this;
+	    var query = self.inputValue();
+	    const same_query = query === self.lastQuery || query == '' && self.lastQuery == null;
+	    var results = self.search(query);
+	    var active_option = null;
+	    var show_dropdown = self.settings.shouldOpen || false;
+	    var dropdown_content = self.dropdown_content;
+	    if (same_query) {
+	      active_option = self.activeOption;
+	      if (active_option) {
+	        active_group = active_option.closest('[data-group]');
+	      }
+	    }
+
+	    // build markup
+	    n = results.items.length;
+	    if (typeof self.settings.maxOptions === 'number') {
+	      n = Math.min(n, self.settings.maxOptions);
+	    }
+	    if (n > 0) {
+	      show_dropdown = true;
+	    }
+
+	    // get fragment for group and the position of the group in group_order
+	    const getGroupFragment = (optgroup, order) => {
+	      let group_order_i = groups[optgroup];
+	      if (group_order_i !== undefined) {
+	        let order_group = groups_order[group_order_i];
+	        if (order_group !== undefined) {
+	          return [group_order_i, order_group.fragment];
+	        }
+	      }
+	      let group_fragment = document.createDocumentFragment();
+	      group_order_i = groups_order.length;
+	      groups_order.push({
+	        fragment: group_fragment,
+	        order,
+	        optgroup
+	      });
+	      return [group_order_i, group_fragment];
+	    };
+
+	    // render and group available options individually
+	    for (i = 0; i < n; i++) {
+	      // get option dom element
+	      let item = results.items[i];
+	      if (!item) continue;
+	      let opt_value = item.id;
+	      let option = self.options[opt_value];
+	      if (option === undefined) continue;
+	      let opt_hash = get_hash(opt_value);
+	      let option_el = self.getOption(opt_hash, true);
+
+	      // toggle 'selected' class
+	      if (!self.settings.hideSelected) {
+	        option_el.classList.toggle('selected', self.items.includes(opt_hash));
+	      }
+	      optgroup = option[self.settings.optgroupField] || '';
+	      optgroups = Array.isArray(optgroup) ? optgroup : [optgroup];
+	      for (j = 0, k = optgroups && optgroups.length; j < k; j++) {
+	        optgroup = optgroups[j];
+	        let order = option.$order;
+	        let self_optgroup = self.optgroups[optgroup];
+	        if (self_optgroup === undefined) {
+	          optgroup = '';
+	        } else {
+	          order = self_optgroup.$order;
+	        }
+	        const [group_order_i, group_fragment] = getGroupFragment(optgroup, order);
+
+	        // nodes can only have one parent, so if the option is in mutple groups, we need a clone
+	        if (j > 0) {
+	          option_el = option_el.cloneNode(true);
+	          setAttr(option_el, {
+	            id: option.$id + '-clone-' + j,
+	            'aria-selected': null
+	          });
+	          option_el.classList.add('ts-cloned');
+	          removeClasses(option_el, 'active');
+
+	          // make sure we keep the activeOption in the same group
+	          if (self.activeOption && self.activeOption.dataset.value == opt_value) {
+	            if (active_group && active_group.dataset.group === optgroup.toString()) {
+	              active_option = option_el;
+	            }
+	          }
+	        }
+	        group_fragment.appendChild(option_el);
+	        if (optgroup != '') {
+	          groups[optgroup] = group_order_i;
+	        }
+	      }
+	    }
+
+	    // sort optgroups
+	    if (self.settings.lockOptgroupOrder) {
+	      groups_order.sort((a, b) => {
+	        return a.order - b.order;
+	      });
+	    }
+
+	    // render optgroup headers & join groups
+	    html = document.createDocumentFragment();
+	    iterate$1(groups_order, group_order => {
+	      let group_fragment = group_order.fragment;
+	      let optgroup = group_order.optgroup;
+	      if (!group_fragment || !group_fragment.children.length) return;
+	      let group_heading = self.optgroups[optgroup];
+	      if (group_heading !== undefined) {
+	        let group_options = document.createDocumentFragment();
+	        let header = self.render('optgroup_header', group_heading);
+	        append(group_options, header);
+	        append(group_options, group_fragment);
+	        let group_html = self.render('optgroup', {
+	          group: group_heading,
+	          options: group_options
+	        });
+	        append(html, group_html);
+	      } else {
+	        append(html, group_fragment);
+	      }
+	    });
+	    dropdown_content.innerHTML = '';
+	    append(dropdown_content, html);
+
+	    // highlight matching terms inline
+	    if (self.settings.highlight) {
+	      removeHighlight(dropdown_content);
+	      if (results.query.length && results.tokens.length) {
+	        iterate$1(results.tokens, tok => {
+	          highlight(dropdown_content, tok.regex);
+	        });
+	      }
+	    }
+
+	    // helper method for adding templates to dropdown
+	    var add_template = template => {
+	      let content = self.render(template, {
+	        input: query
+	      });
+	      if (content) {
+	        show_dropdown = true;
+	        dropdown_content.insertBefore(content, dropdown_content.firstChild);
+	      }
+	      return content;
+	    };
+
+	    // add loading message
+	    if (self.loading) {
+	      add_template('loading');
+
+	      // invalid query
+	    } else if (!self.settings.shouldLoad.call(self, query)) {
+	      add_template('not_loading');
+
+	      // add no_results message
+	    } else if (results.items.length === 0) {
+	      add_template('no_results');
+	    }
+
+	    // add create option
+	    has_create_option = self.canCreate(query);
+	    if (has_create_option) {
+	      create = add_template('option_create');
+	    }
+
+	    // activate
+	    self.hasOptions = results.items.length > 0 || has_create_option;
+	    if (show_dropdown) {
+	      if (results.items.length > 0) {
+	        if (!active_option && self.settings.mode === 'single' && self.items[0] != undefined) {
+	          active_option = self.getOption(self.items[0]);
+	        }
+	        if (!dropdown_content.contains(active_option)) {
+	          let active_index = 0;
+	          if (create && !self.settings.addPrecedence) {
+	            active_index = 1;
+	          }
+	          active_option = self.selectable()[active_index];
+	        }
+	      } else if (create) {
+	        active_option = create;
+	      }
+	      if (triggerDropdown && !self.isOpen) {
+	        self.open();
+	        self.scrollToOption(active_option, 'auto');
+	      }
+	      self.setActiveOption(active_option);
+	    } else {
+	      self.clearActiveOption();
+	      if (triggerDropdown && self.isOpen) {
+	        self.close(false); // if create_option=null, we want the dropdown to close but not reset the textbox value
+	      }
+	    }
+	  }
+
+	  /**
+	   * Return list of selectable options
+	   *
+	   */
+	  selectable() {
+	    return this.dropdown_content.querySelectorAll('[data-selectable]');
+	  }
+
+	  /**
+	   * Adds an available option. If it already exists,
+	   * nothing will happen. Note: this does not refresh
+	   * the options list dropdown (use `refreshOptions`
+	   * for that).
+	   *
+	   * Usage:
+	   *
+	   *   this.addOption(data)
+	   *
+	   */
+	  addOption(data, user_created = false) {
+	    const self = this;
+
+	    // @deprecated 1.7.7
+	    // use addOptions( array, user_created ) for adding multiple options
+	    if (Array.isArray(data)) {
+	      self.addOptions(data, user_created);
+	      return false;
+	    }
+	    const key = hash_key(data[self.settings.valueField]);
+	    if (key === null || self.options.hasOwnProperty(key)) {
+	      return false;
+	    }
+	    data.$order = data.$order || ++self.order;
+	    data.$id = self.inputId + '-opt-' + data.$order;
+	    self.options[key] = data;
+	    self.lastQuery = null;
+	    if (user_created) {
+	      self.userOptions[key] = user_created;
+	      self.trigger('option_add', key, data);
+	    }
+	    return key;
+	  }
+
+	  /**
+	   * Add multiple options
+	   *
+	   */
+	  addOptions(data, user_created = false) {
+	    iterate$1(data, dat => {
+	      this.addOption(dat, user_created);
+	    });
+	  }
+
+	  /**
+	   * @deprecated 1.7.7
+	   */
+	  registerOption(data) {
+	    return this.addOption(data);
+	  }
+
+	  /**
+	   * Registers an option group to the pool of option groups.
+	   *
+	   * @return {boolean|string}
+	   */
+	  registerOptionGroup(data) {
+	    var key = hash_key(data[this.settings.optgroupValueField]);
+	    if (key === null) return false;
+	    data.$order = data.$order || ++this.order;
+	    this.optgroups[key] = data;
+	    return key;
+	  }
+
+	  /**
+	   * Registers a new optgroup for options
+	   * to be bucketed into.
+	   *
+	   */
+	  addOptionGroup(id, data) {
+	    var hashed_id;
+	    data[this.settings.optgroupValueField] = id;
+	    if (hashed_id = this.registerOptionGroup(data)) {
+	      this.trigger('optgroup_add', hashed_id, data);
+	    }
+	  }
+
+	  /**
+	   * Removes an existing option group.
+	   *
+	   */
+	  removeOptionGroup(id) {
+	    if (this.optgroups.hasOwnProperty(id)) {
+	      delete this.optgroups[id];
+	      this.clearCache();
+	      this.trigger('optgroup_remove', id);
+	    }
+	  }
+
+	  /**
+	   * Clears all existing option groups.
+	   */
+	  clearOptionGroups() {
+	    this.optgroups = {};
+	    this.clearCache();
+	    this.trigger('optgroup_clear');
+	  }
+
+	  /**
+	   * Updates an option available for selection. If
+	   * it is visible in the selected items or options
+	   * dropdown, it will be re-rendered automatically.
+	   *
+	   */
+	  updateOption(value, data) {
+	    const self = this;
+	    var item_new;
+	    var index_item;
+	    const value_old = hash_key(value);
+	    const value_new = hash_key(data[self.settings.valueField]);
+
+	    // sanity checks
+	    if (value_old === null) return;
+	    const data_old = self.options[value_old];
+	    if (data_old == undefined) return;
+	    if (typeof value_new !== 'string') throw new Error('Value must be set in option data');
+	    const option = self.getOption(value_old);
+	    const item = self.getItem(value_old);
+	    data.$order = data.$order || data_old.$order;
+	    delete self.options[value_old];
+
+	    // invalidate render cache
+	    // don't remove existing node yet, we'll remove it after replacing it
+	    self.uncacheValue(value_new);
+	    self.options[value_new] = data;
+
+	    // update the option if it's in the dropdown
+	    if (option) {
+	      if (self.dropdown_content.contains(option)) {
+	        const option_new = self._render('option', data);
+	        replaceNode(option, option_new);
+	        if (self.activeOption === option) {
+	          self.setActiveOption(option_new);
+	        }
+	      }
+	      option.remove();
+	    }
+
+	    // update the item if we have one
+	    if (item) {
+	      index_item = self.items.indexOf(value_old);
+	      if (index_item !== -1) {
+	        self.items.splice(index_item, 1, value_new);
+	      }
+	      item_new = self._render('item', data);
+	      if (item.classList.contains('active')) addClasses(item_new, 'active');
+	      replaceNode(item, item_new);
+	    }
+
+	    // invalidate last query because we might have updated the sortField
+	    self.lastQuery = null;
+	  }
+
+	  /**
+	   * Removes a single option.
+	   *
+	   */
+	  removeOption(value, silent) {
+	    const self = this;
+	    value = get_hash(value);
+	    self.uncacheValue(value);
+	    delete self.userOptions[value];
+	    delete self.options[value];
+	    self.lastQuery = null;
+	    self.trigger('option_remove', value);
+	    self.removeItem(value, silent);
+	  }
+
+	  /**
+	   * Clears all options.
+	   */
+	  clearOptions(filter) {
+	    const boundFilter = (filter || this.clearFilter).bind(this);
+	    this.loadedSearches = {};
+	    this.userOptions = {};
+	    this.clearCache();
+	    const selected = {};
+	    iterate$1(this.options, (option, key) => {
+	      if (boundFilter(option, key)) {
+	        selected[key] = option;
+	      }
+	    });
+	    this.options = this.sifter.items = selected;
+	    this.lastQuery = null;
+	    this.trigger('option_clear');
+	  }
+
+	  /**
+	   * Used by clearOptions() to decide whether or not an option should be removed
+	   * Return true to keep an option, false to remove
+	   *
+	   */
+	  clearFilter(option, value) {
+	    if (this.items.indexOf(value) >= 0) {
+	      return true;
+	    }
+	    return false;
+	  }
+
+	  /**
+	   * Returns the dom element of the option
+	   * matching the given value.
+	   *
+	   */
+	  getOption(value, create = false) {
+	    const hashed = hash_key(value);
+	    if (hashed === null) return null;
+	    const option = this.options[hashed];
+	    if (option != undefined) {
+	      if (option.$div) {
+	        return option.$div;
+	      }
+	      if (create) {
+	        return this._render('option', option);
+	      }
+	    }
+	    return null;
+	  }
+
+	  /**
+	   * Returns the dom element of the next or previous dom element of the same type
+	   * Note: adjacent options may not be adjacent DOM elements (optgroups)
+	   *
+	   */
+	  getAdjacent(option, direction, type = 'option') {
+	    var self = this,
+	      all;
+	    if (!option) {
+	      return null;
+	    }
+	    if (type == 'item') {
+	      all = self.controlChildren();
+	    } else {
+	      all = self.dropdown_content.querySelectorAll('[data-selectable]');
+	    }
+	    for (let i = 0; i < all.length; i++) {
+	      if (all[i] != option) {
+	        continue;
+	      }
+	      if (direction > 0) {
+	        return all[i + 1];
+	      }
+	      return all[i - 1];
+	    }
+	    return null;
+	  }
+
+	  /**
+	   * Returns the dom element of the item
+	   * matching the given value.
+	   *
+	   */
+	  getItem(item) {
+	    if (typeof item == 'object') {
+	      return item;
+	    }
+	    var value = hash_key(item);
+	    return value !== null ? this.control.querySelector(`[data-value="${addSlashes(value)}"]`) : null;
+	  }
+
+	  /**
+	   * "Selects" multiple items at once. Adds them to the list
+	   * at the current caret position.
+	   *
+	   */
+	  addItems(values, silent) {
+	    var self = this;
+	    var items = Array.isArray(values) ? values : [values];
+	    items = items.filter(x => self.items.indexOf(x) === -1);
+	    const last_item = items[items.length - 1];
+	    items.forEach(item => {
+	      self.isPending = item !== last_item;
+	      self.addItem(item, silent);
+	    });
+	  }
+
+	  /**
+	   * "Selects" an item. Adds it to the list
+	   * at the current caret position.
+	   *
+	   */
+	  addItem(value, silent) {
+	    var events = silent ? [] : ['change', 'dropdown_close'];
+	    debounce_events(this, events, () => {
+	      var item, wasFull;
+	      const self = this;
+	      const inputMode = self.settings.mode;
+	      const hashed = hash_key(value);
+	      if (hashed && self.items.indexOf(hashed) !== -1) {
+	        if (inputMode === 'single') {
+	          self.close();
+	        }
+	        if (inputMode === 'single' || !self.settings.duplicates) {
+	          return;
+	        }
+	      }
+	      if (hashed === null || !self.options.hasOwnProperty(hashed)) return;
+	      if (inputMode === 'single') self.clear(silent);
+	      if (inputMode === 'multi' && self.isFull()) return;
+	      item = self._render('item', self.options[hashed]);
+	      if (self.control.contains(item)) {
+	        // duplicates
+	        item = item.cloneNode(true);
+	      }
+	      wasFull = self.isFull();
+	      self.items.splice(self.caretPos, 0, hashed);
+	      self.insertAtCaret(item);
+	      if (self.isSetup) {
+	        // update menu / remove the option (if this is not one item being added as part of series)
+	        if (!self.isPending && self.settings.hideSelected) {
+	          let option = self.getOption(hashed);
+	          let next = self.getAdjacent(option, 1);
+	          if (next) {
+	            self.setActiveOption(next);
+	          }
+	        }
+
+	        // refreshOptions after setActiveOption(),
+	        // otherwise setActiveOption() will be called by refreshOptions() with the wrong value
+	        if (!self.isPending && !self.settings.closeAfterSelect) {
+	          self.refreshOptions(self.isFocused && inputMode !== 'single');
+	        }
+
+	        // hide the menu if the maximum number of items have been selected or no options are left
+	        if (self.settings.closeAfterSelect != false && self.isFull()) {
+	          self.close();
+	        } else if (!self.isPending) {
+	          self.positionDropdown();
+	        }
+	        self.trigger('item_add', hashed, item);
+	        if (!self.isPending) {
+	          self.updateOriginalInput({
+	            silent: silent
+	          });
+	        }
+	      }
+	      if (!self.isPending || !wasFull && self.isFull()) {
+	        self.inputState();
+	        self.refreshState();
+	      }
+	    });
+	  }
+
+	  /**
+	   * Removes the selected item matching
+	   * the provided value.
+	   *
+	   */
+	  removeItem(item = null, silent) {
+	    const self = this;
+	    item = self.getItem(item);
+	    if (!item) return;
+	    var i, idx;
+	    const value = item.dataset.value;
+	    i = nodeIndex(item);
+	    item.remove();
+	    if (item.classList.contains('active')) {
+	      idx = self.activeItems.indexOf(item);
+	      self.activeItems.splice(idx, 1);
+	      removeClasses(item, 'active');
+	    }
+	    self.items.splice(i, 1);
+	    self.lastQuery = null;
+	    if (!self.settings.persist && self.userOptions.hasOwnProperty(value)) {
+	      self.removeOption(value, silent);
+	    }
+	    if (i < self.caretPos) {
+	      self.setCaret(self.caretPos - 1);
+	    }
+	    self.updateOriginalInput({
+	      silent: silent
+	    });
+	    self.refreshState();
+	    self.positionDropdown();
+	    self.trigger('item_remove', value, item);
+	  }
+
+	  /**
+	   * Invokes the `create` method provided in the
+	   * TomSelect options that should provide the data
+	   * for the new item, given the user input.
+	   *
+	   * Once this completes, it will be added
+	   * to the item list.
+	   *
+	   */
+	  createItem(input = null, callback = () => {}) {
+	    // triggerDropdown parameter @deprecated 2.1.1
+	    if (arguments.length === 3) {
+	      callback = arguments[2];
+	    }
+	    if (typeof callback != 'function') {
+	      callback = () => {};
+	    }
+	    var self = this;
+	    var caret = self.caretPos;
+	    var output;
+	    input = input || self.inputValue();
+	    if (!self.canCreate(input)) {
+	      callback();
+	      return false;
+	    }
+	    self.lock();
+	    var created = false;
+	    var create = data => {
+	      self.unlock();
+	      if (!data || typeof data !== 'object') return callback();
+	      var value = hash_key(data[self.settings.valueField]);
+	      if (typeof value !== 'string') {
+	        return callback();
+	      }
+	      self.setTextboxValue();
+	      self.addOption(data, true);
+	      self.setCaret(caret);
+	      self.addItem(value);
+	      callback(data);
+	      created = true;
+	    };
+	    if (typeof self.settings.create === 'function') {
+	      output = self.settings.create.call(this, input, create);
+	    } else {
+	      output = {
+	        [self.settings.labelField]: input,
+	        [self.settings.valueField]: input
+	      };
+	    }
+	    if (!created) {
+	      create(output);
+	    }
+	    return true;
+	  }
+
+	  /**
+	   * Re-renders the selected item lists.
+	   */
+	  refreshItems() {
+	    var self = this;
+	    self.lastQuery = null;
+	    if (self.isSetup) {
+	      self.addItems(self.items);
+	    }
+	    self.updateOriginalInput();
+	    self.refreshState();
+	  }
+
+	  /**
+	   * Updates all state-dependent attributes
+	   * and CSS classes.
+	   */
+	  refreshState() {
+	    const self = this;
+	    self.refreshValidityState();
+	    const isFull = self.isFull();
+	    const isLocked = self.isLocked;
+	    self.wrapper.classList.toggle('rtl', self.rtl);
+	    const wrap_classList = self.wrapper.classList;
+	    wrap_classList.toggle('focus', self.isFocused);
+	    wrap_classList.toggle('disabled', self.isDisabled);
+	    wrap_classList.toggle('readonly', self.isReadOnly);
+	    wrap_classList.toggle('required', self.isRequired);
+	    wrap_classList.toggle('invalid', !self.isValid);
+	    wrap_classList.toggle('locked', isLocked);
+	    wrap_classList.toggle('full', isFull);
+	    wrap_classList.toggle('input-active', self.isFocused && !self.isInputHidden);
+	    wrap_classList.toggle('dropdown-active', self.isOpen);
+	    wrap_classList.toggle('has-options', isEmptyObject(self.options));
+	    wrap_classList.toggle('has-items', self.items.length > 0);
+	  }
+
+	  /**
+	   * Update the `required` attribute of both input and control input.
+	   *
+	   * The `required` property needs to be activated on the control input
+	   * for the error to be displayed at the right place. `required` also
+	   * needs to be temporarily deactivated on the input since the input is
+	   * hidden and can't show errors.
+	   */
+	  refreshValidityState() {
+	    var self = this;
+	    if (!self.input.validity) {
+	      return;
+	    }
+	    self.isValid = self.input.validity.valid;
+	    self.isInvalid = !self.isValid;
+	  }
+
+	  /**
+	   * Determines whether or not more items can be added
+	   * to the control without exceeding the user-defined maximum.
+	   *
+	   * @returns {boolean}
+	   */
+	  isFull() {
+	    return this.settings.maxItems !== null && this.items.length >= this.settings.maxItems;
+	  }
+
+	  /**
+	   * Refreshes the original <select> or <input>
+	   * element to reflect the current state.
+	   *
+	   */
+	  updateOriginalInput(opts = {}) {
+	    const self = this;
+	    var option, label;
+	    const empty_option = self.input.querySelector('option[value=""]');
+	    if (self.is_select_tag) {
+	      const selected = [];
+	      const has_selected = self.input.querySelectorAll('option:checked').length;
+	      function AddSelected(option_el, value, label) {
+	        if (!option_el) {
+	          option_el = getDom('<option value="' + escape_html(value) + '">' + escape_html(label) + '</option>');
+	        }
+
+	        // don't move empty option from top of list
+	        // fixes bug in firefox https://bugzilla.mozilla.org/show_bug.cgi?id=1725293
+	        if (option_el != empty_option) {
+	          self.input.append(option_el);
+	        }
+	        selected.push(option_el);
+
+	        // marking empty option as selected can break validation
+	        // fixes https://github.com/orchidjs/tom-select/issues/303
+	        if (option_el != empty_option || has_selected > 0) {
+	          option_el.selected = true;
+	        }
+	        return option_el;
+	      }
+
+	      // unselect all selected options
+	      self.input.querySelectorAll('option:checked').forEach(option_el => {
+	        option_el.selected = false;
+	      });
+
+	      // nothing selected?
+	      if (self.items.length == 0 && self.settings.mode == 'single') {
+	        AddSelected(empty_option, "", "");
+
+	        // order selected <option> tags for values in self.items
+	      } else {
+	        self.items.forEach(value => {
+	          option = self.options[value];
+	          label = option[self.settings.labelField] || '';
+	          if (selected.includes(option.$option)) {
+	            const reuse_opt = self.input.querySelector(`option[value="${addSlashes(value)}"]:not(:checked)`);
+	            AddSelected(reuse_opt, value, label);
+	          } else {
+	            option.$option = AddSelected(option.$option, value, label);
+	          }
+	        });
+	      }
+	    } else {
+	      self.input.value = self.getValue();
+	    }
+	    if (self.isSetup) {
+	      if (!opts.silent) {
+	        self.trigger('change', self.getValue());
+	      }
+	    }
+	  }
+
+	  /**
+	   * Shows the autocomplete dropdown containing
+	   * the available options.
+	   */
+	  open() {
+	    var self = this;
+	    if (self.isLocked || self.isOpen || self.settings.mode === 'multi' && self.isFull()) return;
+	    self.isOpen = true;
+	    setAttr(self.focus_node, {
+	      'aria-expanded': 'true'
+	    });
+	    self.refreshState();
+	    applyCSS(self.dropdown, {
+	      visibility: 'hidden',
+	      display: 'block'
+	    });
+	    self.positionDropdown();
+	    applyCSS(self.dropdown, {
+	      visibility: 'visible',
+	      display: 'block'
+	    });
+	    self.focus();
+	    self.trigger('dropdown_open', self.dropdown);
+	  }
+
+	  /**
+	   * Closes the autocomplete dropdown menu.
+	   */
+	  close(setTextboxValue = true) {
+	    var self = this;
+	    var trigger = self.isOpen;
+	    if (setTextboxValue) {
+	      // before blur() to prevent form onchange event
+	      self.setTextboxValue();
+	      if (self.settings.mode === 'single' && self.items.length) {
+	        self.inputState();
+	      }
+	    }
+	    self.isOpen = false;
+	    setAttr(self.focus_node, {
+	      'aria-expanded': 'false'
+	    });
+	    applyCSS(self.dropdown, {
+	      display: 'none'
+	    });
+	    if (self.settings.hideSelected) {
+	      self.clearActiveOption();
+	    }
+	    self.refreshState();
+	    if (trigger) self.trigger('dropdown_close', self.dropdown);
+	  }
+
+	  /**
+	   * Calculates and applies the appropriate
+	   * position of the dropdown if dropdownParent = 'body'.
+	   * Otherwise, position is determined by css
+	   */
+	  positionDropdown() {
+	    if (this.settings.dropdownParent !== 'body') {
+	      return;
+	    }
+	    var context = this.control;
+	    var rect = context.getBoundingClientRect();
+	    var top = context.offsetHeight + rect.top + window.scrollY;
+	    var left = rect.left + window.scrollX;
+	    applyCSS(this.dropdown, {
+	      width: rect.width + 'px',
+	      top: top + 'px',
+	      left: left + 'px'
+	    });
+	  }
+
+	  /**
+	   * Resets / clears all selected items
+	   * from the control.
+	   *
+	   */
+	  clear(silent) {
+	    var self = this;
+	    if (!self.items.length) return;
+	    var items = self.controlChildren();
+	    iterate$1(items, item => {
+	      self.removeItem(item, true);
+	    });
+	    self.inputState();
+	    if (!silent) self.updateOriginalInput();
+	    self.trigger('clear');
+	  }
+
+	  /**
+	   * A helper method for inserting an element
+	   * at the current caret position.
+	   *
+	   */
+	  insertAtCaret(el) {
+	    const self = this;
+	    const caret = self.caretPos;
+	    const target = self.control;
+	    target.insertBefore(el, target.children[caret] || null);
+	    self.setCaret(caret + 1);
+	  }
+
+	  /**
+	   * Removes the current selected item(s).
+	   *
+	   */
+	  deleteSelection(e) {
+	    var direction, selection, caret, tail;
+	    var self = this;
+	    direction = e && e.keyCode === KEY_BACKSPACE ? -1 : 1;
+	    selection = getSelection(self.control_input);
+
+	    // determine items that will be removed
+	    const rm_items = [];
+	    if (self.activeItems.length) {
+	      tail = getTail(self.activeItems, direction);
+	      caret = nodeIndex(tail);
+	      if (direction > 0) {
+	        caret++;
+	      }
+	      iterate$1(self.activeItems, item => rm_items.push(item));
+	    } else if ((self.isFocused || self.settings.mode === 'single') && self.items.length) {
+	      const items = self.controlChildren();
+	      let rm_item;
+	      if (direction < 0 && selection.start === 0 && selection.length === 0) {
+	        rm_item = items[self.caretPos - 1];
+	      } else if (direction > 0 && selection.start === self.inputValue().length) {
+	        rm_item = items[self.caretPos];
+	      }
+	      if (rm_item !== undefined) {
+	        rm_items.push(rm_item);
+	      }
+	    }
+	    if (!self.shouldDelete(rm_items, e)) {
+	      return false;
+	    }
+	    preventDefault(e, true);
+
+	    // perform removal
+	    if (typeof caret !== 'undefined') {
+	      self.setCaret(caret);
+	    }
+	    while (rm_items.length) {
+	      self.removeItem(rm_items.pop());
+	    }
+	    self.inputState();
+	    self.positionDropdown();
+	    self.refreshOptions(false);
+	    return true;
+	  }
+
+	  /**
+	   * Return true if the items should be deleted
+	   */
+	  shouldDelete(items, evt) {
+	    const values = items.map(item => item.dataset.value);
+
+	    // allow the callback to abort
+	    if (!values.length || typeof this.settings.onDelete === 'function' && this.settings.onDelete(values, evt) === false) {
+	      return false;
+	    }
+	    return true;
+	  }
+
+	  /**
+	   * Selects the previous / next item (depending on the `direction` argument).
+	   *
+	   * > 0 - right
+	   * < 0 - left
+	   *
+	   */
+	  advanceSelection(direction, e) {
+	    var last_active,
+	      adjacent,
+	      self = this;
+	    if (self.rtl) direction *= -1;
+	    if (self.inputValue().length) return;
+
+	    // add or remove to active items
+	    if (isKeyDown(KEY_SHORTCUT, e) || isKeyDown('shiftKey', e)) {
+	      last_active = self.getLastActive(direction);
+	      if (last_active) {
+	        if (!last_active.classList.contains('active')) {
+	          adjacent = last_active;
+	        } else {
+	          adjacent = self.getAdjacent(last_active, direction, 'item');
+	        }
+
+	        // if no active item, get items adjacent to the control input
+	      } else if (direction > 0) {
+	        adjacent = self.control_input.nextElementSibling;
+	      } else {
+	        adjacent = self.control_input.previousElementSibling;
+	      }
+	      if (adjacent) {
+	        if (adjacent.classList.contains('active')) {
+	          self.removeActiveItem(last_active);
+	        }
+	        self.setActiveItemClass(adjacent); // mark as last_active !! after removeActiveItem() on last_active
+	      }
+
+	      // move caret to the left or right
+	    } else {
+	      self.moveCaret(direction);
+	    }
+	  }
+	  moveCaret(direction) {}
+
+	  /**
+	   * Get the last active item
+	   *
+	   */
+	  getLastActive(direction) {
+	    let last_active = this.control.querySelector('.last-active');
+	    if (last_active) {
+	      return last_active;
+	    }
+	    var result = this.control.querySelectorAll('.active');
+	    if (result) {
+	      return getTail(result, direction);
+	    }
+	  }
+
+	  /**
+	   * Moves the caret to the specified index.
+	   *
+	   * The input must be moved by leaving it in place and moving the
+	   * siblings, due to the fact that focus cannot be restored once lost
+	   * on mobile webkit devices
+	   *
+	   */
+	  setCaret(new_pos) {
+	    this.caretPos = this.items.length;
+	  }
+
+	  /**
+	   * Return list of item dom elements
+	   *
+	   */
+	  controlChildren() {
+	    return Array.from(this.control.querySelectorAll('[data-ts-item]'));
+	  }
+
+	  /**
+	   * Disables user input on the control. Used while
+	   * items are being asynchronously created.
+	   */
+	  lock() {
+	    this.setLocked(true);
+	  }
+
+	  /**
+	   * Re-enables user input on the control.
+	   */
+	  unlock() {
+	    this.setLocked(false);
+	  }
+
+	  /**
+	   * Disable or enable user input on the control
+	   */
+	  setLocked(lock = this.isReadOnly || this.isDisabled) {
+	    this.isLocked = lock;
+	    this.refreshState();
+	  }
+
+	  /**
+	   * Disables user input on the control completely.
+	   * While disabled, it cannot receive focus.
+	   */
+	  disable() {
+	    this.setDisabled(true);
+	    this.close();
+	  }
+
+	  /**
+	   * Enables the control so that it can respond
+	   * to focus and user input.
+	   */
+	  enable() {
+	    this.setDisabled(false);
+	  }
+	  setDisabled(disabled) {
+	    this.focus_node.tabIndex = disabled ? -1 : this.tabIndex;
+	    this.isDisabled = disabled;
+	    this.input.disabled = disabled;
+	    this.control_input.disabled = disabled;
+	    this.setLocked();
+	  }
+	  setReadOnly(isReadOnly) {
+	    this.isReadOnly = isReadOnly;
+	    this.input.readOnly = isReadOnly;
+	    this.control_input.readOnly = isReadOnly;
+	    this.setLocked();
+	  }
+
+	  /**
+	   * Completely destroys the control and
+	   * unbinds all event listeners so that it can
+	   * be garbage collected.
+	   */
+	  destroy() {
+	    var self = this;
+	    var revertSettings = self.revertSettings;
+	    self.trigger('destroy');
+	    self.off();
+	    self.wrapper.remove();
+	    self.dropdown.remove();
+	    self.input.innerHTML = revertSettings.innerHTML;
+	    self.input.tabIndex = revertSettings.tabIndex;
+	    removeClasses(self.input, 'tomselected', 'ts-hidden-accessible');
+	    self._destroy();
+	    delete self.input.tomselect;
+	  }
+
+	  /**
+	   * A helper method for rendering "item" and
+	   * "option" templates, given the data.
+	   *
+	   */
+	  render(templateName, data) {
+	    var id, html;
+	    const self = this;
+	    if (typeof this.settings.render[templateName] !== 'function') {
+	      return null;
+	    }
+
+	    // render markup
+	    html = self.settings.render[templateName].call(this, data, escape_html);
+	    if (!html) {
+	      return null;
+	    }
+	    html = getDom(html);
+
+	    // add mandatory attributes
+	    if (templateName === 'option' || templateName === 'option_create') {
+	      if (data[self.settings.disabledField]) {
+	        setAttr(html, {
+	          'aria-disabled': 'true'
+	        });
+	      } else {
+	        setAttr(html, {
+	          'data-selectable': ''
+	        });
+	      }
+	    } else if (templateName === 'optgroup') {
+	      id = data.group[self.settings.optgroupValueField];
+	      setAttr(html, {
+	        'data-group': id
+	      });
+	      if (data.group[self.settings.disabledField]) {
+	        setAttr(html, {
+	          'data-disabled': ''
+	        });
+	      }
+	    }
+	    if (templateName === 'option' || templateName === 'item') {
+	      const value = get_hash(data[self.settings.valueField]);
+	      setAttr(html, {
+	        'data-value': value
+	      });
+
+	      // make sure we have some classes if a template is overwritten
+	      if (templateName === 'item') {
+	        addClasses(html, self.settings.itemClass);
+	        setAttr(html, {
+	          'data-ts-item': ''
+	        });
+	      } else {
+	        addClasses(html, self.settings.optionClass);
+	        setAttr(html, {
+	          role: 'option',
+	          id: data.$id
+	        });
+
+	        // update cache
+	        data.$div = html;
+	        self.options[value] = data;
+	      }
+	    }
+	    return html;
+	  }
+
+	  /**
+	   * Type guarded rendering
+	   *
+	   */
+	  _render(templateName, data) {
+	    const html = this.render(templateName, data);
+	    if (html == null) {
+	      throw 'HTMLElement expected';
+	    }
+	    return html;
+	  }
+
+	  /**
+	   * Clears the render cache for a template. If
+	   * no template is given, clears all render
+	   * caches.
+	   *
+	   */
+	  clearCache() {
+	    iterate$1(this.options, option => {
+	      if (option.$div) {
+	        option.$div.remove();
+	        delete option.$div;
+	      }
+	    });
+	  }
+
+	  /**
+	   * Removes a value from item and option caches
+	   *
+	   */
+	  uncacheValue(value) {
+	    const option_el = this.getOption(value);
+	    if (option_el) option_el.remove();
+	  }
+
+	  /**
+	   * Determines whether or not to display the
+	   * create item prompt, given a user input.
+	   *
+	   */
+	  canCreate(input) {
+	    return this.settings.create && input.length > 0 && this.settings.createFilter.call(this, input);
+	  }
+
+	  /**
+	   * Wraps this.`method` so that `new_fn` can be invoked 'before', 'after', or 'instead' of the original method
+	   *
+	   * this.hook('instead','onKeyDown',function( arg1, arg2 ...){
+	   *
+	   * });
+	   */
+	  hook(when, method, new_fn) {
+	    var self = this;
+	    var orig_method = self[method];
+	    self[method] = function () {
+	      var result, result_new;
+	      if (when === 'after') {
+	        result = orig_method.apply(self, arguments);
+	      }
+	      result_new = new_fn.apply(self, arguments);
+	      if (when === 'instead') {
+	        return result_new;
+	      }
+	      if (when === 'before') {
+	        result = orig_method.apply(self, arguments);
+	      }
+	      return result;
+	    };
+	  }
+	}
+
+	/**
+	 * Plugin: "change_listener" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function change_listener () {
+	  addEvent(this.input, 'change', () => {
+	    this.sync();
+	  });
+	}
+
+	/**
+	 * Plugin: "checkbox_options" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function checkbox_options (userOptions) {
+	  var self = this;
+	  var orig_onOptionSelect = self.onOptionSelect;
+	  self.settings.hideSelected = false;
+	  const cbOptions = Object.assign({
+	    // so that the user may add different ones as well
+	    className: "tomselect-checkbox",
+	    // the following default to the historic plugin's values
+	    checkedClassNames: undefined,
+	    uncheckedClassNames: undefined
+	  }, userOptions);
+	  var UpdateChecked = function UpdateChecked(checkbox, toCheck) {
+	    if (toCheck) {
+	      checkbox.checked = true;
+	      if (cbOptions.uncheckedClassNames) {
+	        checkbox.classList.remove(...cbOptions.uncheckedClassNames);
+	      }
+	      if (cbOptions.checkedClassNames) {
+	        checkbox.classList.add(...cbOptions.checkedClassNames);
+	      }
+	    } else {
+	      checkbox.checked = false;
+	      if (cbOptions.checkedClassNames) {
+	        checkbox.classList.remove(...cbOptions.checkedClassNames);
+	      }
+	      if (cbOptions.uncheckedClassNames) {
+	        checkbox.classList.add(...cbOptions.uncheckedClassNames);
+	      }
+	    }
+	  };
+
+	  // update the checkbox for an option
+	  var UpdateCheckbox = function UpdateCheckbox(option) {
+	    setTimeout(() => {
+	      var checkbox = option.querySelector('input.' + cbOptions.className);
+	      if (checkbox instanceof HTMLInputElement) {
+	        UpdateChecked(checkbox, option.classList.contains('selected'));
+	      }
+	    }, 1);
+	  };
+
+	  // add checkbox to option template
+	  self.hook('after', 'setupTemplates', () => {
+	    var orig_render_option = self.settings.render.option;
+	    self.settings.render.option = (data, escape_html) => {
+	      var rendered = getDom(orig_render_option.call(self, data, escape_html));
+	      var checkbox = document.createElement('input');
+	      if (cbOptions.className) {
+	        checkbox.classList.add(cbOptions.className);
+	      }
+	      checkbox.addEventListener('click', function (evt) {
+	        preventDefault(evt);
+	      });
+	      checkbox.type = 'checkbox';
+	      const hashed = hash_key(data[self.settings.valueField]);
+	      UpdateChecked(checkbox, !!(hashed && self.items.indexOf(hashed) > -1));
+	      rendered.prepend(checkbox);
+	      return rendered;
+	    };
+	  });
+
+	  // uncheck when item removed
+	  self.on('item_remove', value => {
+	    var option = self.getOption(value);
+	    if (option) {
+	      // if dropdown hasn't been opened yet, the option won't exist
+	      option.classList.remove('selected'); // selected class won't be removed yet
+	      UpdateCheckbox(option);
+	    }
+	  });
+
+	  // check when item added
+	  self.on('item_add', value => {
+	    var option = self.getOption(value);
+	    if (option) {
+	      // if dropdown hasn't been opened yet, the option won't exist
+	      UpdateCheckbox(option);
+	    }
+	  });
+
+	  // remove items when selected option is clicked
+	  self.hook('instead', 'onOptionSelect', (evt, option) => {
+	    if (option.classList.contains('selected')) {
+	      option.classList.remove('selected');
+	      self.removeItem(option.dataset.value);
+	      self.refreshOptions();
+	      preventDefault(evt, true);
+	      return;
+	    }
+	    orig_onOptionSelect.call(self, evt, option);
+	    UpdateCheckbox(option);
+	  });
+	}
+
+	/**
+	 * Plugin: "dropdown_header" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function clear_button (userOptions) {
+	  const self = this;
+	  const options = Object.assign({
+	    className: 'clear-button',
+	    title: 'Clear All',
+	    html: data => {
+	      return `<div class="${data.className}" title="${data.title}">&#10799;</div>`;
+	    }
+	  }, userOptions);
+	  self.on('initialize', () => {
+	    var button = getDom(options.html(options));
+	    button.addEventListener('click', evt => {
+	      if (self.isLocked) return;
+	      self.clear();
+	      if (self.settings.mode === 'single' && self.settings.allowEmptyOption) {
+	        self.addItem('');
+	      }
+	      evt.preventDefault();
+	      evt.stopPropagation();
+	    });
+	    self.control.appendChild(button);
+	  });
+	}
+
+	/**
+	 * Plugin: "drag_drop" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	const insertAfter = (referenceNode, newNode) => {
+	  var _referenceNode$parent;
+	  (_referenceNode$parent = referenceNode.parentNode) == null || _referenceNode$parent.insertBefore(newNode, referenceNode.nextSibling);
+	};
+	const insertBefore = (referenceNode, newNode) => {
+	  var _referenceNode$parent2;
+	  (_referenceNode$parent2 = referenceNode.parentNode) == null || _referenceNode$parent2.insertBefore(newNode, referenceNode);
+	};
+	const isBefore = (referenceNode, newNode) => {
+	  do {
+	    var _newNode;
+	    newNode = (_newNode = newNode) == null ? void 0 : _newNode.previousElementSibling;
+	    if (referenceNode == newNode) {
+	      return true;
+	    }
+	  } while (newNode && newNode.previousElementSibling);
+	  return false;
+	};
+	function drag_drop () {
+	  var self = this;
+	  if (self.settings.mode !== 'multi') return;
+	  var orig_lock = self.lock;
+	  var orig_unlock = self.unlock;
+	  let sortable = true;
+	  let drag_item;
+
+	  /**
+	   * Add draggable attribute to item
+	   */
+	  self.hook('after', 'setupTemplates', () => {
+	    var orig_render_item = self.settings.render.item;
+	    self.settings.render.item = (data, escape) => {
+	      const item = getDom(orig_render_item.call(self, data, escape));
+	      setAttr(item, {
+	        'draggable': 'true'
+	      });
+
+	      // prevent doc_mousedown (see tom-select.ts)
+	      const mousedown = evt => {
+	        if (!sortable) preventDefault(evt);
+	        evt.stopPropagation();
+	      };
+	      const dragStart = evt => {
+	        drag_item = item;
+	        setTimeout(() => {
+	          item.classList.add('ts-dragging');
+	        }, 0);
+	      };
+	      const dragOver = evt => {
+	        evt.preventDefault();
+	        item.classList.add('ts-drag-over');
+	        moveitem(item, drag_item);
+	      };
+	      const dragLeave = () => {
+	        item.classList.remove('ts-drag-over');
+	      };
+	      const moveitem = (targetitem, dragitem) => {
+	        if (dragitem === undefined) return;
+	        if (isBefore(dragitem, item)) {
+	          insertAfter(targetitem, dragitem);
+	        } else {
+	          insertBefore(targetitem, dragitem);
+	        }
+	      };
+	      const dragend = () => {
+	        var _drag_item;
+	        document.querySelectorAll('.ts-drag-over').forEach(el => el.classList.remove('ts-drag-over'));
+	        (_drag_item = drag_item) == null || _drag_item.classList.remove('ts-dragging');
+	        drag_item = undefined;
+	        var values = [];
+	        self.control.querySelectorAll(`[data-value]`).forEach(el => {
+	          if (el.dataset.value) {
+	            let value = el.dataset.value;
+	            if (value) {
+	              values.push(value);
+	            }
+	          }
+	        });
+	        self.setValue(values);
+	      };
+	      addEvent(item, 'mousedown', mousedown);
+	      addEvent(item, 'dragstart', dragStart);
+	      addEvent(item, 'dragenter', dragOver);
+	      addEvent(item, 'dragover', dragOver);
+	      addEvent(item, 'dragleave', dragLeave);
+	      addEvent(item, 'dragend', dragend);
+	      return item;
+	    };
+	  });
+	  self.hook('instead', 'lock', () => {
+	    sortable = false;
+	    return orig_lock.call(self);
+	  });
+	  self.hook('instead', 'unlock', () => {
+	    sortable = true;
+	    return orig_unlock.call(self);
+	  });
+	}
+
+	/**
+	 * Plugin: "dropdown_header" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function dropdown_header (userOptions) {
+	  const self = this;
+	  const options = Object.assign({
+	    title: 'Untitled',
+	    headerClass: 'dropdown-header',
+	    titleRowClass: 'dropdown-header-title',
+	    labelClass: 'dropdown-header-label',
+	    closeClass: 'dropdown-header-close',
+	    html: data => {
+	      return '<div class="' + data.headerClass + '">' + '<div class="' + data.titleRowClass + '">' + '<span class="' + data.labelClass + '">' + data.title + '</span>' + '<a class="' + data.closeClass + '">&times;</a>' + '</div>' + '</div>';
+	    }
+	  }, userOptions);
+	  self.on('initialize', () => {
+	    var header = getDom(options.html(options));
+	    var close_link = header.querySelector('.' + options.closeClass);
+	    if (close_link) {
+	      close_link.addEventListener('click', evt => {
+	        preventDefault(evt, true);
+	        self.close();
+	      });
+	    }
+	    self.dropdown.insertBefore(header, self.dropdown.firstChild);
+	  });
+	}
+
+	/**
+	 * Plugin: "dropdown_input" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function caret_position () {
+	  var self = this;
+
+	  /**
+	   * Moves the caret to the specified index.
+	   *
+	   * The input must be moved by leaving it in place and moving the
+	   * siblings, due to the fact that focus cannot be restored once lost
+	   * on mobile webkit devices
+	   *
+	   */
+	  self.hook('instead', 'setCaret', new_pos => {
+	    if (self.settings.mode === 'single' || !self.control.contains(self.control_input)) {
+	      new_pos = self.items.length;
+	    } else {
+	      new_pos = Math.max(0, Math.min(self.items.length, new_pos));
+	      if (new_pos != self.caretPos && !self.isPending) {
+	        self.controlChildren().forEach((child, j) => {
+	          if (j < new_pos) {
+	            self.control_input.insertAdjacentElement('beforebegin', child);
+	          } else {
+	            self.control.appendChild(child);
+	          }
+	        });
+	      }
+	    }
+	    self.caretPos = new_pos;
+	  });
+	  self.hook('instead', 'moveCaret', direction => {
+	    if (!self.isFocused) return;
+
+	    // move caret before or after selected items
+	    const last_active = self.getLastActive(direction);
+	    if (last_active) {
+	      const idx = nodeIndex(last_active);
+	      self.setCaret(direction > 0 ? idx + 1 : idx);
+	      self.setActiveItem();
+	      removeClasses(last_active, 'last-active');
+
+	      // move caret left or right of current position
+	    } else {
+	      self.setCaret(self.caretPos + direction);
+	    }
+	  });
+	}
+
+	/**
+	 * Plugin: "dropdown_input" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function dropdown_input () {
+	  const self = this;
+	  self.settings.shouldOpen = true; // make sure the input is shown even if there are no options to display in the dropdown
+
+	  self.hook('before', 'setup', () => {
+	    self.focus_node = self.control;
+	    addClasses(self.control_input, 'dropdown-input');
+	    const div = getDom('<div class="dropdown-input-wrap">');
+	    div.append(self.control_input);
+	    self.dropdown.insertBefore(div, self.dropdown.firstChild);
+
+	    // set a placeholder in the select control
+	    const placeholder = getDom('<input class="items-placeholder" tabindex="-1" />');
+	    placeholder.placeholder = self.settings.placeholder || '';
+	    self.control.append(placeholder);
+	  });
+	  self.on('initialize', () => {
+	    // set tabIndex on control to -1, otherwise [shift+tab] will put focus right back on control_input
+	    self.control_input.addEventListener('keydown', evt => {
+	      //addEvent(self.control_input,'keydown' as const,(evt:KeyboardEvent) =>{
+	      switch (evt.keyCode) {
+	        case KEY_ESC:
+	          if (self.isOpen) {
+	            preventDefault(evt, true);
+	            self.close();
+	          }
+	          self.clearActiveItems();
+	          return;
+	        case KEY_TAB:
+	          self.focus_node.tabIndex = -1;
+	          break;
+	      }
+	      return self.onKeyDown.call(self, evt);
+	    });
+	    self.on('blur', () => {
+	      self.focus_node.tabIndex = self.isDisabled ? -1 : self.tabIndex;
+	    });
+
+	    // give the control_input focus when the dropdown is open
+	    self.on('dropdown_open', () => {
+	      self.control_input.focus();
+	    });
+
+	    // prevent onBlur from closing when focus is on the control_input
+	    const orig_onBlur = self.onBlur;
+	    self.hook('instead', 'onBlur', evt => {
+	      if (evt && evt.relatedTarget == self.control_input) return;
+	      return orig_onBlur.call(self);
+	    });
+	    addEvent(self.control_input, 'blur', () => self.onBlur());
+
+	    // return focus to control to allow further keyboard input
+	    self.hook('before', 'close', () => {
+	      if (!self.isOpen) return;
+	      self.focus_node.focus({
+	        preventScroll: true
+	      });
+	    });
+	  });
+	}
+
+	/**
+	 * Plugin: "input_autogrow" (Tom Select)
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function input_autogrow () {
+	  var self = this;
+	  self.on('initialize', () => {
+	    var test_input = document.createElement('span');
+	    var control = self.control_input;
+	    test_input.style.cssText = 'position:absolute; top:-99999px; left:-99999px; width:auto; padding:0; white-space:pre; ';
+	    self.wrapper.appendChild(test_input);
+	    var transfer_styles = ['letterSpacing', 'fontSize', 'fontFamily', 'fontWeight', 'textTransform'];
+	    for (const style_name of transfer_styles) {
+	      // @ts-ignore TS7015 https://stackoverflow.com/a/50506154/697576
+	      test_input.style[style_name] = control.style[style_name];
+	    }
+
+	    /**
+	     * Set the control width
+	     *
+	     */
+	    var resize = () => {
+	      test_input.textContent = control.value;
+	      control.style.width = test_input.clientWidth + 'px';
+	    };
+	    resize();
+	    self.on('update item_add item_remove', resize);
+	    addEvent(control, 'input', resize);
+	    addEvent(control, 'keyup', resize);
+	    addEvent(control, 'blur', resize);
+	    addEvent(control, 'update', resize);
+	  });
+	}
+
+	/**
+	 * Plugin: "input_autogrow" (Tom Select)
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function no_backspace_delete () {
+	  var self = this;
+	  var orig_deleteSelection = self.deleteSelection;
+	  this.hook('instead', 'deleteSelection', evt => {
+	    if (self.activeItems.length) {
+	      return orig_deleteSelection.call(self, evt);
+	    }
+	    return false;
+	  });
+	}
+
+	/**
+	 * Plugin: "no_active_items" (Tom Select)
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function no_active_items () {
+	  this.hook('instead', 'setActiveItem', () => {});
+	  this.hook('instead', 'selectAll', () => {});
+	}
+
+	/**
+	 * Plugin: "optgroup_columns" (Tom Select.js)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function optgroup_columns () {
+	  var self = this;
+	  var orig_keydown = self.onKeyDown;
+	  self.hook('instead', 'onKeyDown', evt => {
+	    var index, option, options, optgroup;
+	    if (!self.isOpen || !(evt.keyCode === KEY_LEFT || evt.keyCode === KEY_RIGHT)) {
+	      return orig_keydown.call(self, evt);
+	    }
+	    self.ignoreHover = true;
+	    optgroup = parentMatch(self.activeOption, '[data-group]');
+	    index = nodeIndex(self.activeOption, '[data-selectable]');
+	    if (!optgroup) {
+	      return;
+	    }
+	    if (evt.keyCode === KEY_LEFT) {
+	      optgroup = optgroup.previousSibling;
+	    } else {
+	      optgroup = optgroup.nextSibling;
+	    }
+	    if (!optgroup) {
+	      return;
+	    }
+	    options = optgroup.querySelectorAll('[data-selectable]');
+	    option = options[Math.min(options.length - 1, index)];
+	    if (option) {
+	      self.setActiveOption(option);
+	    }
+	  });
+	}
+
+	/**
+	 * Plugin: "remove_button" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function remove_button (userOptions) {
+	  const options = Object.assign({
+	    label: '&times;',
+	    title: 'Remove',
+	    className: 'remove',
+	    append: true
+	  }, userOptions);
+
+	  //options.className = 'remove-single';
+	  var self = this;
+
+	  // override the render method to add remove button to each item
+	  if (!options.append) {
+	    return;
+	  }
+	  var html = '<a href="javascript:void(0)" class="' + options.className + '" tabindex="-1" title="' + escape_html(options.title) + '">' + options.label + '</a>';
+	  self.hook('after', 'setupTemplates', () => {
+	    var orig_render_item = self.settings.render.item;
+	    self.settings.render.item = (data, escape) => {
+	      var item = getDom(orig_render_item.call(self, data, escape));
+	      var close_button = getDom(html);
+	      item.appendChild(close_button);
+	      addEvent(close_button, 'mousedown', evt => {
+	        preventDefault(evt, true);
+	      });
+	      addEvent(close_button, 'click', evt => {
+	        if (self.isLocked) return;
+
+	        // propagating will trigger the dropdown to show for single mode
+	        preventDefault(evt, true);
+	        if (self.isLocked) return;
+	        if (!self.shouldDelete([item], evt)) return;
+	        self.removeItem(item);
+	        self.refreshOptions(false);
+	        self.inputState();
+	      });
+	      return item;
+	    };
+	  });
+	}
+
+	/**
+	 * Plugin: "restore_on_backspace" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function restore_on_backspace (userOptions) {
+	  const self = this;
+	  const options = Object.assign({
+	    text: option => {
+	      return option[self.settings.labelField];
+	    }
+	  }, userOptions);
+	  self.on('item_remove', function (value) {
+	    if (!self.isFocused) {
+	      return;
+	    }
+	    if (self.control_input.value.trim() === '') {
+	      var option = self.options[value];
+	      if (option) {
+	        self.setTextboxValue(options.text.call(self, option));
+	      }
+	    }
+	  });
+	}
+
+	/**
+	 * Plugin: "restore_on_backspace" (Tom Select)
+	 * Copyright (c) contributors
+	 *
+	 * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this
+	 * file except in compliance with the License. You may obtain a copy of the License at:
+	 * http://www.apache.org/licenses/LICENSE-2.0
+	 *
+	 * Unless required by applicable law or agreed to in writing, software distributed under
+	 * the License is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF
+	 * ANY KIND, either express or implied. See the License for the specific language
+	 * governing permissions and limitations under the License.
+	 *
+	 */
+
+	function virtual_scroll () {
+	  const self = this;
+	  const orig_canLoad = self.canLoad;
+	  const orig_clearActiveOption = self.clearActiveOption;
+	  const orig_loadCallback = self.loadCallback;
+	  var pagination = {};
+	  var dropdown_content;
+	  var loading_more = false;
+	  var load_more_opt;
+	  var default_values = [];
+	  if (!self.settings.shouldLoadMore) {
+	    // return true if additional results should be loaded
+	    self.settings.shouldLoadMore = () => {
+	      const scroll_percent = dropdown_content.clientHeight / (dropdown_content.scrollHeight - dropdown_content.scrollTop);
+	      if (scroll_percent > 0.9) {
+	        return true;
+	      }
+	      if (self.activeOption) {
+	        var selectable = self.selectable();
+	        var index = Array.from(selectable).indexOf(self.activeOption);
+	        if (index >= selectable.length - 2) {
+	          return true;
+	        }
+	      }
+	      return false;
+	    };
+	  }
+	  if (!self.settings.firstUrl) {
+	    throw 'virtual_scroll plugin requires a firstUrl() method';
+	  }
+
+	  // in order for virtual scrolling to work,
+	  // options need to be ordered the same way they're returned from the remote data source
+	  self.settings.sortField = [{
+	    field: '$order'
+	  }, {
+	    field: '$score'
+	  }];
+
+	  // can we load more results for given query?
+	  const canLoadMore = query => {
+	    if (typeof self.settings.maxOptions === 'number' && dropdown_content.children.length >= self.settings.maxOptions) {
+	      return false;
+	    }
+	    if (query in pagination && pagination[query]) {
+	      return true;
+	    }
+	    return false;
+	  };
+	  const clearFilter = (option, value) => {
+	    if (self.items.indexOf(value) >= 0 || default_values.indexOf(value) >= 0) {
+	      return true;
+	    }
+	    return false;
+	  };
+
+	  // set the next url that will be
+	  self.setNextUrl = (value, next_url) => {
+	    pagination[value] = next_url;
+	  };
+
+	  // getUrl() to be used in settings.load()
+	  self.getUrl = query => {
+	    if (query in pagination) {
+	      const next_url = pagination[query];
+	      pagination[query] = false;
+	      return next_url;
+	    }
+
+	    // if the user goes back to a previous query
+	    // we need to load the first page again
+	    self.clearPagination();
+	    return self.settings.firstUrl.call(self, query);
+	  };
+
+	  // clear pagination
+	  self.clearPagination = () => {
+	    pagination = {};
+	  };
+
+	  // don't clear the active option (and cause unwanted dropdown scroll)
+	  // while loading more results
+	  self.hook('instead', 'clearActiveOption', () => {
+	    if (loading_more) {
+	      return;
+	    }
+	    return orig_clearActiveOption.call(self);
+	  });
+
+	  // override the canLoad method
+	  self.hook('instead', 'canLoad', query => {
+	    // first time the query has been seen
+	    if (!(query in pagination)) {
+	      return orig_canLoad.call(self, query);
+	    }
+	    return canLoadMore(query);
+	  });
+
+	  // wrap the load
+	  self.hook('instead', 'loadCallback', (options, optgroups) => {
+	    if (!loading_more) {
+	      self.clearOptions(clearFilter);
+	    } else if (load_more_opt) {
+	      const first_option = options[0];
+	      if (first_option !== undefined) {
+	        load_more_opt.dataset.value = first_option[self.settings.valueField];
+	      }
+	    }
+	    orig_loadCallback.call(self, options, optgroups);
+	    loading_more = false;
+	  });
+
+	  // add templates to dropdown
+	  //	loading_more if we have another url in the queue
+	  //	no_more_results if we don't have another url in the queue
+	  self.hook('after', 'refreshOptions', () => {
+	    const query = self.lastValue;
+	    var option;
+	    if (canLoadMore(query)) {
+	      option = self.render('loading_more', {
+	        query: query
+	      });
+	      if (option) {
+	        option.setAttribute('data-selectable', ''); // so that navigating dropdown with [down] keypresses can navigate to this node
+	        load_more_opt = option;
+	      }
+	    } else if (query in pagination && !dropdown_content.querySelector('.no-results')) {
+	      option = self.render('no_more_results', {
+	        query: query
+	      });
+	    }
+	    if (option) {
+	      addClasses(option, self.settings.optionClass);
+	      dropdown_content.append(option);
+	    }
+	  });
+
+	  // add scroll listener and default templates
+	  self.on('initialize', () => {
+	    default_values = Object.keys(self.options);
+	    dropdown_content = self.dropdown_content;
+
+	    // default templates
+	    self.settings.render = Object.assign({}, {
+	      loading_more: () => {
+	        return `<div class="loading-more-results">Loading more results ... </div>`;
+	      },
+	      no_more_results: () => {
+	        return `<div class="no-more-results">No more results</div>`;
+	      }
+	    }, self.settings.render);
+
+	    // watch dropdown content scroll position
+	    dropdown_content.addEventListener('scroll', () => {
+	      if (!self.settings.shouldLoadMore.call(self)) {
+	        return;
+	      }
+
+	      // !important: this will get checked again in load() but we still need to check here otherwise loading_more will be set to true
+	      if (!canLoadMore(self.lastValue)) {
+	        return;
+	      }
+
+	      // don't call load() too much
+	      if (loading_more) return;
+	      loading_more = true;
+	      self.load.call(self, self.lastValue);
+	    });
+	  });
+	}
+
+	TomSelect.define('change_listener', change_listener);
+	TomSelect.define('checkbox_options', checkbox_options);
+	TomSelect.define('clear_button', clear_button);
+	TomSelect.define('drag_drop', drag_drop);
+	TomSelect.define('dropdown_header', dropdown_header);
+	TomSelect.define('caret_position', caret_position);
+	TomSelect.define('dropdown_input', dropdown_input);
+	TomSelect.define('input_autogrow', input_autogrow);
+	TomSelect.define('no_backspace_delete', no_backspace_delete);
+	TomSelect.define('no_active_items', no_active_items);
+	TomSelect.define('optgroup_columns', optgroup_columns);
+	TomSelect.define('remove_button', remove_button);
+	TomSelect.define('restore_on_backspace', restore_on_backspace);
+	TomSelect.define('virtual_scroll', virtual_scroll);
+
+	return TomSelect;
+
+}));
+var tomSelect=function(el,opts){return new TomSelect(el,opts);} 
+
+
+},{}],3:[function(require,module,exports){
+"use strict";
+
+function _typeof(o) { "@babel/helpers - typeof"; return _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function (o) { return typeof o; } : function (o) { return o && "function" == typeof Symbol && o.constructor === Symbol && o !== Symbol.prototype ? "symbol" : typeof o; }, _typeof(o); }
+function _classCallCheck(a, n) { if (!(a instanceof n)) throw new TypeError("Cannot call a class as a function"); }
+function _defineProperties(e, r) { for (var t = 0; t < r.length; t++) { var o = r[t]; o.enumerable = o.enumerable || !1, o.configurable = !0, "value" in o && (o.writable = !0), Object.defineProperty(e, _toPropertyKey(o.key), o); } }
+function _createClass(e, r, t) { return r && _defineProperties(e.prototype, r), t && _defineProperties(e, t), Object.defineProperty(e, "prototype", { writable: !1 }), e; }
+function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
+function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+var GraphModal = /*#__PURE__*/function () {
+  function GraphModal(options) {
+    _classCallCheck(this, GraphModal);
+    var defaultOptions = {
+      isOpen: function isOpen() {},
+      isClose: function isClose() {}
+    };
+    this.options = Object.assign(defaultOptions, options);
+    this.speed = 300;
+    this.animation = 'fade';
+    this.modalContainer = null;
+    this.isOpen = false;
+    this.previousActiveElement = null;
+    this._focusElements = ['a[href]', 'input', 'select', 'textarea', 'button', 'iframe', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
+    this._fixBlocks = document.querySelectorAll('.fix-block');
+    this.openModalsStack = [];
+    this.events();
+  }
+  return _createClass(GraphModal, [{
+    key: "events",
+    value: function events() {
+      var _this = this;
+      document.addEventListener('click', function (e) {
+        var clickedElement = e.target.closest("[data-graph-path]");
+        if (clickedElement) {
+          var target = clickedElement.dataset.graphPath;
+          var animation = clickedElement.dataset.graphAnimation;
+          var speed = clickedElement.dataset.graphSpeed;
+          _this.animation = animation ? animation : 'fade';
+          _this.speed = speed ? parseInt(speed) : 300;
+          _this._nextContainer = document.querySelector("[data-graph-target=\"".concat(target, "\"]"));
+
+          // Очистка стека при необходимости
+          if (_this._nextContainer && _this._nextContainer.dataset.clearStack === 'true') {
+            _this.openModalsStack = [];
+          }
+          _this.open(clickedElement.closest('.graph-modal__container'));
+          return;
+        }
+        if (e.target.closest('.js-modal-close')) {
+          _this.close();
+          return;
+        }
+      });
+      window.addEventListener('keydown', function (e) {
+        if (e.keyCode === 27 && _this.isOpen) {
+          _this.close();
+        }
+        if (e.which === 9 && _this.isOpen) {
+          _this.focusCatch(e);
+          return;
+        }
+      });
+      document.addEventListener('click', function (e) {
+        if (e.target.classList.contains('graph-modal__container') && e.target.classList.contains("is-open")) {
+          _this.close();
+        }
+      });
+    }
+  }, {
+    key: "open",
+    value: function open(parent) {
+      var _this2 = this;
+      this.previousActiveElement = document.activeElement;
+      if (this.isOpen) {
+        this.openModalsStack.push(this.modalContainer);
+      }
+      this.modalContainer = this._nextContainer;
+      if (parent) {
+        this.modalContainer.setAttribute('data-parent', parent.dataset.graphTarget);
+        parent.classList.remove('graph-modal-open');
+      }
+      this.modalContainer.scrollTo(0, 0);
+      this.modalContainer.style.setProperty('--transition-time', "".concat(this.speed / 1000, "s"));
+      this.modalContainer.closest('.graph-modal').classList.add('is-open');
+      this.modalContainer.classList.add('graph-modal-open');
+      document.body.style.scrollBehavior = 'auto';
+      document.documentElement.style.scrollBehavior = 'auto';
+      this.disableScroll();
+      this.modalContainer.classList.add(this.animation);
+      setTimeout(function () {
+        _this2.options.isOpen(_this2);
+        _this2.modalContainer.classList.add('animate-open');
+        _this2.isOpen = true;
+        _this2.focusTrap();
+      }, this.speed);
+    }
+  }, {
+    key: "close",
+    value: function close() {
+      var _this3 = this;
+      if (this.modalContainer) {
+        this.modalContainer.classList.remove('animate-open');
+        this.modalContainer.classList.remove(this.animation);
+        this.modalContainer.classList.remove('graph-modal-open');
+        this.enableScroll();
+        document.body.style.scrollBehavior = 'auto';
+        document.documentElement.style.scrollBehavior = 'auto';
+        this.options.isClose(this);
+        this.isOpen = false;
+        if (this.openModalsStack.length > 0) {
+          this.modalContainer = this.openModalsStack.pop();
+          this.modalContainer.classList.add('graph-modal-open');
+          setTimeout(function () {
+            _this3.modalContainer.classList.add('animate-open');
+            _this3.isOpen = true;
+            _this3.focusTrap();
+          }, this.speed);
+        } else {
+          this.modalContainer.closest('.graph-modal').classList.remove('is-open');
+          this.focusTrap();
+        }
+      }
+    }
+  }, {
+    key: "focusCatch",
+    value: function focusCatch(e) {
+      var nodes = this.modalContainer.querySelectorAll(this._focusElements);
+      var nodesArray = Array.prototype.slice.call(nodes);
+      var focusedItemIndex = nodesArray.indexOf(document.activeElement);
+      if (e.shiftKey && focusedItemIndex === 0) {
+        nodesArray[nodesArray.length - 1].focus();
+        e.preventDefault();
+      }
+      if (!e.shiftKey && focusedItemIndex === nodesArray.length - 1) {
+        nodesArray[0].focus();
+        e.preventDefault();
+      }
+    }
+  }, {
+    key: "focusTrap",
+    value: function focusTrap() {
+      var nodes = this.modalContainer.querySelectorAll(this._focusElements);
+      if (this.isOpen) {
+        if (nodes.length) nodes[0].focus();
+      } else {
+        this.previousActiveElement.focus();
+      }
+    }
+  }, {
+    key: "disableScroll",
+    value: function disableScroll() {
+      var pagePosition = window.scrollY;
+      this.lockPadding();
+      document.body.classList.add('disable-scroll');
+      document.body.dataset.position = pagePosition;
+      document.body.style.top = -pagePosition + 'px';
+    }
+  }, {
+    key: "enableScroll",
+    value: function enableScroll() {
+      var pagePosition = parseInt(document.body.dataset.position, 10);
+      this.unlockPadding();
+      document.body.style.top = 'auto';
+      document.body.classList.remove('disable-scroll');
+      window.scrollTo({
+        top: pagePosition,
+        left: 0
+      });
+      document.body.removeAttribute('data-position');
+    }
+  }, {
+    key: "lockPadding",
+    value: function lockPadding() {
+      var paddingOffset = "".concat(window.innerWidth - document.body.offsetWidth, "px");
+      this._fixBlocks.forEach(function (el) {
+        el.style.paddingRight = paddingOffset;
+      });
+      document.body.style.paddingRight = paddingOffset;
+    }
+  }, {
+    key: "unlockPadding",
+    value: function unlockPadding() {
+      this._fixBlocks.forEach(function (el) {
+        el.style.paddingRight = '0px';
+      });
+      document.body.style.paddingRight = '0px';
+    }
+  }]);
+}();
+document.addEventListener('DOMContentLoaded', function () {
+  new GraphModal();
+});
+module.exports = GraphModal;
+
+},{}],4:[function(require,module,exports){
+"use strict";
+
+var TomSelect = require("tom-select");
+var HandyCollapse = require("handy-collapse");
+var GraphModal = require("../js/libs/graph-modal");
+var accordeon = new HandyCollapse({
+  nameSpace: "nested",
+  closeOthers: false,
+  isAnimation: true,
+  animationSpeed: 400
+});
+
+// sidebar
+var accordionItems = document.querySelectorAll("[data-accordion-item]"); // Select elements with data-accordion-item attribute
+accordionItems.forEach(function (item) {
+  var button = item.querySelector("[data-accordion-button]"); // Find button using data-accordion-button
+  var content = item.querySelector("[data-accordion-content]"); // Find content using data-accordion-content
+
+  button.addEventListener("click", function () {
+    content.classList.toggle("max-h-0"); // Toggle max-height between 0 and fit content
+
+    // Optional arrow handling
+    var arrow = item.querySelector("[data-accordion-arrow]");
+    if (arrow) {
+      arrow.classList.toggle("rotate-180"); // Toggle rotate-180 on the arrow
+    }
+  });
+});
+
+// preheader
+
+// document.addEventListener('DOMContentLoaded', function () {
+//     const preheaderTabs = document.getElementById('preheader_tabs');
+//     const buttons = preheaderTabs.querySelectorAll('button');
+//     buttons.forEach(button => {
+//         button.addEventListener('click', function () {
+//             buttons.forEach(btn => btn.classList.remove('bg-white', 'text-dark-gray'));
+//             button.classList.add('bg-white', 'text-dark-gray');
+//         });
+//     });
+// });
+
+// tabs
+var tabs = document.querySelectorAll("[data-tabs]");
+if (tabs.length) {
+  tabs.forEach(function (tab) {
+    var buttons = tab.querySelectorAll("button");
+    buttons.forEach(function (button) {
+      button.addEventListener("click", function () {
+        buttons.forEach(function (btn) {
+          return btn.classList.remove("tab-active");
+        });
+        button.classList.add("tab-active");
+      });
+    });
+  });
+}
+
+// pagination
+var paginations = document.querySelectorAll("[data-pagination]");
+if (paginations.length) {
+  paginations.forEach(function (pagination) {
+    var index;
+    var items = pagination.querySelectorAll("[data-pagination-item]");
+    items.forEach(function (item, i) {
+      if (item.classList.contains("pagination-active")) {
+        index = i + 1;
+      }
+    });
+    items.forEach(function (item) {
+      item.addEventListener("click", function () {
+        items.forEach(function (el) {
+          el.classList.remove("pagination-active");
+          el.classList.add("hover:bg-gray-900/10");
+        });
+        item.classList.add("pagination-active");
+        item.classList.remove("hover:bg-gray-900/10");
+      });
+    });
+  });
+}
+
+// // table content
+//
+// document.addEventListener("DOMContentLoaded", () => {
+//     const buttons = document.querySelectorAll("[table-item-button]");
+//     const modals = document.querySelectorAll("[table-item-modal]");
+//     const closeButtons = document.querySelectorAll("[table-close-modal]");
+//
+//     buttons.forEach((button, index) => {
+//         button.addEventListener("click", () => {
+//             modals[index].classList.remove("hidden");
+//             const modalContent = modals[index].querySelector("[table-modal-content]");
+//             requestAnimationFrame(() => {
+//                 modalContent.classList.remove("opacity-0", "translate-y-14");
+//             });
+//             document.body.classList.add("overflow-hidden");
+//         });
+//     });
+//
+//     closeButtons.forEach((button, index) => {
+//         button.addEventListener("click", () => {
+//             const modal = modals[index];
+//             const modalContent = modal.querySelector("[table-modal-content]");
+//             modalContent.classList.add("opacity-0", "translate-y-14");
+//             modalContent.addEventListener(
+//                 "transitionend",
+//                 () => {
+//                     modal.classList.add("hidden");
+//                     document.body.classList.remove("overflow-hidden");
+//                 },
+//                 {once: true}
+//             );
+//         });
+//     });
+//
+//     modals.forEach((modal) => {
+//         modal.addEventListener("click", (event) => {
+//             if (!event.target.closest("[table-modal-content]")) {
+//                 const modalContent = modal.querySelector("[table-modal-content]");
+//                 modalContent.classList.add("opacity-0", "translate-y-14");
+//                 modalContent.addEventListener(
+//                     "transitionend",
+//                     () => {
+//                         modal.classList.add("hidden");
+//                         document.body.classList.remove("overflow-hidden");
+//                     },
+//                     {once: true}
+//                 );
+//             }
+//         });
+//     });
+// });
+
+//  graph-modal
+
+// gallery in modal
+document.addEventListener("DOMContentLoaded", function () {
+  var fileInput = document.getElementById("fileInput");
+  var previewContainer = document.getElementById("preview-container");
+  fileInput.addEventListener("change", function () {
+    var files = Array.from(fileInput.files);
+    files.forEach(function (file) {
+      var reader = new FileReader();
+      reader.onload = function (e) {
+        var preview = document.createElement("div");
+        preview.classList.add("uploaded-card", "relative", "w-full", "max-w-[300px]", "rounded-xl", "border-2", "border-solid", "border-gray-200");
+        var img = document.createElement("img");
+        img.src = e.target.result;
+        img.alt = "detail";
+        img.classList.add("h-full", "rounded-[8px]", "object-cover");
+        var deleteButton = document.createElement("span");
+        deleteButton.classList.add("group", "delete-card", "cursor-pointer", "absolute", "top-0", "right-0", "p-2.5", "text-primary", "font-extrabold", "text-lg");
+        deleteButton.innerHTML = "\n          <svg width=\"22\" height=\"22\" viewBox=\"0 0 22 22\" fill=\"none\"\n               xmlns=\"http://www.w3.org/2000/svg\">\n            <path class=\"transition  group-hover:stroke-primary\" d=\"M3 19L19 3M3 3L19 19\" stroke=\"#212121\" stroke-width=\"5\"\n                  stroke-linecap=\"round\" stroke-linejoin=\"round\"/>\n          </svg>\n        ";
+        deleteButton.addEventListener("click", function () {
+          preview.remove();
+        });
+        preview.appendChild(img);
+        preview.appendChild(deleteButton);
+        previewContainer.appendChild(preview);
+      };
+      reader.readAsDataURL(file);
+    });
+  });
+
+  // Add event listener for existing delete buttons
+  previewContainer.addEventListener('click', function (event) {
+    if (event.target.closest('.delete-card')) {
+      event.target.closest('.uploaded-card').remove();
+    }
+  });
+});
+
+// mini-modals
+document.addEventListener("DOMContentLoaded", function () {
+  var topToggles = document.querySelectorAll("[minimodal-top-toggle]");
+  var topModals = document.querySelectorAll("[minimodal-top-content]");
+
+  // Делегирование событий для переключателей
+  topToggles.forEach(function (toggle, index) {
+    toggle.addEventListener("click", function () {
+      var modal = topModals[index];
+      if (modal) {
+        if (modal.classList.contains("hidden")) {
+          modal.classList.remove("hidden");
+          setTimeout(function () {
+            requestAnimationFrame(function () {
+              modal.classList.remove("translate-y-14", "opacity-0");
+            });
+          }, 10);
+          document.body.classList.add("overflow-hidden");
+        } else {
+          modal.classList.add("opacity-0", "translate-y-14");
+          modal.addEventListener("transitionend", function () {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }, {
+            once: true
+          });
+        }
+      }
+    });
+  });
+
+  // Закрытие модальных окон при клике вне их содержимого
+  document.addEventListener("click", function (event) {
+    topModals.forEach(function (modal, index) {
+      var toggle = topToggles[index];
+      if (!modal.contains(event.target) && !toggle.contains(event.target)) {
+        if (!modal.classList.contains("hidden")) {
+          modal.classList.add("opacity-0", "translate-y-14");
+          modal.addEventListener("transitionend", function () {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }, {
+            once: true
+          });
+        }
+      }
+    });
+  });
+
+  // Предотвращение закрытия модального окна при клике внутри него
+  topModals.forEach(function (modal) {
+    modal.addEventListener("click", function (event) {
+      event.stopPropagation();
+    });
+  });
+});
+document.addEventListener("DOMContentLoaded", function () {
+  var bottomToggles = document.querySelectorAll("[minimodal-bottom-toggle]");
+  var bottomModals = document.querySelectorAll("[minimodal-bottom-content]");
+
+  // Делегирование событий для переключателей
+  bottomToggles.forEach(function (toggle, index) {
+    toggle.addEventListener("click", function () {
+      var modal = bottomModals[index];
+      if (modal) {
+        if (modal.classList.contains("hidden")) {
+          modal.classList.remove("hidden");
+          setTimeout(function () {
+            requestAnimationFrame(function () {
+              modal.classList.remove("translate-y-full", "opacity-0");
+            });
+          }, 10);
+          document.body.classList.add("overflow-hidden");
+        } else {
+          modal.classList.add("opacity-0", "translate-y-full");
+          modal.addEventListener("transitionend", function () {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }, {
+            once: true
+          });
+        }
+      }
+    });
+  });
+
+  // Закрытие модальных окон при клике вне их содержимого
+  document.addEventListener("click", function (event) {
+    bottomModals.forEach(function (modal, index) {
+      var toggle = bottomToggles[index];
+      if (!modal.contains(event.target) && !toggle.contains(event.target)) {
+        if (!modal.classList.contains("hidden")) {
+          modal.classList.add("opacity-0", "translate-y-full");
+          modal.addEventListener("transitionend", function () {
+            modal.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+          }, {
+            once: true
+          });
+        }
+      }
+    });
+  });
+
+  // Предотвращение закрытия модального окна при клике внутри него
+  // bottomModals.forEach((modal) => {
+  //   modal.addEventListener("click", (event) => {
+  //     event.stopPropagation();
+  //   });
+  // });
+});
+
+//orders
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("select[data-tom-select]").forEach(function (select) {
+    new TomSelect(select, {
+      create: false,
+      sortField: {
+        field: "text",
+        direction: "asc"
+      }
+    });
+  });
+});
+function initializeSelects() {
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-options").forEach(function (dropdown) {
+      if (!dropdown.classList.contains("hidden")) {
+        closeDropdown(dropdown);
+      }
+    });
+  }
+  function openDropdown(dropdown) {
+    dropdown.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+    dropdown.classList.add("opacity-100", "scale-100");
+  }
+  function closeDropdown(dropdown) {
+    dropdown.classList.remove("opacity-100", "scale-100");
+    dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+  }
+  document.querySelectorAll(".custom-select").forEach(function (customSelect) {
+    var selectButton = customSelect.querySelector(".select-button");
+    var dropdownOptions = customSelect.querySelector(".dropdown-options");
+    var selectedOption = customSelect.querySelector(".selected-option");
+
+    // Set the default selected option to "-"
+    selectedOption.textContent = "-";
+    selectButton.addEventListener("click", function (event) {
+      closeAllDropdowns();
+      if (dropdownOptions.classList.contains("opacity-0")) {
+        openDropdown(dropdownOptions);
+      } else {
+        closeDropdown(dropdownOptions);
+      }
+    });
+    var options = dropdownOptions.querySelectorAll("li");
+    options.forEach(function (option) {
+      option.addEventListener("click", function () {
+        options.forEach(function (opt) {
+          return opt.classList.remove("text-primary", "font-bold");
+        });
+        this.classList.add("text-primary", "font-bold");
+        selectedOption.textContent = this.textContent;
+        closeDropdown(dropdownOptions);
+      });
+    });
+    document.addEventListener("click", function (event) {
+      if (!customSelect.contains(event.target)) {
+        closeDropdown(dropdownOptions);
+      }
+    });
+  });
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".custom-select")) {
+      closeAllDropdowns();
+    }
+  });
+}
+
+// select
+document.addEventListener("DOMContentLoaded", function () {
+  initializeSelects();
+});
+
+// tooltip more list
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-more]").forEach(function (tooltip) {
+    var tooltipTitle = tooltip.querySelector("[data-more-title]");
+    var tooltipContent = tooltip.querySelector("[data-more-content]");
+
+    // Function to show tooltip
+    function showTooltip() {
+      tooltipContent.classList.add("tooltip-more-active");
+    }
+
+    // Function to hide tooltip
+    function hideTooltip() {
+      tooltipContent.classList.remove("tooltip-more-active");
+    }
+
+    // Listen for mouse enter on the tooltip title
+    tooltip.addEventListener("mouseenter", function (event) {
+      // Hide all other tooltips before showing this one
+      document.querySelectorAll("[data-more-content]").forEach(function (el) {
+        el.classList.remove("tooltip-more-active");
+      });
+      showTooltip();
+    });
+
+    // Listen for mouse leave on the tooltip title
+    tooltip.addEventListener("mouseleave", hideTooltip);
+  });
+});
+
+// colorPick
+var colorPick = document.getElementById("colorPick");
+if (colorPick) {
+  colorPick.addEventListener("input", function (event) {
+    var colorBox = document.getElementById("colorBox");
+    var selectedColor = event.target.value;
+    colorBox.style.backgroundColor = selectedColor;
+  });
+}
+
+// Show/hide password
+document.addEventListener("DOMContentLoaded", function () {
+  document.querySelectorAll("[data-password]").forEach(function (tooltip) {
+    var trigger = tooltip.querySelector("[data-password-trigger]");
+    var crossLine = tooltip.querySelector("[data-password-line]");
+    var inputPassword = tooltip.querySelector("input");
+    var isPasswordVisible = false;
+
+    // Function to show/hide password
+    function showPassword() {
+      if (!isPasswordVisible) {
+        inputPassword.type = "text";
+        crossLine.classList.add("crossline-hidden");
+        isPasswordVisible = true;
+      } else {
+        inputPassword.type = "password";
+        crossLine.classList.remove("crossline-hidden");
+        isPasswordVisible = false;
+      }
+    }
+
+    // Listen for click on the toggle pasword
+    trigger.addEventListener("click", function (event) {
+      showPassword();
+    });
+  });
+});
+
+//popover
+
+document.querySelectorAll("[data-popover-wrapper]").forEach(function (wrapper) {
+  var trigger = wrapper.querySelector("[data-popover-trigger]");
+  var content = wrapper.querySelector("[data-popover-content]");
+  trigger.addEventListener("click", function (event) {
+    event.stopPropagation();
+    if (content.classList.contains("opacity-0")) {
+      content.classList.remove("opacity-0", "invisible");
+      content.classList.add("opacity-80");
+    } else {
+      content.classList.remove("opacity-80");
+      content.classList.add("opacity-0");
+    }
+  });
+  document.addEventListener("click", function (event) {
+    if (!wrapper.contains(event.target)) {
+      if (content.classList.contains("opacity-80")) {
+        content.classList.remove("opacity-80");
+        content.classList.add("opacity-0");
+        content.addEventListener("transitionend", function handleTransitionEnd() {
+          content.classList.add("invisible");
+          content.removeEventListener("transitionend", handleTransitionEnd);
+        });
+      }
+    }
+  });
+});
+
+//table columns & checkboxes
+
+document.addEventListener("DOMContentLoaded", function () {
+  var checkboxes = document.querySelectorAll('input[type="checkbox"][data-column][data-table]');
+  checkboxes.forEach(function (checkbox) {
+    var tableId = checkbox.getAttribute("data-table");
+    var columnIndex = checkbox.getAttribute("data-column");
+    var table = document.getElementById(tableId);
+    document.querySelectorAll("#".concat(tableId, " tr")).forEach(function (row) {
+      var cells = Array.from(row.children);
+      var cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
+      if (cell) {
+        if (!checkbox.checked) {
+          cell.classList.add("hidden");
+        }
+      }
+    });
+    checkbox.addEventListener("change", function () {
+      var _this = this;
+      document.querySelectorAll("#".concat(tableId, " tr")).forEach(function (row) {
+        var cells = Array.from(row.children);
+        var cell = cells[columnIndex - 1]; // Столбцы начинаются с 1, а индексы массива с 0
+        if (cell) {
+          if (_this.checked) {
+            cell.classList.remove("hidden");
+          } else {
+            cell.classList.add("hidden");
+          }
+        }
+      });
+    });
+  });
+});
+
+// column sorting
+document.addEventListener("DOMContentLoaded", function () {
+  var sortingTriggers = document.querySelectorAll("[data-sorting-trigger]");
+  sortingTriggers.forEach(function (trigger) {
+    var ascending = trigger.querySelector("[data-sorting-ascending]");
+    var descending = trigger.querySelector("[data-sorting-descending]");
+    var title = trigger.querySelector("[data-sorting-title]");
+    var sortingWrapper = trigger.querySelector("[data-sorting-wrapper]");
+
+    // По умолчанию скрыть sortingWrapper
+    if (sortingWrapper) {
+      sortingWrapper.classList.add("hidden");
+    }
+    if (title) {
+      title.classList.add("text-primary");
+      title.addEventListener("click", function () {
+        title.classList.toggle("underline");
+        if (sortingWrapper) {
+          sortingWrapper.classList.toggle("hidden");
+          sortingWrapper.classList.toggle("flex");
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+    if (ascending) {
+      ascending.addEventListener("click", function () {
+        var isActive = ascending.classList.toggle("text-primary");
+        if (isActive) {
+          title.classList.add("text-primary");
+        }
+        if (descending) {
+          descending.classList.remove("text-primary");
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+    if (descending) {
+      descending.addEventListener("click", function () {
+        var isActive = descending.classList.toggle("text-primary");
+        if (isActive) {
+          title.classList.add("text-primary");
+        }
+        if (ascending) {
+          ascending.classList.remove("text-primary");
+        }
+        // Сброс состояния других триггеров
+        resetOtherTriggers(trigger);
+      });
+    }
+  });
+  function resetOtherTriggers(activeTrigger) {
+    sortingTriggers.forEach(function (trigger) {
+      if (trigger !== activeTrigger) {
+        var ascending = trigger.querySelector("[data-sorting-ascending]");
+        var descending = trigger.querySelector("[data-sorting-descending]");
+        var title = trigger.querySelector("[data-sorting-title]");
+        if (ascending) {
+          ascending.classList.remove("text-primary");
+        }
+        if (descending) {
+          descending.classList.remove("text-primary");
+        }
+        if (title) {
+          title.classList.remove("underline");
+        }
+        // Скрыть sortingWrapper для неактивных триггеров
+        var sortingWrapper = trigger.querySelector("[data-sorting-wrapper]");
+        if (sortingWrapper) {
+          sortingWrapper.classList.add("hidden");
+          sortingWrapper.classList.remove("flex");
+        }
+      }
+    });
+  }
+});
+
+// // filters
+// document.addEventListener('DOMContentLoaded', () => {
+//   const filters = document.querySelector('[data-filters]');
+//   const filterPoints = filters.querySelectorAll('[data-filter]');
+
+//   filterPoints.forEach(point => {
+//     point.addEventListener('click', () => {
+//       point.classList.add('filter-choosed');
+
+//       // add conditions for all types of filters (in the discussion)
+//     });
+//   })
+
+// })
+
+document.addEventListener("DOMContentLoaded", function () {
+  var filtersGroups = document.querySelectorAll("[data-filters]");
+  filtersGroups.forEach(function (filters) {
+    var filterPoints = filters.querySelectorAll("[data-filter]");
+    var filtersGroupKey = filters.getAttribute("data-filters");
+    filterPoints.forEach(function (point) {
+      point.addEventListener("click", function () {
+        // Удаляем класс у всех фильтров в текущей группе
+        // filterPoints.forEach(p => p.classList.remove("filter-choosed"));
+
+        // Добавляем класс выбранному фильтру
+        point.classList.add("filter-choosed");
+        var filtersArea = document.querySelector("[data-filters-area=\"".concat(filtersGroupKey, "\"]"));
+        var parentElement = filtersArea.querySelector("[data-filter-container]");
+        if (!parentElement) {
+          createFilterElements(filtersArea);
+        }
+        var filterName = point.querySelector("span").textContent;
+        createAndAppendContainer(filterName, point, filtersArea);
+        initializeSelectsInArea(filtersArea); // Переименованная функция
+      });
+    });
+  });
+});
+function createFilterElements(parentElement) {
+  var filterContainer = document.createElement("div");
+  filterContainer.dataset.filterContainer = true;
+  filterContainer.classList.add("mb-5", "flex", "flex-col", "gap-5", "mt-5");
+  var buttonsContainer = document.createElement("div");
+  buttonsContainer.classList.add("flex", "items-center", "gap-5");
+  var applyButton = document.createElement("button");
+  applyButton.type = "button";
+  applyButton.classList.add("flex", "w-full", "items-center", "gap-2", "rounded-lg", "bg-success", "p-3", "py-2", "pr-4", "text-start", "font-medium", "leading-tight", "text-white", "transition-all", "hover:text-light-gray", "cursor-pointer", "active:opacity-60", "!w-fit", "whitespace-nowrap");
+  applyButton.textContent = "Применить фильтры";
+  buttonsContainer.appendChild(applyButton);
+  var clearButton = document.createElement("button");
+  clearButton.type = "button";
+  clearButton.classList.add("flex", "w-full", "items-center", "gap-2", "rounded-lg", "bg-danger", "p-3", "py-2", "pr-4", "text-start", "font-medium", "leading-tight", "text-white", "transition-all", "hover:text-light-gray", "cursor-pointer", "active:opacity-60", "!w-fit", "whitespace-nowrap");
+  clearButton.textContent = "Очистить фильтры";
+  clearButton.addEventListener("click", function () {
+    clearAllFilters(parentElement);
+  });
+  buttonsContainer.appendChild(clearButton);
+  filterContainer.appendChild(buttonsContainer);
+  var filtersList = document.createElement("div");
+  filtersList.dataset.filterList = true;
+  filtersList.classList.add("flex", "flex-col", "gap-5");
+  parentElement.appendChild(filtersList);
+  parentElement.appendChild(filterContainer);
+}
+function createAndAppendContainer(filterName, point, filtersArea) {
+  var container = document.createElement("div");
+  container.classList.add("flex", "items-center", "gap-10");
+  var oemDiv = document.createElement("div");
+  oemDiv.classList.add("flex", "cursor-pointer", "items-center", "gap-4", "transition-all", "hover:opacity-70", "w-44");
+  var svgContainer = document.createElement("div");
+  svgContainer.classList.add("relative", "h-4", "w-4");
+  var svgElement = "\n  <svg viewBox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\" class=\"h-full w-full\">\n    <path d=\"M20.7457 3.32851C20.3552 2.93798 19.722 2.93798 19.3315 3.32851L12.0371 10.6229L4.74275 3.32851C4.35223 2.93798 3.71906 2.93798 3.32854 3.32851C2.93801 3.71903 2.93801 4.3522 3.32854 4.74272L10.6229 12.0371L3.32856 19.3314C2.93803 19.722 2.93803 20.3551 3.32856 20.7457C3.71908 21.1362 4.35225 21.1362 4.74277 20.7457L12.0371 13.4513L19.3315 20.7457C19.722 21.1362 20.3552 21.1362 20.7457 20.7457C21.1362 20.3551 21.1362 19.722 20.7457 19.3315L13.4513 12.0371L20.7457 4.74272C21.1362 4.3522 21.1362 3.71903 20.7457 3.32851Z\" fill=\"#0F0F0F\"></path>\n  </svg>\n  ";
+  svgContainer.innerHTML = svgElement;
+  oemDiv.appendChild(svgContainer);
+  var oemSpan = document.createElement("span");
+  oemSpan.textContent = "".concat(filterName, ":");
+  oemDiv.appendChild(oemSpan);
+  container.appendChild(oemDiv);
+  oemDiv.addEventListener("click", function () {
+    container.remove();
+    point.classList.remove("filter-choosed");
+    var filterList = filtersArea.querySelector("[data-filter-list]");
+    if (!filterList || filterList.children.length === 0) {
+      var filterContainer = filtersArea.querySelector("[data-filter-container]");
+      if (filterContainer) {
+        filterContainer.remove();
+      }
+    }
+  });
+  var gridContainer = document.createElement("div");
+  gridContainer.classList.add("grid", "grid-cols-2", "items-center", "gap-4");
+  var customSelectContainer = document.createElement("div");
+  customSelectContainer.classList.add("custom-select", "relative", "w-full");
+  var selectButtonDiv = document.createElement("div");
+  selectButtonDiv.classList.add("border-blue-gray-200", "rounded-lg", "border", "bg-white", "shadow-sm");
+  var selectButton = document.createElement("button");
+  selectButton.type = "button";
+  selectButton.classList.add("select-button", "flex", "w-full", "items-center", "justify-between", "px-3", "py-2", "text-left");
+  var selectedOptionSpan = document.createElement("span");
+  selectedOptionSpan.classList.add("selected-option");
+  selectedOptionSpan.textContent = "-"; // Устанавливаем начальное значение
+  var selectIcon = "\n  <svg class=\"h-5 w-5\" fill=\"none\" stroke=\"currentColor\" viewBox=\"0 0 24 24\" xmlns=\"http://www.w3.org/2000/svg\">\n    <path stroke-linecap=\"round\" stroke-linejoin=\"round\" stroke-width=\"2\" d=\"M19 9l-7 7-7-7\"></path>\n  </svg>\n  ";
+  selectButton.innerHTML += selectedOptionSpan.outerHTML + selectIcon;
+  selectButtonDiv.appendChild(selectButton);
+  customSelectContainer.appendChild(selectButtonDiv);
+  var dropdownOptions = document.createElement("ul");
+  dropdownOptions.classList.add("dropdown-options", "pointer-events-none", "absolute", "z-10", "mt-1", "w-full", "scale-95", "transform", "overflow-hidden", "rounded-lg", "border", "border-gray-300", "bg-white", "opacity-0", "shadow-sm", "transition");
+  var options = ["равно", "не равно", "содержит", "не содержит", "отсутствует", "существует"];
+  options.forEach(function (optionText) {
+    var option = document.createElement("li");
+    option.classList.add("cursor-pointer", "px-3", "py-2", "hover:bg-gray-100");
+    option.textContent = optionText;
+    dropdownOptions.appendChild(option);
+  });
+  customSelectContainer.appendChild(dropdownOptions);
+  gridContainer.appendChild(customSelectContainer);
+  var inputField = document.createElement("input");
+  inputField.classList.add("text-blue-gray-700", "disabled:bg-blue-gray-50", "placeholder-shown:border-blue-gray-200", "border-t-blue-gray-200", "border-blue-gray-200", "peer", "h-full", "w-full", "rounded-[7px]", "border", "bg-transparent", "px-3", "py-2.5", "font-sans", "text-base", "font-normal", "outline", "outline-0", "transition-all", "placeholder-shown:border", "focus:outline-1", "focus:outline-primary", "focus:border-primary", "disabled:border-0");
+  inputField.placeholder = "";
+  inputField.value = "";
+  inputField.type = "text";
+  gridContainer.appendChild(inputField);
+  container.appendChild(gridContainer);
+  var filterList = filtersArea.querySelector("[data-filter-list]");
+  filterList.appendChild(container);
+
+  // Инициализация логики селекта
+  initializeSelect(customSelectContainer);
+}
+function initializeSelect(customSelect) {
+  var selectButton = customSelect.querySelector(".select-button");
+  var dropdownOptions = customSelect.querySelector(".dropdown-options");
+  var selectedOption = customSelect.querySelector(".selected-option");
+
+  // Set the default selected option to "-"
+  selectedOption.textContent = "-";
+  function closeAllDropdowns() {
+    document.querySelectorAll(".dropdown-options").forEach(function (dropdown) {
+      if (!dropdown.classList.contains("pointer-events-none")) {
+        closeDropdown(dropdown);
+      }
+    });
+  }
+  function openDropdown(dropdown) {
+    dropdown.classList.remove("opacity-0", "scale-95", "pointer-events-none");
+    dropdown.classList.add("opacity-100", "scale-100");
+  }
+  function closeDropdown(dropdown) {
+    dropdown.classList.remove("opacity-100", "scale-100");
+    dropdown.classList.add("opacity-0", "scale-95", "pointer-events-none");
+  }
+  selectButton.addEventListener("click", function (event) {
+    event.stopPropagation();
+    closeAllDropdowns();
+    if (dropdownOptions.classList.contains("opacity-0")) {
+      openDropdown(dropdownOptions);
+    } else {
+      closeDropdown(dropdownOptions);
+    }
+  });
+  var options = dropdownOptions.querySelectorAll("li");
+  options.forEach(function (option) {
+    option.addEventListener("click", function () {
+      options.forEach(function (opt) {
+        return opt.classList.remove("text-primary", "font-bold");
+      });
+      this.classList.add("text-primary", "font-bold");
+      selectedOption.textContent = this.textContent;
+      closeDropdown(dropdownOptions);
+    });
+  });
+  document.addEventListener("click", function (event) {
+    if (!customSelect.contains(event.target)) {
+      closeDropdown(dropdownOptions);
+    }
+  });
+}
+function clearAllFilters(parentElement) {
+  var filterContainer = parentElement.querySelector("[data-filter-container]");
+  if (filterContainer) {
+    filterContainer.remove();
+  }
+  var filterList = parentElement.querySelector("[data-filter-list]");
+  if (filterList) {
+    filterList.remove();
+  }
+  var filterPoints = document.querySelectorAll("[data-filter]");
+  filterPoints.forEach(function (point) {
+    point.classList.remove("filter-choosed");
+  });
+}
+function initializeSelectsInArea(filtersArea) {
+  var selects = filtersArea.querySelectorAll(".custom-select");
+  selects.forEach(function (select) {
+    initializeSelect(select);
+  });
+}
+
+// inventory checkbox
+document.addEventListener("DOMContentLoaded", function () {
+  var inventories = document.querySelector("[data-inventories]");
+  if (!inventories) return; // Проверка на наличие элемента inventories
+
+  var inventoryItems = inventories.querySelectorAll("[data-inventory]");
+  inventoryItems.forEach(function (inventoryItem) {
+    var inventoryCheckbox = inventoryItem.querySelector("[data-inventory-checkbox]");
+    var checkbox = inventoryCheckbox.querySelector("input[type='checkbox']");
+    checkbox.addEventListener("change", function () {
+      if (checkbox.checked) {
+        var currentDate = new Date();
+        var formattedDate = currentDate.toLocaleString(); // Форматирование даты и времени
+        var span = document.createElement("span");
+        span.classList.add("text-sm", "text-success", "font-normal");
+        span.textContent = "".concat(formattedDate);
+        inventoryItem.classList.add("invetory-active");
+        inventoryCheckbox.innerHTML = ''; // Очистка содержимого элемента
+        inventoryCheckbox.appendChild(span); // Добавление нового span с датой и временем
+      }
+    });
+  });
+});
+var mainCheckboxes = document.querySelectorAll("[data-table-checkbox-main]");
+var secondaryCheckboxes = document.querySelectorAll("[data-table-checkbox-secondary]");
+function updateSortingVisibility(CheckboxType) {
+  var sortingElement = document.querySelector("[data-table-checkbox-filter='".concat(CheckboxType, "']"));
+  var anyMainChecked = document.querySelector("[data-table-checkbox-main='".concat(CheckboxType, "']:checked"));
+  var anySecondaryChecked = document.querySelector("[data-table-checkbox-secondary='".concat(CheckboxType, "']:checked"));
+  if (anyMainChecked || anySecondaryChecked) {
+    sortingElement.classList.remove("hidden");
+  } else {
+    sortingElement.classList.add("hidden");
+  }
+}
+mainCheckboxes.forEach(function (mainCheckbox) {
+  mainCheckbox.addEventListener("change", function () {
+    var CheckboxType = mainCheckbox.getAttribute("data-table-checkbox-main");
+
+    // Update secondary checkboxes based on the main checkbox state
+    var secondaryCheckboxes = document.querySelectorAll("[data-table-checkbox-secondary='".concat(CheckboxType, "']"));
+    secondaryCheckboxes.forEach(function (secondaryCheckbox) {
+      secondaryCheckbox.checked = mainCheckbox.checked;
+    });
+
+    // Update sorting visibility
+    updateSortingVisibility(CheckboxType);
+  });
+});
+secondaryCheckboxes.forEach(function (secondaryCheckbox) {
+  secondaryCheckbox.addEventListener("change", function () {
+    var CheckboxType = secondaryCheckbox.getAttribute("data-table-checkbox-secondary");
+    updateSortingVisibility(CheckboxType);
+  });
+});
+document.addEventListener('DOMContentLoaded', function () {
+  // Handle toggle buttons
+  var toggler = document.querySelectorAll('[data-tree-toggle]');
+  for (var i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function () {
+      // Находим ближайший родительский <div> и его следующий <ul> элемент
+      var nestedList = this.closest('div').nextElementSibling;
+      if (nestedList) {
+        nestedList.classList.toggle("active");
+        // Toggle the rotation class on the first span element
+        var indicator = this.children[1]; // The second span element
+        if (indicator) {
+          indicator.classList.toggle("rotate-90");
+        }
+      }
+    });
+  }
+
+  // Handle checkboxes
+
+  // Обрабатываем изменения состояния чекбоксов
+  var checkboxes = document.querySelectorAll("[data-tree-checkbox]");
+  for (var i = 0; i < checkboxes.length; i++) {
+    checkboxes[i].addEventListener("change", function () {
+      var _this2 = this;
+      var nestedList = this.closest('div').nextElementSibling;
+      if (nestedList) {
+        var nestedCheckboxes = nestedList.querySelectorAll("[data-tree-checkbox]");
+        nestedCheckboxes.forEach(function (cb) {
+          cb.checked = _this2.checked;
+        });
+      }
+    });
+  }
+  var applicabilityLists = document.querySelector("[data-applicability-lists]");
+  var applicabilityTabs = document.querySelector("[data-applicability-tabs]");
+  applicabilityTabs.firstElementChild.addEventListener("click", function () {
+    applicabilityLists.firstElementChild.classList.remove("hidden");
+    applicabilityLists.lastElementChild.classList.add("hidden");
+  });
+  applicabilityTabs.lastElementChild.addEventListener("click", function () {
+    applicabilityLists.firstElementChild.classList.add("hidden");
+    applicabilityLists.lastElementChild.classList.remove("hidden");
+  });
+});
+
+// orders
+var PriceChangers = document.querySelectorAll('[data-price-wrapper]');
+PriceChangers.forEach(function (el) {
+  var priceStatic = el.querySelector('[data-price-static]');
+  var priceClick = el.querySelector('[data-price-click]');
+  var priceChange = el.querySelector('[data-price-change]');
+  priceStatic.addEventListener("click", function () {
+    priceStatic.classList.add('hidden');
+    priceChange.classList.remove('hidden');
+    priceChange.focus(); // Опционально: фокус на поле ввода
+  });
+  priceChange.addEventListener("blur", function () {
+    var newValue = priceChange.value;
+    priceClick.textContent = newValue;
+    priceStatic.classList.remove('hidden');
+    priceChange.classList.add('hidden');
+  });
+
+  // Обновление значения в режиме реального времени
+  priceChange.addEventListener("input", function () {
+    var newValue = priceChange.value;
+    priceClick.textContent = newValue;
+  });
+});
+
+},{"../js/libs/graph-modal":3,"handy-collapse":1,"tom-select":2}]},{},[4]);
+
 //# sourceMappingURL=scripts.js.map

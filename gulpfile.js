@@ -15,7 +15,7 @@ const babelify = require('babelify');
 const sass = require('gulp-sass')(require('sass'));
 const postcss = require('gulp-postcss');
 const concat = require('gulp-concat');
-const uglify = require('gulp-terser');
+// const uglify = require('gulp-terser'); // Comment out or remove this line
 const imagemin = require('gulp-imagemin');
 const mozjpeg = require('imagemin-mozjpeg');
 const pngquant = require('imagemin-pngquant');
@@ -45,21 +45,21 @@ function previewReload(done) {
 // Development Tasks
 function devHTML() {
   return src(`${options.paths.src.base}/**/*.html`)
-      .pipe(includePartials({
-        prefix: '@@',
-        basepath: path.join(__dirname, 'src/components')
-      }))
-      .pipe(dest(options.paths.dist.base));
+    .pipe(includePartials({
+      prefix: '@@',
+      basepath: path.join(__dirname, 'src/components')
+    }))
+    .pipe(dest(options.paths.dist.base));
 }
 
 function devStyles() {
   const tailwindcss = require('tailwindcss');
   const autoprefixer = require('autoprefixer');
   return src(`${options.paths.src.css}/**/*.scss`)
-      .pipe(sass().on('error', sass.logError))
-      .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer()]))
-      .pipe(concat({ path: 'style.css' }))
-      .pipe(dest(options.paths.dist.css));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer()]))
+    .pipe(concat({ path: 'style.css' }))
+    .pipe(dest(options.paths.dist.css));
 }
 
 function devScripts() {
@@ -67,8 +67,8 @@ function devScripts() {
     `${options.paths.src.js}/libs/**/*.js`,
     `!${options.paths.src.js}/**/external/*`,
   ])
-      .pipe(concat('libs.js'))
-      .pipe(dest(options.paths.dist.js));
+    .pipe(concat('libs.js'))
+    .pipe(dest(options.paths.dist.js));
 }
 
 function bundleScripts() {
@@ -76,14 +76,14 @@ function bundleScripts() {
     entries: [`${options.paths.src.js}/main.js`], // Ваша основная точка входа
     debug: true,
   })
-      .transform(babelify, { presets: ['@babel/preset-env'] })
-      .bundle()
-      .pipe(source('scripts.js'))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(gulpif(process.env.NODE_ENV === 'production', uglify()))
-      .pipe(sourcemaps.write('./'))
-      .pipe(dest(options.paths.dist.js));
+    .transform(babelify, { presets: ['@babel/preset-env'] })
+    .bundle()
+    .pipe(source('scripts.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    // .pipe(gulpif(process.env.NODE_ENV === 'production', uglify())) // Comment out or remove this line
+    .pipe(sourcemaps.write('./'))
+    .pipe(dest(options.paths.dist.js));
 }
 
 function devImages() {
@@ -104,12 +104,12 @@ function devFavicons() {
 
 function watchFiles() {
   watch(
-      `${options.paths.src.base}/**/*.{html,php}`,
-      series(devHTML, devStyles, previewReload)
+    `${options.paths.src.base}/**/*.{html,php}`,
+    series(devHTML, devStyles, previewReload)
   );
   watch(
-      [options.config.tailwindjs, `${options.paths.src.css}/**/*.scss`],
-      series(devStyles, previewReload)
+    [options.config.tailwindjs, `${options.paths.src.css}/**/*.scss`],
+    series(devStyles, previewReload)
   );
   watch(`${options.paths.src.js}/**/*.js`, series(devScripts, bundleScripts, previewReload));
   watch(`${options.paths.src.img}/**/*`, series(devImages, previewReload));
@@ -127,22 +127,21 @@ function devClean() {
 // Production Tasks (Optimized Build for Live/Production Sites)
 function prodHTML() {
   return src(`${options.paths.src.base}/**/*.{html,php}`)
-      .pipe(includePartials({
-        prefix: '@@',
-        basepath: path.join(__dirname, 'src/components')
-      }))
-      .pipe(replace('/favicons/', '/auto-parts/favicons/'))
-      .pipe(dest(options.paths.build.base));
+    .pipe(includePartials({
+      prefix: '@@',
+      basepath: path.join(__dirname, 'src/components')
+    }))
+    .pipe(replace('/favicons/', '/auto-parts/favicons/'))
+    .pipe(dest(options.paths.build.base));
 }
 
 function prodStyles() {
   const tailwindcss = require('tailwindcss');
   const autoprefixer = require('autoprefixer');
-  const cssnano = require('cssnano');
   return src(`${options.paths.src.css}/**/*.scss`)
-      .pipe(sass().on('error', sass.logError))
-      .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer(), cssnano()]))
-      .pipe(dest(options.paths.build.css));
+    .pipe(sass().on('error', sass.logError))
+    .pipe(postcss([tailwindcss(options.config.tailwindjs), autoprefixer()]))
+    .pipe(dest(options.paths.build.css));
 }
 
 function prodScripts() {
@@ -150,28 +149,28 @@ function prodScripts() {
     entries: [`${options.paths.src.js}/main.js`],
     debug: false,
   })
-      .transform(babelify, { presets: ['@babel/preset-env'] })
-      .bundle()
-      .pipe(source('scripts.js'))
-      .pipe(buffer())
-      .pipe(sourcemaps.init({ loadMaps: true }))
-      .pipe(uglify())
-      .pipe(sourcemaps.write('./'))
-      .pipe(dest(options.paths.build.js));
+    .transform(babelify, { presets: ['@babel/preset-env'] })
+    .bundle()
+    .pipe(source('scripts.js'))
+    .pipe(buffer())
+    .pipe(sourcemaps.init({ loadMaps: true }))
+    // .pipe(uglify()) // Comment out or remove this line
+    .pipe(sourcemaps.write('./'))
+    .pipe(dest(options.paths.build.js));
 }
 
 function prodImages() {
   const pngQuality = Array.isArray(options.config.imagemin.png)
-      ? options.config.imagemin.png
-      : [0.7, 0.7];
+    ? options.config.imagemin.png
+    : [0.7, 0.7];
   const jpgQuality = Number.isInteger(options.config.imagemin.jpeg)
-      ? options.config.imagemin.jpeg
-      : 70;
+    ? options.config.imagemin.jpeg
+    : 70;
   const plugins = [pngquant({ quality: pngQuality }), mozjpeg({ quality: jpgQuality })];
 
   return src(options.paths.src.img + '/**/*')
-      .pipe(imagemin([...plugins]))
-      .pipe(dest(options.paths.build.img));
+    .pipe(imagemin([...plugins]))
+    .pipe(dest(options.paths.build.img));
 }
 
 function prodFonts() {
@@ -193,21 +192,21 @@ function prodClean() {
 
 function buildFinish(done) {
   console.log(
-      '\n\t' + logSymbols.info,
-      `Production build is complete. Files are located at ${options.paths.build.base}\n`
+    '\n\t' + logSymbols.info,
+    `Production build is complete. Files are located at ${options.paths.build.base}\n`
   );
   done();
 }
 
 exports.default = series(
-    devClean, // Clean Dist Folder
-    parallel(devStyles, devScripts, bundleScripts, devImages, devFonts, devThirdParty, devFavicons, devHTML), // Run All tasks in parallel
-    livePreview, // Live Preview Build
-    watchFiles // Watch for Live Changes
+  devClean, // Clean Dist Folder
+  parallel(devStyles, devScripts, bundleScripts, devImages, devFonts, devThirdParty, devFavicons, devHTML), // Run All tasks in parallel
+  livePreview, // Live Preview Build
+  watchFiles // Watch for Live Changes
 );
 
 exports.prod = series(
-    prodClean, // Clean Build Folder
-    parallel(prodStyles, prodScripts, prodImages, prodHTML, prodFonts, prodThirdParty, prodFavicons), // Run All tasks in parallel
-    buildFinish
+  prodClean, // Clean Build Folder
+  parallel(prodStyles, prodScripts, prodImages, prodHTML, prodFonts, prodThirdParty, prodFavicons), // Run All tasks in parallel
+  buildFinish
 );
