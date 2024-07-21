@@ -228,12 +228,14 @@ document.addEventListener("DOMContentLoaded", () => {
                     }, 10);
                     document.body.classList.add("overflow-hidden");
                 } else {
-                    modal.classList.add("opacity-0", "translate-y-14");
+                    modal.classList.add("opacity-0", "translate-y-14", "hidden");
                     modal.addEventListener(
                         "transitionend",
                         () => {
-                            modal.classList.add("hidden");
-                            document.body.classList.remove("overflow-hidden");
+                            if (modal.classList.contains("opacity-0")) {
+                                modal.classList.add("hidden");
+                                document.body.classList.remove("overflow-hidden");
+                            }
                         },
                         {once: true}
                     );
@@ -248,12 +250,14 @@ document.addEventListener("DOMContentLoaded", () => {
             const toggle = topToggles[index];
             if (!modal.contains(event.target) && !toggle.contains(event.target)) {
                 if (!modal.classList.contains("hidden")) {
-                    modal.classList.add("opacity-0", "translate-y-14");
+                    modal.classList.add("opacity-0", "translate-y-14", "hidden");
                     modal.addEventListener(
                         "transitionend",
                         () => {
-                            modal.classList.add("hidden");
-                            document.body.classList.remove("overflow-hidden");
+                            if (modal.classList.contains("opacity-0")) {
+                                modal.classList.add("hidden");
+                                document.body.classList.remove("overflow-hidden");
+                            }
                         },
                         {once: true}
                     );
@@ -262,13 +266,25 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 
-    // Предотвращение закрытия модального окна при клике внутри него
+    // Сброс состояния компонента при клике на содержимое модального окна
     topModals.forEach((modal) => {
         modal.addEventListener("click", (event) => {
-            event.stopPropagation();
+            modal.classList.add("opacity-0", "translate-y-14", "hidden");
+            modal.addEventListener(
+                "transitionend",
+                () => {
+                    if (modal.classList.contains("opacity-0")) {
+                        modal.classList.add("hidden");
+                        document.body.classList.remove("overflow-hidden");
+                    }
+                },
+                {once: true}
+            );
         });
     });
 });
+
+
 
 document.addEventListener("DOMContentLoaded", () => {
     const bottomToggles = document.querySelectorAll("[minimodal-bottom-toggle]");
