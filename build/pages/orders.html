@@ -6182,32 +6182,7 @@
                         class="flex justify-between gap-6 border-t-2 border-solid border-gray-200 p-5"
                 >
                     <div class="flex gap-4">
-                        <!-- <button
-                                class="group relative h-[36px] w-auto cursor-pointer rounded-lg bg-amber-600 p-2 transition-all hover:bg-amber-700"
-                        >
-                            <svg
-                                    class="w-full"
-                                    width="20"
-                                    height="20"
-                                    viewBox="0 0 24 24"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                        d="M3 17V7C3 6.46957 3.21071 5.96086 3.58579 5.58579C3.96086 5.21071 4.46957 5 5 5H11L13 7H19C19.5304 7 20.0391 7.21071 20.4142 7.58579C20.7893 7.96086 21 8.46957 21 9V17C21 17.5304 20.7893 18.0391 20.4142 18.4142C20.0391 18.7893 19.5304 19 19 19H5C4.46957 19 3.96086 18.7893 3.58579 18.4142C3.21071 18.0391 3 17.5304 3 17Z"
-                                        stroke="#FFFFFF"
-                                        stroke-width="2"
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                />
-                            </svg>
-                            <div
-                                    class="invisible opacity-0 -top-[60px] -left-[210%] group-hover:visible group-hover:opacity-100 transition-opacity duration-300 cursor-default w-max absolute  z-[999] mt-3 translate-x-1/2  rounded-md bg-blue-gray-900 py-2 px-4 text-sm text-white font-medium border border-gray-300 shadow-[0px_12px_30px_-4px_rgba(16,24,40,0.08);]">
-                                <span class="absolute  left-[10px] top-full  z-[990] h-3 w-3  border-gray-300 -translate-y-1/2 rotate-45  bg-blue-gray-900 opacity-75">
-                                </span>
-                                Переместить в архив
-                            </div>
-                        </button> -->
+
                         <div
                                 minimodal-top-toggle
                                 class=" h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
@@ -6273,6 +6248,14 @@
                                 </button>
                             </div>
                         </div>
+                        <button
+                                data-graph-path="barcodes"
+                                data-clear-stack="true"
+                                type="button"
+                                class="flex h-[36px] w-auto text-lg cursor-pointer items-center justify-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 px-4  transition-all hover:bg-gray-100"
+                        >
+                            Похожие (803)
+                        </button>
                     </div>
                     <div class="flex gap-4">
                         <button
@@ -11426,15 +11409,36 @@
 
 
                     </div>
+                    <div
+                            minimodal-top-toggle
+                            class="w-[285px] h-[36px] relative flex cursor-pointer items-center gap-1 rounded-lg border-2 border-blue-gray bg-gray-50 p-2 transition-all hover:bg-gray-100"
+                    >
+                        <div class="w-full flex  justify-center items-center gap-1 ">
+                            <h5 class="text-lg">Добавить запчасть</h5>
+                        </div>
 
-                    <div class=" w-full flex justify-start items-center">
-                        <button
-                                data-graph-path="add-unlinked"
-                                type="button"
-                                class="bg-primary flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight transition-all  focus:bg-primary hover:bg-light-gray hover:text-primary"
+                        <div
+                                minimodal-top-content
+                                class="absolute bottom-[120%] left-0 flex hidden justify-center w-full
+                                       translate-y-14 flex-col gap-2 rounded-lg border-2 border-blue-gray
+                                       bg-light-gray bg-opacity-60 p-2 opacity-0 backdrop-blur-[12px]
+                                       transition-all duration-300 "
                         >
-                            <h4>Добавить отдельную запчасть</h4>
-                        </button>
+                            <button
+                                    data-graph-path="add-unlinked"
+                                    type="button"
+                                    class="bg-primary flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight "
+                            >
+                                Добавить отдельную запчасть
+                            </button>
+                            <button
+                                    data-graph-path="add-linked"
+                                    type="button"
+                                    class="bg-primary flex w-fit items-center gap-2 rounded-lg p-3 py-2 pr-4 text-start text-white font-medium leading-tight "
+                            >
+                               Добавить связанную запчасть
+                            </button>
+                        </div>
                     </div>
                     <span class="h-1 w-full rounded-full bg-primary bg-opacity-70"></span>
                     <div class=" w-full flex justify-center items-center">
