@@ -682,6 +682,9 @@ select{
 .z-10{
   z-index: 10;
 }
+.z-20{
+  z-index: 20;
+}
 .z-30{
   z-index: 30;
 }
@@ -1124,6 +1127,9 @@ select{
 }
 .max-w-\[350px\]{
   max-width: 350px;
+}
+.max-w-\[400px\]{
+  max-width: 400px;
 }
 .max-w-\[40px\]{
   max-width: 40px;
